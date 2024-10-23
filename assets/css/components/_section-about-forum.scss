@@ -1,0 +1,177 @@
+.section-about-forum{
+    margin-bottom: 80px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__title{
+        margin-bottom: 24px;
+        @include mobile-sm{
+            margin-bottom: 12px;
+        }
+    }
+    &__desc{
+        line-height: 1.6;
+        margin-bottom: 32px;
+        color: $color-text-accent;
+        @include mobile-sm{
+            margin-bottom: 12px;
+        }
+    }
+    &__inner{
+        display: grid;
+        grid-template-columns: 2fr repeat(2,1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        @include laptop-sm{
+            grid-template-columns: repeat(4,1fr);
+        }
+        @include tablet{
+            grid-template-columns: 1fr; 
+        }
+        @include mobile-sm{
+            gap: 8px;
+        }
+       
+        
+    }
+    &__big{
+        grid-column: 1/ span 1;
+        grid-row:1 / span 2 ;
+        background-color: white;
+        border-radius: $border-radius-xl;
+        padding: 48px 98px 48px 72px;
+        @include laptop{
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        @include laptop-sm{
+            grid-column: 1/ span 4;
+            grid-row: unset;
+        }
+        @include tablet{
+            grid-column: unset;
+            grid-row: unset;
+        }
+        @include mobile-sm{
+            padding: 24px 16px;
+            border-radius: $border-radius-sm;
+        }
+    }
+    &__btns{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+        @include mobile-sm{
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        >a:first-child{
+            flex-grow: 1;
+        }
+        >a.btn{
+            @include laptop{
+            width: 45%;
+            padding: 16px;
+            text-align: center;
+            justify-content: center;
+            }
+
+            @include mobile-sm{
+                width: 100%;
+               
+            }
+        }
+    }
+
+    &__small{
+         display: flex;
+         flex-direction: column;
+        position: relative;
+        border-radius: $border-radius-xl;
+        @include mobile-sm{
+            border-radius: $border-radius-sm;
+        }
+        &--active{
+            background-color: $primary-color-btn;
+            .section-about-forum__small-content{
+                background-color: $primary-color-btn;
+                color: white;
+                ul{
+                    color: white;
+                }
+            }
+        }
+        ul{
+            font-family: "Raleway";
+            list-style-type: disc;
+            color: $default-text-color;
+            margin-left: 20px;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            @include mobile-sm{
+                gap: 8px;
+            }
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            @include mobile-sm{
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+           
+        }
+        &-content{
+            transform: translateX(-1px);
+            height: 100%;
+            left: -1px;
+            top: 0;
+            bottom: 0;
+            border-radius: $border-radius-xl;
+            box-sizing: border-box;
+            z-index: 100;
+            padding: 48px 26px 34px 32px;
+            background-color: white;
+          
+            width: calc(100% - 24px);
+            z-index: 1000;
+            @include mobile-sm{
+                padding: 24px 16px;
+                width: calc(100% - 12px);
+                border-radius: $border-radius-sm;
+            }
+        }
+        &-layout{
+            flex-grow: 1;
+            border-radius: $border-radius-xl;
+            @include mobile-sm{
+                border-radius: $border-radius-sm;
+            }
+            
+        
+        }
+       &:nth-of-type(2){
+        .section-about-forum__small-layout{
+            background-color:#E3000F ;
+        }
+       }
+
+       &:nth-of-type(4){
+        .section-about-forum__small-layout{
+            background-color:#C79A4D ;
+        }
+       }
+
+       &:nth-of-type(5){
+        .section-about-forum__small-layout{
+            background-color:#0056A4 ;
+        }
+       }
+    }
+}

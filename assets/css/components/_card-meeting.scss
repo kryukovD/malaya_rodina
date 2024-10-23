@@ -1,0 +1,112 @@
+.card-meeting{
+    background-color: #1460A3;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    min-height: 335px;
+    position: relative;
+    &--black{
+        .card-meeting__name{
+            color: $color-text-accent;
+        }  
+    }
+    @include mobile-sm{
+        min-height: 156px;
+        border-radius: $border-radius-sm;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        background-color: #1460A3;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        z-index: 100;
+        width: 100%;
+      
+
+    }
+    
+    @include hover{
+        &:before{
+            content: "";
+            right: 0;
+            animation: fill_right_to_left $transition-timing ease-in-out;
+    
+        }
+        .card-meeting__arrow{
+            transform: rotate(45deg);;
+        }
+        
+    }
+    
+  
+    img{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        transition: all ease $transition-timing;
+      
+    }
+    &__layer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        border-radius: $border-radius-xl;
+        width: calc(100% - 23px);
+        overflow: hidden;
+        flex-grow: 1;
+        @include mobile-sm{
+            width: calc(100% - 12px);
+            border-radius: $border-radius-sm;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: #0000004D;
+            z-index: -1;
+            transform: translateY(100%);
+        }
+    }
+    &__name{
+        position: relative;
+        color: white;
+        z-index: 100;
+        padding: 0px 32px 33px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        @include mobile-sm{
+            font-size: 16px;
+            line-height: 1.3;
+            padding: 0px 16px 14px;
+        }
+    }
+    &__arrow{
+        position: absolute;
+        top: 23px;
+        right: 19px;
+        z-index: 101;
+        transition: all ease $transition-timing;
+    }
+}
+@keyframes fill_right_to_left {
+        0%{
+            right: -100%;
+        }
+        100%{
+         right: 0;
+        }
+}

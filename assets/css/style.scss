@@ -1,0 +1,145 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Light.ttf");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Medium.ttf");
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Bold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Unbounded";
+    src: url("../fonts/Unbounded-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Unbounded";
+    src: url("../fonts/Unbounded-Medium.ttf");
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Regular.ttf");
+    font-weight: 400;
+}
+
+.container{
+    width: 1640px;
+    margin-inline: auto;
+   padding-inline: 20px;
+    @include laptop{
+        width: 100%;
+        max-width: 1340px;
+    }
+    @include mobile-sm{
+        padding: 16px;
+    }
+}
+
+.wrapper{
+    display: flex;
+    background: $defalt-wrapper-bg;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+.content{
+    flex-grow: 1;
+}
+.wrapper a{
+    text-decoration: none;
+    color: inherit;
+}
+.wrapper  ul{
+    list-style-type: none;
+    margin-bottom: 0px;
+    padding: 0px;
+
+}
+body{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Montserrat";
+    color: $default-text-color;
+    line-height: 1.4;
+    @include mobile-sm{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+
+.wrapper h2{
+    font-family: "Unbounded";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $color-text-accent;
+    margin-bottom: 0px;
+    @include mobile-sm{
+        font-size: 24px;
+
+    }
+
+}
+
+.p-margin p:only-child{
+    margin-bottom: 0px;
+}
+.p-margin p:not(:only-child){
+    margin-bottom: 12px;
+    @include mobile-sm{
+        margin-bottom: 8px;
+    }
+}
+
+.slider-scrollbar .swiper-scrollbar-drag{
+    background: $color-accent-secondary;
+}
+
+
+
+
+@import "./components/_buttons";
+@import "./components/_header";
+@import "./components/_header-dropdown";
+@import "./components/_mobile-menu";
+@import "./components/_main-banner";
+@import "./components/_mini-banner";
+@import "./components/_section-about-forum";
+@import "./components/section-statistics";
+@import "./components/section-meeting";
+@import  "./components/card-meeting";
+@import "./components/section-marafon";
+@import "./components/section-speakers";
+@import "./components/card-speakers";
+@import "./components/slider-arrow";
+@import "./components/section-members";
+@import "./components/section-photo-gallery";
+@import "./components/slider-arrow-chevron";
+@import "./components/section-stream";
+@import "./components/section-faq";
+@import "./components/section-news";
+@import "./components/section-brands";
+@import "./components/footer";

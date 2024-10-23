@@ -1,0 +1,46 @@
+ul.header-dropdown{
+    transform: translateY(100%);
+    background-color: white;
+    padding-block: 16px; 
+    flex-direction: column;
+    border-radius: $border-radius-xl-secondary;
+    z-index: 1000;
+   
+        li{
+            padding-block: 8px;
+            padding-left: 24px;
+            padding-right: 60px;
+            border-radius: 8px;
+            @include hover{
+                background-color: $hover-sub-menu-color;
+                color: $primary-color-btn;
+                
+
+            }
+        }
+
+    &--lang{
+        >li{
+            padding-right: 37px;
+         a{
+            display: flex;
+            gap: 8px;
+            color: #30374A;
+        }
+      
+    }
+    }
+
+}
+.header-dropdown__overlay{
+    bottom:  -8px;
+    display: none;
+    position: absolute;
+    &--lang{
+        right: 0;
+        li.active a span:first-child{
+            color: $primary-color-btn;
+        }
+    }
+   
+}

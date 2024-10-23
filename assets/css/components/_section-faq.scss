@@ -1,0 +1,245 @@
+.section-faq {
+    margin-bottom: 80px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns:518px 1fr;
+        gap: 22px;
+        @include laptop-sm{
+            grid-template-columns:1fr;
+        }
+        @include mobile-sm{
+            gap: 8px;
+        }
+       
+
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-color-btn;
+        padding: 56px 72px 67px;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        color: white;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+        @include mobile-sm{
+            padding:24px 16px 35px ;
+            border-radius: $border-radius-sm;
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image:url("../images/main/faq-image.png");
+            background-size: contain;
+            width: 1074px;
+            aspect-ratio: 1074/600;
+            z-index: 1;
+            @include laptop-sm{
+                background-size: cover;
+            }
+
+        }
+       
+    }
+    &__answers{
+        z-index: 120;
+        position: relative;
+        padding: 37px 32px 18px;
+        background-color: white;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        @include mobile-sm{
+            border-radius: $border-radius-sm;
+            padding: 16px 16px 37px;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 100;
+        &-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 31px;
+            @include mobile-sm{
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 100;
+        h2 {
+            color: white;
+        }
+        
+
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @include mobile-sm{
+            gap: 8px;
+        }
+
+        a:first-child {
+            background-color: #FFFFFF1A;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 16px;
+            transition: all 0.4s ease;
+            @include mobile-sm{
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            @include hover {
+                background-color: #FFFFFF33;
+            }
+
+        }
+
+        a:nth-child(2) {
+            background-color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 16px;
+            color: $color-accent-secondary;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            @include mobile-sm{
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            @include hover {
+                background-color: $primary-color-btn;
+                color: white;
+                border: 1px solid #FFFFFF;
+            }
+        }
+
+    }
+    
+    &__answers-list{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__answer {
+        border-radius: $border-radius-xl-secondary;
+
+        &--active{
+            .section-faq__answer-name{
+                background-color:  $primary-color-btn;
+                color: white;
+                svg{
+                    transform: rotate(90deg);
+                }
+                svg path{
+                    stroke: white;
+                }
+            }
+            .section-faq__answer-text{
+                display: block;
+            }
+                
+        }
+
+        &-name {
+            position: relative;
+            z-index: 100;
+            font-size: 20px;
+            line-height: 1;
+            color: $color-text-accent;
+            padding: 31px 12px 31px 32px;
+            background-color: $color-accent-third;
+            width: calc(100% - 18px);
+            border-radius: $border-radius-xl-secondary;
+            position: relative;
+            color: $color-text-accent;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            svg{
+                @include mobile-sm{
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            @include mobile-sm{
+                font-size: 15px;
+                padding: 11px 8px 11px 16px;
+                border-radius: $border-radius-sm-secondary;
+                width: calc(100% - 5px);
+                line-height: 1.4;
+            }
+        
+        }
+        &-text{
+            display: none;
+            margin-top: 8px;
+            padding: 16px 0px 24px 32px;
+            a{
+              color:$color-accent-secondary;
+              text-decoration: underline;
+            }
+            @include mobile-sm{
+                padding: 16px;
+                
+            }
+            p{
+                margin-bottom: 4px;
+            }
+        }
+
+        &-wrap {
+            width: 100%;
+        }
+
+        &-layer {
+            position: relative;
+          
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                left: 5px;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                border-radius: $border-radius-xl-secondary;
+                overflow: hidden;
+                background-color: $primary-color-btn;
+                z-index: 100;
+                @include mobile-sm{
+                    border-radius: $border-radius-sm-secondary;
+                }
+
+            }
+
+
+
+
+
+        }
+    }
+}

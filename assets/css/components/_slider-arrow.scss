@@ -1,0 +1,18 @@
+.slider-arrow{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #E6EFF6;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease $transition-timing;
+    @include hover{
+        background-color: $color-accent-secondary;
+        svg path{
+            stroke: white;
+        }
+    }
+
+}

@@ -1,0 +1,81 @@
+.section-statistics{
+    margin-bottom: 81px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 21px;
+        @include tablet{
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include mobile-sm{
+            gap: 8px;
+        }
+    }
+    &__item{
+        position: relative;
+        border-radius: $border-radius-xl;
+        background-color: $primary-color-btn;
+        color: white;
+        padding: 48px 32px 44px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 192px;
+        @include laptop-sm{
+            padding-inline: 20px;
+        }
+        @include mobile-sm{
+            border-radius: $border-radius-sm;
+            min-height: 120px;
+            padding: 28px 16px;
+        }
+        &-digits{
+            font-family: "Unbounded";
+            font-size: 56px;
+            line-height: 1.1;
+            @include laptop{
+                font-size: 40px;
+            }
+            @include laptop-sm{
+                font-size: 35px;
+            }
+            @include mobile-sm{
+                font-size: 32px;
+                line-height: 1.2;
+            }
+        }
+        &-text{
+            color: #FFFFFFCC;
+            font-size: 20px;
+            @include mobile-sm{
+                font-size: 16px;
+                line-height: 1.2;
+            }
+           
+        }
+        &:nth-child(4n+1){
+            
+            background-image: url("/assets/images/statistics/members.png");
+
+            @include mobile-sm{
+                grid-column: 1/ span 2;
+            }
+        }
+
+        &:nth-child(4n+2){
+            background-image: url("/assets/images/statistics/regions.png");
+        }
+        &:nth-child(4n+3){
+            background-image: url("/assets/images/statistics/speakers.png");
+        }
+
+        &:nth-child(4n+4){
+            background-image: url("/assets/images/statistics/areas.png");
+            @include mobile-sm{
+                grid-column: 1/ span 2;
+            }
+        }
+    }
+}

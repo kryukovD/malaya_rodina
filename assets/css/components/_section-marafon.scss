@@ -1,0 +1,201 @@
+.section-marafon{
+    margin-bottom: 80px;
+    position: relative;
+    @include mobile-sm{
+        margin-bottom: 55px;
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+        @include mobile-sm{
+            gap: 8px;
+        }
+
+       
+    }
+    &__map{
+        transform: translateY(-120px);
+        svg{
+            @include laptop{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @include laptop{
+            transform: translateY(0);
+        }
+        &-inner{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+    }
+    &__block-map{
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        background-color: $primary-color-btn;
+        max-height: 823px;
+        padding-bottom: 46px;
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            min-height: 550px;
+            border-radius: $border-radius-sm;
+        }
+
+        &-text{
+            padding: 64px 74px 20px;
+            color: white;
+          
+            h2{
+                color: white;
+                margin-bottom: 5px;
+                max-width: 750px;
+                @include laptop-sm{
+                    font-size: 35px;
+                }
+                @include mobile-sm{
+                    font-size: 24px;
+                    word-wrap: break-word;
+                    margin-bottom: 13px;
+                }
+             
+
+            }
+            p{
+                margin-bottom: 0px;
+                line-height: 1.6;
+
+            }
+            @include laptop-sm{
+                padding: 64px 30px 20px;
+            }
+            @include mobile-sm{
+                padding: 24px 16px 0px;
+            }
+        }
+    }
+    &__regions{
+     
+        padding: 24px 8px 24px 24px;
+        border-radius: $border-radius-xl;
+        background-color: white;
+       
+        max-height: 823px;
+        @include mobile-sm{
+            padding: 16px 10px 16px 16px;
+            border-radius: $border-radius-sm;
+            max-height: 480px;
+        }
+        &-inner{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding-right: 18px;
+            height: 100%;
+            @include mobile-sm{
+                padding-right: 8px;
+            }
+          
+            &::-webkit-scrollbar{
+                width: 8px;
+                @include mobile-sm{
+                    width: 4px;
+                }
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #0056A40D;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #E6EFF6;
+            }
+          
+        }
+
+    }
+    &__region{
+        cursor: pointer;
+        background-color: #F2F6FA;
+        border-radius: $border-radius-xl-secondary;
+        background-color: #F2F6FA;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        position: relative;
+        @include mobile-sm{
+            grid-template-columns: 1fr;
+            gap: 8px;
+            border-radius: $border-radius-sm-secondary;
+        }
+        &-place{
+            color: $color-accent-secondary;
+            line-height: 1;
+            @include mobile-sm{
+                order: 1;
+            }
+        }
+        &-date{
+            font-size: 14px;
+            @include mobile-sm{
+                font-size: 13px;
+                line-height: 1.2;
+                order: 3;
+            }
+        }
+        &-forum{
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.2;
+            @include mobile-sm{
+                order: 2;
+            }
+        }
+        &--active{
+            background-color: $color-accent-secondary;
+            color: white !important;
+            .section-marafon__region-date{
+                color: #FFFFFF99;
+            }
+            .section-marafon__region-place{
+                color: white ;
+            }
+            &:before{
+                position: absolute;
+                content: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6666 8.66663V3.33329H7.33325" stroke="white" stroke-linecap="round"/><path d="M12.6666 3.33337L3.33325 12.6667" stroke="white" stroke-linecap="round"/></svg>');
+                bottom: 0px;
+                right: 7px;
+            } 
+        }
+        @include hover{
+            background-color: $color-accent-secondary;
+            color: white;
+            .section-marafon__region-date{
+                color: #FFFFFF99;
+            }
+            .section-marafon__region-place{
+                color: white;
+            }
+            &:before{
+                position: absolute;
+                content: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6666 8.66663V3.33329H7.33325" stroke="white" stroke-linecap="round"/><path d="M12.6666 3.33337L3.33325 12.6667" stroke="white" stroke-linecap="round"/></svg>');
+                bottom: 0px;
+                right: 7px;
+            }
+
+
+        }
+    }
+}
+
+.path-active{
+    fill: #0068C6 !important;
+    stroke:  #73BCFF;
+    stroke-width: 2px;
+}

@@ -1,0 +1,37 @@
+.section-meeting{
+    &__inner{
+    background-color: #FFFFFF;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    padding: 64px 72px;
+    margin-bottom: 80px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    @include laptop-sm{
+        padding-inline: 30px;
+    }
+    @include mobile-sm{
+        padding: 24px 16px;
+        border-radius: $border-radius-sm;
+    }
+    }
+    &__title{
+        margin-bottom: 24px;
+        @include mobile-sm{
+            margin-bottom: 15px;
+        }
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        @include tablet{
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include mobile-sm{
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+    }
+}

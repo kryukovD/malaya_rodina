@@ -1,0 +1,191 @@
+.footer {
+    &__inner {
+        padding: 53px 70px 36px 80px;
+        background-color: $footer-background;
+        border-radius: $border-radius-xl;
+        @include mobile-sm{
+            padding: 28px 16px;
+            border-radius: $border-radius-sm-secondary;
+        }
+    }
+
+    &__logo {
+        aspect-ratio: 221/60;
+        width: 221px;
+        @include mobile-sm{
+            aspect-ratio: 135/36;
+            width: 135px;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 22px;
+        gap: 20px;
+
+        border-bottom: 1px solid #FFFFFF33;
+        @include mobile-sm{
+            padding-bottom: 28px;
+        }
+    }
+
+    &__partners {
+        display: flex;
+        gap: 40px;
+        @include mobile-sm{
+            gap: 10px;
+        }
+
+        >a {
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            display: block;
+            aspect-ratio: 91/78;
+            width: 91px;
+            @include mobile-sm{
+                aspect-ratio: 47/40;
+                width: 47px;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        gap: 144px;
+        padding-top: 25px;
+        padding-bottom: 32px;
+        @include laptop{
+            gap: 60px;
+        }
+        @include tablet{
+            flex-wrap: wrap;
+        }
+        @include mobile-sm{
+            gap: 24px;
+            padding-bottom: 0px;
+        }
+    }
+
+    &-menus {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        @include laptop-sm{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile-sm{
+            row-gap: 24px;
+            column-gap: 8px;
+        }
+    }
+
+    &__bottom-btn {
+        flex-shrink: 1;
+        max-width: 224px;
+        width: 100%;
+        @include mobile-sm{
+            max-width: 100%;
+            display: flex;
+        }
+        
+        a {
+            display: inline-flex;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 38.5px;
+            border-radius: 2px;
+            line-height: 1.2;
+            background-color: #FFFFFF33;
+            transition: all ease $transition-timing;
+            @include hover{
+               background-color: $color-accent-secondary
+            }
+            @include mobile-sm{
+                font-size: 13px;
+                padding: 10px;
+                text-align: center;
+                justify-content: center;
+                max-width: 100%;
+                flex-grow: 1;
+            }
+        }
+    }
+    &-menu{
+        display: flex;
+        flex-direction: column;
+        color: #FFFFFFCC;
+        font-weight: 300;
+        @include mobile-sm{
+            font-size: 12px;
+        }
+        &:not(.footer-menu--not-title){
+           >ul li:not(:last-child){
+            margin-bottom: 8px;
+            @include mobile-sm{
+                margin-bottom: 4px;
+            }
+            }
+        }
+        &:not(.footer-menu--not-title)>li:first-child{
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            @include mobile-sm{
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+        }
+        &--not-title{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.3;
+            color: white;
+            @include mobile-sm{
+                font-size: 14px;
+            }
+           
+            li:not(:last-child){
+                margin-bottom: 16px;
+                @include mobile-sm{
+                    margin-bottom: 8px;
+                }
+              
+            }
+        }
+    }
+    &-separate{
+        text-align: center;
+        background-color: $footer-background;
+        padding: 16px;
+        border-radius:$border-radius-xl-secondary;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFFCC;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.3;
+        justify-content: center;
+        overflow: hidden;
+        @include mobile-sm{
+            border-radius: $border-radius-sm-secondary;
+            padding: 9.5px;
+            font-size: 12px;
+        }
+    }
+}
