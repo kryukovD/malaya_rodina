@@ -51,7 +51,7 @@
         max-width: 1340px;
     }
     @include mobile-sm{
-        padding: 16px;
+        padding-inline: 16px;
     }
 }
 
@@ -87,7 +87,23 @@ body{
         line-height: 1.4;
     }
 }
-
+.wrapper h1{
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 500;
+    font-family: "Unbounded";
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    @include tablet{
+        font-size: 35px;
+    }
+    @include mobile{
+        font-size: 32px;
+    }
+}
+.text-white{
+    color: white;
+}
 
 .wrapper h2{
     font-family: "Unbounded";
@@ -120,7 +136,7 @@ body{
 
 
 
-
+@import "./components/_breadcrumbs";
 @import "./components/_buttons";
 @import "./components/_header";
 @import "./components/_header-dropdown";
@@ -142,4 +158,8 @@ body{
 @import "./components/section-faq";
 @import "./components/section-news";
 @import "./components/section-brands";
+
+/*page marafaon */
+@import "./components/banner-children";
+
 @import "./components/footer";
