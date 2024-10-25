@@ -1,5 +1,6 @@
 .section-stream{
     margin-bottom: 80px;
+    
     @include mobile-sm{
         margin-bottom: 56px;
     }
@@ -35,6 +36,13 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 21px;
+        >div:not(:first-child){
+            .slider-stream__item-name{
+                @include mobile-sm{
+                    font-size: 11px;
+                }
+            }
+        }
         @include tablet{
             grid-template-columns: 1fr 1fr;
         }
@@ -49,10 +57,14 @@
             border-radius: $border-radius-xl;
             overflow: hidden;
             z-index: 100;
+            background: transparent;
             @include mobile-sm{
                 border-radius: $border-radius-sm;
             }
             iframe,video{
+                background: transparent;
+              
+                border: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;

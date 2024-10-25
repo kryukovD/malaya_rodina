@@ -1,4 +1,7 @@
+
+
 .card-meeting{
+    position: relative;
     background-color: #1460A3;
     display: flex;
     flex-direction: column;
@@ -6,11 +9,20 @@
     overflow: hidden;
     min-height: 335px;
     position: relative;
+    overflow: hidden;
+    border-color: transparent;
+     perspective: 1000px; /* Перспектива для 3D эффекта */
     &--black{
         .card-meeting__name{
             color: $color-text-accent;
+            
         }  
+        .card-meeting__arrow path{
+            stroke: #85929E;
+        }
     }
+
+    
     @include mobile-sm{
         min-height: 156px;
         border-radius: $border-radius-sm;
@@ -20,24 +32,47 @@
         position: absolute;
         background-color: #1460A3;
         top: 0;
-        right: -100%;
+        right: 0;
+        left: 0;
         bottom: 0;
         z-index: 100;
-        width: 100%;
-      
+        transform: rotateY(0deg);
+        transition: transform 0.8s ease,right 0.8s ease,opacity 0.4s ease;; /* Плавный переход */
+        opacity: 0;
+        
+        border-radius: $border-radius-xl;
+        @include  mobile-sm{
+            border-radius: $border-radius-sm;
+        }
 
     }
     
     @include hover{
+       
+      
         &:before{
+            z-index: 1;
             content: "";
+            left: 0;
+            width: 100%;
             right: 0;
-            animation: fill_right_to_left $transition-timing ease-in-out;
+            top: 0;
+            bottom: 0;
+            opacity: 1;
+            transform: rotateY(180deg); /* Поворот при наведении */
+
     
         }
         .card-meeting__arrow{
-            transform: rotate(45deg);;
+            transform: rotate(45deg);
+            path{
+            stroke: white;
+            }
         }
+        .card-meeting__name{
+            color: white;
+        }
+      
         
     }
     
@@ -59,26 +94,16 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        position: relative;
         border-radius: $border-radius-xl;
         width: calc(100% - 23px);
         overflow: hidden;
         flex-grow: 1;
+        position: relative;
         @include mobile-sm{
             width: calc(100% - 12px);
             border-radius: $border-radius-sm;
         }
-        &::before{
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            background-color: #0000004D;
-            z-index: -1;
-            transform: translateY(100%);
-        }
+       
     }
     &__name{
         position: relative;
@@ -100,13 +125,9 @@
         right: 19px;
         z-index: 101;
         transition: all ease $transition-timing;
+        @include mobile{
+            width: 16px;
+            height: 16px;
+        }
     }
-}
-@keyframes fill_right_to_left {
-        0%{
-            right: -100%;
-        }
-        100%{
-         right: 0;
-        }
 }

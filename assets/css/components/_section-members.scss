@@ -89,6 +89,7 @@
             height: 100%;
         }
         .section-members__tabs-li {
+         
             cursor: pointer;
             padding: 25px 12px 25px 24px;
             border-radius: $border-radius-xl-secondary;
@@ -99,6 +100,10 @@
             display: inline-flex;
             justify-content: space-between;
             transition: all ease $transition-timing;
+            svg{
+                rotate: -45deg;
+                transition: all $transition-timing ease;
+            }
             @include mobile-sm{
                 padding: 10px 12px;
                 border-radius: $border-radius-sm-secondary;
@@ -114,9 +119,12 @@
             &--active {
                 background-color: $color-accent-secondary;
                 color: white;
-
+                svg{
+                    rotate: 0deg;
+                }
                 svg path {
                     stroke: white;
+                    
                 }
             }
 
