@@ -159,11 +159,16 @@ body{
 @import "./components/section-faq";
 @import "./components/section-news";
 @import "./components/section-brands";
+@import "./components/_section-participant";
+@import "./components/_section-placement";
+@import "./components/_section-issue";
+@import "./components/_forms";
 
 /*page marafaon */
 @import "./components/banner-children";
 
-/*page program*/
 @import "./components/program-list";
+
+
 
 @import "./components/footer";

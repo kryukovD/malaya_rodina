@@ -1,0 +1,100 @@
+.section-issue {
+    margin-bottom: 80px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__inner{
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    @include laptop{
+        grid-template-columns: 2.4fr 3fr;
+    }
+    @include tablet{
+        grid-template-columns: 1fr;
+    }
+    @include mobile-sm{
+        gap: 0px;
+    }
+    gap: 20px;
+    }
+
+    &__col-left {
+        padding: 76px 52px;
+        background-color: #0056a4;
+        background-image: url('../images/col-bg.svg');
+        background-repeat: repeat;
+        background-size: 100%;
+        background-position: 0 0;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        @include laptop-sm {
+          padding: 64px 30px; 
+        }
+        @include mobile-sm{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: $border-radius-sm;
+            border-top-right-radius: $border-radius-sm;
+            padding: 24px 16px;
+        }
+    }
+
+    &__col-right {
+        background-color: white;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        padding: 56px 48px;
+        overflow: hidden;
+        @include laptop-sm {
+          padding: 64px 30px; 
+        }
+        @include mobile-sm{
+            border-bottom-left-radius: $border-radius-sm;
+            border-bottom-right-radius: $border-radius-sm;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 24px 16px;
+        }
+    }
+
+    &__title {
+        h2 {
+            color: #fff;
+        }
+        @include mobile-sm{
+            margin-bottom: 16px;
+        }
+    }
+    a {
+        color: $primary-color-btn;
+    }
+    &__text {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 24px;
+        display: none;
+        color: #fff;
+        margin-top: 24px;
+        @include mobile-sm {
+            font-size: 15px;
+            line-height: 20px;
+        }
+        a {
+            color: #fff;
+        }
+        @include tablet {
+            display: block;
+        }
+    }
+}
+
+.form-issue {
+    &__text {
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 24px;
+        @include tablet {
+            display: none;
+        }
+    }
+}

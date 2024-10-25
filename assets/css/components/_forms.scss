@@ -1,0 +1,122 @@
+.form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile-sm {
+        flex-direction: column;
+    }
+    label {
+        width: calc(50% - 10px);
+        @include mobile-sm {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+label {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    background: rgba(0, 86, 164, 0.05);
+    border-radius: 8px;
+    .error {
+        position: absolute;
+        color: $color-accent;
+        left: 0;
+        bottom: 0;
+        display: none;
+    }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    @include mobile-sm {
+        height: 49px;
+    }
+    &::placeholder {
+        transform-origin: 0 0;
+        font-size: 15px;
+        transition: .35s ease-in-out all;
+    }
+    &:hover {
+        &::placeholder {
+            opacity: 0.5;
+        }
+    }
+    &:focus {
+        &::placeholder {
+            opacity: 0;
+        }
+    }
+}
+
+textarea {
+    height: 100px;
+    resize:none;
+    @include mobile-sm {
+        height: 80px;
+    }
+}
+
+.checkbox {
+    background: transparent;
+    padding-left: 32px;
+    position: relative;
+    cursor: pointer;
+    .like-checkbox{
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: rgba(0, 86, 164, 0.05);
+            border: 1px solid $primary-color-btn;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            background: $primary-color-btn;
+            transform-origin: 50% 50%;
+            transform: scale(0);
+            transition: .35s ease-in-out all;
+        }}
+    input[type="checkbox"] {
+        display: none;
+        &:checked{
+            & + .like-checkbox {
+                &::after {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

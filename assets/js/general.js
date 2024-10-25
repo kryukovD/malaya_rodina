@@ -148,9 +148,53 @@ $(document).ready(function () {
                 spaceBetween: 20
             }
         }
+    });
 
+    
+    /*placement slider */
+    const placement = new Swiper('.placement-slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 3,
+        autoHeight: true,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.section-placement .slider-arrow--next',
+            prevEl: '.section-placement .slider-arrow--prev',
+        },
+        allowTouchMove: true,
 
+        breakpoints: {
+            0: {
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                slidesPerView: 1.15,
+                navigation: false,
+                allowTouchMove: true,
+                spaceBetween: 8,
+                autoHeight: false,
+            },
+            576: {
+                scrollbar: false,
+                slidesPerView: 1,
+                spaceBetween: 8,
+                autoHeight: false,
+            },
 
+            768: {
+                scrollbar: false,
+                slidesPerView: 2,
+                spaceBetween: 16,
+
+            },
+            1200: {
+                scrollbar: false,
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
     });
 
     /*tabs */

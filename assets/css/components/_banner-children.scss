@@ -35,6 +35,18 @@
     &__title{
         position: relative;
     }
+    &__description {
+        color: #fff;
+        font-size: 16px;
+        line-height: 25px;
+        max-width: 988px;
+        & + .banner-children__block-button {
+            .btn {
+                max-width: 364px;
+            }
+            
+        }
+    }
     &__date {
         left: 0;
         top: -48px;
