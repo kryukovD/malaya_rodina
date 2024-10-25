@@ -567,7 +567,7 @@ $(document).ready(function () {
         pauseOnHover: true
     });
 
-    $(document).ready(function () {
+
         // Показывать кнопку при прокрутке вниз
         $(window).scroll(function () {
             if ($(this).scrollTop() > 200) {
@@ -582,7 +582,8 @@ $(document).ready(function () {
             $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
             return false;
         });
-    });
+    
+     
 
 
 
