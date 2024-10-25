@@ -623,14 +623,24 @@ $(document).ready(function () {
         pauseOnHover: true
     });
 
-    // Показывать кнопку при прокрутке вниз
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.btn-upper').fadeIn();
-        } else {
-            $('.btn-upper').fadeOut();
-        }
-    });
+
+        // Показывать кнопку при прокрутке вниз
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('.btn-upper').fadeIn();
+            } else {
+                $('.btn-upper').fadeOut();
+            }
+        });
+
+        // Плавная прокрутка вверх при клике
+        $('.btn-upper').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
+            return false;
+        });
+    
+     
+
 
 
 
