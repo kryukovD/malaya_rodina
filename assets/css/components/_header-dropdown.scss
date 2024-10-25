@@ -1,4 +1,5 @@
 ul.header-dropdown{
+ 
     transform: translateY(100%);
     background-color: white;
     padding-block: 16px; 
@@ -33,6 +34,9 @@ ul.header-dropdown{
 
 }
 .header-dropdown__overlay{
+    &--menu{
+        transform: translateX(-32px);
+    }
     bottom:  -8px;
     display: none;
     position: absolute;

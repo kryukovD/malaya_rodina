@@ -98,13 +98,13 @@ $(document).ready(function () {
         direction: 'horizontal',
         loop: true,
         slidesPerView: 4,
-
         spaceBetween: 20,
         navigation: {
             nextEl: '.section-speakers .slider-arrow--next',
             prevEl: '.section-speakers .slider-arrow--prev',
         },
         allowTouchMove: false,
+
 
         breakpoints: {
             0: {
@@ -165,22 +165,22 @@ $(document).ready(function () {
 
     /*photo gallery slider */
 
-    const swiperContainer = document.querySelector('.slider-photo-gallery');
-    const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
-    const originalSlides = swiperWrapper.children;
+    // const swiperContainer = document.querySelector('.slider-photo-gallery');
+    // const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
+    // const originalSlides = swiperWrapper.children;
 
-    // Проверяем количество слайдов и клонируем при необходимости
-    const totalSlides = originalSlides.length;
-    const requiredSlides = 7; // Необходимое количество слайдов для корректного отображения
+    // // Проверяем количество слайдов и клонируем при необходимости
+    // const totalSlides = originalSlides.length;
+    // const requiredSlides = 30; // Необходимое количество слайдов для корректного отображения
 
-    if (totalSlides < requiredSlides) {
-        const slidesToClone = requiredSlides - totalSlides;
+    // if (totalSlides < requiredSlides) {
+    //     const slidesToClone = requiredSlides - totalSlides;
 
-        for (let i = 0; i < slidesToClone; i++) {
-            const clonedSlide = originalSlides[i % totalSlides].cloneNode(true); // Клонируем слайды
-            swiperWrapper.appendChild(clonedSlide); // Добавляем клонированные слайды в обертку
-        }
-    }
+    //     for (let i = 0; i < slidesToClone; i++) {
+    //         const clonedSlide = originalSlides[i % totalSlides].cloneNode(true); // Клонируем слайды
+    //         swiperWrapper.appendChild(clonedSlide); // Добавляем клонированные слайды в обертку
+    //     }
+    // }
 
 
 
@@ -193,78 +193,96 @@ $(document).ready(function () {
         spaceBetween: 24, // Отступы между слайдами
         centeredSlides: true, // Центрируем активный слайд
         loop: true, // Зацикливаем слайды
-        // slideToClickedSlide: true, // При клике на слайд — переключаемся на него
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 50, // Угол поворота слайдов
+            stretch: 0, // Расстояние между слайдами
+            depth: 100, // Глубина слайдов, чем больше значение — тем больше эффект 3D
+            modifier: 0, // Модификатор эффекта (усиление)
+            slideShadows: true // Тени у слайдов
+        },
+
+        on: {
+            slideChange: function () {
+                updateSlides(this);
+            },
+            init: function () {
+                updateSlides(this); // Установить начальные стили
+            },
+        },
+
         navigation: {
-            nextEl: '.slider-arrow-chevron--prev',
-            prevEl: '.slider-arrow-chevron--next',
+            nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
+            prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
         },
         breakpoints: {
             0: {
                 allowTouchMove: true,
                 centeredSlides: true,
-                slidesPerView: 2,
+                slidesPerView: 3,
                 navigation: false,
                 spaceBetween: 4,
+                loop: true,
                 scrollbar: {
                     el: '.slider-photo-gallery .slider-scrollbar',
-                },
-
+                }
             },
             576: {
-
                 slidesPerView: 3,
-                centeredSlides: true,
-                spaceBetween: 24,
-                allowTouchMove: false,
                 navigation: {
-                    nextEl: '.slider-arrow-chevron--prev',
-                    prevEl: '.slider-arrow-chevron--next',
+                    nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
+                    prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
                 },
-            }
-            ,
+                scrollbar: false
+            },
+
+
             1024: {
-                slidesPerView: 5,
-                width: "auto",
+                loop: true,
                 centeredSlides: true,
-                autoHeight: false,
+                slidesPerView: 5,
+                spaceBetween: 24,
+
+
             }
         },
 
-        init: function () {
-            this.updateClasses(); // Вызываем обновление классов при инициализации
-        },
-        slideChange: function () {
-            this.update();
-            this.updateClasses(); // Обновляем классы при изменении слайда
-        }
+
 
     });
 
 
-    // Функция для обновления классов слайдов
-    photoGallerySwiper.updateClasses = function () {
-        // Удаляем старые классы
-        this.slides.forEach(slide => {
-            slide.classList.remove('swiper-slide-big', 'swiper-slide-medium', 'swiper-slide-small');
+
+
+    function updateSlides(swiper) {
+
+        const slides = swiper.slides;
+        const activeIndex = swiper.activeIndex;
+
+        // Очищаем все слайды от классов
+        slides.forEach((slide) => {
+            slide.classList.remove('scale-1', 'scale-2', 'scale-3');
         });
 
-        // Получаем индексы слайдов
-        const activeIndex = this.realIndex; // Используем realIndex вместо activeIndex
-        const prevPrevSlide = this.slides[(activeIndex - 2 + this.slides.length) % this.slides.length];
-        const prevSlide = this.slides[(activeIndex - 1 + this.slides.length) % this.slides.length];
-        const currentSlide = this.slides[activeIndex];
-        const nextSlide = this.slides[(activeIndex + 1) % this.slides.length];
-        const nextNextSlide = this.slides[(activeIndex + 2) % this.slides.length];
+        // Применяем классы масштабирования к слайдам вокруг активного
+        if (!window.matchMedia("(max-width: 1024px)").matches) {
 
-        // Устанавливаем классы для изменения размеров
-        if (prevPrevSlide) prevPrevSlide.classList.add('swiper-slide-small');
-        if (prevSlide) prevSlide.classList.add('swiper-slide-medium');
-        if (currentSlide) currentSlide.classList.add('swiper-slide-big');
-        if (nextSlide) nextSlide.classList.add('swiper-slide-medium');
-        if (nextNextSlide) nextNextSlide.classList.add('swiper-slide-small');
-    };
+            const totalSlides = slides.length;
+            slides[activeIndex % totalSlides].classList.add('scale-1'); // Центральный
+            slides[(activeIndex - 1 + totalSlides) % totalSlides].classList.add('scale-2'); // Левый
+            slides[(activeIndex + 1) % totalSlides].classList.add('scale-2'); // Правый
+            slides[(activeIndex - 2 + totalSlides) % totalSlides].classList.add('scale-3'); // Дальний левый
+            slides[(activeIndex + 2) % totalSlides].classList.add('scale-3'); // Дальний правый
+        } else {
+            const totalSlides = slides.length;
+            slides[activeIndex % totalSlides].classList.add('scale-1'); // Центральный
+            slides[(activeIndex - 1 + totalSlides) % totalSlides].classList.add('scale-2'); // Левый
+            slides[(activeIndex + 1) % totalSlides].classList.add('scale-2'); // Правый
 
-    photoGallerySwiper.updateClasses();
+        }
+    }
+
+
 
     var sliderStreamSwiper = new Swiper('.slider-stream', {
         slidesPerView: 1, // Показываем несколько слайдов одновременно
@@ -307,7 +325,6 @@ $(document).ready(function () {
     /* news slider */
     const newsSlider = new Swiper('.slider-news', {
         slidesPerView: 4, // Показываем несколько слайдов одновременно
-        width: 'auto',
         autoHeight: false,
         spaceBetween: 20,
         allowTouchMove: false,
@@ -315,6 +332,12 @@ $(document).ready(function () {
         navigation: {
             nextEl: '.section-news__btns .slider-arrow--next',
             prevEl: '.section-news__btns  .slider-arrow--prev',
+        },
+        on: {
+            // Событие при смене слайда
+            slideChange: function () {
+                updateClassNews(this);
+            }
         },
         breakpoints: {
             0: {
@@ -338,28 +361,58 @@ $(document).ready(function () {
                 },
 
             },
-            1024: {
-                width: 'auto',
-                slidesPerView: 4, // Показываем несколько слайдов одновременно
-                spaceBetween: 20
-            }
-        },
-        on: {
-            init: function () {
-                updateSlideSizes(this);
+
+            768: {
+                allowTouchMove: false,
+                slidesPerView: 3,
+                scrollbar: false,
+                navigation: {
+                    nextEl: '.section-news__btns .slider-arrow--next',
+                    prevEl: '.section-news__btns  .slider-arrow--prev',
+                },
 
             },
 
-            slideChange: function () {
-
-                updateSlideSizes(this);
-
-
-
+            1024: {
+                slidesPerView: 4, // Показываем несколько слайдов одновременно
+                spaceBetween: 20,
+                loop: true
             }
         }
+
     });
 
+
+    function updateClassNews(swiper) {
+        // Сначала удаляем классы со всех слайдов
+        swiper.slides.forEach(slide => {
+            slide.classList.remove('section-new__item--large-slide', 'section-new__item--small-slide');
+        });
+
+        // Находим первый видимый слайд и задаем ему класс 'large-slide'
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        activeSlide.classList.add('section-new__item--large-slide');
+
+        // Задаем остальным слайдам класс 'small-slide'
+        for (let i = 1; i <= 3; i++) {
+            const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
+            nextSlide.classList.add('section-new__item--small-slide');
+        }
+    }
+
+
+    // Функция, которая добавляет класс к первому видимому слайду
+    // Функция для увеличения первого видимого слайда
+    function resizeFirstVisibleSlide(swiper) {
+        // Удаляем класс 'large' со всех слайдов
+        swiper.slides.forEach(slide => slide.classList.remove('large'));
+
+        // Получаем первый видимый слайд
+        const firstVisibleSlide = swiper.slides[swiper.activeIndex];
+
+        // Добавляем класс 'large' к первому слайду
+        firstVisibleSlide.classList.add('large');
+    }
 
     function updateSlideSizes(swiper) {
         // Удаляем классы с всех слайдов
@@ -454,7 +507,9 @@ $(document).ready(function () {
     function updateSwiper() {
         sliderStreamSwiper.update();
         photoGallerySwiper.update();
-        newsSlider.update();
+        photoGallerySwiper.updateSize();
+        photoGallerySwiper.updateSlidesClasses()
+
     }
 
     /*faq tabs */
@@ -472,12 +527,13 @@ $(document).ready(function () {
     /*marque */
 
 
-    
+
 
 
     /*rezize */
     $(window).resize(function () {
-        debounce(updateSwiper, 500);
+        updateSwiper();
+    
 
     })
 
@@ -487,29 +543,48 @@ $(document).ready(function () {
         gap: 10, // Расстояние между повторениями
         delayBeforeStart: 0, // Задержка перед началом
         direction: 'left', // Направление движения
-        duplicated: true ,// Дублирование строки для бесшовного эффекта
-        startVisible:true,
-        scrollDelay: 2000,
-        easing:"linear",
-        behavior:"linear",
-         speed:150
+        duplicated: true,// Дублирование строки для бесшовного эффекта
+        startVisible: true,
+        scrollDelay: 10000,
+        easing: "linear",
+        behavior: "linear",
+        speed: 70,
+        pauseOnHover: true
     });
 
     // Настройка второй бегущей строки
     $('.section-brands__row--second').marquee({
-        duration: 2000, // Время движения строки
+        duration: 3000, // Время движения строки
         gap: 10, // Расстояние между повторениями
         delayBeforeStart: 0, // Задержка перед началом
         direction: 'right', // Направление движения
         duplicated: true, // Дублирование строки для бесшовного эффекта
-        startVisible:true,
-        scrollDelay: 2000,
-        easing:"linear",
-         behavior:"linear",
-         speed:150
+        startVisible: true,
+        scrollDelay: 10000,
+        easing: "linear",
+        behavior: "linear",
+        speed: 70,
+        pauseOnHover: true
     });
 
- 
-     
+    $(document).ready(function () {
+        // Показывать кнопку при прокрутке вниз
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('.btn-upper').fadeIn();
+            } else {
+                $('.btn-upper').fadeOut();
+            }
+        });
+
+        // Плавная прокрутка вверх при клике
+        $('.btn-upper').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
+            return false;
+        });
+    });
+
+
+
 
 });

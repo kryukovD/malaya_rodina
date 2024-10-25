@@ -57,7 +57,7 @@
         }
         &:nth-child(4n+1){
             
-            background-image: url("/assets/images/statistics/members.png");
+            background-image: url("../images/statistics/members.png");
 
             @include mobile-sm{
                 grid-column: 1/ span 2;
@@ -65,14 +65,14 @@
         }
 
         &:nth-child(4n+2){
-            background-image: url("/assets/images/statistics/regions.png");
+            background-image: url("../images/statistics/regions.png");
         }
         &:nth-child(4n+3){
-            background-image: url("/assets/images/statistics/speakers.png");
+            background-image: url("../images/statistics/speakers.png");
         }
 
         &:nth-child(4n+4){
-            background-image: url("/assets/images/statistics/areas.png");
+            background-image: url("../images/statistics/areas.png");
             @include mobile-sm{
                 grid-column: 1/ span 2;
             }

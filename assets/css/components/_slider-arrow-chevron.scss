@@ -1,4 +1,11 @@
+
 .slider-arrow-chevron{
+    &:is(.swiper-button-disabled){
+        background-color: #F2F6FA;
+        svg path{
+         fill: #9FAAB4;       
+        }
+    }
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -6,6 +13,10 @@
     height: 100%;
     background-color: $color-accent-third;
     z-index: 100;
+    transition: all ease 0.4s;
+    svg path{
+        transition: all ease 0.4s;
+    }
     &--prev{
         border-top-left-radius: 8px;
         border-top-right-radius: 2px;
@@ -20,6 +31,12 @@
         border-bottom-right-radius: 8px;
         svg{
             transform: rotate(180deg);
+        }
+    }
+    @include hover{
+        background-color: $color-accent-secondary;
+        svg path{
+            fill: white;
         }
     }
 

@@ -101,4 +101,54 @@
     background-color: $color-accent;
     color: white;
     line-height: 1.2;
+    @include mobile-sm{
+        font-size: 14px;
+        padding: 12px;
+        border-radius: $border-radius-sm-secondary;
+    }
+}
+.btn-upper{
+    display:none; 
+    position:fixed; 
+    z-index: 1000;
+    bottom:20px;
+    right:calc(((100vw - 1600px ) / 2 )) ;
+    transform: translateX(calc(100% + 34px));
+    z-index:100;
+    cursor: pointer;
+    display: inline-flex;
+    width: 64px;
+    height: 64px;
+    border-radius:$border-radius-xl-secondary ;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-accent-secondary;
+
+    border: 0;
+    transition: all ease 0.4s;
+    @include laptop{
+        right:calc(((100vw - 1300px ) / 2 )) ;
+        transform: translateX( calc( 100% + 17px )) ;
+    }
+    @media (max-width:1420px) {
+        right:4%;
+        transform: translateX(0);
+    }
+    @include laptop-sm{
+        right:calc(((100vw - 1200px ) / 2 )) ;
+        transform: translateX(-100%);
+    }
+    @include tablet{
+      
+        right: calc(-20px - 17px);
+    }
+    @include mobile-sm{
+        right: calc(-16px - 10px);
+        width: 52px;
+        height: 52px;
+    }
+
+    @include hover{
+        background-color: #0C3C68;
+    }
 }

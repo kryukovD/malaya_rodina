@@ -10,6 +10,7 @@
     position: relative;
     @include mobile-sm{
         border-radius:$border-radius-sm;
+        margin-top: 8px;
     }
     &__logo{
         width: 194px;
@@ -65,10 +66,12 @@
             justify-content: flex-start;
         }
         >li:not(.header-menu__li--is_dropdown){
+            
             padding: 10px 12px;
             transition: all ease $transition-timing;
             z-index: 100;
             position: relative;
+            border-radius: 4px;
             @include hover{
                 background-color: #E6EFF6;
                 color: $primary-color-btn;
@@ -79,8 +82,9 @@
          
         }
         >li:is(.header-menu__li--is_dropdown){
-          
+           z-index: 100;
             padding: 10px 12px;
+            border-radius: 4px;
             
             transition: all ease $transition-timing;
             @include laptop{

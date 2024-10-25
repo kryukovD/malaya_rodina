@@ -2,7 +2,7 @@
     position: relative;
     z-index: 100;
     &--margin-marafon{
-        margin-bottom:140px ;
+        margin-bottom:120px ;
     }
     &__list {
         display: flex;
@@ -12,9 +12,22 @@
         align-items: center;
         font-size: 15px;
         line-height: 1.3;
+        padding: 0px !important;
         li svg{
     
             margin-right: 8px;
+        }
+        @include mobile-sm{
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            font-size: 12px;
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+        }
+        li{
+            flex-shrink: 0;
         }
     }
 }
