@@ -2795,6 +2795,95 @@ textarea {
     .checkbox input[type="checkbox"]:checked + .like-checkbox::after {
       transform: scale(1); }
 
+.section-placement-list__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px 20px;
+  grid-template-areas: ". . ."; }
+  @media (max-width: 1200px) {
+    .section-placement-list__inner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: ". ."; } }
+  @media (max-width: 768px) {
+    .section-placement-list__inner {
+      grid-template-columns: 1fr;
+      grid-template-areas: "."; } }
+
+.section-paggination {
+  margin-bottom: 100px; }
+  @media (max-width: 768px) {
+    .section-paggination {
+      margin-bottom: 56px; } }
+  .section-paggination__inner {
+    padding: 16px 72px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 1024px) {
+      .section-paggination__inner {
+        flex-direction: column;
+        padding: 16px 42px; } }
+    @media (max-width: 768px) {
+      .section-paggination__inner {
+        padding: 16px; } }
+  .section-paggination .btn {
+    width: 448px;
+    font-size: 15px;
+    line-height: 1.23;
+    font-weight: 500;
+    color: #0056A4; }
+    @media (max-width: 1024px) {
+      .section-paggination .btn {
+        margin-bottom: 24px;
+        max-width: 100%; } }
+    @media (hover: hover) {
+      .section-paggination .btn:hover {
+        background: #0056A4;
+        color: #fff; } }
+    @media (hover: none) {
+      .section-paggination .btn:active {
+        background: #0056A4;
+        color: #fff; } }
+
+.paggination {
+  display: flex; }
+  .paggination a.paggination__item {
+    width: 49px;
+    height: 49px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    background: rgba(0, 86, 164, 0.05);
+    font-size: 15px;
+    line-height: 1.23;
+    font-weight: 500;
+    transition: .2s ease-in-out all;
+    color: #0056A4; }
+    @media (max-width: 576px) {
+      .paggination a.paggination__item {
+        height: 32px;
+        width: 32px; }
+        .paggination a.paggination__item:nth-child(6) {
+          display: none; } }
+    .paggination a.paggination__item.paggination__separator {
+      pointer-events: none; }
+    .paggination a.paggination__item svg path,
+    .paggination a.paggination__item svg rect {
+      transition: .2s ease-in-out all; }
+    .paggination a.paggination__item:hover, .paggination a.paggination__item--current {
+      background: #0056A4;
+      color: #fff; }
+      .paggination a.paggination__item:hover svg path,
+      .paggination a.paggination__item:hover svg rect, .paggination a.paggination__item--current svg path,
+      .paggination a.paggination__item--current svg rect {
+        stroke: #fff; }
+  .paggination .paggination__next {
+    margin-right: 0; }
+
 /*page marafaon */
 .banner-children {
   margin-top: 16px; }

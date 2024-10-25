@@ -1,0 +1,85 @@
+.section-paggination {
+    margin-bottom: 100px;
+    @include mobile {
+        margin-bottom: 56px;;
+    }
+    &__inner {
+        padding: 16px 72px;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet {
+            flex-direction: column;
+            padding: 16px 42px;
+        }
+        @include mobile {
+            padding: 16px;
+        }
+    }
+
+    .btn {
+        width: 448px;
+        font-size: 15px;
+        line-height: 1.23;
+        font-weight: 500;
+        color: $primary-color-btn;
+        @include tablet {
+            margin-bottom: 24px;
+            max-width: 100%;
+        }
+        @include hover {
+            background: $primary-color-btn;
+            color: #fff;
+        }
+    }
+}
+
+.paggination {
+    display: flex;
+    a.paggination__item {
+        width: 49px;
+        height: 49px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+        background: rgba(0, 86, 164, 0.05);
+        font-size: 15px;
+        line-height: 1.23;
+        font-weight: 500;
+        transition: .2s ease-in-out all;
+        color: $primary-color-btn;
+        @include mobile-sm {
+            height: 32px;
+            width: 32px;
+            &:nth-child(6) {
+                display: none;
+            }
+        }
+        &.paggination__separator {
+            pointer-events: none;
+        }
+        svg {
+            path,
+            rect {
+                transition: .2s ease-in-out all;
+            }
+        }
+        &:hover,
+        &--current {
+            background: $primary-color-btn;
+            color: #fff;
+            svg {
+                path,
+                rect {
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+    .paggination__next {
+        margin-right: 0;
+    }
+}
