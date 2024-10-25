@@ -26,6 +26,7 @@ $(document).ready(function () {
         }, 500)
     });
 
+    document.querySelectorAll("[data-fancybox]");
 
     function isElementInViewport(el) {
         const rect = el[0].getBoundingClientRect();

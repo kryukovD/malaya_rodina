@@ -2884,6 +2884,76 @@ textarea {
   .paggination .paggination__next {
     margin-right: 0; }
 
+.section-photo__inner {
+  padding: 0 72px;
+  border-radius: 16px;
+  margin-bottom: 24px; }
+  @media (max-width: 1024px) {
+    .section-photo__inner {
+      padding: 0 42px; } }
+  @media (max-width: 768px) {
+    .section-photo__inner {
+      padding: 0; } }
+
+.section-photo__tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.section-photo .btn-photo {
+  width: calc(50% - 4px);
+  border-radius: 8px;
+  box-shadow: 3px 5px 25px 0px rgba(9, 19, 39, 0.08);
+  background: white;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #200E32;
+  text-align: center; }
+  @media (max-width: 1024px) {
+    .section-photo .btn-photo {
+      padding: 16px;
+      font-size: 14px;
+      line-height: 17px; } }
+  @media (hover: hover) {
+    .section-photo .btn-photo:hover {
+      color: #fff;
+      background: #E3000F; } }
+  @media (hover: none) {
+    .section-photo .btn-photo:active {
+      color: #fff;
+      background: #E3000F; } }
+  .section-photo .btn-photo--selected {
+    color: #fff;
+    background: #E3000F; }
+    @media (hover: hover) {
+      .section-photo .btn-photo--selected:hover {
+        background: #BA1722; } }
+    @media (hover: none) {
+      .section-photo .btn-photo--selected:active {
+        background: #BA1722; } }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px 20px; }
+  @media (max-width: 1024px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 16px; } }
+  @media (max-width: 768px) {
+    .gallery {
+      gap: 8px 8px; } }
+  .gallery__item img {
+    object-fit: cover;
+    width: 100%;
+    height: 335px; }
+    @media (max-width: 1024px) {
+      .gallery__item img {
+        height: 160px; } }
+
 /*page marafaon */
 .banner-children {
   margin-top: 16px; }
