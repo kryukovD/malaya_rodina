@@ -2,6 +2,9 @@
     &--marafon{
         margin-bottom: 64px;
     }
+    &--program{
+        margin-bottom: 48px;
+    }
     margin-top: 16px;
     &__content{
         position: relative;
@@ -25,14 +28,56 @@
         @include tablet{
             padding:48px 42px 48px; ;
         }
+        @include mobile-sm {
+            padding: 24px 16px;
+        }
     }
     &__title{
-      
+        position: relative;
+    }
+    &__date {
+        left: 0;
+        top: -48px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        @include mobile  {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 16px;
+        }
+        svg {
+            margin-right: 12px;
+            @include mobile {
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
     &__block-button{
         .btn-red{
             max-width: 248px;
             width: 100%;
+        }
+    }
+    &__block-links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 30px;
+        overflow: auto;
+        .btn {
+            flex-shrink: 0;
+            @include mobile {
+                background-color: transparent;
+                color: #fff;
+            }
         }
     }
     &__group{

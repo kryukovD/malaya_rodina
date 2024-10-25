@@ -89,6 +89,53 @@
         border-radius: $border-radius-sm-secondary;
     }
 }
+.btn.btn-secondary{
+    display: inline-flex;
+    padding: 10px 37px;
+    border-radius: $border-radius-xl-secondary;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $color-accent-secondary;
+    background: $color-accent-third;
+    @include mobile-sm{
+        font-size: 14px;
+        padding: 10px 36px;
+        border-radius: $border-radius-sm-secondary;
+    }
+    @include hover{
+        background: $primary-color-btn;
+        color: #fff;
+    }
+}
+.btn.btn-border{
+    display: inline-flex;
+    padding: 10px 37px;
+    border-radius: $border-radius-xl-secondary;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    color: $color-accent-secondary;
+    background: $color-accent-third;
+    border: 1px solid $color-accent-secondary;
+    @include mobile-sm{
+        font-size: 14px;
+        padding: 10px 36px;
+        border-radius: $border-radius-sm-secondary;
+    }
+    @include hover {
+        background: $primary-color-btn;
+        color: #fff;
+    }
+}
 .btn.btn-red{
     display: inline-flex;
     align-items: center;
@@ -101,4 +148,45 @@
     background-color: $color-accent;
     color: white;
     line-height: 1.2;
+}
+
+.btn.btn-transparent {
+    padding: 16px 32px 16px 24px;
+    background: rgba(255, 255, 255, 0.2) url('../images/btn-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 7px) 8px;
+    background-size: 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile-sm{
+        font-size: 14px;
+        padding: 10px 36px;
+        border-radius: $border-radius-sm-secondary;
+    }
+}
+
+.btn.btn-light {
+    padding: 16px 32px 16px 24px;
+    background: rgba(0, 86, 164, 0.05);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: $color-accent-secondary;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile-sm{
+        font-size: 14px;
+        padding: 10px 36px;
+        border-radius: $border-radius-sm-secondary;
+    }
 }
