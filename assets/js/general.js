@@ -648,9 +648,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
 // Драг без полосы прокрутки. При необходимости динамического добавления класса вызвать dragscroll.reset()
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -732,3 +729,5 @@ $(document).ready(function () {
     }
     exports.reset = reset;
 }));
+
+
