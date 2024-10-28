@@ -47,7 +47,6 @@ $(document).ready(function () {
             /*счетчик */
             $('.counter').countTo({
                 refreshInterval: 50,
-                speed:2000,
                 formatter: function (value, options) {
                     return value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
                 },
@@ -241,69 +240,75 @@ $(document).ready(function () {
     // }
 
 
-    var photoGallerySwiper;
 
-    function initPhotoSlider() {
 
-        photoGallerySwiper = new Swiper('.slider-photo-gallery', {
-            allowTouchMove: false,
-            slidesPerView: 5, // Показываем несколько слайдов одновременно
-            spaceBetween: 24, // Отступы между слайдами
-            centeredSlides: true, // Центрируем активный слайд
-            loop: true, // Зацикливаем слайды     
 
-            on: {
-                slideChange: function () {
-                    updateSlides(this);
-                },
-                init: function () {
-                    updateSlides(this); // Установить начальные стили
-                },
 
+    var photoGallerySwiper = new Swiper('.slider-photo-gallery', {
+        allowTouchMove: false,
+        slidesPerView: 5, // Показываем несколько слайдов одновременно
+        spaceBetween: 24, // Отступы между слайдами
+        centeredSlides: true, // Центрируем активный слайд
+        loop: true, // Зацикливаем слайды
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 50, // Угол поворота слайдов
+            stretch: 0, // Расстояние между слайдами
+            depth: 100, // Глубина слайдов, чем больше значение — тем больше эффект 3D
+            modifier: 0, // Модификатор эффекта (усиление)
+            slideShadows: true // Тени у слайдов
+        },
+
+        on: {
+            slideChange: function () {
+                updateSlides(this);
             },
-
-            navigation: {
-                nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
-                prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
+            init: function () {
+                updateSlides(this); // Установить начальные стили
             },
-            breakpoints: {
-                0: {
-                    allowTouchMove: true,
-                    centeredSlides: true,
-                    slidesPerView: 3,
-                    navigation: false,
-                    spaceBetween: 4,
-                    loop: true,
-                    scrollbar: {
-                        el: '.slider-photo-gallery .slider-scrollbar',
-                    }
-                },
-                576: {
-                    slidesPerView: 3,
-                    navigation: {
-                        nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
-                        prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
-                    },
-                    scrollbar: false
-                },
+        },
 
-
-                1024: {
-                    loop: true,
-                    centeredSlides: true,
-                    slidesPerView: 5,
-                    spaceBetween: 24,
-
-
+        navigation: {
+            nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
+            prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
+        },
+        breakpoints: {
+            0: {
+                allowTouchMove: true,
+                centeredSlides: true,
+                slidesPerView: 3,
+                navigation: false,
+                spaceBetween: 4,
+                loop: true,
+                scrollbar: {
+                    el: '.slider-photo-gallery .slider-scrollbar',
                 }
             },
+            576: {
+                slidesPerView: 3,
+                navigation: {
+                    nextEl: '.section-photo-gallery .slider-arrow-chevron--next',
+                    prevEl: '.section-photo-gallery .slider-arrow-chevron--prev',
+                },
+                scrollbar: false
+            },
+
+
+            1024: {
+                loop: true,
+                centeredSlides: true,
+                slidesPerView: 5,
+                spaceBetween: 24,
+
+
+            }
+        },
 
 
 
-        });
+    });
 
-    }
-    initPhotoSlider();
+
 
 
     function updateSlides(swiper) {
@@ -573,7 +578,7 @@ $(document).ready(function () {
         $(".section-faq__answer").removeClass("section-faq__answer--active");
         $(this).addClass("section-faq__answer--active");
     });
-
+    updateSwiper();
 
 
     /*marque */
@@ -585,15 +590,6 @@ $(document).ready(function () {
     /*rezize */
     $(window).resize(function () {
         updateSwiper();
-
-
-
-        if (photoGallerySwiper != undefined) {
-            photoGallerySwiper.destroy(true, true);
-            initPhotoSlider();
-        }
-
-
 
 
     })
@@ -629,31 +625,22 @@ $(document).ready(function () {
     });
 
 
-    // Показывать кнопку при прокрутке вниз
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.btn-upper').fadeIn();
-        } else {
-            $('.btn-upper').fadeOut();
-        }
-    });
+        // Показывать кнопку при прокрутке вниз
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('.btn-upper').fadeIn();
+            } else {
+                $('.btn-upper').fadeOut();
+            }
+        });
 
-    // Плавная прокрутка вверх при клике
-    $('.btn-upper').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
-        return false;
-    });
-
-    /* initialize wow */
-    new WOW().init({
-        boxClass: 'wow',      // default
-        animateClass: 'animated', // default
-        offset: 0,          // default
-        mobile: false,       // default
-        live: true        // default
-    });
-
-
+        // Плавная прокрутка вверх при клике
+        $('.btn-upper').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
+            return false;
+        });
+    
+     
 
 
 

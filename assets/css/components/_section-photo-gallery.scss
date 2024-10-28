@@ -116,8 +116,7 @@
 
         &__item {
 
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; /* Плавная анимация */
+            opacity: 0.5;
 
             border-radius: $border-radius-xl;
             overflow: hidden;
