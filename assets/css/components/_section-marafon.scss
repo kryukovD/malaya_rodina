@@ -25,14 +25,21 @@
                 height: 100%;
             }
         }
+       
         @include laptop{
             transform: translateY(0);
+        }
+        @include mobile{
+            display: none;
         }
         &-inner{
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: flex-end;
+            @include mobile{
+                flex-grow: 0;
+            }
         }
     }
     &__block-map{
@@ -44,13 +51,20 @@
         @include mobile{
             display: flex;
             flex-direction: column;
-            min-height: 550px;
+            // min-height: 550px;
             border-radius: $border-radius-sm;
+            min-height: auto;
+            
         }
 
         &-text{
             padding: 64px 74px 20px;
             color: white;
+            p{
+                @include mobile{
+                    display: none;
+                }
+            }
           
             h2{
                 color: white;

@@ -121,6 +121,7 @@
                 color: white;
                 svg{
                     rotate: 0deg;
+                    transition: all $transition-timing ease;
                 }
                 svg path {
                     stroke: white;
@@ -134,6 +135,9 @@
 
                     a {
                         color: $color-accent-secondary;
+                    }
+                    svg{
+                        rotate: 0deg;
                     }
                 }
             }
