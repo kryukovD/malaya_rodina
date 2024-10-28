@@ -19,6 +19,9 @@
     }
     &__map{
         transform: translateY(-120px);
+        @include mobile{
+            display: none;
+        }
         svg{
             @include laptop{
                 width: 100%;
@@ -28,12 +31,19 @@
         @include laptop{
             transform: translateY(0);
         }
+        
+     
         &-inner{
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: flex-end;
+            @include mobile{
+                flex-grow: 0;
+            }
+           
         }
+      
     }
     &__block-map{
         border-radius: $border-radius-xl;
@@ -44,8 +54,9 @@
         @include mobile{
             display: flex;
             flex-direction: column;
-            min-height: 550px;
+            // min-height: 550px;
             border-radius: $border-radius-sm;
+            height: auto;
         }
 
         &-text{

@@ -147,6 +147,9 @@
             @include hover{
                 .section-faq__answer-name{
                     color: $color-accent-secondary;
+                    svg{
+                        rotate: 90deg;
+                    }
                 }
             }
         }
@@ -186,6 +189,9 @@
             justify-content: space-between;
             cursor: pointer;
             transition: all $transition-timing ease  ;
+            svg{
+                transition: all $transition-timing ease;
+            }
             svg{
                 @include mobile-sm{
                     width: 16px;
