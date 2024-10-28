@@ -590,8 +590,6 @@ $(document).ready(function () {
     /*rezize */
     $(window).resize(function () {
         updateSwiper();
-
-
     })
 
 
@@ -633,6 +631,7 @@ $(document).ready(function () {
                 $('.btn-upper').fadeOut();
             }
         });
+
 
         // Плавная прокрутка вверх при клике
         $('.btn-upper').click(function () {
@@ -729,5 +728,9 @@ $(document).ready(function () {
     }
     exports.reset = reset;
 }));
+
+
+     
+    
 
 
