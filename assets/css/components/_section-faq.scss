@@ -143,6 +143,13 @@
         height: 100%;
     }
     &__answer {
+        &:not(.section-faq__answer--active){
+            @include hover{
+                .section-faq__answer-name{
+                    color: $color-accent-secondary;
+                }
+            }
+        }
         border-radius: $border-radius-xl-secondary;
 
         &--active{
@@ -163,6 +170,7 @@
         }
 
         &-name {
+        
             position: relative;
             z-index: 100;
             font-size: 20px;
@@ -177,6 +185,7 @@
             display: flex;
             justify-content: space-between;
             cursor: pointer;
+            transition: all $transition-timing ease  ;
             svg{
                 @include mobile-sm{
                     width: 16px;

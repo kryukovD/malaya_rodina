@@ -129,12 +129,14 @@
         display: grid;
         grid-template-columns: 1fr 100px;
         position: relative;
+        transition: all $transition-timing ease;
         @include mobile-sm{
             grid-template-columns: 1fr;
             gap: 8px;
             border-radius: $border-radius-sm-secondary;
         }
         &-place{
+            transition: all $transition-timing ease;
             color: $color-accent-secondary;
             line-height: 1;
             @include mobile-sm{
@@ -142,6 +144,7 @@
             }
         }
         &-date{
+            transition: all $transition-timing ease;
             font-size: 14px;
             @include mobile-sm{
                 font-size: 13px;
@@ -150,9 +153,13 @@
             }
         }
         &-forum{
+        
             text-transform: uppercase;
             font-weight: 600;
             line-height: 1.2;
+            svg{
+                margin-left: 3px;
+            }
             @include mobile-sm{
                 order: 2;
             }
@@ -182,12 +189,7 @@
             .section-marafon__region-place{
                 color: white;
             }
-            &:before{
-                position: absolute;
-                content: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6666 8.66663V3.33329H7.33325" stroke="white" stroke-linecap="round"/><path d="M12.6666 3.33337L3.33325 12.6667" stroke="white" stroke-linecap="round"/></svg>');
-                bottom: 0px;
-                right: 7px;
-            }
+        
 
 
         }
@@ -198,4 +200,5 @@
     fill: #0068C6 !important;
     stroke:  #73BCFF;
     stroke-width: 2px;
+    transition: all $transition-timing ease;
 }
