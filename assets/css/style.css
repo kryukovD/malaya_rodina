@@ -2954,6 +2954,90 @@ textarea {
       .gallery__item img {
         height: 160px; } }
 
+.section-hotel {
+  margin-bottom: 80px; }
+  @media (max-width: 576px) {
+    .section-hotel {
+      margin-bottom: 56px; } }
+  .section-hotel__inner {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 20px; }
+    @media (max-width: 1640px) {
+      .section-hotel__inner {
+        grid-template-columns: 3fr 2.4fr; } }
+    @media (max-width: 1024px) {
+      .section-hotel__inner {
+        grid-template-columns: 1fr; } }
+    @media (max-width: 576px) {
+      .section-hotel__inner {
+        gap: 0px; } }
+  .section-hotel__col-left {
+    padding: 76px 72px;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden; }
+    @media (max-width: 1200px) {
+      .section-hotel__col-left {
+        padding: 64px 30px; } }
+    @media (max-width: 576px) {
+      .section-hotel__col-left {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding: 24px 16px; } }
+  .section-hotel__col-right {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 56px 48px;
+    overflow: hidden; }
+    @media (max-width: 1200px) {
+      .section-hotel__col-right {
+        padding: 64px 30px; } }
+    @media (max-width: 576px) {
+      .section-hotel__col-right {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 24px 16px; } }
+  .section-hotel__title {
+    margin-bottom: 24px; }
+  .section-hotel .map img {
+    width: 100%;
+    height: auto; }
+
+.hotel-gallery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px; }
+  @media (max-width: 1640px) {
+    .hotel-gallery {
+      flex-direction: column; } }
+  .hotel-gallery img {
+    border-radius: 12px; }
+  .hotel-gallery__col {
+    width: 660px;
+    height: 400px; }
+    .hotel-gallery__col:nth-last-child(1) {
+      width: 236px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      @media (max-width: 1640px) {
+        .hotel-gallery__col:nth-last-child(1) {
+          flex-direction: row;
+          width: 100%;
+          height: auto; } }
+      .hotel-gallery__col:nth-last-child(1) img {
+        width: 236px;
+        height: 190px;
+        object-fit: cover; }
+
 /*page marafaon */
 .banner-children {
   margin-top: 16px; }

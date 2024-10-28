@@ -1,0 +1,98 @@
+.section-hotel {
+    margin-bottom: 80px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__inner{
+    display: grid;
+    grid-template-columns:3fr 1.5fr ;
+    @include laptop{
+        grid-template-columns:3fr 2.4fr ;
+    }
+    @include tablet{
+        grid-template-columns: 1fr;
+    }
+    @include mobile-sm{
+        gap: 0px;
+    }
+    gap: 20px;
+    }
+
+    &__col-left {
+        padding: 76px 72px;
+        background-color: #fff;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        @include laptop-sm {
+          padding: 64px 30px; 
+        }
+        @include mobile-sm{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: $border-radius-sm;
+            border-top-right-radius: $border-radius-sm;
+            padding: 24px 16px;
+        }
+    }
+
+    &__col-right {
+        background-color: white;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        padding: 56px 48px;
+        overflow: hidden;
+        @include laptop-sm {
+          padding: 64px 30px; 
+        }
+        @include mobile-sm{
+            border-bottom-left-radius: $border-radius-sm;
+            border-bottom-right-radius: $border-radius-sm;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 24px 16px;
+        }
+    }
+    &__title {
+        margin-bottom: 24px;
+    }
+    .map {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.hotel-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    @include laptop {
+        flex-direction: column;
+    }
+    img {
+        border-radius: 12px;
+    }
+    &__col {
+        width: 660px;
+        height: 400px;
+        &:nth-last-child(1) {
+            width: 236px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include laptop {
+                flex-direction: row;
+                width: 100%;
+                height: auto;
+            }
+            img {
+                width: 236px;
+                height: 190px;
+                object-fit: cover;
+            }
+        }
+    }
+}
