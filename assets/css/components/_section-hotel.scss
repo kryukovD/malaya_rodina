@@ -4,18 +4,18 @@
         margin-bottom: 56px;
     }
     &__inner{
-    display: grid;
-    grid-template-columns:3fr 1.5fr ;
-    @include laptop{
-        grid-template-columns:3fr 2.4fr ;
-    }
-    @include tablet{
-        grid-template-columns: 1fr;
-    }
-    @include mobile-sm{
-        gap: 0px;
-    }
-    gap: 20px;
+        display: grid;
+        grid-template-columns:3fr 1.5fr ;
+        gap: 20px;
+        @include laptop{
+            grid-template-columns:3fr 2.4fr ;
+        }
+        @include tablet{
+            grid-template-columns: 1fr;
+        }
+        @include mobile-sm{
+            gap: 0px;
+        }
     }
 
     &__col-left {
@@ -73,10 +73,19 @@
     }
     img {
         border-radius: 12px;
+        @include laptop {
+            width: 100%;
+            height: auto;
+        }
     }
     &__col {
         width: 660px;
         height: 400px;
+        @include laptop {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
         &:nth-last-child(1) {
             width: 236px;
             height: 400px;
@@ -92,7 +101,58 @@
                 width: 236px;
                 height: 190px;
                 object-fit: cover;
+                @include laptop {
+                    width: calc(50% - 10px);
+                    height: auto;
+                }
             }
+        }
+    }
+}
+
+
+.title-hotel {
+    .rate {
+        width: 76px;
+        height: 40px;
+        display: inline-block;
+        font-size: 36px;
+        line-height: 40px;
+        background-position: 41px 8px;
+        background-size: 27px;
+        margin-right: 10px;
+        @include mobile {
+            margin-bottom: 10px;
+            width: 50px;
+            height: 30px;
+            font-size: 26px;
+            line-height: 30px;
+            background-position: 29px 7px;
+            background-size: 17px;
+            padding: 0px 4px;
+            margin-right: 0;
+
+        }
+    }
+    &__descr {
+        margin-top: 24px;
+        margin-bottom: 23px;
+    }
+    &__item {
+        font-size: 16px;
+        line-height: 16px;
+        color: #fff;
+        padding: 8px 16px;
+        background: rgba(255,255,255,.1);
+        max-width: 410px;
+        width: 100%;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        span {
+            display: block;
+            padding-right: 10px;
         }
     }
 }
