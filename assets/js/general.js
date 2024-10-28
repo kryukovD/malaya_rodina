@@ -633,6 +633,7 @@ $(document).ready(function () {
         });
 
 
+
         // Плавная прокрутка вверх при клике
         $('.btn-upper').click(function () {
             $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
@@ -640,8 +641,6 @@ $(document).ready(function () {
         });
     
      
-
-
 
 
 });
@@ -731,3 +730,5 @@ $(document).ready(function () {
     }
     exports.reset = reset;
 }));
+
+    
