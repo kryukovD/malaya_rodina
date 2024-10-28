@@ -58,6 +58,8 @@
         gap: 8px 8px; 
     }
     &__item {
+        border-radius: 12px;
+        overflow: hidden;
         img {
             object-fit: cover;
             width: 100%;
