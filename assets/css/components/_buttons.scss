@@ -226,28 +226,6 @@
     }
 }
 
-.btn.btn-white--opacity {
-    padding: 16px 48px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    color: #fff;
-    margin-right: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    @include mobile-sm{
-        font-size: 14px;
-        padding: 10px 36px;
-        border-radius: $border-radius-sm-secondary;
-    }
-    @include hover {
-        background: $primary-color-btn;
-    }
-}
-
 .btn.btn-light {
     padding: 16px 32px 16px 24px;
     background: rgba(0, 86, 164, 0.05);

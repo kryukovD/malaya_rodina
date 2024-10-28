@@ -108,6 +108,7 @@
 
             @include hover {
                 background-color: #FFFFFF33;
+             
             }
 
         }
@@ -148,6 +149,9 @@
                 .section-faq__answer-name{
                     color: $color-accent-secondary;
                 }
+                svg{
+                    transform: rotate(90deg);
+                }
             }
         }
         border-radius: $border-radius-xl-secondary;
@@ -186,7 +190,9 @@
             justify-content: space-between;
             cursor: pointer;
             transition: all $transition-timing ease  ;
+            
             svg{
+                transition: all $transition-timing ease;
                 @include mobile-sm{
                     width: 16px;
                     height: 16px;

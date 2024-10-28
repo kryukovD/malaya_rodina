@@ -62,38 +62,7 @@
             
         }
     }
-    &--date-place {
-        margin-top: 24px;
-        position: relative;
-    }
     &__date {
-        left: 0;
-        top: -48px;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 24px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        .banner-children--date-place & {
-            top: -84px;
-        }
-        @include mobile  {
-            font-size: 16px;
-            line-height: 20px;
-            margin-bottom: 16px;
-        }
-        svg {
-            margin-right: 12px;
-            @include mobile {
-                width: 20px;
-                height: 20px;
-            }
-        }
-    }
-    &__place {
         left: 0;
         top: -48px;
         font-weight: 500;
@@ -129,12 +98,9 @@
     }
 
     &__block-button {
-        margin-top: 24px;
-        .btn {
-            margin-bottom: 8px;
+        .btn-red {
             max-width: 248px;
             width: 100%;
-            margin-right: 16px;
             @include mobile-sm{
                 max-width: 227px;
             }
