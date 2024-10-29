@@ -150,7 +150,8 @@
                     color: $color-accent-secondary;
                 }
                 svg{
-                    transform: rotate(90deg);
+                    // transform: rotate(90deg);
+                    animation: moveUpDown 0.8s ease-in-out;
                 }
             }
         }
@@ -167,9 +168,9 @@
                     stroke: white;
                 }
             }
-            .section-faq__answer-text{
-                display: block;
-            }
+            // .section-faq__answer-text{
+            //     display: block;
+            // }
                 
         }
 
@@ -211,10 +212,12 @@
             display: none;
             margin-top: 8px;
             padding: 16px 0px 24px 32px;
+            animation: slideDown 0.4s forwards; /* Анимация slideDown */
             a{
               color:$color-accent-secondary;
               text-decoration: underline;
             }
+
             @include mobile-sm{
                 padding: 16px;
                 
@@ -256,5 +259,23 @@
 
 
         }
+    }
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: rotate(90deg);
+        transform: translate(0,0); /* Начальная позиция */
+        opacity: 0;
+      
+    }
+    50% {
+        transform: translate(40px,-40px); /* Поднимаем стрелку */
+    }
+    100% {
+        transform: rotate(90deg);
+        transform: translate(0,0);; /* Возвращаем стрелку на место */
+        opacity: 1;
+       
     }
 }

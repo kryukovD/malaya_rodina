@@ -8,6 +8,33 @@
     font-size: 15px;
     line-height: 1.1;
     position: relative;
+    transition: top 0.5s ease; /* Анимация */
+    &.fixed{
+    position: fixed;
+    top: 0px;
+    margin-inline: auto;
+    max-width: 1600px;
+    width: 100%;
+    z-index: 1000; 
+    margin-top: 0px;
+    animation: slideDown 0.3s ease-in-out forwards; /* Применение анимации */
+    @include laptop{
+        max-width:1300px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @include laptop-sm{
+        max-width:1102px;
+    }
+    @include tablet{
+        max-width: calc(100% - 40px);
+    }
+    @include mobile-sm{
+        max-width: calc(100% - 20px);
+    }
+    
+
+    }
     @include mobile-sm{
         border-radius:$border-radius-sm;
         margin-top: 8px;
@@ -154,4 +181,12 @@
         }
     }
     
+}
+@keyframes slideDown {
+    from {
+        top: -100px; /* Начальное положение шапки — скрыто */
+    }
+    to {
+        top: 0; /* Конечное положение — фиксировано вверху */
+    }
 }

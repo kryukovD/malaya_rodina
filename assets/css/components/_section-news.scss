@@ -92,7 +92,11 @@
 
       
 
-     
+       &__item{
+        .slider-news__item-image{
+            transition: aspect-ratio 0.5s ease, transform 0.5s ease;
+        }
+       }
 
         &__item.section-new__item--large-slide  {
             width: calc(33% - 20px ) !important;

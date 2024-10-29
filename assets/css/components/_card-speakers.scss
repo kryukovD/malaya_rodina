@@ -1,7 +1,8 @@
 .card-speakers{
     display: flex;
     flex-direction: column;
-
+    opacity: 0;
+    transition: all $transition-timing ease;
     &__image{
         margin-bottom: 16px;
         border-radius: $border-radius-xl-secondary;
@@ -11,43 +12,49 @@
           
         }
     }
-    &--big{
+    &.swiper-slide{
+        opacity: 1;
+        .card-speakers__image{
+            transition: aspect-ratio 0.5s ease, transform 0.5s ease;
+        }
+    }
+    &.swiper-slide-active{
         .card-speakers__image {
             aspect-ratio: 349/484;
             // min-height: 484px;
             @include mobile-sm{
-                min-height: 340px;
-                aspect-ratio: 254/340;
+                min-height: 245px;
+                aspect-ratio: 245/272;
             }
         }
         .card-speakers__image img{
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             @include mobile-sm{
                 object-fit: cover;
             }
         }
     }
 
-    &--small{
+   
         .card-speakers__image {
             aspect-ratio: 349/388;
             // min-height: 388px;
             @include mobile-sm{
-                min-height: 272px;
-                aspect-ratio: 244/272;
+                min-height: 245px;
+                aspect-ratio: 245/272;
             }
         }
         .card-speakers__image img{
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             @include mobile-sm{
                 object-fit: cover;
             }
         }
-    }
+    
 
 
 

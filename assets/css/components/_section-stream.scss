@@ -36,6 +36,7 @@
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 21px;
+        z-index: 1000;
         >div:not(:first-child){
             .slider-stream__item-name{
                 @include mobile-sm{

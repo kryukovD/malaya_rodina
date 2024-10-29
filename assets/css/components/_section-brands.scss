@@ -3,13 +3,20 @@
     @include mobile-sm{
         margin-bottom: 56px;
     }
-
+   
+  
     &__row {
         display: block;
         width: 100%;
         overflow: hidden;
         margin: 10px 0; /* Отступ между строками */
         position: relative; /* Для позиционирования */
+        white-space: nowrap; /* Не переносим контент на новую строку */
+        .swiper-wrapper{
+            -webkit-transition-timing-function: linear !important;
+            transition-timing-function: linear !important;
+  
+        }
         img{
             height: 100px; /* Высота изображений */
             width: 100%;
@@ -27,21 +34,12 @@
             margin-left: 0px;
             margin-bottom: 10px;
         }
-        .js-marquee{
-            @include mobile-sm{
-            margin-right: 0px !important;
-            }
-        }
+       
     }
 
     .section-brands__row:nth-child(2) {
         margin-bottom: 20px;
         margin-left: 0px;
-        .js-marquee{
-            @include mobile-sm{
-            margin-right: 0px !important;
-            }
-        }
 
     }
 
@@ -55,13 +53,16 @@
     &__item {
         flex-shrink: 0;
         padding: 52px 32px;
+        aspect-ratio: 1/1;
+        box-sizing: border-box;
         background-color: #FFFFFF;
-        box-sizing: content-box;
         display: inline-block;
-        margin-right: 20px;
         border-radius: $border-radius-xl-secondary;
         overflow: hidden;
         transition: transform 0.5s ease-in-out; 
+        img{
+            max-width: 100%;
+        }
         @include hover{
             img{
             filter: grayscale(0);
