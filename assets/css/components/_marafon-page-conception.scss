@@ -1,0 +1,28 @@
+.marafon-page-conception{
+    margin-bottom: 80px;
+    &__inner{
+       display: grid;
+       grid-template-columns: 4fr 1fr;
+       gap: 20px;
+    }
+    &__content{
+        padding: 48px 72px 48px;
+        border-radius: $border-radius-xl;
+        background-color: #FFFFFF;
+    }
+    &__title{
+        margin-bottom: 24px;
+    }
+    &__desc{
+       margin-bottom: 41px;
+       color: $color-text-accent;
+    }
+    &__cards{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);
+        gap: 20px;
+        margin-bottom: 13px;
+    }
+
+}
+

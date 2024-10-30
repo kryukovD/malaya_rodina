@@ -51,10 +51,13 @@
     }
     
     @include hover{
-       
+       .card-meeting__layer::before{
+        content: "";
+        z-index: 100;
+       }
       
         &:before{
-            z-index: 1;
+            z-index: 101;
             content: "";
             left: 0;
             right: 0;
@@ -76,6 +79,7 @@
             }
         }
         .card-meeting__name{
+            z-index: 102;
             color: white;
         }
       
@@ -105,6 +109,17 @@
         overflow: hidden;
         flex-grow: 1;
         position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Затемнение с прозрачностью */
+            z-index: 100;
+           
+        }
         @include mobile-sm{
             width: calc(100% - 12px);
             border-radius: $border-radius-sm;

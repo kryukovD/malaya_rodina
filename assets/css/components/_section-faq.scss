@@ -264,3 +264,27 @@
     }
 }
 
+
+/* Уход вверх по диагонали */
+@keyframes disappear_mod {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(150%, -150%) rotate(0deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Возвращение с другой стороны */
+  @keyframes reappear_mod {
+    0% {
+      transform: translate(-150%, 150%) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+  }

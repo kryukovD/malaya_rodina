@@ -1,0 +1,27 @@
+.card-color{
+   
+    h3{
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        font-weight: 600;
+        color: $color-text-accent;
+    }
+    &__content{
+        border-radius: $border-radius-xl;
+        background-color: $defalt-wrapper-bg;
+        padding: 24px 17px 24px 24px;
+        width: calc(100% - 12px);
+        position: relative;
+        &:before{
+            content: "";
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+        &:nth-child(1n+1){
+            
+        }
+    }
+}
