@@ -122,7 +122,7 @@
                 svg{
                     rotate: 0deg;
                     transition: all $transition-timing ease;
-                    animation: moveUpDown 0.4s ease-in-out;
+                   
                 }
                 svg path {
                     stroke: white;
@@ -138,7 +138,7 @@
                         color: $color-accent-secondary;
                     }
                     svg{
-                        animation: moveUpDown 0.4s ease-in-out;
+                        animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
                         rotate: 0deg;
                     }
                 }
@@ -155,16 +155,26 @@
     }
 }
 
-@keyframes moveUpDown {
+/* Уход вверх по диагонали */
+@keyframes disappear {
     0% {
-        transform: translate(0,0); /* Начальная позиция */
-        opacity: 0;
-    }
-    50% {
-        transform: translate(40px,-40px); /* Поднимаем стрелку */
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
     }
     100% {
-        transform: translate(0,0);; /* Возвращаем стрелку на место */
-        opacity: 1;
+      transform: translate(150%, -150%) rotate(0deg);
+      opacity: 0;
     }
-}
+  }
+  
+  /* Возвращение с другой стороны */
+  @keyframes reappear {
+    0% {
+      transform: translate(-150%, 150%) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+  }

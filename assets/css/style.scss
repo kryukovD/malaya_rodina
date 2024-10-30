@@ -142,6 +142,30 @@ body{
     background: $color-accent-secondary;
 }
 
+/* Уход вверх по диагонали */
+@keyframes disappear {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(150%, -150%) rotate(0deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Возвращение с другой стороны */
+  @keyframes reappear {
+    0% {
+      transform: translate(-150%, 150%) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
 
 
 @import "./components/_breadcrumbs";

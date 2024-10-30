@@ -422,6 +422,7 @@ $(document).ready(function () {
             slideChange: function () {
                 updateClassNews(this);
             }
+            
         },
         breakpoints: {
             0: {
@@ -490,15 +491,17 @@ $(document).ready(function () {
     const partner_slider_1 = new Swiper('.section-brands__row--first', {
 
         loop: true,
-        allowTouchMove: true,
+        allowTouchMove: false,
         slidesPerView: 7, // показывать несколько слайдов одновременно
         spaceBetween: 20,
         autoplay: {
             delay: 0, // Задержка между слайдами
-            pauseOnMouseEnter: true
+            disableOnInteraction: false,
+
         },
         speed: 3000,
         grabCursor: true,
+       
         breakpoints: {
             0: {
                 slidesPerView: 3.2,
@@ -544,20 +547,27 @@ $(document).ready(function () {
         }
     });
 
-
+    
     $('.section-brands__row--second').on('mouseenter', function () {
+        partner_slider_2.slideTo(partner_slider_2.realIndex, 0); // Переход к текущему слайду без анимации
         partner_slider_2.autoplay.stop();
     });
+
     $('.section-brands__row--second').on('mouseleave', function () {
         partner_slider_2.autoplay.start();
     });
-
+    
     $('.section-brands__row--first').on('mouseenter', function () {
-        partner_slider_1.autoplay.stop();
+        partner_slider_1.autoplay.stop();  // Останавливаем autoplay
+        partner_slider_1.slideTo(partner_slider_1.activeIndex, 0, false); // Переход к активному слайду без анимации
+        partner_slider_1.update();  // Принудительно обновляем слайдер
     });
+    
     $('.section-brands__row--first').on('mouseleave', function () {
-        partner_slider_1.autoplay.start();
+        partner_slider_1.autoplay.start(); // Возобновляем autoplay
     });
+   
+
 
 
     // Функция, которая добавляет класс к первому видимому слайду

@@ -145,13 +145,14 @@
     }
     &__answer {
         &:not(.section-faq__answer--active){
+            
             @include hover{
                 .section-faq__answer-name{
                     color: $color-accent-secondary;
                 }
                 svg{
                     // transform: rotate(90deg);
-                    animation: moveUpDown 0.8s ease-in-out;
+                    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
                 }
             }
         }
@@ -162,6 +163,7 @@
                 background-color:  $primary-color-btn;
                 color: white;
                 svg{
+                    transition: all $transition-timing ease ;
                     transform: rotate(90deg);
                 }
                 svg path{
@@ -262,20 +264,3 @@
     }
 }
 
-@keyframes moveUpDown {
-    0% {
-        transform: rotate(90deg);
-        transform: translate(0,0); /* Начальная позиция */
-        opacity: 0;
-      
-    }
-    50% {
-        transform: translate(40px,-40px); /* Поднимаем стрелку */
-    }
-    100% {
-        transform: rotate(90deg);
-        transform: translate(0,0);; /* Возвращаем стрелку на место */
-        opacity: 1;
-       
-    }
-}

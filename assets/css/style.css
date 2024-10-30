@@ -149,6 +149,28 @@ body {
   background: #1460A3;
 }
 
+/* Уход вверх по диагонали */
+@keyframes disappear {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150%, -150%) rotate(0deg);
+    opacity: 0;
+  }
+}
+/* Возвращение с другой стороны */
+@keyframes reappear {
+  0% {
+    transform: translate(-150%, 150%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
 .breadcrumbs {
   position: relative;
   z-index: 100;
@@ -1788,7 +1810,7 @@ ul.header-dropdown--lang > li a {
   }
   .card-meeting:hover .card-meeting__arrow {
     opacity: 1;
-    animation: moveUpDown 0.8s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
   }
   .card-meeting:hover .card-meeting__arrow path {
     stroke: white;
@@ -1812,7 +1834,7 @@ ul.header-dropdown--lang > li a {
   }
   .card-meeting:active .card-meeting__arrow {
     opacity: 1;
-    animation: moveUpDown 0.8s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
   }
   .card-meeting:active .card-meeting__arrow path {
     stroke: white;
@@ -1880,16 +1902,25 @@ ul.header-dropdown--lang > li a {
   }
 }
 
-@keyframes moveUpDown {
+/* Уход вверх по диагонали */
+@keyframes disappear {
   0% {
-    transform: translate(0, 0); /* Начальная позиция */
-    opacity: 0;
-  }
-  50% {
-    transform: translate(40px, -40px); /* Поднимаем стрелку */
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
   }
   100% {
-    transform: translate(0, 0); /* Возвращаем стрелку на место */
+    transform: translate(150%, -150%) rotate(0deg);
+    opacity: 0;
+  }
+}
+/* Возвращение с другой стороны */
+@keyframes reappear {
+  0% {
+    transform: translate(-150%, 150%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
     opacity: 1;
   }
 }
@@ -2449,7 +2480,6 @@ ul.header-dropdown--lang > li a {
 .section-members__tabs .section-members__tabs-li--active svg {
   rotate: 0deg;
   transition: all 0.4s ease;
-  animation: moveUpDown 0.4s ease-in-out;
 }
 .section-members__tabs .section-members__tabs-li--active svg path {
   stroke: white;
@@ -2462,7 +2492,7 @@ ul.header-dropdown--lang > li a {
     color: #1460A3;
   }
   .section-members__tabs .section-members__tabs-li:not(.section-members__tabs-li--active):hover svg {
-    animation: moveUpDown 0.4s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
     rotate: 0deg;
   }
 }
@@ -2474,7 +2504,7 @@ ul.header-dropdown--lang > li a {
     color: #1460A3;
   }
   .section-members__tabs .section-members__tabs-li:not(.section-members__tabs-li--active):active svg {
-    animation: moveUpDown 0.4s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
     rotate: 0deg;
   }
 }
@@ -2484,16 +2514,25 @@ ul.header-dropdown--lang > li a {
   justify-content: space-between;
 }
 
-@keyframes moveUpDown {
+/* Уход вверх по диагонали */
+@keyframes disappear {
   0% {
-    transform: translate(0, 0); /* Начальная позиция */
-    opacity: 0;
-  }
-  50% {
-    transform: translate(40px, -40px); /* Поднимаем стрелку */
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
   }
   100% {
-    transform: translate(0, 0); /* Возвращаем стрелку на место */
+    transform: translate(150%, -150%) rotate(0deg);
+    opacity: 0;
+  }
+}
+/* Возвращение с другой стороны */
+@keyframes reappear {
+  0% {
+    transform: translate(-150%, 150%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
     opacity: 1;
   }
 }
@@ -2742,7 +2781,7 @@ ul.header-dropdown--lang > li a {
     visibility: visible; /* Блок становится видимым */
   }
   100% {
-    opacity: 1; /* Конечная прозрачность */
+    opacity: 0.5; /* Конечная прозрачность */
     visibility: visible; /* Блок остается видимым */
   }
 }
@@ -3217,7 +3256,7 @@ ul.header-dropdown--lang > li a {
     color: #1460A3;
   }
   .section-faq__answer:not(.section-faq__answer--active):hover svg {
-    animation: moveUpDown 0.8s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
   }
 }
 @media (hover: none) {
@@ -3225,7 +3264,7 @@ ul.header-dropdown--lang > li a {
     color: #1460A3;
   }
   .section-faq__answer:not(.section-faq__answer--active):active svg {
-    animation: moveUpDown 0.8s ease-in-out;
+    animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
   }
 }
 .section-faq__answer--active .section-faq__answer-name {
@@ -3233,6 +3272,7 @@ ul.header-dropdown--lang > li a {
   color: white;
 }
 .section-faq__answer--active .section-faq__answer-name svg {
+  transition: all 0.4s ease;
   transform: rotate(90deg);
 }
 .section-faq__answer--active .section-faq__answer-name svg path {
@@ -3317,21 +3357,6 @@ ul.header-dropdown--lang > li a {
   }
 }
 
-@keyframes moveUpDown {
-  0% {
-    transform: rotate(90deg);
-    transform: translate(0, 0); /* Начальная позиция */
-    opacity: 0;
-  }
-  50% {
-    transform: translate(40px, -40px); /* Поднимаем стрелку */
-  }
-  100% {
-    transform: rotate(90deg);
-    transform: translate(0, 0); /* Возвращаем стрелку на место */
-    opacity: 1;
-  }
-}
 .section-news {
   margin-bottom: 100px;
 }
