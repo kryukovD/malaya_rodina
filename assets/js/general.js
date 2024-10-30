@@ -243,38 +243,62 @@ $(document).ready(function () {
 
     var photoGallerySwiper = undefined;
     function initGallerySlider() {
-
+        var startX = 0; // Начальная позиция мыши по оси X
+        var isDragging = false; // Флаг для определения начала движения
+        var isSwiped = false; // Флаг для определения, произошел ли свайп
+        var swipeThreshold = 10; // Пороговое значение для определения свайпа
 
         photoGallerySwiper = new Swiper('.slider-photo-gallery', {
             allowTouchMove: true,
             slidesPerView: 5, // Показываем несколько слайдов одновременно
             spaceBetween: 24, // Отступы между слайдами
+            slidesPerGroup: 1,
             centeredSlides: true, // Центрируем активный слайд
             loop: true, // Зацикливаем слайды
-            watchSlidesProgress: true,
-            effect: 'coverflow',
-            speed: 1000,
-            touchRatio: 1,
-            touchStartPreventDefault: false,
-            coverflowEffect: {
-                rotate: 50, // Угол поворота слайдов
-                stretch: 0, // Расстояние между слайдами
-                depth: 100, // Глубина слайдов, чем больше значение — тем больше эффект 3D
-                modifier: 0, // Модификатор эффекта (усиление)
-                slideShadows: true // Тени у слайдов
-            },
-
+            speed: 1000, // Скорость перехода в миллисекундах
+            threshold: 1,
+            shortSwipes: true,
+            simulateTouch: false,
+            grabCursor: true,
             on: {
                 slideChange: function () {
+                    this.loopFix();
                     updateSlides(this);
+
                 },
                 init: function () {
                     updateSlides(this); // Установить начальные стили
 
                 },
-                touchEnd:function(){
-                        updateSlides(this);
+
+                transitionEnd: function () {
+                    this.loopFix();  // Принудительно фиксируем положение слайдов
+
+                },
+                touchStart: function (event) {
+                    startX = event.touches[0].clientX;
+                },
+                touchEnd: function (event) {
+                    const endX = event.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+
+                    if (Math.abs(diffX) > 10) {  // Если движение больше 10px
+                        if (diffX > 0) {
+                            photoGallerySwiper.slideNext();  // Пролистывание вправо
+                        } else {
+                            photoGallerySwiper.slidePrev();  // Пролистывание влево
+                        }
+                    }
+                },
+                mousemove: function (event) {
+                    if (event.movementX > 10) {
+                        photoGallerySwiper.slideNext();  // Пролистывание вправо
+                    } else if (event.movementX < -10) {
+                        photoGallerySwiper.slidePrev();  // Пролистывание влево
+                    }
                 }
+
+
             },
 
             navigation: {
@@ -304,11 +328,11 @@ $(document).ready(function () {
 
 
                 1024: {
-                    lazy: false ,
+                    lazy: false,
                     loop: true,
                     centeredSlides: true,
                     slidesPerView: 5,
-                    spaceBetween: 24,
+                    spaceBetween: 24
 
 
                 }
@@ -318,23 +342,76 @@ $(document).ready(function () {
 
         });
 
-    }
+        // Обработчик начала движения мыши
+        $('.slider-photo-gallery').on('mousedown touchstart', function (event) {
+            startX = event.clientX || event.touches[0].clientX;  // Запоминаем начальную позицию мыши или пальца
+            isDragging = true;  // Устанавливаем флаг для начала движения
+            isSwiped = false; // Сбрасываем флаг свайпа при начале нового движения
+        });
 
+        // Обработчик движения мыши
+        $(document).on('mousemove touchmove', function (event) {
+            if (!isDragging) return; // Если не происходит свайпа, не выполняем код
+
+            var currentX = event.clientX || event.touches[0].clientX;  // Текущая позиция мыши или пальца
+            var diffX = startX - currentX; // Разница между начальной и текущей точками
+
+            // Если мышь сдвинулась более чем на 10px влево или вправо
+            if (Math.abs(diffX) > swipeThreshold) {
+                isSwiped = true; // Устанавливаем флаг, что свайп произошел
+                if (diffX > 0) {
+                    photoGallerySwiper.slideNext();  // Свайп вправо (переключаем на следующий слайд)
+                } else {
+                    photoGallerySwiper.slidePrev();  // Свайп влево (переключаем на предыдущий слайд)
+                }
+                isDragging = false; // Останавливаем обработку после одного свайпа
+            }
+        });
+
+        // Обработчик окончания движения мыши
+        $(document).on('mouseup touchend', function () {
+            isDragging = false; // Сбрасываем флаг движения мыши
+        });
+
+        // Обработчик клика по активному слайду
+        $('.slider-photo-gallery').on('click', '.swiper-slide', function (event) {
+            if (isSwiped) {
+                // Если произошел свайп, не выполняем действие клика
+                event.preventDefault(); // Отменяем действие клика
+                return; // Выходим из функции
+            }
+            // Проверяем, является ли текущий слайд активным
+            var activeIndex = photoGallerySwiper.activeIndex; // Получаем индекс активного слайда
+            var currentIndex = $(this).index(); // Получаем индекс текущего слайда
+            if (currentIndex === activeIndex) {
+                let src = $(this).attr("data-src");
+                let allImage = $(".slider-photo-gallery__item");
+                let objectsShow = [];
+                objectsShow.push({ src: src, type: 'image' });
+                allImage.each(function (i, item) {
+                    objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
+                });
+                Fancybox.show(objectsShow);
+            }
+        });
+    }
     initGallerySlider();
+
+
 
     $(".slider-photo-gallery").on('mouseenter', '.slider-photo-gallery__item.swiper-slide-active', function () {
         $(".slider-photo-gallery__item.scale-2").addClass("slider-photo-gallery__item--change-height");
         $(".slider-photo-gallery__item.scale-3").addClass("slider-photo-gallery__item--change-height");
     });
     $(".slider-photo-gallery").on("click", ".slider-photo-gallery__item.swiper-slide-active", function () {
-        let src = $(this).attr("data-src");
-        let allImage = $(".slider-photo-gallery__item");
-        let objectsShow = [];
-        objectsShow.push({ src: src, type: 'image' });
-        allImage.each(function (i, item) {
-            objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
-        });
-        Fancybox.show(objectsShow);
+        // let src = $(this).attr("data-src");
+        // let allImage = $(".slider-photo-gallery__item");
+        // let objectsShow = [];
+        // objectsShow.push({ src: src, type: 'image' });
+        // allImage.each(function (i, item) {
+        //     objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
+        // });
+        // Fancybox.show(objectsShow);
     });
 
 

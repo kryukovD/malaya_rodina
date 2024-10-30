@@ -2647,6 +2647,9 @@ ul.header-dropdown--lang > li a {
 .section-photo-gallery .slider-photo-gallery {
   height: 540px;
   padding-inline: 52px;
+  -webkit-user-select: none; /* Для Chrome/Safari */
+  -moz-user-select: none; /* Для Firefox */ /* Для IE/Edge */
+  user-select: none; /* Для современных браузеров */
 }
 @media (max-width: 1640px) {
   .section-photo-gallery .slider-photo-gallery {
@@ -2674,12 +2677,8 @@ ul.header-dropdown--lang > li a {
     padding-bottom: 23px;
   }
 }
-.section-photo-gallery .slider-photo-gallery .slider-photo-gallery__item--change-height {
-  height: calc(100% - 40px);
-  margin-block: auto;
-  animation: fadeIn 1.5s forwards; /* Анимация */
-}
 .section-photo-gallery .slider-photo-gallery__item.swiper-slide-active {
+  background-color: transparent; /* Или укажите цвет, который вам нужен */
   opacity: 1;
   transition: opacity 0.5s ease;
 }
@@ -2743,9 +2742,11 @@ ul.header-dropdown--lang > li a {
   opacity: 0.7;
 }
 .section-photo-gallery .slider-photo-gallery__item {
-  cursor: pointer;
+  outline: none; /* Убираем контур при фокусе */
+  cursor: pointer; /* Указываем, что это кликабельный элемент */
+  background-color: transparent; /* Или укажите цвет, который вам нужен */
   opacity: 0.5;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
   border-radius: 16px;
   overflow: hidden;
   height: auto;
@@ -2778,6 +2779,9 @@ ul.header-dropdown--lang > li a {
 .section-photo-gallery .slider-photo-gallery__item.scale-2 {
   opacity: 0.5;
   width: calc(15% - 24px) !important;
+  height: calc(100% - 40px);
+  margin-block: auto;
+  animation: fadeIn 1.5s forwards; /* Анимация */
   transition: all 0.4s ease;
   /* Ширина для соседних слайдов */
   z-index: 2;
@@ -2797,6 +2801,9 @@ ul.header-dropdown--lang > li a {
   opacity: 0.2;
   z-index: 1;
   transition: all 0.4s ease;
+  height: calc(100% - 40px);
+  margin-block: auto;
+  animation: fadeIn 1.5s forwards; /* Анимация */
 }
 @media (max-width: 1024px) {
   .section-photo-gallery .slider-photo-gallery__item.scale-3 {
@@ -2810,16 +2817,6 @@ ul.header-dropdown--lang > li a {
   opacity: 0.6;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0; /* Начальная прозрачность */
-    visibility: visible; /* Блок становится видимым */
-  }
-  100% {
-    opacity: 0.5; /* Конечная прозрачность */
-    visibility: visible; /* Блок остается видимым */
-  }
-}
 .slider-arrow-chevron {
   cursor: pointer;
   display: inline-flex;
