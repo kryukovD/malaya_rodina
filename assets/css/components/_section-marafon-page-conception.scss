@@ -1,8 +1,8 @@
-.marafon-page-conception{
+.section-marafon-page-conception{
     margin-bottom: 80px;
     &__inner{
        display: grid;
-       grid-template-columns: 4fr 1fr;
+       grid-template-columns: 4fr 1.3fr;
        gap: 20px;
     }
     &__content{
@@ -17,11 +17,20 @@
        margin-bottom: 41px;
        color: $color-text-accent;
     }
+    &__desc-bottom{
+        margin-bottom: 16px;
+    }
     &__cards{
         display: grid;
         grid-template-columns:repeat(3,1fr);
         gap: 20px;
         margin-bottom: 13px;
+    }
+    &__advantages{
+        padding: 48px 32px 48px;
+        background-color: $primary-color-btn;
+        border-radius: $border-radius-xl;
+        color: white;
     }
 
 }

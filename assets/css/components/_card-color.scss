@@ -1,27 +1,72 @@
-.card-color{
-   
-    h3{
+.card-color {
+    position: relative;
+    &:nth-child(2n+1) {
+        &:before {
+            content: "";
+            background-color: $color-accent;
+            z-index: 1;
+
+        }
+    }
+
+    &:nth-child(2n+2) {
+        &:before {
+            content: "";
+            background-color: $primary-color-btn;
+            z-index: 1;
+
+        }
+    }
+
+    &:nth-child(2n+3) {
+        &:before {
+            content: "";
+            background-color:   $color-accent-four;
+            z-index: 1;
+
+        }
+    }
+    h3 {
         font-size: 20px;
         line-height: 1.2;
         margin-bottom: 12px;
         font-weight: 600;
         color: $color-text-accent;
     }
-    &__content{
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: $border-radius-xl;
+    }
+
+    &__content {
+        z-index: 100;
         border-radius: $border-radius-xl;
         background-color: $defalt-wrapper-bg;
         padding: 24px 17px 24px 24px;
         width: calc(100% - 12px);
         position: relative;
-        &:before{
-            content: "";
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
+        height: 100%;
+        ul{
+            font-family: "Raleway";
+            font-weight: 400;
+            list-style-type: disc;
+            margin-left: 25px;
+            line-height: 1.3;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-        &:nth-child(1n+1){
-            
-        }
+
+
+    }
+    &__desc-bottom{
+        color: #200E32;
+        line-height: 1.8;
     }
 }

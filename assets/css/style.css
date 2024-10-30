@@ -132,6 +132,19 @@ body {
   }
 }
 
+.wrapper h4 {
+  font-family: "Unbounded";
+  font-size: 18px;
+  line-height: 1.3;
+  margin-bottom: 0px;
+}
+@media (max-width: 576px) {
+  .wrapper h4 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+
 .p-margin p:only-child {
   margin-bottom: 0px;
 }
@@ -577,9 +590,11 @@ body {
   font-size: 15px;
   line-height: 1.1;
   position: relative;
-  transition: top 0.5s ease; /* Анимация */
+  transition: all 0.8s ease; /* Анимация */
 }
 .header.fixed {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
   position: fixed;
   top: 0px;
   margin-inline: auto;
@@ -587,7 +602,7 @@ body {
   width: 100%;
   z-index: 1000;
   margin-top: 0px;
-  animation: slideDown 0.3s ease-in-out forwards; /* Применение анимации */
+  animation: slideDown 0.6s ease-in-out forwards; /* Применение анимации */
 }
 @media (max-width: 1640px) {
   .header.fixed {
@@ -793,10 +808,12 @@ body {
 
 @keyframes slideDown {
   from {
+    opacity: 0;
     top: -100px; /* Начальное положение шапки — скрыто */
   }
   to {
     top: 0; /* Конечное положение — фиксировано вверху */
+    opacity: 1;
   }
 }
 ul.header-dropdown {
@@ -4990,33 +5007,60 @@ textarea {
   }
 }
 
-.marafon-page-conception {
+.section-marafon-page-conception {
   margin-bottom: 80px;
 }
-.marafon-page-conception__inner {
+.section-marafon-page-conception__inner {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 1.3fr;
   gap: 20px;
 }
-.marafon-page-conception__content {
+.section-marafon-page-conception__content {
   padding: 48px 72px 48px;
   border-radius: 16px;
   background-color: #FFFFFF;
 }
-.marafon-page-conception__title {
+.section-marafon-page-conception__title {
   margin-bottom: 24px;
 }
-.marafon-page-conception__desc {
+.section-marafon-page-conception__desc {
   margin-bottom: 41px;
   color: #200E32;
 }
-.marafon-page-conception__cards {
+.section-marafon-page-conception__desc-bottom {
+  margin-bottom: 16px;
+}
+.section-marafon-page-conception__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 13px;
 }
+.section-marafon-page-conception__advantages {
+  padding: 48px 32px 48px;
+  background-color: #0056A4;
+  border-radius: 16px;
+  color: white;
+}
 
+.card-color {
+  position: relative;
+}
+.card-color:nth-child(2n+1):before {
+  content: "";
+  background-color: #E3000F;
+  z-index: 1;
+}
+.card-color:nth-child(2n+2):before {
+  content: "";
+  background-color: #0056A4;
+  z-index: 1;
+}
+.card-color:nth-child(2n+3):before {
+  content: "";
+  background-color: #C79A4D;
+  z-index: 1;
+}
 .card-color h3 {
   font-size: 20px;
   line-height: 1.2;
@@ -5024,20 +5068,49 @@ textarea {
   font-weight: 600;
   color: #200E32;
 }
+.card-color:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 16px;
+}
 .card-color__content {
+  z-index: 100;
   border-radius: 16px;
   background-color: #F7F7FC;
   padding: 24px 17px 24px 24px;
   width: calc(100% - 12px);
   position: relative;
+  height: 100%;
 }
-.card-color__content:before {
-  content: "";
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
+.card-color__content ul {
+  font-family: "Raleway";
+  font-weight: 400;
+  list-style-type: disc;
+  margin-left: 25px;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+.card-color__desc-bottom {
+  color: #200E32;
+  line-height: 1.8;
+}
+
+.notice-blue {
+  background-color: rgba(20, 96, 163, 0.1019607843);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: "Montserrat";
+  color: #1460A3;
+  background-color: rgba(20, 96, 163, 0.1019607843);
+}
+
 /*end page marafon */
 .section-program {
   margin-top: 48px;

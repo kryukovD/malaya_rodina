@@ -251,8 +251,11 @@ $(document).ready(function () {
             spaceBetween: 24, // Отступы между слайдами
             centeredSlides: true, // Центрируем активный слайд
             loop: true, // Зацикливаем слайды
+            watchSlidesProgress: true,
             effect: 'coverflow',
             speed: 1000,
+            touchRatio: 1,
+            touchStartPreventDefault: false,
             coverflowEffect: {
                 rotate: 50, // Угол поворота слайдов
                 stretch: 0, // Расстояние между слайдами
@@ -264,12 +267,14 @@ $(document).ready(function () {
             on: {
                 slideChange: function () {
                     updateSlides(this);
-
                 },
                 init: function () {
                     updateSlides(this); // Установить начальные стили
 
                 },
+                touchEnd:function(){
+                        updateSlides(this);
+                }
             },
 
             navigation: {
@@ -299,6 +304,7 @@ $(document).ready(function () {
 
 
                 1024: {
+                    lazy: false ,
                     loop: true,
                     centeredSlides: true,
                     slidesPerView: 5,
@@ -502,7 +508,7 @@ $(document).ready(function () {
             disableOnInteraction: false,
 
         },
-        speed: 3000,
+        speed: 8000,
         grabCursor: true,
 
         breakpoints: {
@@ -532,7 +538,7 @@ $(document).ready(function () {
             reverseDirection: true, // Прокрутка слева направо
             disableOnInteraction: false
         },
-        speed: 3000,
+        speed: 8000,
         grabCursor: true,
         breakpoints: {
             0: {
@@ -549,27 +555,6 @@ $(document).ready(function () {
             }
         }
     });
-
-
-    $('.section-brands__row--second').on('mouseenter', function () {
-        partner_slider_2.slideTo(partner_slider_2.realIndex, 0); // Переход к текущему слайду без анимации
-        partner_slider_2.autoplay.stop();
-    });
-
-    $('.section-brands__row--second').on('mouseleave', function () {
-        partner_slider_2.autoplay.start();
-    });
-
-    $('.section-brands__row--first').on('mouseenter', function () {
-        partner_slider_1.autoplay.stop();  // Останавливаем autoplay
-        partner_slider_1.slideTo(partner_slider_1.activeIndex, 0, false); // Переход к активному слайду без анимации
-        partner_slider_1.update();  // Принудительно обновляем слайдер
-    });
-
-    $('.section-brands__row--first').on('mouseleave', function () {
-        partner_slider_1.autoplay.start(); // Возобновляем autoplay
-    });
-
 
 
 
@@ -676,13 +661,6 @@ $(document).ready(function () {
         };
     }
 
-    function updateSwiper() {
-        sliderStreamSwiper.update();
-        photoGallerySwiper.update();
-        photoGallerySwiper.updateSize();
-        photoGallerySwiper.updateSlidesClasses()
-
-    }
 
     /*faq tabs */
 
@@ -764,11 +742,6 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
         return false;
     });
-
-
-
-
-
 
 });
 
