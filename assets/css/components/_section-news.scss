@@ -1,4 +1,10 @@
 .section-news {
+    .swiper-slide-active,
+    .swiper-slide-next,
+    .swiper-slide-prev,.section-new__item--small-slide {
+      opacity: 1 !important;
+      transform: translateY(0); /* Возвращаем в исходную позицию */
+    }
     margin-bottom: 100px;
     @include mobile-sm{
         margin-bottom: 56px;
@@ -93,8 +99,11 @@
       
 
        &__item{
+        opacity: 0;
+        transform: translateY(20px); /* Лёгкий сдвиг для эффекта появления */
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
         .slider-news__item-image{
-            transition: aspect-ratio 0.5s ease, transform 0.5s ease;
+            transition: all 1s ease-in-out;
         }
        }
 

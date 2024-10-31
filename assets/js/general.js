@@ -508,6 +508,7 @@ $(document).ready(function () {
             slideChange: function () {
                 updateClassNews(this);
             }
+            
 
         },
         breakpoints: {
