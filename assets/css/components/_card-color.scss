@@ -32,16 +32,22 @@
         margin-bottom: 12px;
         font-weight: 600;
         color: $color-text-accent;
+        @include mobile-sm{
+            font-size: 16px;
+        }
     }
 
     &:before {
         content: "";
         position: absolute;
         left: 5px;
-        top: 0;
-        bottom: 0;
+        top: 1px;
+        bottom: 1px;
         right: 0;
         border-radius: $border-radius-xl;
+        @include mobile-sm{
+            border-radius: $border-radius-sm;
+        }
     }
 
     &__content {
@@ -52,6 +58,10 @@
         width: calc(100% - 12px);
         position: relative;
         height: 100%;
+        @include mobile-sm{
+            padding: 16px 16px 24px;
+            border-radius: $border-radius-sm;
+        }
         ul{
             font-family: "Raleway";
             font-weight: 400;
@@ -61,6 +71,9 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            @include mobile-sm{
+                gap: 4px;
+            }
         }
 
 

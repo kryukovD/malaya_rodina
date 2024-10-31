@@ -1,6 +1,9 @@
 .banner-children {
     &--marafon {
         margin-bottom: 64px;
+        @include mobile-sm{
+            margin-bottom: 32px;
+        }
     }
     
 
@@ -20,6 +23,9 @@
         border-radius: $border-radius-xl;
         position: relative;
         overflow: hidden;
+        @include mobile-sm{
+            border-radius: $border-radius-sm; 
+        }
 
         &::before {
             content: "";
@@ -41,7 +47,7 @@
             padding: 32px 17px 32px;
         }
         @include mobile-sm {
-            padding: 24px 16px;
+            padding: 32px 16px;
         }
     }
 

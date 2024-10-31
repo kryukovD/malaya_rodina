@@ -153,6 +153,39 @@ $(document).ready(function () {
     });
 
 
+
+     /*quote slider */
+     const quoteSlider = new Swiper('.slider-quote', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        autoHeight: true,
+        spaceBetween: 0,
+        speed:1000,
+        navigation: {
+            nextEl: '.slider-quote .slider-arrow--next',
+            prevEl: '.slider-quote .slider-arrow--prev',
+        },
+        scrollbar: {
+            el: '.slider-quote  .slider-scrollbar',
+
+        },
+        
+        allowTouchMove: true,
+        on: {
+            slideChangeTransitionStart: function () {
+              // Скрываем стрелки при начале переключения
+              $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '0');
+            },
+            slideChangeTransitionEnd: function () {
+              // Показываем стрелки после завершения переключения
+              $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '1');
+            }
+          }
+
+    });
+
     /*placement slider */
     const placement = new Swiper('.placement-slider', {
         // Optional parameters

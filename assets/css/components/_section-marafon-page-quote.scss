@@ -1,0 +1,11 @@
+.section-marafon-page-quote{
+    margin-bottom: 80px;
+    &__inner{
+        @include mobile-sm{
+            padding-bottom: 13px;
+        }
+    }
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+}

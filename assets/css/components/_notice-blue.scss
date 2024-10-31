@@ -6,4 +6,9 @@
     font-family: "Montserrat";
     color: $color-accent-secondary;
     background-color: #1460A31A;
+    @include mobile-sm{
+        padding: 8px 16px ;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 }

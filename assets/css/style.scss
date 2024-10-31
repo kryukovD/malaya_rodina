@@ -11,6 +11,13 @@
     src: url("../fonts/Montserrat-Regular.ttf");
     font-weight: 400;
 }
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
 @font-face {
     font-family: "Montserrat";
     src: url("../fonts/Montserrat-Medium.ttf");
@@ -132,6 +139,8 @@ body{
     font-size: 18px;
     line-height: 1.3;
     margin-bottom: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
     @include mobile-sm{
         font-size: 16px;
         line-height: 1.2;
@@ -218,6 +227,8 @@ body{
 @import "./components/section-marafon-page-conception";
 @import "./components/card-color.scss";
 @import "./components/notice-blue";
+@import "./components/section-marafon-page-quote";
+@import "./components/slider-quote";
 /*end page marafon */
 
 @import "./components/program-list";
