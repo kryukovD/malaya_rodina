@@ -1,6 +1,4 @@
-
-
-.card-meeting{
+.card-meeting {
     position: relative;
     background-color: #1460A3;
     display: flex;
@@ -11,83 +9,77 @@
     position: relative;
     overflow: hidden;
     border-color: transparent;
-     perspective: 1000px; /* Перспектива для 3D эффекта */
-    &--black{
-        .card-meeting__name{
+    perspective: 1000px;
+
+    /* Перспектива для 3D эффекта */
+    &--black {
+        .card-meeting__name {
             color: $color-text-accent;
-            
-        }  
-        .card-meeting__arrow path{
+
+        }
+
+        .card-meeting__arrow path {
             stroke: #85929E;
         }
     }
 
-    
-    @include mobile-sm{
+
+    @include mobile-sm {
         min-height: 156px;
         border-radius: $border-radius-sm;
     }
-    &:before{
-        content: "";
+
+    &:before {
+        content: '';
+        z-index: 101;
         position: absolute;
-        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width="1050px" height="1050px" viewBox="0 0 300 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"%3E%3Ctitle%3EPath 2 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"%3E%3Cpolygon id="Path-2-Copy" fill="%231460A3" points="0 32.8554687 0 129.190599 299.859707 129.190599 299.859707 0.105040791"%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E');
-        background-position: 0 0%;
-        transform: rotate(-90deg);
-        background-repeat: no-repeat;
-        transition: background-position  0.8s ease,  opacity 0.8s ease ;
         top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 100;
+        width: 100%; /* Увеличиваем ширину, чтобы полностью заполнить при выезде */
+        height: 100%;
+        background-color: #1460A3; /* Основной цвет заливки */
+        transform: skewX(19deg) translateX(100%); /* Скос по диагонали */
         opacity: 0;
-        width: 100%;
-        aspect-ratio: 1/1;
-        border-radius: $border-radius-xl;
-        @include  mobile-sm{
+        transform-origin: left; /* Начинаем трансформацию с левой стороны */
+        transition: all 0.8s ease; /* Плавная анимация */
+        @include mobile-sm {
             border-radius: $border-radius-sm;
         }
 
     }
-    
-    @include hover{
-       .card-meeting__layer::before{
-        content: "";
-        z-index: 100;
-       }
-      
-        &:before{
-            z-index: 101;
-            content: "";
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            opacity: 1;
-            transform: rotate(-90deg);
-            background-position: right ;
-            aspect-ratio: 1/1;
 
-    
+    @include hover {
+        .card-meeting__layer::before {
+            content: "";
+            z-index: 100;
         }
-        .card-meeting__arrow{
+
+        &:before {
+            opacity: 1;
+            z-index: 101;
+            transform:skewX(0) translateX(0) ; /* Двигаем псевдоэлемент влево */
+       
+        }
+
+        .card-meeting__arrow {
             opacity: 1;
             animation: disappear 0.5s forwards, reappear 0.5s 0.5s forwards;
+
             // transform: rotate(45deg);
-            path{
-            stroke: white;
+            path {
+                stroke: white;
             }
         }
-        .card-meeting__name{
+
+        .card-meeting__name {
             z-index: 102;
             color: white;
         }
-      
-        
+
+
     }
-    
-  
-    img{
+
+
+    img {
         display: block;
         position: absolute;
         width: 100%;
@@ -98,9 +90,10 @@
         right: 0;
         top: 0;
         transition: all ease $transition-timing;
-      
+
     }
-    &__layer{
+
+    &__layer {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -109,24 +102,28 @@
         overflow: hidden;
         flex-grow: 1;
         position: relative;
-        &::before{
+
+        &::before {
             content: "";
             position: absolute;
             left: 0;
             right: 0;
             top: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.4); /* Затемнение с прозрачностью */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Затемнение с прозрачностью */
             z-index: 100;
-           
+
         }
-        @include mobile-sm{
+
+        @include mobile-sm {
             width: calc(100% - 12px);
             border-radius: $border-radius-sm;
         }
-       
+
     }
-    &__name{
+
+    &__name {
         position: relative;
         color: white;
         z-index: 100;
@@ -134,47 +131,52 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 1.2;
-        @include mobile-sm{
+
+        @include mobile-sm {
             font-size: 16px;
             line-height: 1.3;
             padding: 0px 16px 14px;
         }
     }
-    &__arrow{
+
+    &__arrow {
         position: absolute;
         top: 23px;
         right: 19px;
         z-index: 101;
         transition: all ease $transition-timing;
-        svg{
 
-        }
-        @include mobile{
+        svg {}
+
+        @include mobile {
             width: 16px;
             height: 16px;
         }
     }
 }
+
 /* Уход вверх по диагонали */
 @keyframes disappear {
     0% {
-      transform: translate(0, 0) rotate(0deg);
-      opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
     }
+
     100% {
-      transform: translate(150%, -150%) rotate(0deg);
-      opacity: 0;
+        transform: translate(150%, -150%) rotate(0deg);
+        opacity: 0;
     }
-  }
-  
-  /* Возвращение с другой стороны */
-  @keyframes reappear {
+}
+
+/* Возвращение с другой стороны */
+@keyframes reappear {
     0% {
-      transform: translate(-150%, 150%) rotate(0deg);
-      opacity: 0;
+        transform: translate(-150%, 150%) rotate(0deg);
+        opacity: 0;
     }
+
     100% {
-      transform: translate(0, 0) rotate(0deg);
-      opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
     }
-  }
+}

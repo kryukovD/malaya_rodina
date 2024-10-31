@@ -1,4 +1,4 @@
-.header{
+.header {
 
     background-color: #FFFFFF;
     box-shadow: 3px 5px 25px 0px #09132714;
@@ -8,70 +8,86 @@
     font-size: 15px;
     line-height: 1.1;
     position: relative;
-    transition: all 0.8s ease; /* Анимация */
-    &.fixed{
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    position: fixed;
-    top: 0px;
-    margin-inline: auto;
-    max-width: 1600px;
-    width: 100%;
-    z-index: 1000; 
-    margin-top: 0px;
-    animation: slideDown 0.6s ease-in-out forwards; /* Применение анимации */
+    transition: all 0.8s ease;
 
-    @include laptop{
-        max-width:1300px;
+    /* Анимация */
+    &.fixed {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        position: fixed;
+        top: 0px;
+        margin-inline: auto;
+        max-width: 1600px;
         width: 100%;
-        box-sizing: border-box;
-    }
-    @include laptop-sm{
-        max-width:1102px;
-    }
-    @include tablet{
-        max-width: calc(100% - 40px);
-    }
-    @include mobile-sm{
-        max-width: calc(100% - 20px);
-    }
-    
+        z-index: 1000;
+        margin-top: 0px;
+        animation: slideDown 0.6s ease-in-out forwards;
+        @include laptop
+         {
+            width: 100%;
+            max-width:1300px ;
+        }
+        /* Применение анимации */
+        @media (max-width:1340px) {
+            width: calc(100% - 40px);
+        }
+
+
+
+        @include tablet {
+            max-width: calc(100% - 40px);
+        }
+
+        @include mobile-sm {
+            max-width: calc(100% - 32px) ;
+            width: 100%;
+        }
+
 
     }
-    @include mobile-sm{
-        border-radius:$border-radius-sm;
+
+    @include mobile-sm {
+        border-radius: $border-radius-sm;
         margin-top: 8px;
     }
-    &__logo{
+
+    &__logo {
         width: 194px;
         aspect-ratio: 195/52;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-       @include mobile-sm{
-        width: 119px;
-       }
+
+        @include mobile-sm {
+            width: 119px;
+        }
     }
-    @include laptop{
+
+    @include laptop {
         padding-inline: 15px;
     }
+
     @include tablet {
         justify-content: space-between;
     }
- 
-    &__inner{
+
+    &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 24px;
-        @include laptop{
+
+        @include laptop {
             gap: 20px;
         }
-    } 
-    .nav{
+    }
+
+    .nav {
         flex-grow: 1;
+
         @include tablet {
             order: -1;
             width: max-content;
@@ -79,78 +95,91 @@
         }
     }
 
-    &__menu{
+    &__menu {
         color: #30374A;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         gap: 8px;
-        @include laptop{
+
+        @include laptop {
             flex-wrap: wrap;
             justify-content: flex-start;
             column-gap: 4px;
 
         }
-        @include  tablet{
+
+        @include tablet {
             display: none;
             justify-content: flex-start;
         }
-        >li:not(.header-menu__li--is_dropdown){
-            
+
+        >li:not(.header-menu__li--is_dropdown) {
+
             padding: 10px 12px;
             transition: all ease $transition-timing;
             z-index: 100;
             position: relative;
             border-radius: 4px;
-            @include hover{
+
+            @include hover {
                 background-color: #E6EFF6;
                 color: $primary-color-btn;
             }
-            @include laptop{
+
+            @include laptop {
                 padding: 5px;
             }
-         
+
         }
-        >li:is(.header-menu__li--is_dropdown){
-           z-index: 100;
+
+        >li:is(.header-menu__li--is_dropdown) {
+            z-index: 100;
             padding: 10px 12px;
             border-radius: 4px;
-            
+
             transition: all ease $transition-timing;
-            @include laptop{
+
+            @include laptop {
                 padding: 5px;
             }
         }
-        >li:hover:is(.header-menu__li--is_dropdown){
-             @include hover{
+
+        >li:hover:is(.header-menu__li--is_dropdown) {
+            @include hover {
                 background-color: $primary-color-btn;
-                >a{
+
+                >a {
                     color: white;
                 }
-                svg path{
+
+                svg path {
                     fill: white;
                 }
             }
         }
+
         >li:hover:is(.header-menu__li--is_dropdown) .header-dropdown__overlay {
             display: flex;
-            
+
         }
 
-       
+
 
     }
-    &__group{
+
+    &__group {
         display: flex;
         gap: 16px;
         align-items: center;
-        @include laptop{
+
+        @include laptop {
             flex-shrink: 0;
             gap: 4px;
         }
     }
 
-    &__lang{
+    &__lang {
         font-family: "Raleway";
         display: inline-flex;
         align-items: center;
@@ -160,38 +189,46 @@
         color: #30374A;
         line-height: 1.1;
         transition: all ease $transition-timing;
-        svg{
+
+        svg {
             margin-bottom: 2px;
         }
+
         cursor: pointer;
-        @include  tablet{
+
+        @include tablet {
             display: none;
         }
-       
-     &:hover{
-        background-color: #E6EFF6;
-        
-        .header-dropdown__overlay{
-            display: flex;
+
+        &:hover {
+            background-color: #E6EFF6;
+
+            .header-dropdown__overlay {
+                display: flex;
+            }
         }
-     }
     }
- 
-    .header-cabinet-mobile{
+
+    .header-cabinet-mobile {
         display: none;
-        @include  tablet{
+
+        @include tablet {
             display: block;
         }
     }
-    
+
 }
+
 @keyframes slideDown {
     from {
         opacity: 0;
-        top: -100px; /* Начальное положение шапки — скрыто */
+        top: -100px;
+        /* Начальное положение шапки — скрыто */
     }
+
     to {
-        top: 0; /* Конечное положение — фиксировано вверху */
+        top: 0;
+        /* Конечное положение — фиксировано вверху */
         opacity: 1;
     }
 }

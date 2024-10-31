@@ -598,7 +598,8 @@ body {
   font-size: 15px;
   line-height: 1.1;
   position: relative;
-  transition: all 0.8s ease; /* Анимация */
+  transition: all 0.8s ease;
+  /* Анимация */
 }
 .header.fixed {
   border-top-left-radius: 0px;
@@ -610,18 +611,18 @@ body {
   width: 100%;
   z-index: 1000;
   margin-top: 0px;
-  animation: slideDown 0.6s ease-in-out forwards; /* Применение анимации */
+  animation: slideDown 0.6s ease-in-out forwards;
+  /* Применение анимации */
 }
 @media (max-width: 1640px) {
   .header.fixed {
-    max-width: 1300px;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 1300px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1340px) {
   .header.fixed {
-    max-width: 1102px;
+    width: calc(100% - 40px);
   }
 }
 @media (max-width: 1024px) {
@@ -631,7 +632,8 @@ body {
 }
 @media (max-width: 576px) {
   .header.fixed {
-    max-width: calc(100% - 20px);
+    max-width: calc(100% - 32px);
+    width: 100%;
   }
 }
 @media (max-width: 576px) {
@@ -817,10 +819,12 @@ body {
 @keyframes slideDown {
   from {
     opacity: 0;
-    top: -100px; /* Начальное положение шапки — скрыто */
+    top: -100px;
+    /* Начальное положение шапки — скрыто */
   }
   to {
-    top: 0; /* Конечное положение — фиксировано вверху */
+    top: 0;
+    /* Конечное положение — фиксировано вверху */
     opacity: 1;
   }
 }
@@ -1783,7 +1787,8 @@ ul.header-dropdown--lang > li a {
   position: relative;
   overflow: hidden;
   border-color: transparent;
-  perspective: 1000px; /* Перспектива для 3D эффекта */
+  perspective: 1000px;
+  /* Перспектива для 3D эффекта */
 }
 .card-meeting--black .card-meeting__name {
   color: #200E32;
@@ -1799,21 +1804,16 @@ ul.header-dropdown--lang > li a {
 }
 .card-meeting:before {
   content: "";
+  z-index: 101;
   position: absolute;
-  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width="1050px" height="1050px" viewBox="0 0 300 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"%3E%3Ctitle%3EPath 2 Copy%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"%3E%3Cpolygon id="Path-2-Copy" fill="%231460A3" points="0 32.8554687 0 129.190599 299.859707 129.190599 299.859707 0.105040791"%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E');
-  background-position: 0 0%;
-  transform: rotate(-90deg);
-  background-repeat: no-repeat;
-  transition: background-position 0.8s ease, opacity 0.8s ease;
   top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
+  width: 100%; /* Увеличиваем ширину, чтобы полностью заполнить при выезде */
+  height: 100%;
+  background-color: #1460A3; /* Основной цвет заливки */
+  transform: skewX(19deg) translateX(100%); /* Скос по диагонали */
   opacity: 0;
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 16px;
+  transform-origin: left; /* Начинаем трансформацию с левой стороны */
+  transition: all 0.8s ease; /* Плавная анимация */
 }
 @media (max-width: 576px) {
   .card-meeting:before {
@@ -1826,16 +1826,9 @@ ul.header-dropdown--lang > li a {
     z-index: 100;
   }
   .card-meeting:hover:before {
-    z-index: 101;
-    content: "";
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     opacity: 1;
-    transform: rotate(-90deg);
-    background-position: right;
-    aspect-ratio: 1/1;
+    z-index: 101;
+    transform: skewX(0) translateX(0); /* Двигаем псевдоэлемент влево */
   }
   .card-meeting:hover .card-meeting__arrow {
     opacity: 1;
@@ -1855,16 +1848,9 @@ ul.header-dropdown--lang > li a {
     z-index: 100;
   }
   .card-meeting:active:before {
-    z-index: 101;
-    content: "";
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     opacity: 1;
-    transform: rotate(-90deg);
-    background-position: right;
-    aspect-ratio: 1/1;
+    z-index: 101;
+    transform: skewX(0) translateX(0); /* Двигаем псевдоэлемент влево */
   }
   .card-meeting:active .card-meeting__arrow {
     opacity: 1;
@@ -1908,7 +1894,8 @@ ul.header-dropdown--lang > li a {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Затемнение с прозрачностью */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Затемнение с прозрачностью */
   z-index: 100;
 }
 @media (max-width: 576px) {
