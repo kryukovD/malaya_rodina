@@ -43,6 +43,7 @@ $(document).ready(function () {
     // Запуск счетчика
     function startCounter() {
         const $counter = $('.section-statistics__row');
+        if($('.section-statistics__row').length>0){
         if (isElementInViewport($counter)) {
             /*счетчик */
             $('.counter').countTo({
@@ -54,6 +55,7 @@ $(document).ready(function () {
             // Убираем обработчик скролла, чтобы счетчик запускался один раз
             $(window).off('scroll', onScroll);
         }
+    }
     }
 
     // Обработчик события скролла
