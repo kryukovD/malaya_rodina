@@ -1584,6 +1584,9 @@ ul.header-dropdown--lang > li a {
 .section-about-forum__small--active .section-about-forum__small-content ul {
   color: white;
 }
+.section-about-forum__small--active .section-about-forum__small-content h3 {
+  color: white;
+}
 .section-about-forum__small ul {
   font-family: "Raleway";
   list-style-type: disc;
@@ -1600,10 +1603,13 @@ ul.header-dropdown--lang > li a {
   }
 }
 .section-about-forum__small h3 {
+  font-family: "Montserrat";
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.2;
+  color: #200E32;
   margin-bottom: 14px;
+  text-transform: none;
 }
 @media (max-width: 576px) {
   .section-about-forum__small h3 {

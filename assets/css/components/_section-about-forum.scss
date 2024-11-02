@@ -102,6 +102,9 @@
                     color: white;
                 }
             }
+            .section-about-forum__small-content h3{
+                color: white;
+            }
         }
         ul{
             font-family: "Raleway";
@@ -117,10 +120,13 @@
             }
         }
         h3{
+            font-family: "Montserrat";
             font-size: 20px;
             font-weight: 600;
-            line-height: 1.4;
+            line-height: 1.2;
+            color: $color-text-accent;
             margin-bottom: 14px;
+            text-transform: none;
             @include mobile-sm{
                 font-size: 16px;
                 margin-bottom: 12px;
