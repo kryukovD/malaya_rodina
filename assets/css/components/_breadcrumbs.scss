@@ -1,6 +1,12 @@
 .breadcrumbs {
     position: relative;
     z-index: 100;
+    &--partners{
+        margin-bottom: 140px;
+        @include mobile-sm{
+            margin-bottom: 59px;
+        }
+    }
     &--margin-marafon{
         margin-bottom:120px ;
     }

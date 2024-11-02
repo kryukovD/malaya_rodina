@@ -5,6 +5,30 @@
             margin-bottom: 32px;
         }
     }
+    &--partners{
+
+        .banner-children__logos{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            @include mobile-sm{
+                position: static;
+                margin-bottom: 12px;
+            }
+        }
+        
+        .banner-children__block-button{
+            margin-top: 0px;
+        }
+        .btn.btn-red{
+            @include mobile-sm{
+                max-width: 176px;
+            }
+          
+        }
+        
+       
+    }
     
 
     &--program{
@@ -174,5 +198,50 @@
         }
     }
 
+    &__logos{
+
+        display: flex;
+        gap: 22px;
+        @include mobile-sm{
+            gap: 8px;
+        }
+    
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        >div:first-child{
+            width: 382px;
+            aspect-ratio: 382/77;
+            @include tablet{
+                width: 39px;
+                height: 39px;
+                aspect-ratio: 1/1;
+            }
+        }
+
+        >div:nth-child(2){
+            @include tablet{
+                width: 39px;
+                height: 39px;
+            }
+        }
+
+        >div:nth-child(3){
+            @include tablet{
+                width: 48px;
+                height: 39px;
+            }
+        }
+        >div:not(:first-child){
+            width: 108px;
+            aspect-ratio: 108/83;
+            @include tablet{
+               width: auto;
+               aspect-ratio: unset;
+            }
+        }
+    }
     
 }

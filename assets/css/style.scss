@@ -134,6 +134,19 @@ body{
     }
 
 }
+.wrapper h3{
+    font-family: "Unbounded";
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    @include mobile-sm{
+        font-size: 18px;
+
+    }
+}
+
 .wrapper h4{
     font-family: "Unbounded";
     font-size: 18px;
@@ -230,6 +243,11 @@ body{
 @import "./components/section-marafon-page-quote";
 @import "./components/slider-quote";
 /*end page marafon */
+
+/*page parners */
+@import "./components/section-page-partners-gos";
+@import "./components/section-page-partners-another";
+/*end page parners */
 
 @import "./components/program-list";
 
