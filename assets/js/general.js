@@ -43,19 +43,19 @@ $(document).ready(function () {
     // Запуск счетчика
     function startCounter() {
         const $counter = $('.section-statistics__row');
-        if($('.section-statistics__row').length>0){
-        if (isElementInViewport($counter)) {
-            /*счетчик */
-            $('.counter').countTo({
-                refreshInterval: 50,
-                formatter: function (value, options) {
-                    return value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
-                },
-            });
-            // Убираем обработчик скролла, чтобы счетчик запускался один раз
-            $(window).off('scroll', onScroll);
+        if ($('.section-statistics__row').length > 0) {
+            if (isElementInViewport($counter)) {
+                /*счетчик */
+                $('.counter').countTo({
+                    refreshInterval: 50,
+                    formatter: function (value, options) {
+                        return value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
+                    },
+                });
+                // Убираем обработчик скролла, чтобы счетчик запускался один раз
+                $(window).off('scroll', onScroll);
+            }
         }
-    }
     }
 
     // Обработчик события скролла
@@ -156,15 +156,15 @@ $(document).ready(function () {
 
 
 
-     /*quote slider */
-     const quoteSlider = new Swiper('.slider-quote', {
+    /*quote slider */
+    const quoteSlider = new Swiper('.slider-quote', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
         slidesPerView: 1,
         autoHeight: true,
         spaceBetween: 0,
-        speed:1000,
+        speed: 1000,
         navigation: {
             nextEl: '.slider-quote .slider-arrow--next',
             prevEl: '.slider-quote .slider-arrow--prev',
@@ -173,18 +173,18 @@ $(document).ready(function () {
             el: '.slider-quote  .slider-scrollbar',
 
         },
-        
+
         allowTouchMove: true,
         on: {
             slideChangeTransitionStart: function () {
-              // Скрываем стрелки при начале переключения
-              $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '0');
+                // Скрываем стрелки при начале переключения
+                $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '0');
             },
             slideChangeTransitionEnd: function () {
-              // Показываем стрелки после завершения переключения
-              $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '1');
+                // Показываем стрелки после завершения переключения
+                $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '1');
             }
-          }
+        }
 
     });
 
@@ -526,7 +526,21 @@ $(document).ready(function () {
         }
     });
 
+
+
     /* news slider */
+    var swiperContainerNews = $('.slider-news');
+    var slidesNews = swiperContainerNews.find('.swiper-slide');
+    var minSlides = 5; // Минимальное количество слайдов
+
+    // Дублируем слайды, если их меньше 4
+    if (slidesNews.length < minSlides) {
+        var slidesToDuplicate = minSlides - slidesNews.length;
+        for (var i = 0; i < slidesToDuplicate; i++) {
+            slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+        }
+    }
+
     const newsSlider = new Swiper('.slider-news', {
         slidesPerView: 4, // Показываем несколько слайдов одновременно
         autoHeight: false,
@@ -539,11 +553,14 @@ $(document).ready(function () {
             prevEl: '.section-news__btns  .slider-arrow--prev',
         },
         on: {
+
+            init: function () {
+                updateClassNews(this);
+            },
             // Событие при смене слайда
             slideChange: function () {
-                updateClassNews(this);
-            }
-            
+                 updateClassNews(this);
+            },
 
         },
         breakpoints: {
@@ -595,17 +612,19 @@ $(document).ready(function () {
     function updateClassNews(swiper) {
         // Сначала удаляем классы со всех слайдов
         swiper.slides.forEach(slide => {
-            slide.classList.remove('section-new__item--large-slide', 'section-new__item--small-slide');
+            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide','section-news__item--revert-slide','section-news__item--before-revert-slide');
         });
 
         // Находим первый видимый слайд и задаем ему класс 'large-slide'
         const activeSlide = swiper.slides[swiper.activeIndex];
-        activeSlide.classList.add('section-new__item--large-slide');
 
+        activeSlide.classList.add('section-news__item--large-slide');
+        swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
+        swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
         // Задаем остальным слайдам класс 'small-slide'
         for (let i = 1; i <= 3; i++) {
             const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
-            nextSlide.classList.add('section-new__item--small-slide');
+            nextSlide.classList.add('section-news__item--small-slide');
         }
     }
 
@@ -782,16 +801,18 @@ $(document).ready(function () {
             $(this).find(".section-faq__answer-text").stop(true, true).slideDown(300);
         }
     });
-    $(".section-faq__answer").click(function () {
-        if ($(this).hasClass("section-faq__answer--active")) {
-            $(this).removeClass("section-faq__answer--active");
-            $(this).find(".section-faq__answer-text").stop(true, true).slideUp(300);
+    $(".section-faq__answer-name").click(function () {
+
+        let parent = $(this).parents(".section-faq__answer");
+        if ($(parent).hasClass("section-faq__answer--active")) {
+            $(parent).removeClass("section-faq__answer--active");
+            $(parent).find(".section-faq__answer-text").stop(true, true).slideUp(300);
             return false;
         }
         $(".section-faq__answer").removeClass("section-faq__answer--active");
         $(".section-faq__answer").find(".section-faq__answer-text").stop(true, true).slideUp(300);
-        $(this).addClass("section-faq__answer--active");
-        $(this).find(".section-faq__answer-text").stop(true, true).slideDown(300);
+        $(parent).addClass("section-faq__answer--active");
+        $(parent).find(".section-faq__answer-text").stop(true, true).slideDown(300);
     });
 
 

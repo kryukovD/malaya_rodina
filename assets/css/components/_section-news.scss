@@ -1,18 +1,23 @@
 .section-news {
-    .swiper-slide-active,
-    .swiper-slide-next,
-    .swiper-slide-prev,.section-new__item--small-slide {
-      opacity: 1 !important;
-      transform: translateY(0); /* Возвращаем в исходную позицию */
-    }
     margin-bottom: 100px;
-    @include mobile-sm{
+
+    .section-new__item.section-news__item--large-slide,
+    .section-new__item.section-news__item--small-slide {
+        opacity: 1;
+        /* Полная видимость для активных слайдов */
+        transform: translateY(0);
+        /* Возврат на место */
+    }
+
+
+    @include mobile-sm {
         margin-bottom: 56px;
     }
 
     .slider-scrollbar {
         display: none;
-        @include mobile-sm{
+
+        @include mobile-sm {
             display: block;
         }
     }
@@ -28,7 +33,8 @@
             flex-direction: column;
             padding: 30px 25px;
         }
-        @include mobile-sm{
+
+        @include mobile-sm {
             border-radius: 8px;
             padding: 24px 16px 24px;
         }
@@ -48,6 +54,7 @@
             @include mobile {
                 margin-bottom: 12px;
             }
+
             @include mobile {
                 margin-bottom: 16px;
             }
@@ -58,15 +65,17 @@
         display: flex;
         gap: 24px;
         align-items: flex-start;
-        @include mobile{
+
+        @include mobile {
             margin-bottom: 20px;
         }
 
         @include mobile-sm {
-           
+
             order: 3;
         }
-        @include mobile-sm{
+
+        @include mobile-sm {
             margin-bottom: 0px;
         }
 
@@ -75,7 +84,8 @@
             padding-inline: 17px;
             line-height: 1;
             min-height: 40px;
-            @include mobile-sm{
+
+            @include mobile-sm {
                 max-width: 164px;
                 width: 100%;
             }
@@ -85,37 +95,51 @@
     &__arrows {
         display: flex;
         gap: 8px;
-        @include mobile-sm{
+
+        @include mobile-sm {
             display: none;
         }
     }
 
     .slider-news {
-        @include mobile-sm{
-          padding-bottom: 23px ;
-          margin-bottom: 16px;
+        @include mobile-sm {
+            padding-bottom: 23px;
+            margin-bottom: 16px;
         }
 
-      
 
-       &__item{
-        opacity: 0;
-        transform: translateY(20px); /* Лёгкий сдвиг для эффекта появления */
-        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-        .slider-news__item-image{
-            transition: all 1s ease-in-out;
+
+        &__item {
+            transition: all $transition-timing ease;
+            .slider-news__item-image {
+                transition: all 0.8s ease-in-out;
+            }
         }
-       }
 
-        &__item.section-new__item--large-slide  {
-            width: calc(33% - 20px ) !important;
+        &__item.section-news__item--revert-slide{
+            animation: revertSlide 0.6s ease forwards; /* Запускаем анимацию */
+           
+            .slider-news__item-image{
+                order: 2;
+            }
+        }
+        &__item.section-news__item--before-revert-slide{
+            animation: revertBeforeSlide 0.6s ease forwards; /* Запускаем анимацию */
+        }
+        &__item.section-news__item--large-slide {
+            width: calc(33% - 20px) !important;
+            img {
+                opacity: 1;
+            }
 
             .slider-news__item-image {
                 aspect-ratio: 484 / 508;
                 height: 508px;
                 margin-bottom: 16px;
-                order: -1 ;
-                @include mobile-sm{
+                order: -1;
+                transition: all $transition-timing ease;
+
+                @include mobile-sm {
                     height: 285px;
                     aspect-ratio: 252/285;
                     margin-bottom: 0px;
@@ -128,53 +152,66 @@
 
             .slider-news__item-body {
                 margin-bottom: 0px;
-                @include mobile-sm{
+
+                @include mobile-sm {
                     padding-right: 15px;
                 }
             }
 
-            @include tablet{
+            @include tablet {
                 width: calc(50% - 20px) !important;
-               }
+            }
 
             @include mobile {
                 width: 85% !important;
             }
         }
-        &__item.section-new__item--small-slide {
-            width: calc(22.5% - 20px ) !important;
-            @include tablet{
-                width: calc(26% - 20px ) !important;
-               }
-            @include mobile{
+
+        &__item.section-news__item--small-slide {
+            /* Возврат на место */
+            width: calc(22.5% - 20px) !important;
+
+            /* Вернуть на место */
+            img {
+                opacity: 1;
+            }
+
+            @include tablet {
+                width: calc(26% - 20px) !important;
+            }
+
+            @include mobile {
                 width: 85% !important;
             }
         }
-        &__item.section-new__item--small-slide:nth-of-type(odd){
-            .slider-news__item-image{
-                order: 1;
-              
-            }
-            @include mobile{
-                order: -1;
-            }
-           
-        }
-      
+
+        // &__item.section-new__item--small-slide:nth-of-type(odd) {
+        //     .slider-news__item-image {
+        //         order: 1;
+        //         transition: all $transition-timing ease;
+
+        //     }
+
+        //     @include mobile {
+        //         order: -1;
+        //     }
+
+        // }
+
         &__item {
             display: flex;
             flex-direction: column;
             // justify-content: space-between;
-            
             gap: 16px;
+          
 
-            @include hover{
-                .slider-news__item-name{
+            @include hover {
+                .slider-news__item-name {
                     color: $color-accent-secondary;
                 }
             }
 
-            @include mobile{
+            @include mobile {
                 width: 85% !important;
                 gap: 8px;
             }
@@ -182,7 +219,8 @@
             &-date {
                 font-size: 16px;
                 margin-bottom: 8px;
-                @include mobile-sm{
+
+                @include mobile-sm {
                     font-size: 12px;
                     margin-bottom: 4px;
                 }
@@ -194,7 +232,8 @@
                 line-height: 1.2;
                 font-weight: 500;
                 transition: all $transition-timing ease;
-                @include mobile-sm{
+
+                @include mobile-sm {
                     font-size: 15px;
                 }
             }
@@ -203,9 +242,10 @@
                 aspect-ratio: 304/456;
                 height: 456px;
                 flex-shrink: 0;
-                @include mobile-sm{
-                height: 264px;
-                aspect-ratio: 252/264;
+
+                @include mobile-sm {
+                    height: 264px;
+                    aspect-ratio: 252/264;
                 }
             }
 
@@ -231,7 +271,8 @@
             &-image {
                 border-radius: 16px;
                 overflow: hidden;
-                @include mobile-sm{
+
+                @include mobile-sm {
                     border-radius: $border-radius-sm;
                 }
 
@@ -251,3 +292,34 @@
         }
     }
 }
+
+/* Описание анимации через keyframes */
+@keyframes revertSlide {
+    0% {
+      transform: translateX(0); /* Начальная позиция */
+      opacity: 0;               /* Полная непрозрачность */
+    }
+    50% {
+      transform: translateY(-200%); /* Сдвиг вправо на полпути */
+      opacity: 0.5;                /* Уменьшение прозрачности */
+    }
+    100% {
+      transform: translateX(0); /* Возвращаем в исходное положение */
+      opacity: 1;               /* Восстанавливаем полную непрозрачность */
+    }
+  }
+
+  @keyframes revertBeforeSlide {
+    0% {
+      transform: translateX(0); /* Начальная позиция */
+      opacity: 0;               /* Полная непрозрачность */
+    }
+    50% {
+      transform: translateY(200%); /* Сдвиг вправо на полпути */
+      opacity: 0.5;                /* Уменьшение прозрачности */
+    }
+    100% {
+      transform: translateX(0); /* Возвращаем в исходное положение */
+      opacity: 1;               /* Восстанавливаем полную непрозрачность */
+    }
+  }
