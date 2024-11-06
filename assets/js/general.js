@@ -807,12 +807,12 @@ $(document).ready(function () {
     /*marque */
 
     /*page forum show more */
-    $(".forum-text-block__collapse").click(function(){
-        if($(this).parents(".forum-text-block").find(".forum-text-block__inner").hasClass("forum-text-block__inner--expanded")){
+    $(".forum-text-block__collapse").click(function () {
+        if ($(this).parents(".forum-text-block").find(".forum-text-block__inner").hasClass("forum-text-block__inner--expanded")) {
             $(this).text("Подробнее");
         }
-        else{
-            $(this).text("Свернуть"); 
+        else {
+            $(this).text("Свернуть");
         }
         $(this).parents(".forum-text-block").find(".forum-text-block__inner").toggleClass("forum-text-block__inner--expanded");
     });
@@ -873,10 +873,10 @@ $(document).ready(function () {
         var headerHeight = $('.header').outerHeight(); // Получаем высоту шапки
 
         if (scroll >= headerHeight) {
-            $("body").css("padding-top",headerHeight + "px")
+            $("body").css("padding-top", headerHeight + "px")
             $('.header').addClass('fixed');
         } else {
-            $("body").css("padding-top",0)
+            $("body").css("padding-top", 0)
             $('.header').removeClass('fixed');
         }
     });
@@ -887,6 +887,24 @@ $(document).ready(function () {
     $('.btn-upper').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
         return false;
+    });
+    /*dots menu */
+
+
+    $(document).click(function (event) {
+    
+        var $target = $(event.target);
+
+        // Проверяем, что клик произошел не по элементу или его дочерним элементам
+        if (!$target.closest('.header__menu__dots').length && $('.header__menu__dots').is(':visible')) {
+            $('.header__menu__dots').find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active"); // Скрываем блок
+        }
+    });
+    $(".header__menu__dots-icons").click(function (e) {
+        $(this).parents(".header__menu__dots").find(".header-dropdown__overlay").toggleClass("header-dropdown__overlay--active");
+    });
+    $(".header-menu__li--is_dropdown").hover(function(){
+        $(".header__menu__dots-icons").parents(".header__menu__dots").find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active");
     });
 
 });
