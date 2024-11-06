@@ -29,10 +29,34 @@
         
        
     }
+    &--forum{
+        .banner-children__block-button{
+            margin-top: 0px;
+        }
+        .btn.btn-red{
+            max-width: 209px;
+        }
+       
+    }
     
 
     &--program{
         margin-bottom: 48px;
+    }
+    &__text-forum{
+        color: white;
+        font-size: 16px;
+        max-width: 988px;
+        line-height: 1.5;
+        p:not(:last-child){
+            margin-bottom: 10px;
+        }
+        p:last-child{
+            margin-bottom: 0px;
+        }
+        @include mobile{
+            display: none;
+        }
     }
 
     margin-top: 16px;

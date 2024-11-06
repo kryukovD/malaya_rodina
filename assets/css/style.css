@@ -633,7 +633,7 @@ body {
   width: 100%;
   z-index: 1000;
   margin-top: 0px;
-  animation: slideDown 0.6s ease-in-out forwards;
+  animation: slideDownHeader 0.4s ease-in-out forwards;
   /* Применение анимации */
 }
 @media (max-width: 1640px) {
@@ -838,10 +838,10 @@ body {
   }
 }
 
-@keyframes slideDown {
+@keyframes slideDownHeader {
   from {
     opacity: 0;
-    top: -100px;
+    top: -50px;
     /* Начальное положение шапки — скрыто */
   }
   to {
@@ -4942,8 +4942,31 @@ textarea {
     max-width: 176px;
   }
 }
+.banner-children--forum .banner-children__block-button {
+  margin-top: 0px;
+}
+.banner-children--forum .btn.btn-red {
+  max-width: 209px;
+}
 .banner-children--program {
   margin-bottom: 48px;
+}
+.banner-children__text-forum {
+  color: white;
+  font-size: 16px;
+  max-width: 988px;
+  line-height: 1.5;
+}
+.banner-children__text-forum p:not(:last-child) {
+  margin-bottom: 10px;
+}
+.banner-children__text-forum p:last-child {
+  margin-bottom: 0px;
+}
+@media (max-width: 768px) {
+  .banner-children__text-forum {
+    display: none;
+  }
 }
 .banner-children__content {
   position: relative;
@@ -5702,6 +5725,70 @@ textarea {
 }
 
 /*end page parners */
+/*page forum */
+.forum-text-block {
+  display: none;
+}
+@media (max-width: 576px) {
+  .forum-text-block {
+    display: block;
+    margin-bottom: 56px;
+    padding-inline: 16px;
+    line-height: 1.6;
+    color: #200E32;
+  }
+  .forum-text-block__inner {
+    max-height: 136px;
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Плавное изменение max-height и opacity */
+    overflow: hidden;
+  }
+  .forum-text-block__inner--expanded {
+    max-height: 3000px;
+  }
+  .forum-text-block__inner--expanded .forum-text-block__wrap {
+    -webkit-line-clamp: unset;
+    opacity: 1;
+    overflow: visible;
+  }
+  .forum-text-block__wrap {
+    overflow: hidden;
+    margin-bottom: 4px;
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Плавное изменение max-height и opacity */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* Ограничение на количество строк */
+    -webkit-box-orient: vertical;
+    transition: max-height 0.5s ease;
+  }
+  .forum-text-block__wrap p {
+    margin-bottom: 14px;
+  }
+}
+.forum-text-block a.forum-text-block__collapse {
+  cursor: pointer;
+  color: #0056A4;
+  text-decoration: underline;
+}
+
+/* Анимация для раскрытия текста */
+@keyframes slideDown {
+  from {
+    max-height: 136px; /* Исходная высота для 6 строк */
+  }
+  to {
+    max-height: 3000px; /* Высота для полного текста, можно настроить по мере необходимости */
+  }
+}
+/* Анимация для скрытия текста */
+@keyframes slideUp {
+  from {
+    max-height: 3000px; /* Полная высота текста */
+  }
+  to {
+    max-height: 136px; /* Исходная высота для 6 строк */
+  }
+}
 .section-program {
   margin-top: 48px;
 }

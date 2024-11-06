@@ -806,6 +806,17 @@ $(document).ready(function () {
 
     /*marque */
 
+    /*page forum show more */
+    $(".forum-text-block__collapse").click(function(){
+        if($(this).parents(".forum-text-block").find(".forum-text-block__inner").hasClass("forum-text-block__inner--expanded")){
+            $(this).text("Подробнее");
+        }
+        else{
+            $(this).text("Свернуть"); 
+        }
+        $(this).parents(".forum-text-block").find(".forum-text-block__inner").toggleClass("forum-text-block__inner--expanded");
+    });
+
 
     const wow = new WOW(
         {
@@ -862,8 +873,10 @@ $(document).ready(function () {
         var headerHeight = $('.header').outerHeight(); // Получаем высоту шапки
 
         if (scroll >= headerHeight) {
+            $("body").css("padding-top",headerHeight + "px")
             $('.header').addClass('fixed');
         } else {
+            $("body").css("padding-top",0)
             $('.header').removeClass('fixed');
         }
     });
