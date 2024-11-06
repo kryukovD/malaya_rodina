@@ -8,10 +8,10 @@
     font-size: 15px;
     line-height: 1.1;
     position: relative;
-    transition: all 0.8s ease;
 
     /* Анимация */
     &.fixed {
+        padding-top: 16px;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
         position: fixed;

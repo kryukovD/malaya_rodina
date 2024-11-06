@@ -110,6 +110,7 @@
 
 
         &__item {
+            flex-shrink: 0;
             transition: all $transition-timing ease;
             .slider-news__item-image {
                 transition: all 0.8s ease-in-out;
@@ -166,7 +167,7 @@
                 width: 85% !important;
             }
         }
-
+       
         &__item.section-news__item--small-slide {
             /* Возврат на место */
             width: calc(22.5% - 20px) !important;
@@ -177,7 +178,7 @@
             }
 
             @include tablet {
-                width: calc(26% - 20px) !important;
+                width: calc(25% - 20px) !important;
             }
 
             @include mobile {

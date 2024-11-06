@@ -1,4 +1,9 @@
 .section-marafon-page-quote{
+    .slider-quote__arrows{
+        @include tablet{
+            margin-bottom: 20px
+        }
+    }
     margin-bottom: 80px;
     &__inner{
         @include mobile-sm{
@@ -7,5 +12,10 @@
     }
     @include mobile-sm{
         margin-bottom: 56px;
+    }
+    @include mobile-sm{
+        .slider-quote__arrows{
+            display: none;
+        }
     }
 }
