@@ -1,6 +1,9 @@
 .section-page-questions{
     &__inner{
         margin-bottom: 24px;
+        @include mobile-sm{
+         
+        }
     }
     &__row{
         display: grid;
