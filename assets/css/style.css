@@ -860,7 +860,7 @@ body {
   }
 }
 @media (max-width: 1480px) {
-  .header__menu > li:nth-last-child(-1n+4) {
+  .header__menu > li:not(.header-menu__li--is_dropdown) {
     display: none;
   }
 }
@@ -5079,6 +5079,9 @@ textarea {
 }
 .banner-children--questions:before {
   background-color: rgba(15, 26, 61, 0.6509803922);
+}
+.banner-children--questions .banner-children__title h1 {
+  word-break: auto-phrase;
 }
 .banner-children--program {
   margin-bottom: 48px;

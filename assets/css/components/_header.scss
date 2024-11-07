@@ -194,7 +194,7 @@
         }
 
         @media (max-width:1480px) {
-            >li:nth-last-child(-1n + 4) {
+            >li:not(.header-menu__li--is_dropdown) {
                 display: none;
             }
         }
