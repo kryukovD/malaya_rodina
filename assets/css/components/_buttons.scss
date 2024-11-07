@@ -206,10 +206,7 @@
 
 .btn.btn-transparent {
     padding: 16px 32px 16px 24px;
-    background: rgba(255, 255, 255, 0.2) url('../images/btn-arrow.svg');
-    background-repeat: no-repeat;
-    background-position: calc(100% - 7px) 8px;
-    background-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-size: 16px;
     line-height: 20px;
@@ -219,6 +216,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    .arrow {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../images/btn-arrow.svg) center no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        transform-origin: center;
+        transition: .35s ease-in-out all;
+    }
+    @include hover {
+        .arrow {
+            transform: rotate(45deg);
+        }
+    }
     @include mobile-sm{
         font-size: 14px;
         padding: 10px 36px;

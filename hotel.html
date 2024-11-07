@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./assets/css/swiper.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
     <script src="./assets/js/jquery.countTo.js"></script>
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery.marquee.min.js"></script>
@@ -240,11 +242,17 @@
                         <div class="section-hotel__col-left">
                             <div class="hotel-gallery">
                                 <div class="hotel-gallery__col">
-                                    <img src="./assets/images/hotel/h1.jpg" alt="">
+                                    <a class="img-wrapper" href="./assets/images/hotel/h1.jpg" data-fancybox="gallery">
+                                        <img src="./assets/images/hotel/h1.jpg" />
+                                    </a>
                                 </div>
                                 <div class="hotel-gallery__col">
-                                    <img src="./assets/images/hotel/h1.jpg" alt="">
-                                    <img src="./assets/images/hotel/h1.jpg" alt="">
+                                    <a class="img-wrapper" href="./assets/images/hotel/h1.jpg" data-fancybox="gallery">
+                                        <img src="./assets/images/hotel/h1.jpg" />
+                                    </a>
+                                    <a class="img-wrapper" href="./assets/images/hotel/h1.jpg" data-fancybox="gallery">
+                                        <img src="./assets/images/hotel/h1.jpg" />
+                                    </a>
                                 </div>
                             </div>
                             <div class="section-hotel__title">
@@ -296,16 +304,16 @@
                                 <!-- Slides -->
                                 <!-- item-->
                                 <div class="card-placement swiper-slide">
-                                    <div class="card-placement__image">
+                                    <a href="javascript:void(0)" class="card-placement__image">
                                         <img src="./assets/images/participant/slider1.jpg">
-                                    </div>
+                                    </a>
                                     <div class="card-placement__name">
                                         <span class="rate">5</span>
                                         Soluxe Hotel Moscow
                                     </div>
-                                    <div class="card-placement__text">
+                                    <a href="javascript:void(0)"  class="card-placement__text">
                                         Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
-                                    </div>
+                                    </a>
                                     <div class="card-placement__options">
                                         <div class="option">
                                             <div class="tag tag-type">1-местный с завтраком</div>
@@ -320,64 +328,64 @@
                                 </div>
                                 <!-- item-->
                                 <div class="card-placement swiper-slide">
-                                    <div class="card-placement__image">
-                                        <img src="./assets/images/participant/slider2.jpg">
-                                    </div>
-                                    <div class="card-placement__name">
-                                        <span class="rate">5</span>
-                                        Soluxe Hotel Moscow
-                                    </div>
-                                    <div class="card-placement__text">
-                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг. Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
-                                    </div>
-                                    <div class="card-placement__options">
-                                        <div class="option">
-                                            <div class="tag tag-type">1-местный с завтраком</div>
-                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
-                                        </div>
-                                        <div class="option">
-                                            <div class="tag tag-type">2-местный с завтраком</div>
-                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
-                                </div>
-                                <!-- item-->
-                                <div class="card-placement swiper-slide">
-                                    <div class="card-placement__image">
-                                        <img src="./assets/images/participant/slider3.jpg">
-                                    </div>
-                                    <div class="card-placement__name">
-                                        <span class="rate">3</span>
-                                        AZIMUT Сити Отель Олимпик Москва
-                                    </div>
-                                    <div class="card-placement__text">
-                                        AZIMUT Сити Отель Олимпик Москва – один из крупнейших бизнес-отелей Москвы категории 4*, расположенный в центре города и в непосредственной близости от основных достопримечательностей столицы, в 15 минутах езды от исторического центра города, и в 10 минутах от ВДНХ.
-                                    </div>
-                                    <div class="card-placement__options">
-                                        <div class="option">
-                                            <div class="tag tag-type">1-местный с завтраком</div>
-                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
-                                        </div>
-                                        <div class="option">
-                                            <div class="tag tag-type">2-местный с завтраком</div>
-                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
-                                </div>
-                                <!-- item-->
-                                <div class="card-placement swiper-slide">
-                                    <div class="card-placement__image">
+                                    <a href="javascript:void(0)" class="card-placement__image">
                                         <img src="./assets/images/participant/slider1.jpg">
-                                    </div>
+                                    </a>
                                     <div class="card-placement__name">
                                         <span class="rate">5</span>
                                         Soluxe Hotel Moscow
                                     </div>
-                                    <div class="card-placement__text">
+                                    <a href="javascript:void(0)"  class="card-placement__text">
                                         Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </a>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
                                     </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <a href="javascript:void(0)" class="card-placement__image">
+                                        <img src="./assets/images/participant/slider1.jpg">
+                                    </a>
+                                    <div class="card-placement__name">
+                                        <span class="rate">5</span>
+                                        Soluxe Hotel Moscow
+                                    </div>
+                                    <a href="javascript:void(0)"  class="card-placement__text">
+                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </a>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <a href="javascript:void(0)" class="card-placement__image">
+                                        <img src="./assets/images/participant/slider1.jpg">
+                                    </a>
+                                    <div class="card-placement__name">
+                                        <span class="rate">5</span>
+                                        Soluxe Hotel Moscow
+                                    </div>
+                                    <a href="javascript:void(0)"  class="card-placement__text">
+                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </a>
                                     <div class="card-placement__options">
                                         <div class="option">
                                             <div class="tag tag-type">1-местный с завтраком</div>

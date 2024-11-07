@@ -293,6 +293,7 @@
         font-weight: 500;
         line-height: 25px;
         transition: .35s ease all;
+        position: relative;
         @include mobile {
             width: auto;
             padding: 18px 8px;
@@ -306,6 +307,15 @@
             font-weight: 300;
             line-height: 25px;
             transition: .35s ease all;
+        }
+        .close {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            @include mobile {
+             right: 2px;
+             top: 0px;   
+            }
         }
         &--active{
             background: $color-accent;
@@ -342,9 +352,16 @@
             background-size: cover;
             position: relative;
             top: 3px;
+            transform-origin: center;
+            transition: .35s ease-in-out all;
             @include mobile-sm {
                 width: 12px;
                 height: 12px;
+            }
+        }
+        @include hover {
+            .arrow {
+                transform: rotate(45deg);
             }
         }
         @include mobile-sm {

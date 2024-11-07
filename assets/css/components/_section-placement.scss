@@ -54,10 +54,16 @@
         border-radius: 16px;
         overflow: hidden;
         margin-bottom: 24px;
+        @include hover{
+            img {
+                transform: scale(1.1);
+            }
+        }
     }
     img {
         width: 100%;
         height: auto;
+        transition: .35s ease-in-out all;
     }
     &__name {
         font-family: "Unbounded";
@@ -75,6 +81,10 @@
     }
     &__text {
         margin-bottom: 24px;
+        transition: .35s ease-in-out all;
+        @include hover {
+            text-decoration: underline;
+        }
         @include mobile-sm {
             font-size: 14px;
             line-height: 17px;
