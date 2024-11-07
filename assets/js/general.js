@@ -80,6 +80,7 @@ $(document).ready(function () {
         startCounter();
     }
 
+
     $(window).on('scroll', onScroll);
 
 
@@ -183,8 +184,8 @@ $(document).ready(function () {
         spaceBetween: 0,
         speed: 1000,
         navigation: {
-            nextEl: '.slider-quote .slider-arrow--next',
-            prevEl: '.slider-quote .slider-arrow--prev',
+            nextEl: '.section-marafon-page-quote .slider-arrow--next',
+            prevEl: '.section-marafon-page-quote .slider-arrow--prev',
         },
         scrollbar: {
             el: '.slider-quote  .slider-scrollbar',
@@ -192,18 +193,15 @@ $(document).ready(function () {
         },
 
         allowTouchMove: true,
-        on: {
-            slideChangeTransitionStart: function () {
-                // Скрываем стрелки при начале переключения
-                $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '0');
-            },
-            slideChangeTransitionEnd: function () {
-                // Показываем стрелки после завершения переключения
-                $('.slider-arrow--prev,.slider-arrow--next').css('opacity', '1');
-            }
-        }
+
 
     });
+
+    if (quoteSlider.slides.length <= 1) {
+        $(".slider-quote__arrows").css("z-index", "-1");
+        $(".slider-quote__arrows").css("opacity", 0);
+    }
+
 
     /*placement slider */
     const placement = new Swiper('.placement-slider', {
@@ -299,6 +297,10 @@ $(document).ready(function () {
         var isDragging = false; // Флаг для определения начала движения
         var isSwiped = false; // Флаг для определения, произошел ли свайп
         var swipeThreshold = 10; // Пороговое значение для определения свайпа
+        if (photoGallerySwiper !== undefined && photoGallerySwiper instanceof Swiper) {
+            // Если Swiper уже существует, уничтожим его
+            photoGallerySwiper.destroy(true, true);
+        }
 
         photoGallerySwiper = new Swiper('.slider-photo-gallery', {
             allowTouchMove: true,
@@ -309,8 +311,8 @@ $(document).ready(function () {
             loop: true, // Зацикливаем слайды
             speed: 1000, // Скорость перехода в миллисекундах
             threshold: 1,
-            shortSwipes: true,
-            simulateTouch: false,
+            shortSwipes: false,
+
             grabCursor: true,
             on: {
                 slideChange: function () {
@@ -324,33 +326,8 @@ $(document).ready(function () {
                 },
 
                 transitionEnd: function () {
-                    this.loopFix();  // Принудительно фиксируем положение слайдов
-
-                },
-                touchStart: function (event) {
-                    startX = event.touches[0].clientX;
-                },
-                touchEnd: function (event) {
-                    const endX = event.changedTouches[0].clientX;
-                    const diffX = startX - endX;
-
-                    if (Math.abs(diffX) > 10) {  // Если движение больше 10px
-                        if (diffX > 0) {
-                            photoGallerySwiper.slideNext();  // Пролистывание вправо
-                        } else {
-                            photoGallerySwiper.slidePrev();  // Пролистывание влево
-                        }
-                    }
-                },
-                mousemove: function (event) {
-                    if (event.movementX > 10) {
-                        photoGallerySwiper.slideNext();  // Пролистывание вправо
-                    } else if (event.movementX < -10) {
-                        photoGallerySwiper.slidePrev();  // Пролистывание влево
-                    }
+                    this.loopFix();  // Принудительно фиксируем положение слайдо
                 }
-
-
             },
 
             navigation: {
@@ -384,7 +361,10 @@ $(document).ready(function () {
                     loop: true,
                     centeredSlides: true,
                     slidesPerView: 5,
-                    spaceBetween: 24
+                    spaceBetween: 24,
+                    watchSlidesProgress: true,
+                    watchSlidesVisibility: true,
+                    loopedSlides: 5
 
 
                 }
@@ -394,14 +374,14 @@ $(document).ready(function () {
 
         });
 
-        // Обработчик начала движения мыши
+        /*
         $('.slider-photo-gallery').on('mousedown touchstart', function (event) {
             startX = event.clientX || event.touches[0].clientX;  // Запоминаем начальную позицию мыши или пальца
             isDragging = true;  // Устанавливаем флаг для начала движения
             isSwiped = false; // Сбрасываем флаг свайпа при начале нового движения
         });
 
-        // Обработчик движения мыши
+      
         $(document).on('mousemove touchmove', function (event) {
             if (!isDragging) return; // Если не происходит свайпа, не выполняем код
 
@@ -420,7 +400,7 @@ $(document).ready(function () {
             }
         });
 
-        // Обработчик окончания движения мыши
+    
         $(document).on('mouseup touchend', function () {
             isDragging = false; // Сбрасываем флаг движения мыши
         });
@@ -446,8 +426,12 @@ $(document).ready(function () {
                 Fancybox.show(objectsShow);
             }
         });
+         */
     }
-    initGallerySlider();
+
+    if (hasSliderOnPage(".slider-photo-gallery")) {
+        initGallerySlider();
+    }
 
 
 
@@ -463,14 +447,14 @@ $(document).ready(function () {
         $(".slider-photo-gallery__item.scale-3").addClass("slider-photo-gallery__item--change-height");
     });
     $(".slider-photo-gallery").on("click", ".slider-photo-gallery__item.swiper-slide-active", function () {
-        // let src = $(this).attr("data-src");
-        // let allImage = $(".slider-photo-gallery__item");
-        // let objectsShow = [];
-        // objectsShow.push({ src: src, type: 'image' });
-        // allImage.each(function (i, item) {
-        //     objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
-        // });
-        // Fancybox.show(objectsShow);
+        let src = $(this).attr("data-src");
+        let allImage = $(".slider-photo-gallery__item");
+        let objectsShow = [];
+        objectsShow.push({ src: src, type: 'image' });
+        allImage.each(function (i, item) {
+            objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
+        });
+        Fancybox.show(objectsShow);
     });
 
 
@@ -572,19 +556,19 @@ $(document).ready(function () {
         allowTouchMove: true,
         speed: 1000,
         loop: true,
+        loopFillGroupWithBlank: true,
         navigation: {
             nextEl: '.section-news__btns .slider-arrow--next',
             prevEl: '.section-news__btns  .slider-arrow--prev',
         },
         on: {
 
-            init: function () {
-                updateClassNews(this);
-            },
+
             // Событие при смене слайда
             slideChange: function () {
-                 updateClassNews(this);
+                updateClassNews(this);
             },
+
 
         },
         breakpoints: {
@@ -613,7 +597,11 @@ $(document).ready(function () {
             768: {
                 allowTouchMove: false,
                 slidesPerView: 3,
+                loopAdditionalSlides: 3,
+                observer: true,
+                observeParents: true,
                 scrollbar: false,
+                spaceBetween: 20,
                 navigation: {
                     nextEl: '.section-news__btns .slider-arrow--next',
                     prevEl: '.section-news__btns  .slider-arrow--prev',
@@ -636,7 +624,7 @@ $(document).ready(function () {
     function updateClassNews(swiper) {
         // Сначала удаляем классы со всех слайдов
         swiper.slides.forEach(slide => {
-            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide','section-news__item--revert-slide','section-news__item--before-revert-slide');
+            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
         });
 
         // Находим первый видимый слайд и задаем ему класс 'large-slide'
@@ -842,6 +830,17 @@ $(document).ready(function () {
 
     /*marque */
 
+    /*page forum show more */
+    $(".forum-text-block__collapse").click(function () {
+        if ($(this).parents(".forum-text-block").find(".forum-text-block__inner").hasClass("forum-text-block__inner--expanded")) {
+            $(this).text("Подробнее");
+        }
+        else {
+            $(this).text("Свернуть");
+        }
+        $(this).parents(".forum-text-block").find(".forum-text-block__inner").toggleClass("forum-text-block__inner--expanded");
+    });
+
 
     const wow = new WOW(
         {
@@ -858,18 +857,29 @@ $(document).ready(function () {
     /*rezize */
     $(window).resize(function () {
         // updateSwiper();
-        if (photoGallerySwiper != undefined) {
-            photoGallerySwiper.destroy(true, true);
+        if (photoGallerySwiper !== undefined) {
+            if (photoGallerySwiper && typeof photoGallerySwiper.destroy === 'function') {
+                photoGallerySwiper.destroy(true, true);
+                photoGallerySwiper = null;
+            }
             setTimeout(function () {
-                initGallerySlider();
+                if (hasSliderOnPage(".slider-photo-gallery")) {
+                    initGallerySlider();
+                }
             }, 300);
 
         }
         else {
-            initGallerySlider();
+            if (hasSliderOnPage(".slider-photo-gallery")) {
+                initGallerySlider();
+            }
         }
     })
 
+
+    function hasSliderOnPage(swiperSelector) {
+        return $(swiperSelector).length > 0;
+    }
 
 
 
@@ -887,8 +897,10 @@ $(document).ready(function () {
         var headerHeight = $('.header').outerHeight(); // Получаем высоту шапки
 
         if (scroll >= headerHeight) {
+            $("body").css("padding-top", headerHeight + "px")
             $('.header').addClass('fixed');
         } else {
+            $("body").css("padding-top", 0)
             $('.header').removeClass('fixed');
         }
     });
@@ -899,6 +911,24 @@ $(document).ready(function () {
     $('.btn-upper').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 300); // 600 - длительность анимации в миллисекундах
         return false;
+    });
+    /*dots menu */
+
+
+    $(document).click(function (event) {
+    
+        var $target = $(event.target);
+
+        // Проверяем, что клик произошел не по элементу или его дочерним элементам
+        if (!$target.closest('.header__menu__dots').length && $('.header__menu__dots').is(':visible')) {
+            $('.header__menu__dots').find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active"); // Скрываем блок
+        }
+    });
+    $(".header__menu__dots-icons").click(function (e) {
+        $(this).parents(".header__menu__dots").find(".header-dropdown__overlay").toggleClass("header-dropdown__overlay--active");
+    });
+    $(".header-menu__li--is_dropdown").hover(function(){
+        $(".header__menu__dots-icons").parents(".header__menu__dots").find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active");
     });
 
 });

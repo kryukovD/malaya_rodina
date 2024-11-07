@@ -46,6 +46,7 @@
     }
 
     &__item-desc {
+        padding-top: 79px;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -55,6 +56,7 @@
         padding-right: 66px;
         @include mobile{
             padding-right: 0px;
+            padding-top: 0px;
         }
         @include mobile-sm{
             padding-inline: 16px ;
@@ -101,6 +103,7 @@
         }
     }
     &__item-text{
+
         position: relative;
         &:before{
             width: 127px;

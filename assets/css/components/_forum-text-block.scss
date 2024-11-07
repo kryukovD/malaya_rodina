@@ -1,0 +1,75 @@
+.forum-text-block{
+    display: none;
+    @include mobile-sm{
+        display: block;
+        margin-bottom: 56px;
+        padding-inline: 16px;
+        line-height: 1.6;
+        color: $color-text-accent;
+        &__inner{
+            max-height: 136px;
+            transition: max-height 0.5s ease, opacity 0.5s ease; /* Плавное изменение max-height и opacity */
+            overflow: hidden;
+            &--expanded{
+                max-height: 3000px;
+                .forum-text-block__wrap{
+                    -webkit-line-clamp: unset;
+                     opacity: 1;
+                     overflow: visible;
+                    
+                }
+            }
+        }
+        &__wrap{
+          overflow: hidden;
+            margin-bottom: 4px;
+            opacity: 1;
+            transition: max-height 0.5s ease, opacity 0.5s ease; /* Плавное изменение max-height и opacity */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 6; /* Ограничение на количество строк */
+            -webkit-box-orient: vertical;
+            transition: max-height 0.5s ease;
+         
+            p{
+                margin-bottom: 14px;
+            }
+           
+        }
+    }
+   
+   a.forum-text-block__collapse{
+        cursor: pointer;
+        color: $primary-color-btn;
+        text-decoration: underline;
+    }
+
+    
+  
+   
+    
+}
+
+
+
+
+
+/* Анимация для раскрытия текста */
+@keyframes slideDown {
+    from {
+        max-height: 136px; /* Исходная высота для 6 строк */
+    }
+    to {
+        max-height: 3000px; /* Высота для полного текста, можно настроить по мере необходимости */
+    }
+}
+
+/* Анимация для скрытия текста */
+@keyframes slideUp {
+    from {
+        max-height: 3000px; /* Полная высота текста */
+    }
+    to {
+        max-height: 136px; /* Исходная высота для 6 строк */
+    }
+}

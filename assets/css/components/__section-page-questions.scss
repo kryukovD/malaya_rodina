@@ -1,0 +1,25 @@
+.section-page-questions{
+    &__inner{
+        margin-bottom: 24px;
+        @include mobile-sm{
+         
+        }
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 52px;
+        @include laptop-sm{
+            grid-template-columns: 1fr;
+        }
+    }
+  .section-faq__answers{
+    padding-left: 72px;
+    @include laptop-sm{
+        padding-left: 32px;
+    }
+    @include mobile-sm{
+        padding-left: 16px;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 .banner-children {
+
     &--marafon {
         margin-bottom: 64px;
         @include mobile-sm{
@@ -29,10 +30,52 @@
         
        
     }
+    &--forum{
+        .banner-children__block-button{
+            margin-top: 0px;
+        }
+        .btn.btn-red{
+            max-width: 209px;
+        }
+       
+    }
+
+    &--questions{
+        .banner-children__inner:before{
+            background-color: #0F1A3DA6;
+        }
+        .banner-children__title h1{
+            word-break: auto-phrase
+        }
+       
+    }
+    &--detail-questions{
+        .banner-children__inner{
+            background-color: $primary-color-btn;
+        }
+        .banner-children__inner:before{
+            background-color: transparent;
+        } 
+    }
     
 
     &--program{
         margin-bottom: 48px;
+    }
+    &__text-forum{
+        color: white;
+        font-size: 16px;
+        max-width: 988px;
+        line-height: 1.5;
+        p:not(:last-child){
+            margin-bottom: 10px;
+        }
+        p:last-child{
+            margin-bottom: 0px;
+        }
+        @include mobile{
+            display: none;
+        }
     }
 
     margin-top: 16px;

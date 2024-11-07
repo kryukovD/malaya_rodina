@@ -61,7 +61,7 @@
    padding-inline: 20px;
     @include laptop{
         width: 100%;
-        max-width: 1340px;
+        max-width: 1480px;
     }
     @include mobile-sm{
         padding-inline: 16px;
@@ -248,6 +248,16 @@ body{
 @import "./components/section-page-partners-gos";
 @import "./components/section-page-partners-another";
 /*end page parners */
+
+/*page forum */
+@import "./components/forum-text-block";
+
+/*page questions */
+@import "./components/_section-page-questions";
+@import "./components/_questions-form-block";
+
+/*detail page questions */
+@import "./components/section-detail-questions";
 
 @import "./components/program-list";
 

@@ -177,9 +177,13 @@
 
     border: 0;
     transition: all ease 0.4s;
+    @media (max-width:1800px) {
+        right:calc(((100vw - 1400px ) / 2 )) ;
+        transform: translateX( calc( 100% - 30px )) ;
+    }
     @include laptop{
-        right:calc(((100vw - 1300px ) / 2 )) ;
-        transform: translateX( calc( 100% + 17px )) ;
+        right:calc(((100vw - 1400px ) / 2 )) ;
+        transform: translateX( calc( 100% - 72px )) ;
     }
     @media (max-width:1420px) {
         right:4%;
@@ -187,11 +191,12 @@
     }
     @include laptop-sm{
         right:calc(((100vw - 1200px ) / 2 )) ;
-        transform: translateX(-100%);
+        transform: translateX(-144px);
     }
     @include tablet{
       
         right: calc(-20px - 17px);
+        transform: translateX(-72px);
     }
     @include mobile-sm{
         right: calc(-16px - 10px);
@@ -280,5 +285,29 @@
         font-size: 14px;
         padding: 10px 36px;
         border-radius: $border-radius-sm-secondary;
+    }
+}
+.btn.btn-question{
+    padding: 16px;
+    border-radius: $border-radius-sm-secondary;
+    background-color: white;
+    font-weight: 600;
+    font-size: 16px;
+    color: $color-accent-secondary;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: all $transition-timing ease;
+    @include mobile-sm{
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.1;
+    }
+    @include hover{
+        background-color: $primary-color-btn;
+        border: 1px solid white;
+        color: white;
     }
 }
