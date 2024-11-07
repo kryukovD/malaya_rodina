@@ -1,4 +1,5 @@
 .banner-children {
+
     &--marafon {
         margin-bottom: 64px;
         @include mobile-sm{
@@ -40,13 +41,21 @@
     }
 
     &--questions{
-        &:before{
+        .banner-children__inner:before{
             background-color: #0F1A3DA6;
         }
         .banner-children__title h1{
             word-break: auto-phrase
         }
        
+    }
+    &--detail-questions{
+        .banner-children__inner{
+            background-color: $primary-color-btn;
+        }
+        .banner-children__inner:before{
+            background-color: transparent;
+        } 
     }
     
 

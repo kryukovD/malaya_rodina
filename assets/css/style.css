@@ -851,7 +851,7 @@ body {
   .header__menu {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
   }
 }
 @media (max-width: 1480px) {
@@ -5077,11 +5077,17 @@ textarea {
 .banner-children--forum .btn.btn-red {
   max-width: 209px;
 }
-.banner-children--questions:before {
+.banner-children--questions .banner-children__inner:before {
   background-color: rgba(15, 26, 61, 0.6509803922);
 }
 .banner-children--questions .banner-children__title h1 {
   word-break: auto-phrase;
+}
+.banner-children--detail-questions .banner-children__inner {
+  background-color: #0056A4;
+}
+.banner-children--detail-questions .banner-children__inner:before {
+  background-color: transparent;
 }
 .banner-children--program {
   margin-bottom: 48px;
@@ -6005,6 +6011,7 @@ textarea {
   z-index: 1;
 }
 
+/*detail page questions */
 .section-program {
   margin-top: 48px;
 }
