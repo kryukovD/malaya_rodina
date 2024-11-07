@@ -1,20 +1,20 @@
 $(document).ready(function () {
 
-    $.fn.setCursorPosition = function(pos) {
+    $.fn.setCursorPosition = function (pos) {
         if ($(this).get(0).setSelectionRange) {
-          $(this).get(0).setSelectionRange(pos, pos);
+            $(this).get(0).setSelectionRange(pos, pos);
         } else if ($(this).get(0).createTextRange) {
-          var range = $(this).get(0).createTextRange();
-          range.collapse(true);
-          range.moveEnd('character', pos);
-          range.moveStart('character', pos);
-          range.select();
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
         }
-      };
+    };
 
-    $("[type='tel']").click(function(){
+    $("[type='tel']").click(function () {
         $(this).setCursorPosition(3);
-      }).mask("+7(999) 999-9999");
+    }).mask("+7(999) 999-9999");
 
     /* mobile menu */
     $(".mobile-menu__burger").click(function () {
@@ -435,7 +435,7 @@ $(document).ready(function () {
 
 
 
-    
+
     Fancybox.bind("[data-fancybox]", {
         // Your custom options
     });
@@ -914,20 +914,35 @@ $(document).ready(function () {
     });
     /*dots menu */
 
+    /*close popup */
+    $(".popup-come-out__close").click(function () {
+        $(".popup-come-out").removeClass("popup-come-out--active");
+    });
+    $(".btn-question").click(function () {
+        $(".popup-come-out").addClass("popup-come-out--active");
+    });
+
 
     $(document).click(function (event) {
-    
+
         var $target = $(event.target);
 
         // Проверяем, что клик произошел не по элементу или его дочерним элементам
         if (!$target.closest('.header__menu__dots').length && $('.header__menu__dots').is(':visible')) {
             $('.header__menu__dots').find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active"); // Скрываем блок
         }
+
+        // Проверяем, был ли клик вне всплывающего окна и не по кнопке показа
+        if (!$('.popup-come-out__inner').is(event.target) && $('.popup-come-out__inner').has(event.target).length === 0 &&
+            !$(".btn-question").is(event.target) && $(".btn-question").has(event.target).length === 0) {
+            $(".popup-come-out").removeClass("popup-come-out--active");
+        }
     });
+
     $(".header__menu__dots-icons").click(function (e) {
         $(this).parents(".header__menu__dots").find(".header-dropdown__overlay").toggleClass("header-dropdown__overlay--active");
     });
-    $(".header-menu__li--is_dropdown").hover(function(){
+    $(".header-menu__li--is_dropdown").hover(function () {
         $(".header__menu__dots-icons").parents(".header__menu__dots").find(".header-dropdown__overlay").removeClass("header-dropdown__overlay--active");
     });
 
