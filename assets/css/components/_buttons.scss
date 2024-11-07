@@ -272,3 +272,27 @@
         border-radius: $border-radius-sm-secondary;
     }
 }
+.btn.btn-question{
+    padding: 16px;
+    border-radius: $border-radius-sm-secondary;
+    background-color: white;
+    font-weight: 600;
+    font-size: 16px;
+    color: $color-accent-secondary;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: all $transition-timing ease;
+    @include mobile-sm{
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.1;
+    }
+    @include hover{
+        background-color: $primary-color-btn;
+        border: 1px solid white;
+        color: white;
+    }
+}
