@@ -1,0 +1,41 @@
+.popup-come-out{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index:1000 ;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0F1A3DA6;
+        z-index: -1;
+    }
+    &__inner{
+        display: flex;
+        flex-direction: column;
+     
+        z-index: 1000;
+        width: 30%;
+    }
+    &__header{
+        background-color: $primary-color-btn;
+        height: 22vh;
+        padding: 16px 44px  32px;
+        border-bottom-left-radius: $border-radius-xl;
+        border-bottom-right-radius: $border-radius-xl;
+        z-index: 100;
+    }
+    &__body{
+        background-color: white;
+        flex-grow: 1;
+        margin-top: -10px;
+    }
+
+}

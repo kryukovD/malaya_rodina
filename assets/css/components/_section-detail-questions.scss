@@ -1,3 +1,38 @@
 .section-detail-questions{
-    
+    margin-bottom: 100px;
+    @include mobile-sm{
+        margin-bottom: 56px;
+    }
+    &__row{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap:20px;
+        @include laptop-sm{
+            grid-template-columns: 1fr;
+        }
+        @include mobile-sm{
+            gap: 8px;
+        }
+    }
+    &__col-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 48px 32px 48px 72px;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        background-color: white;
+        font-size: 16px;
+        align-items: flex-start;
+        @include laptop-sm{
+            padding-left: 48px;
+        }   
+        @include mobile-sm{
+            padding: 16px;
+            border-radius: $border-radius-sm;
+            font-size: 14px;
+            gap: 16px;
+        }
+    }
 }

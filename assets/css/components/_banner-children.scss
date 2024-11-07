@@ -56,6 +56,9 @@
         .banner-children__inner:before{
             background-color: transparent;
         } 
+        .banner-children__title h1{
+            word-break: auto-phrase;
+        }
     }
     
 

@@ -296,3 +296,39 @@
         color: white;
     }
 }
+.btn.btn-back{
+    background-color: #0056A41A;
+    padding: 16px;
+    min-width: 176px;
+    display: inline-flex;
+    gap: 8px;
+    font-weight: 600;
+    color: $primary-color-btn;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius-xl-secondary;
+    transition: all $transition-timing ease;
+    svg path{
+        transition: all $transition-timing ease;
+    }
+    @include hover{
+        background-color: $primary-color-btn;
+        color: white;
+        svg path{
+            stroke: white;
+        }
+    }
+    @include mobile-sm{
+        max-width: 100%;
+        font-size: 14px;
+        gap: 4px;
+        padding: 12px;
+        width: 100%;
+        svg{
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+}

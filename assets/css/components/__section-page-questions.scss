@@ -1,6 +1,7 @@
 .section-page-questions{
     &__inner{
         margin-bottom: 24px;
+      
         @include mobile-sm{
          
         }
@@ -15,6 +16,7 @@
     }
   .section-faq__answers{
     padding-left: 72px;
+   
     @include laptop-sm{
         padding-left: 32px;
     }
