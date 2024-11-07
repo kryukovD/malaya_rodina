@@ -22,15 +22,51 @@
         flex-direction: column;
      
         z-index: 1000;
-        width: 30%;
+        width:35%;
     }
     &__header{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         background-color: $primary-color-btn;
-        height: 22vh;
+        height: 30vh;
         padding: 16px 44px  32px;
         border-bottom-left-radius: $border-radius-xl;
         border-bottom-right-radius: $border-radius-xl;
         z-index: 100;
+        justify-content: space-between;
+        background-image: url("/assets/images/popup-back-header.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left top -10px;
+    }
+    &__close{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: $border-radius-xl-secondary;
+        overflow: hidden;
+        background-color: $color-accent-secondary;
+        transition: all $transition-timing ease;
+        cursor: pointer;
+    
+        @include hover{
+            background-color: #E6EFF6;
+            svg path{
+               
+            }
+
+        }
+
+    }
+    &__header-title{
+        font-family: "Unbounded";
+        font-size: 32px;
+        text-transform: uppercase;
+        color: white;
+        line-height: 1.1;
     }
     &__body{
         background-color: white;
