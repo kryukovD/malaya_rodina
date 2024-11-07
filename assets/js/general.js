@@ -1,4 +1,21 @@
 $(document).ready(function () {
+
+    $.fn.setCursorPosition = function(pos) {
+        if ($(this).get(0).setSelectionRange) {
+          $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+          var range = $(this).get(0).createTextRange();
+          range.collapse(true);
+          range.moveEnd('character', pos);
+          range.moveStart('character', pos);
+          range.select();
+        }
+      };
+
+    $("[type='tel']").click(function(){
+        $(this).setCursorPosition(3);
+      }).mask("+7(999) 999-9999");
+
     /* mobile menu */
     $(".mobile-menu__burger").click(function () {
         $(".mobile-menu__dropdown").addClass("mobile-menu__dropdown--active");
@@ -25,8 +42,6 @@ $(document).ready(function () {
             scrollTop: $(anchor).offset().top
         }, 500)
     });
-
-    document.querySelectorAll("[data-fancybox]");
 
     function isElementInViewport(el) {
         const rect = el[0].getBoundingClientRect();
@@ -57,6 +72,8 @@ $(document).ready(function () {
             }
         }
     }
+
+
 
     // Обработчик события скролла
     function onScroll() {
@@ -415,6 +432,13 @@ $(document).ready(function () {
     if (hasSliderOnPage(".slider-photo-gallery")) {
         initGallerySlider();
     }
+
+
+
+    
+    Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+    });
 
 
 
