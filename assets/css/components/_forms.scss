@@ -22,12 +22,22 @@
     }
 }
 
-label {
+.label {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
     background: rgba(0, 86, 164, 0.05);
     border-radius: 8px;
+    &--submit {
+        width: auto;
+        #popup-questions & {
+            margin-top: 20px;
+            .btn {
+                width: 190px;
+            }
+            
+        }
+    }
     .error {
         position: absolute;
         color: $color-accent;
@@ -72,6 +82,7 @@ textarea {
 textarea {
     height: 100px;
     resize:none;
+    padding: 12px 16px;
     @include mobile-sm {
         height: 80px;
     }
@@ -116,6 +127,33 @@ textarea {
                 &::after {
                     transform: scale(1);
                 }
+            }
+        }
+    }
+}
+
+.placeholder {
+    position: absolute;
+    left: 16px;
+    bottom: 12px;
+    transition: .35s ease-in-out all;
+    transform-origin: 0 0;
+}
+
+input,
+textarea{
+    &:focus + .placeholder,
+    .not-empty & + .placeholder {
+        bottom: calc(100% - 26px);
+        transform: scale(.6);
+    }
+    &:required {
+        & + .placeholder {
+            &::after {
+                content: '*';
+                display: inline-block;
+                margin-left: 3px;
+                color: $color-accent;
             }
         }
     }

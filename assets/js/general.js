@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $("[type='tel']").click(function () {
         $(this).setCursorPosition(3);
-    }).mask("+7(999) 999-9999");
+    }).mask("+7(999)999-9999");
 
     /* mobile menu */
     $(".mobile-menu__burger").click(function () {
@@ -921,6 +921,16 @@ $(document).ready(function () {
         let idPopup=$(this).attr("data-id-popup");
         $(idPopup).addClass("popup-come-out--active");
     });
+
+
+    $('input, textarea').on('focusout', function () {
+        let $masktel = /(^(?!\+.*\(.*\).*--.*$)(?!\+.*\(.*\).*-$)(\+[0-9]{1,3}\([0-9]{1,3}\)[0-9]{1}([-0-9]{0,8})?([0-9]{0,1})?)$)|(^[0-9]{1,4}$)/
+        
+        $(this).val() != '' ? $(this).closest('.label').addClass('not-empty') : $(this).closest('.label').removeClass('not-empty')
+        if($(this).attr('type') == 'tel' && !$masktel.test($(this).val()) ) {
+            $(this).closest('.label').removeClass('not-empty')
+        }
+    })
 
 
     $(document).click(function (event) {
