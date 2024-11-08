@@ -563,7 +563,6 @@ $(document).ready(function () {
         },
         on: {
 
-
             // Событие при смене слайда
             slideChange: function () {
                 updateClassNews(this);
@@ -918,8 +917,9 @@ $(document).ready(function () {
     $(".popup-come-out__close").click(function () {
         $(".popup-come-out").removeClass("popup-come-out--active");
     });
-    $(".btn-question").click(function () {
-        $(".popup-come-out").addClass("popup-come-out--active");
+    $(".btn-trigger-popup").click(function () {
+        let idPopup=$(this).attr("data-id-popup");
+        $(idPopup).addClass("popup-come-out--active");
     });
 
 
@@ -933,11 +933,16 @@ $(document).ready(function () {
         }
 
         // Проверяем, был ли клик вне всплывающего окна и не по кнопке показа
-        if (!$('.popup-come-out__inner').is(event.target) && $('.popup-come-out__inner').has(event.target).length === 0 &&
-            !$(".btn-question").is(event.target) && $(".btn-question").has(event.target).length === 0) {
-            $(".popup-come-out").removeClass("popup-come-out--active");
-        }
+        if (!$('.popup-come-out__inner').is(event.target) && $('.popup-come-out__inner').has(event.target).length === 0){
+            if(!$(".btn-trigger-popup").is(event.target) && $(".btn-trigger-popup").has(event.target).length === 0){
+                $(".popup-come-out").removeClass("popup-come-out--active"); 
+            }
+        } 
+          
+        
     });
+
+ 
 
     $(".header__menu__dots-icons").click(function (e) {
         $(this).parents(".header__menu__dots").find(".header-dropdown__overlay").toggleClass("header-dropdown__overlay--active");

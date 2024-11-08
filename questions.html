@@ -218,7 +218,7 @@
                 <div class="banner-children banner-children--questions banner-children--marafon  wow animate__animated  animate__fadeInUp"
                     data-wow-delay="0.1s">
                     <div class="banner-children__inner"
-                        style="background:url('./assets/images/questions/back.png');background-size: cover;background-repeat: no-repeat;">
+                        style="background-image:url('./assets/images/questions/back.png');background-size: cover;background-repeat: no-repeat;">
                         <div class="banner-children__content">
                             <div class="breadcrumbs breadcrumbs--margin-marafon">
                                 <ul class="breadcrumbs__list">
@@ -526,7 +526,7 @@
                                         <div class="questions-form-block__text">Не нашли нужного вопроса? <br>
                                             Задайте его нам, заполнив форму.<br>
                                             Наши специалисты ответят в ближайшее время.</div>
-                                        <a class="btn btn-question" href="javascript:void(0)">Задать вопрос</a>
+                                        <a class="btn btn-question btn-trigger-popup" data-id-popup="#popup-questions" href="javascript:void(0)">Задать вопрос</a>
                                     </div>
                                 </div>
                             </div>
@@ -663,7 +663,7 @@
 
 
     <!-- form questions-->
-    <div class="popup-come-out">
+    <div class="popup-come-out" id="popup-questions">
         <div class="popup-come-out__inner">
             <div class="popup-come-out__header">
                 <div class="popup-come-out__close">
@@ -692,7 +692,6 @@
             </div>
 
         </div>
-    </div>
     </div>
 
     <script src="./assets/js/jquery-3.7.1.min.js"></script>

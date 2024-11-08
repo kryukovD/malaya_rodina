@@ -65,6 +65,14 @@
     &--program{
         margin-bottom: 48px;
     }
+    &--blue{
+        .banner-children__inner{
+             background-color: $primary-color-btn;
+        }
+        .banner-children__inner:before{
+            background-color: transparent;
+        }
+    }
     &__text-forum{
         color: white;
         font-size: 16px;
