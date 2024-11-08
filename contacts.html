@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="./assets/css/fancybox.css">
+    <link rel="stylesheet" href="./assets/css/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- header-->
+        <div class="container">
+            <header class="header">
+                <div class=header__inner>
+                    <a href="javascript:void(0)" class="header__logo">
+                        <img src="./assets/images/logo.svg">
+                    </a>
+                    <nav class="nav">
+                        <ul class="header__menu">
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">О форуме <svg
+                                        width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg></a>
+                                <div
+                                    class="header-dropdown__overlay  header-dropdown__overlay--menu header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Страница</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">Участникам
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg>
+                                </a>
+                                <div class="header-dropdown__overlay header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Страница </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">Программа
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg>
+                                </a>
+                                <div class="header-dropdown__overlay header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="https://www.google.com/">Страница</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)">Марафон межрегиональных форумов</a></li>
+                            <li> <a href="javascript:void(0)">Новости</a></li>
+                            <li> <a href="javascript:void(0)">Контакты</a></li>
+                            <!-- dots li-->
+                            <li class="header__menu__dots">
+                                <a href="javascript:void(0)" class="header__menu__dots-icons">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                                <div
+                                    class="header-dropdown__overlay header-dropdown__overlay--menu  header-dropdown__overlay--dots">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Пункт меню</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <!-- mobile menu-->
+                        <div class="mobile-menu">
+                            <div class="mobile-menu__burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="mobile-menu__dropdown">
+                                <div class="mobile-menu__close">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="32" height="32" rx="4" fill="#FDFEFF" fill-opacity="0.1" />
+                                        <rect x="9" y="9" width="20" height="2" rx="1" transform="rotate(45 9 9)"
+                                            fill="white" />
+                                        <rect x="8" y="23" width="20" height="2" rx="1" transform="rotate(-45 8 23)"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <ul class="mobile-menu__list">
+                                    <li class="mobile-menu__li--has--children "> <a class="" href="javascript:void(0)">О
+                                            форуме <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M3.35909 2.77717C3.19846 2.65542 2.96681 2.66942 2.81819 2.81804C2.65606 2.98017 2.65414 3.24111 2.8139 3.40087L7.89862 8.48559L4.20527 8.50535L4.14433 8.51014C3.94532 8.54063 3.79121 8.71274 3.78926 8.91966C3.78712 9.14727 3.96989 9.33081 4.19749 9.32961L8.88095 9.30482C8.90831 9.30521 8.93574 9.30288 8.9628 9.29785C9.15628 9.26206 9.30419 9.09192 9.30525 8.88873L9.32969 4.19738L9.32554 4.13652C9.29714 3.93807 9.12663 3.78722 8.9197 3.78919C8.69209 3.79135 8.50661 3.97762 8.50543 4.20522L8.4862 7.89892L3.40103 2.81375L3.35909 2.77717Z"
+                                                    fill="#1460A3" />
+                                            </svg></a></li>
+                                    <ul class="mobile-menu__children">
+                                        <li> <a href="javascript:void(0)">Страница</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                    <li> <a href="javascript:void(0)">Участникам</a></li>
+                                    <li> <a href="javascript:void(0)">Программа</a></li>
+                                    <li> <a href="javascript:void(0)">Марафон межрегиональных форумов</a></li>
+                                    <li> <a href="javascript:void(0)">Контакты</a></li>
+
+                                </ul>
+                                <div class="mobile-menu__lang">
+                                    <div class="mobile-menu__lang-title">Выберите язык:</div>
+                                    <ul>
+                                        <li><span>BY</span> <span> Беларускі</span></li>
+                                        <li><span>EN</span> <span> English</span></li>
+                                        <li class="mobile-menu__li--active"><span>RU</span> <span> Русский</span></li>
+                                        <li><span>CH</span> <span>中文</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="header__group">
+                        <div class="header__cabinet">
+                            <a class="btn btn-cabinet" href="javascript:void(0)"> <svg width="12" height="14"
+                                    viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.00282 0.333496C4.04681 0.333496 2.46114 1.92592 2.46114 3.89028C2.46114 5.85464 4.04681 7.44706 6.00282 7.44706C7.95884 7.44706 9.5445 5.85464 9.5445 3.89028C9.5445 1.92592 7.95884 0.333496 6.00282 0.333496ZM6.00282 1.29861C7.42808 1.29861 8.58349 2.45894 8.58349 3.89028C8.58349 5.32162 7.42808 6.48195 6.00282 6.48195C4.57756 6.48195 3.42216 5.32162 3.42216 3.89028C3.42216 2.45894 4.57756 1.29861 6.00282 1.29861ZM4.55333 8.88075C4.03485 8.91675 3.51077 8.99076 2.99382 9.10154C1.99608 9.30707 1.19786 9.7177 0.858119 10.4001C0.729978 10.6669 0.665552 10.9527 0.66664 11.242C0.666255 11.5292 0.730159 11.8153 0.853704 12.077C1.17992 12.7515 1.88516 13.1333 2.83745 13.3449L3.00804 13.3805C3.51095 13.4939 4.03519 13.5703 4.56294 13.6062C4.60788 13.6194 4.71501 13.6316 4.83193 13.6376L4.9281 13.6412C4.97755 13.6423 5.03368 13.6426 5.1173 13.6426C5.87586 13.6844 6.66224 13.6722 7.44497 13.6056C7.86209 13.577 8.28202 13.5225 8.69845 13.4426L9.01 13.3779C10.0383 13.175 10.8083 12.7892 11.1457 12.0778C11.3958 11.5496 11.3958 10.9366 11.1458 10.4087C10.8093 9.699 10.0491 9.31642 9.0022 9.10076C8.59147 9.01307 8.17409 8.94819 7.75374 8.90676L7.44643 8.88075C6.48391 8.79585 5.51584 8.79585 4.55333 8.88075ZM7.36233 9.84216L7.37078 9.84283C7.85321 9.87679 8.33269 9.9445 8.80573 10.0455C9.58335 10.2057 10.1111 10.4713 10.278 10.8234C10.4037 11.0888 10.4037 11.3973 10.2779 11.6631C10.1219 11.9921 9.64795 12.2462 8.96294 12.4016L8.81295 12.4333C8.33061 12.541 7.85271 12.6103 7.37166 12.6433C6.62524 12.7068 5.88325 12.7182 5.14313 12.6782L4.88073 12.6737C4.80789 12.67 4.7465 12.663 4.6896 12.6516C4.2391 12.6175 3.83373 12.5638 3.44013 12.4857L3.20512 12.436C2.42509 12.2831 1.89272 12.0164 1.72011 11.6595C1.65971 11.5315 1.62745 11.387 1.62764 11.2408C1.6271 11.0954 1.65894 10.9542 1.72074 10.8254C1.88857 10.4884 2.45275 10.1982 3.19066 10.0462C3.66711 9.94409 4.14636 9.87641 4.62858 9.84286C5.54397 9.76219 6.45577 9.76219 7.36233 9.84216Z"
+                                        fill="white" />
+                                </svg> Личный кабинет</a>
+
+                            <a class="header-cabinet-mobile"> <svg width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="4" fill="#1460A3" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.0037 7.6665C13.5587 7.6665 11.5766 9.65704 11.5766 12.1125C11.5766 14.5679 13.5587 16.5585 16.0037 16.5585C18.4488 16.5585 20.4308 14.5679 20.4308 12.1125C20.4308 9.65704 18.4488 7.6665 16.0037 7.6665ZM16.0037 8.87289C17.7853 8.87289 19.2296 10.3233 19.2296 12.1125C19.2296 13.9017 17.7853 15.3521 16.0037 15.3521C14.2222 15.3521 12.7779 13.9017 12.7779 12.1125C12.7779 10.3233 14.2222 8.87289 16.0037 8.87289ZM14.1919 18.3506C13.5438 18.3956 12.8887 18.4881 12.2425 18.6266C10.9953 18.8835 9.99754 19.3968 9.57286 20.2497C9.41269 20.5833 9.33215 20.9405 9.33351 21.3021C9.33303 21.6611 9.41291 22.0187 9.56734 22.3459C9.97512 23.1891 10.8567 23.6662 12.047 23.9307L12.2603 23.9752C12.8889 24.1171 13.5442 24.2125 14.2039 24.2574C14.2601 24.2738 14.394 24.2892 14.5401 24.2966L14.6603 24.3011C14.7222 24.3026 14.7923 24.3029 14.8968 24.3029C15.845 24.3551 16.828 24.3399 17.8064 24.2566C18.3278 24.2209 18.8527 24.1527 19.3733 24.0528L19.7627 23.972C21.0481 23.7184 22.0106 23.2362 22.4323 22.3469C22.745 21.6866 22.745 20.9204 22.4325 20.2605C22.0118 19.3734 21.0616 18.8952 19.753 18.6256C19.2396 18.516 18.7178 18.4349 18.1924 18.3831L17.8082 18.3506C16.6051 18.2444 15.395 18.2444 14.1919 18.3506ZM17.7031 19.5523L17.7137 19.5532C18.3167 19.5956 18.9161 19.6803 19.5074 19.8065C20.4794 20.0067 21.1391 20.3387 21.3477 20.7788C21.5049 21.1107 21.5049 21.4963 21.3476 21.8285C21.1526 22.2397 20.5602 22.5574 19.7039 22.7516L19.5164 22.7913C18.9135 22.9258 18.3161 23.0125 17.7148 23.0538C16.7818 23.1331 15.8543 23.1474 14.9291 23.0974L14.6011 23.0918C14.5101 23.0871 14.4333 23.0784 14.3622 23.0641C13.7991 23.0216 13.2924 22.9543 12.8004 22.8568L12.5066 22.7946C11.5316 22.6035 10.8661 22.2701 10.6504 21.824C10.5749 21.664 10.5345 21.4834 10.5348 21.3006C10.5341 21.1189 10.5739 20.9423 10.6511 20.7814C10.8609 20.3602 11.5662 19.9974 12.4885 19.8074C13.0841 19.6798 13.6832 19.5951 14.2859 19.5532C15.4302 19.4524 16.5699 19.4524 17.7031 19.5523Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="header__lang">
+                            <a href="javascript:void(0)">
+                                <svg width="21" height="16" viewBox="0 0 21 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_2246_2188)">
+                                        <rect y="0.5" width="21" height="15" rx="4" fill="#1A47B8" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.5H21V15.5H0V10.5Z"
+                                            fill="#F93939" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H21V5.5H0V0.5Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2246_2188">
+                                            <rect y="0.5" width="21" height="15" rx="4" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <span>RU</span>
+                            </a>
+
+                            <div class="header-dropdown__overlay header-dropdown__overlay--lang">
+                                <ul class="header-dropdown header-dropdown--lang">
+                                    <li><a href="javascript:void(0)"> <span>BY</span> <span>Беларускі</span></a></li>
+                                    <li><a href="javascript:void(0)"><span>EN</span> <span>English</span> </a></li>
+                                    <li class="active"><a href="javascript:void(0)"><span>RU</span> <span>Русский</span>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><span>CH</span> <span>中文</span> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+        </div>
+        <!-- content-->
+        <div class="content">
+            <div class="container">
+
+
+
+                <div class="banner-children  banner-children--marafon  wow animate__animated  animate__fadeInUp"
+                    data-wow-delay="0.1s">
+                    <div class="banner-children__inner"
+                        style="background:url('./assets/images/contacts/back_crop.png');background-size: cover;background-repeat: no-repeat;">
+                        <div class="banner-children__content">
+                            <div class="breadcrumbs breadcrumbs--margin-marafon">
+                                <ul class="breadcrumbs__list">
+                                    <li><a href="javascript:void(0)">Главная </a></li>
+                                    <li> <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.47144 4.45143C0.205203 4.48809 0 4.71969 0 4.99993C0 5.30564 0.244208 5.55347 0.545455 5.55347L10.1333 5.55347L6.6698 9.05423L6.61686 9.1162C6.45797 9.33257 6.47495 9.64013 6.6682 9.83706C6.88077 10.0537 7.22613 10.0544 7.43959 9.83868L11.8318 5.3997C11.858 5.37427 11.8816 5.34622 11.9024 5.31597C12.0511 5.0998 12.0301 4.79995 11.8396 4.60737L7.43955 0.161287L7.37826 0.107824C7.16439 -0.0524988 6.8614 -0.0339699 6.66817 0.162973C6.45561 0.379612 6.45636 0.730097 6.66983 0.945805L10.1342 4.44638L0.545455 4.44638L0.47144 4.45143Z"
+                                                fill="white" fill-opacity="0.5" />
+                                        </svg>
+                                        Контакты
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="banner-children__group">
+                                <div class="banner-children__title">
+                                    <h1 class="text-white">Контакты</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="section-page-contacts wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-page-contacts__inner">
+                        <div class="section-page-contacts__row p-margin">
+                            <div class="section-page-contacts__col-info">
+                                <div class="section-page-contacts__item">
+                                    <div class="section-page-contacts__item-title">
+                                        Всероссийский муниципальный форум «Малая Родина — сила России»
+                                    </div>
+                                    <div class="section-page-contacts__item-list">
+                                        <ul>
+                                            <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_2909_20442)">
+                                                        <path
+                                                            d="M7.5 6V1M17.5 6V1M21.5 17V21.5H3.5V18.5M21.3625 8.5H3.35232M0.5 18.25V18.5H18.4L18.55 18.25L18.7839 17.7585C20.5721 14.0001 21.5 9.89038 21.5 5.72829V3.5H3.5V5.62804C3.5 9.82239 2.55768 13.9632 0.742661 17.7445L0.5 18.25Z"
+                                                            stroke="#0056A4" stroke-width="1.5" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_2909_20442">
+                                                            <rect width="24" height="24" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg> <span> 21 -28 апреля 2025 </span></li>
+                                            <li> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_2909_20446)">
+                                                        <path
+                                                            d="M11.9997 23.9198C11.9777 21.4016 10.9061 19.0052 9.04089 17.3096L6.47309 14.9753C4.73876 13.3986 3.75 11.1422 3.75 8.79828C3.75 4.24201 7.4435 0.500678 11.9997 0.500488C16.556 0.500678 20.2498 4.24201 20.2498 8.79828C20.2498 11.1422 19.2611 13.3986 17.5267 14.9753L14.9589 17.3096C13.0938 19.0052 12.0218 21.4016 11.9997 23.9198ZM11.9997 23.9198V23.9989C11.9997 23.9803 11.9998 23.9617 11.9999 23.9431M12.0001 11.4997C10.6194 11.4997 9.50015 10.3805 9.50015 8.9997C9.50015 7.61899 10.6194 6.4997 12.0001 6.4997C13.3809 6.4997 14.5001 7.61899 14.5001 8.9997C14.5001 10.3805 13.3809 11.4997 12.0001 11.4997Z"
+                                                            stroke="#0056A4" stroke-width="1.5" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_2909_20446">
+                                                            <rect width="24" height="24" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg> <span> Международный центр деловой активности «Экспоцентр»</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="section-page-contacts__item">
+                                    <div class="section-page-contacts__item-title">
+                                        Контактная информация
+                                    </div>
+                                    <div class="section-page-contacts__item-list">
+                                        <ul>
+                                            <li class="section-page-contacts__li-grid">
+                                                <div class="section-page-contacts__li-icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2909_20455)">
+                                                            <path
+                                                                d="M2 4.70588C2 14.2572 9.74284 22 19.2941 22L23 18.2941L18.6765 13.9706L15.5882 17.0588L6.94118 8.41176L10.0294 5.32353L5.70588 1L2 4.70588Z"
+                                                                stroke="#0056A4" stroke-width="1.5" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2909_20455">
+                                                                <rect width="24" height="24" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="section-page-contacts__li-text">
+                                                    <span class="section-page-contacts__li-name"> Телефон горячей линии
+                                                        для справок </span> <a href="tel:8-800-000-00-00">
+                                                        8-800-000-00-00</a>
+                                                </div>
+                                            </li>
+
+
+                                            <li class="section-page-contacts__li-grid">
+                                                <div class="section-page-contacts__li-icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2909_20461)">
+                                                            <path
+                                                                d="M0.5 6.5L11.875 13.5H12.125L23.5 6.5M23.5 4V20.5H23C20 20 15 19.75 12 19.75C9 19.75 4 20 1 20.5H0.5V4C3.5 3.5 9 3.25 12 3.25C15 3.25 20.5 3.5 23.5 4Z"
+                                                                stroke="#0056A4" stroke-width="1.5" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2909_20461">
+                                                                <rect width="24" height="24" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="section-page-contacts__li-text">
+                                                    <span class="section-page-contacts__li-name"> Электронная почта для
+                                                        регистрации и общих вопросов</span> <a
+                                                        href="mailto:exapmple@mail.ru"> exapmple@mail.ru</a>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="section-page-contacts__item">
+                                    <div class="section-page-contacts__item-title">
+                                        Контакты организационного комитета
+                                    </div>
+                                    <div class="section-page-contacts__item-list">
+                                        <ul>
+                                            <li class="section-page-contacts__li-grid">
+                                                <div class="section-page-contacts__li-icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2909_20472)">
+                                                            <path
+                                                                d="M21.4335 16.6772V23.5H2.5625V16.6774C2.5625 16.6774 6.19154 14.5 11.9979 14.5C17.8044 14.5 21.4335 16.6772 21.4335 16.6772Z"
+                                                                stroke="#0056A4" stroke-width="1.5" />
+                                                            <path
+                                                                d="M6.91797 5.58065C6.91797 2.77468 9.19546 0.5 12.0049 0.5C14.8143 0.5 17.0793 2.77468 17.0793 5.58065C17.0793 9.47071 12.1055 12.1129 12.1055 12.1129H11.8915C11.8915 12.1129 6.91797 9.47071 6.91797 5.58065Z"
+                                                                stroke="#0056A4" stroke-width="1.5" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2909_20472">
+                                                                <rect width="24" height="24" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+
+                                                </div>
+                                                <div class="section-page-contacts__li-text">
+                                                    <span class="section-page-contacts__li-name"> Фамилия Имя
+                                                        Отчество</span>
+                                                    <span> Должность</span>
+                                                </div>
+                                            </li>
+
+
+                                            <li class="section-page-contacts__li-grid">
+                                                <div class="section-page-contacts__li-icon">
+                                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1 4.70588C1 14.2572 8.74284 22 18.2941 22L22 18.2941L17.6765 13.9706L14.5882 17.0588L5.94118 8.41176L9.0294 5.32353L4.70588 1L1 4.70588Z"
+                                                            stroke="#0056A4" stroke-width="1.5" />
+                                                    </svg>
+
+                                                </div>
+                                                <div class="section-page-contacts__li-text">
+                                                    <a href="tel:+7 (495) 123-45-67"> +7 (495) 123-45-67</a>
+                                                </div>
+                                            </li>
+
+
+                                            <li class="section-page-contacts__li-grid">
+                                                <div class="section-page-contacts__li-icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_2909_20461)">
+                                                        <path
+                                                            d="M0.5 6.5L11.875 13.5H12.125L23.5 6.5M23.5 4V20.5H23C20 20 15 19.75 12 19.75C9 19.75 4 20 1 20.5H0.5V4C3.5 3.5 9 3.25 12 3.25C15 3.25 20.5 3.5 23.5 4Z"
+                                                            stroke="#0056A4" stroke-width="1.5" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_2909_20461">
+                                                            <rect width="24" height="24" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                                </div>
+                                                <div class="section-page-contacts__li-text">
+                                                    <a href="mailto:exapmple@mail.ru"> exapmple@mail.ru</a>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="section-page-contacts__item">
+                                    <div class="section-page-contacts__item-title">
+                                        Социальные сети:
+                                    </div>
+
+                                    <div class="section-page-contacts__item-list">
+                                        <ul class="section-page-contacts__socials-list">
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2909_20493)">
+                                                            <path
+                                                                d="M0 11.52C0 6.0894 0 3.37413 1.68707 1.68707C3.37413 0 6.0894 0 11.52 0H12.48C17.9106 0 20.6259 0 22.313 1.68707C24 3.37413 24 6.0894 24 11.52V12.48C24 17.9106 24 20.6259 22.313 22.313C20.6259 24 17.9106 24 12.48 24H11.52C6.0894 24 3.37413 24 1.68707 22.313C0 20.6259 0 17.9106 0 12.48V11.52Z"
+                                                                fill="#0077FF" />
+                                                            <path
+                                                                d="M12.7707 17.29C7.30073 17.29 4.18078 13.54 4.05078 7.30005H6.79078C6.88078 11.88 8.90073 13.82 10.5007 14.22V7.30005H13.0808V11.25C14.6608 11.08 16.3206 9.28005 16.8806 7.30005H19.4607C19.0307 9.74005 17.2307 11.54 15.9507 12.28C17.2307 12.88 19.2808 14.45 20.0608 17.29H17.2207C16.6107 15.39 15.0908 13.92 13.0808 13.72V17.29H12.7707Z"
+                                                                fill="white" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2909_20493">
+                                                                <rect width="24" height="24" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2909_20494)">
+                                                            <path
+                                                                d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
+                                                                fill="url(#paint0_linear_2909_20494)" />
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M5.43104 11.8734C8.92928 10.3493 11.262 9.34452 12.4292 8.85905C15.7617 7.47294 16.4542 7.23216 16.9055 7.22421C17.0048 7.22246 17.2267 7.24706 17.3705 7.36372C17.4919 7.46223 17.5253 7.5953 17.5413 7.6887C17.5573 7.78209 17.5772 7.99485 17.5614 8.1611C17.3808 10.0586 16.5994 14.6633 16.2018 16.7885C16.0336 17.6877 15.7024 17.9892 15.3817 18.0188C14.6849 18.0829 14.1557 17.5582 13.4808 17.1158C12.4246 16.4235 11.8279 15.9925 10.8028 15.3169C9.61798 14.5362 10.386 14.107 11.0612 13.4058C11.2379 13.2222 14.3083 10.4295 14.3677 10.1761C14.3752 10.1444 14.3821 10.0263 14.3119 9.96397C14.2417 9.9016 14.1382 9.92293 14.0635 9.93989C13.9575 9.96393 12.2703 11.0791 9.00179 13.2855C8.52287 13.6143 8.08909 13.7745 7.70043 13.7662C7.27197 13.7569 6.44778 13.5239 5.83508 13.3247C5.08358 13.0804 4.4863 12.9513 4.53831 12.5364C4.5654 12.3203 4.86298 12.0993 5.43104 11.8734Z"
+                                                                fill="white" />
+                                                        </g>
+                                                        <defs>
+                                                            <linearGradient id="paint0_linear_2909_20494" x1="12" y1="0"
+                                                                x2="12" y2="23.822" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#2AABEE" />
+                                                                <stop offset="1" stop-color="#229ED9" />
+                                                            </linearGradient>
+                                                            <clipPath id="clip0_2909_20494">
+                                                                <rect width="24" height="24" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-page-contacts__col-form ">
+                                <div class="questions-form-block questions-form-block--no-overlay"
+                                    style="background-image: url('./assets/images/contacts/form-back.png');background-size: cover;background-repeat: no-repeat;">
+                                    <div class="questions-form-block__inner">
+                                        <div class="questions-form-block__title">Задать вопрос</div>
+                                        <div class="questions-form-block__text">Не нашли нужного вопроса? <br>
+                                            Задайте его нам, заполнив форму.<br>
+                                            Наши специалисты ответят в ближайшее время.</div>
+                                        <a class="btn btn-question" href="javascript:void(0)">Задать вопрос</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="section-members wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-members__inner">
+                        <div class="section-members__col-left">
+                            <ul class="section-members__tabs">
+                                <li data-target="#tab-members-1"
+                                    class="section-members__tabs-li section-members__tabs-li--active wow ">О площадке
+                                    карта
+                                    «Патриот» <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                        <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                    </svg>
+                                    </a>
+                                </li>
+
+                                <li data-target="#tab-members-2" class="section-members__tabs-li wow ">Схема проезда
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                        <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                    </svg>
+                                </li>
+
+                                <li data-target="#tab-members-3" class="section-members__tabs-li wow ">Место получения
+                                    бейджа<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                        <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                    </svg>
+                                </li>
+
+                                <li class="section-members__tabs-li wow "><a href="https://www.google.ru/">Размещение
+                                        (отели)<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                            <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="section-members__col-right wow ">
+                            <div class="section-members__tabs-render">
+                                <!-- first-->
+                                <div class="section-members__tabs-body" id="tab-members-1">
+                                    <picture>
+                                        <source srcset="./assets/images/main/tabs1-sm.png" media="(max-width: 576px)" />
+                                        <img src="./assets/images/main/tabs1.png" alt="">
+                                    </picture>
+                                </div>
+
+                                <!-- second-->
+                                <div class="section-members__tabs-body" id="tab-members-2">
+                                    <p>Здесь картинка для 2 таба</p>
+                                </div>
+
+                                <!-- third-->
+                                <div class="section-members__tabs-body" id="tab-members-3">
+                                    <p>Здесь картинка для 3 таба</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                   <!-- placement-->
+                   <section class="section-placement wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-placement__inner">
+                        <div class="section-placement__header">
+                            <div class="section-placement__title">
+                                <h2>РАЗМЕЩЕНИЕ</h2>
+                            </div>
+                            <div class="section-placement__btns">
+                                <a class="btn btn-registration" href="javascript:void(0)">Все отели</a>
+                                <div class="section-placement__arrows">
+                                    <div class="slider-arrow slider-arrow--prev">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12L3 12" stroke="#1460A3" stroke-linecap="round" />
+                                            <path d="M9 6L3 12L9 18" stroke="#1460A3" stroke-linecap="round" />
+                                        </svg>
+
+                                    </div>
+                                    <div class="slider-arrow slider-arrow--next">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                            <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper placement-slider">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <div class="card-placement__image">
+                                        <img src="./assets/images/participant/slider1.jpg">
+                                    </div>
+                                    <div class="card-placement__name">
+                                        <span class="rate">5</span>
+                                        Soluxe Hotel Moscow
+                                    </div>
+                                    <div class="card-placement__text">
+                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </div>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <a href="javascript:void(0)" class="card-placement__image">
+                                        <img src="./assets/images/participant/slider2.jpg">
+                                    </a>
+                                    <div class="card-placement__name">
+                                        <span class="rate">5</span>
+                                        Soluxe Hotel Moscow
+                                    </div>
+                                    <a href="javascript:void(0)" class="card-placement__text">
+                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг. Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </a>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <a href="javascript:void(0)" class="card-placement__image">
+                                        <img src="./assets/images/participant/slider3.jpg">
+                                    </a>
+                                    <div class="card-placement__name">
+                                        <span class="rate">3</span>
+                                        AZIMUT Сити Отель Олимпик Москва
+                                    </div>
+                                    <a href="javascript:void(0)" class="card-placement__text">
+                                        AZIMUT Сити Отель Олимпик Москва – один из крупнейших бизнес-отелей Москвы категории 4*, расположенный в центре города и в непосредственной близости от основных достопримечательностей столицы, в 15 минутах езды от исторического центра города, и в 10 минутах от ВДНХ.
+                                    </a>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+                                <!-- item-->
+                                <div class="card-placement swiper-slide">
+                                    <a href="javascript:void(0)" class="card-placement__image">
+                                        <img src="./assets/images/participant/slider1.jpg">
+                                    </a>
+                                    <div class="card-placement__name">
+                                        <span class="rate">5</span>
+                                        Soluxe Hotel Moscow
+                                    </div>
+                                    <a href="javascript:void(0)" class="card-placement__text">
+                                        Soluxe Hotel Moscow - пятизвездочный отель премиум-класса является частью многофункционального комплекса Китайского делового центра «Парк Хуамин». Это флагманский отель сети Soluxe, вышедшей на российский рынок, готовый предложить современному путешественнику широкий спектр услуг.
+                                    </a>
+                                    <div class="card-placement__options">
+                                        <div class="option">
+                                            <div class="tag tag-type">1-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>11 200 ₽</b> в сутки</div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="tag tag-type">2-местный с завтраком</div>
+                                            <div class="tag tag-price">от <b>13 200 ₽</b> в сутки</div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-registration" href="javascript:void(0)">Забронировать</a>
+                                </div>
+
+                            </div>
+
+                            <!-- If we need scrollbar -->
+                            <div class="swiper-scrollbar slider-scrollbar"></div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+
+            </div>
+        </div>
+
+
+        <!-- footer-->
+        <div class="footer-container container">
+            <button class="btn-upper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21V3" stroke="#F7F7F7" stroke-linecap="round" />
+                    <path d="M6 9L12 3L18 9" stroke="#F7F7F7" stroke-linecap="round" />
+                </svg>
+            </button>
+            <footer class="footer">
+                <div class="footer__inner">
+                    <div class="footer__top">
+                        <a href="javascript:void(0)" class="footer__logo">
+                            <img src="./assets/images/footer-logo.svg">
+                        </a>
+                        <div class="footer__partners">
+                            <a href="javascript:void(0)">
+                                <img src="./assets/images/main/partner_footer1.svg">
+                            </a>
+                            <a href="javascript:void(0)">
+                                <img src="./assets/images/main/partner__footer2.svg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="footer__bottom-btn">
+                            <a href="javascript:void(0)">Вход/Регистрация</a>
+                        </div>
+                        <div class="footer-menus">
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">О форуме </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Карта выставки</a></li>
+                                    <li><a href="javascript:void(0)">Место проведения</a></li>
+                                    <li><a href="javascript:void(0)">Вопрос-ответ</a></li>
+                                    <li><a href="javascript:void(0)">Партнеры</a></li>
+                                </ul>
+
+
+                            </ul>
+
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">Участникам </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Размещение (Отели)</a></li>
+                                    <li><a href="javascript:void(0)">О площадке (Карта залов)</a></li>
+                                </ul>
+                            </ul>
+
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">Программа </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Деловая программа</a></li>
+                                    <li><a href="javascript:void(0)">Культурная программа</a></li>
+                                    <li><a href="javascript:void(0)">Первый инвестиционный форум</a></li>
+                                    <li><a href="javascript:void(0)">Премия (служения)</a></li>
+                                </ul>
+                            </ul>
+
+                            <ul class="footer-menu footer-menu--not-title">
+
+                                <li><a href="javasscript:void(0)">Марафон межрегиональных форумов</a></li>
+                                <li><a href="javasscript:void(0)">Новости </a></li>
+                                <li><a href="javascript:void(0)"> Контакты </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="footer-separate">
+                    <span>© Всероссийский муниципальный форум <a href="javascript:void(0)"> «Малая Родина — сила России»
+                        </a></span>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+
+
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/jquery.countTo.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery.marquee.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
+    <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script defer src="./assets/js/general.js"></script>
+
+</body>
+
+</html>

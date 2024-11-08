@@ -6,9 +6,9 @@
     bottom: 0;
     display: flex;
     justify-content: flex-end;
-    z-index:0;
+    z-index:1000;
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(200%);
     transition: opacity 1s ease;
     &--active{
         transform: translateX(0);
