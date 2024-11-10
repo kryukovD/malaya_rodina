@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
     <script src="./assets/js/jquery.countTo.js"></script>
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery.marquee.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
     <script defer src="./assets/js/general.js"></script>
 
 </head>
@@ -161,7 +163,7 @@
         <!-- content-->
         <div class="content">
             <div class="container">
-                <div class="banner-children banner-children--program ">
+                <div class="banner-children banner-children--program wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="banner-children__inner"
                         style="background:url('./assets/images/marafon/banner.png');background-size: cover;">
                         <div class="banner-children__content">
@@ -197,7 +199,7 @@
                 </div>
                 
                 <!-- section participant -->
-                <section class="section-participant">
+                <section class="section-participant wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-participant__inner">
                         <div class="section-participant__title">
                             <h2>Регистрация</h2>
@@ -239,7 +241,7 @@
                     </div>
                  </section>
 
-                 <section class="section-members">
+                 <section class="section-members wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                      <div class="section-members__inner">
                          <div class="section-members__col-left">
                              <ul class="section-members__tabs">
@@ -299,7 +301,7 @@
                  </section>
 
                 <!-- placement-->
-                <section class="section-placement">
+                <section class="section-placement wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-placement__inner">
                         <div class="section-placement__header">
                             <div class="section-placement__title">
@@ -437,7 +439,7 @@
                     </div>
                 </section>
 
-                <section class="section-meeting">
+                <section class="section-meeting wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-meeting__inner">
                         <div class="section-meeting__title">
                             <h2>Мероприятия</h2>
@@ -486,7 +488,7 @@
                             <!--card -->
                             <a href="javascript:void(0)" class="card-meeting card-meeting--black">
                                 <div class="card-meeting__layer">
-                                    <img src="./assets/images/main/meet4.png" width="326" height="335" alt="">
+                                    <img src="./assets/images/main/meet4.jfif" width="326" height="335" alt="">
                                     <div class="card-meeting__name">Премия «Служения»</div>
 
                                     <svg class="card-meeting__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -500,7 +502,7 @@
 
                 </section>
 
-                <section class="section-issue">
+                <section class="section-issue wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-issue__inner">
                         <div class="section-issue__col-left">
                             <div class="section-issue__title">
@@ -513,26 +515,29 @@
                             <form class="form form-issue">
                                 <div class="form-issue__text">Для всех вопросов, связанных с регистрацией и участием, пожалуйста, обращайтесь к организаторам форума по номеру <a href="tel:+7 (999) 999 99 99">+7 (999) 999 99 99</a> или воспользуйтесь контактной формой, представленной ниже:</div>
                                 <div class="form-row">
-                                    <label class="label--name">
-                                        <input type="text" placeholder="Ваше имя">
+                                    <label class="label label--required label--name">
+                                        <input type="text" value="">
+                                        <div class="placeholder">Ваше ФИО</div>
                                         <span class="error">Введите корректное имя</span>
                                     </label>
-                                    <label class="label--name">
-                                        <input type="tel" placeholder="Телефон">
-                                        <span class="error">Введите телефон в формате +7 (999) 999 99 99</span>
+                                    <label class="label label--tel label--required">
+                                        <input type="tel" value="">
+                                        <div class="placeholder">Ваш телефон</div>
+                                        <span class="error">Введите корректный телефон</span>
                                     </label>
                                 </div>
-                                <label class="label--text">
-                                    <textarea placeholder="Сообщение"></textarea>
-                                    <span class="error">Введите вопрос</span>
+                                <label class="label label--text">
+                                    <textarea value=""></textarea>
+                                    <div class="placeholder">Ваш вопрос</div>
                                 </label>
                                 <div class="form-row">
                                     <label class="label--submit">
-                                        <a class="btn btn-registration" href="javascript:void(0)">Задать вопрос</a>
+                                        <button class="btn btn-registration" href="javascript:void(0)">Задать вопрос</button>
                                     </label>
-                                    <label class="checkbox">
+                                    <label class="checkbox label label--required label--valid">
                                         <input type="checkbox" checked>
-                                        <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>                                        
+                                        <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                                        <span class="error">Необходимо ваше согласие</span>                                     
                                     </label>
                                 </div>
                             </form>

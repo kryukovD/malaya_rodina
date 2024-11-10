@@ -45,6 +45,11 @@
             margin-right: 16px;
         }
     }
+    &__message-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &__message {
         padding: 19px;
         width: 100%;
@@ -56,6 +61,9 @@
         color: $color-accent;
         margin-top: -20px;
         margin-bottom: 8px;
+        &--intersection {
+            display: none;
+        }
         @include mobile-sm {
             padding: 12px;
         }
@@ -148,8 +156,23 @@
             border-radius: 4px;
             margin-top: auto;
             width: 122px;
-            .section-program__item--selected &,
             .section-program__item--register & {
+                display: block;
+            }
+            @include mobile {
+                margin-top: 8px;
+            }
+        }
+        
+        .tag--intersection {
+            display: none;
+            padding: 4px 8px;
+            color: #fff;
+            background: $primary-color-btn;
+            border-radius: 4px;
+            margin-top: auto;
+            width: 122px;
+            .except & {
                 display: block;
             }
             @include mobile {
@@ -182,9 +205,6 @@
             width: 16px;
             height: 16px;
             display: inline-block;
-        }
-        .section-program__item--selected & {
-            color: $color-accent-secondary;
         }
     }
     &__tags{
@@ -240,7 +260,7 @@
 .section-title {
     &__btns {
         display: flex;
-        .btn-primary {
+        .jsShowAllEvent {
             margin-right: 16px;
         }
         @include tablet {
@@ -380,4 +400,52 @@
         width: 0;
         height: 0;
   }
+}
+
+.section-program__item.section-program__item--register {
+    color: #fff;
+    background: rgba(0, 86, 164, 1);
+}
+
+.section-program__item.section-program__item--register a {
+    color: #fff;
+}
+
+.section-program__item.section-program__item--register .section-program__descr {
+    color: #fff;
+}
+
+.section-program__item.section-program__item--register {border: 0;}
+
+.tag--intersection {
+    display: none;
+}
+
+.section-program__item.section-program__item--register .tag {
+    color: #fff;
+    background: #FFFFFF0D;
+    &.tag--intersection {
+        background: $color-accent;
+    }
+}
+
+.section-program__item.section-program__item--register a.btn.btn-border {
+    border-color: #fff;
+    @include hover {
+        background: #fff;
+        color: $primary-color-btn;
+    }
+}
+
+.btn.jsReg {
+    .section-program__item--register & {
+        display: none;
+    }
+}
+
+.btn.jsRefuseReg {
+    display: none;
+    .section-program__item--register & {
+        display: inline-flex;
+    }
 }

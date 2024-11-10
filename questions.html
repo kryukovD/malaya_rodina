@@ -679,27 +679,29 @@
             <div class="popup-come-out__content">
                 <div class="popup-come-out__body">
                     <form>
-                        <label class="label label--name">
-                            <input type="text" required="required" value="">
+                        <label class="label label--required label--name">
+                            <input type="text" value="">
                             <div class="placeholder">Ваше ФИО</div>
                             <span class="error">Введите корректное имя</span>
                         </label>
-                        <label class="label label--email">
-                            <input type="email" required="required" value="">
-                            <div class="placeholder">Ваш e-mail</div>
-                            <span class="error">Введите телефон в формате +7 (999) 999 99 99</span>
+                        <label class="label label--required label--email">
+                            <input type="email" value="">
+                            <div class="placeholder">Ваш email</div>
+                            <span class="error">Введите корректное имя</span>
                         </label>
-                        <label class="label label--tel">
+                        <label class="label label--tel label--required">
                             <input type="tel" value="">
                             <div class="placeholder">Ваш телефон</div>
+                            <span class="error">Введите корректный телефон</span>
                         </label>
                         <label class="label label--text">
                             <textarea value=""></textarea>
                             <div class="placeholder">Ваш вопрос</div>
                         </label>
-                        <label class="checkbox">
+                        <label class="checkbox label label--required label--valid">
                             <input type="checkbox" checked>
-                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>                                        
+                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                            <span class="error">Необходимо ваше согласие</span>                                     
                         </label>
                         <label class="label label--submit">
                             <button class="btn btn-registration btn-red" >Отправить</button>

@@ -22,31 +22,6 @@
     }
 }
 
-.label {
-    width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-    background: rgba(0, 86, 164, 0.05);
-    border-radius: 8px;
-    &--submit {
-        width: auto;
-        #popup-questions & {
-            margin-top: 20px;
-            .btn {
-                width: 190px;
-            }
-            
-        }
-    }
-    .error {
-        position: absolute;
-        color: $color-accent;
-        left: 0;
-        bottom: 0;
-        display: none;
-    }
-}
-
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -58,7 +33,8 @@ textarea {
     font-size: 18px;
     border: 0;
     outline: none;
-    background: transparent;
+    border-radius: 8px;
+    background: rgba(0, 86, 164, 0.05);
     @include mobile-sm {
         height: 49px;
     }
@@ -88,11 +64,77 @@ textarea {
     }
 }
 
+.placeholder {
+    position: absolute;
+    left: 16px;
+    bottom: 12px;
+    transition: .35s ease-in-out all;
+    transform-origin: 0 0;
+    cursor: text;
+}
+
+input,
+textarea{
+    &:focus + .placeholder,
+    .not-empty & + .placeholder {
+        bottom: calc(100% - 26px);
+        transform: scale(.6);
+    }
+    &:required {
+        & + .placeholder {
+            &::after {
+                content: '*';
+                display: inline-block;
+                margin-left: 3px;
+                color: $color-accent;
+            }
+        }
+    }
+}
+
+
+.label {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    &--submit {
+        width: auto;
+        #popup-questions & {
+            margin-top: 20px;
+            .btn {
+                width: 190px;
+            }
+            
+        }
+    }
+    .error {
+        color: $color-accent;
+        display: none;
+        font-size: 11px;
+        position: absolute;
+        left: 16px;
+        bottom: -15px;
+    }
+    &--error {
+        input {
+            border: 1px solid $color-accent;
+        }
+        margin-bottom: 20px;
+        .error {
+            display: block;
+        }
+    }
+}
+
+
 .checkbox {
     background: transparent;
     padding-left: 32px;
     position: relative;
     cursor: pointer;
+    .error {
+        left: 32px;
+    }
     .like-checkbox{
         &::before {
             content: '';
@@ -127,33 +169,6 @@ textarea {
                 &::after {
                     transform: scale(1);
                 }
-            }
-        }
-    }
-}
-
-.placeholder {
-    position: absolute;
-    left: 16px;
-    bottom: 12px;
-    transition: .35s ease-in-out all;
-    transform-origin: 0 0;
-}
-
-input,
-textarea{
-    &:focus + .placeholder,
-    .not-empty & + .placeholder {
-        bottom: calc(100% - 26px);
-        transform: scale(.6);
-    }
-    &:required {
-        & + .placeholder {
-            &::after {
-                content: '*';
-                display: inline-block;
-                margin-left: 3px;
-                color: $color-accent;
             }
         }
     }

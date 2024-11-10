@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
     <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
     <script src="./assets/js/jquery.countTo.js"></script>
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery.marquee.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
     <script defer src="./assets/js/general.js"></script>
 
 </head>
@@ -161,7 +163,7 @@
         <!-- content-->
         <div class="content">
             <div class="container">
-                <div class="banner-children banner-children--program ">
+                <div class="banner-children banner-children--program wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="banner-children__inner"
                         style="background:url('./assets/images/marafon/banner.png');background-size: cover;">
                         <div class="banner-children__content">
@@ -183,7 +185,7 @@
                                 <div class="banner-children__title">
                                     <div class="banner-children__date">
                                         <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <rect id="calendar--Streamline-Wayfinding" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+                                            <rect id="calendar--Streamline-Wayfinding" rx="0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
                                             <g clip-path="url(#clip2683_4100)">
                                                 <path id="Vector" d="M7.5 6L7.5 1M17.5 6L17.5 1M21.5 17L21.5 21.5L3.5 21.5L3.5 18.5M21.36 8.5L3.35 8.5M0.5 18.5L18.4 18.5L18.54 18.25L18.78 17.75C20.57 14 21.5 9.89 21.5 5.72L21.5 3.5L3.5 3.5L3.5 5.62C3.5 9.82 2.55 13.96 0.74 17.74L0.5 18.25L0.5 18.5Z" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.500000"/>
                                             </g>
@@ -205,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-                <section class="section-dates">
+                <section class="section-dates wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="program-dates dragscroll">
                         <div class="program-dates__item">
                             21 апреля
@@ -262,30 +264,33 @@
                     </div>
                 </section>
                 <!-- section program -->
-                 <section class="section-program">
+                 <section class="section-program wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-program__inner">
                         <div class="section-program__title" id="open">
                             <h2>ОТКРЫТИЕ ФОРУМА</h2>
                             <div class="section-title__btns">
-                                <a href="javascript:void(0)" class="btn btn-primary">Все</a>
-                                <a href="javascript:void(0)" class="btn btn-secondary">Мои мероприятия</a>
+                                <a href="javascript:void(0)" class="btn btn-primary jsShowAllEvent">Все</a>
+                                <a href="javascript:void(0)" class="btn btn-secondary jsShowMyEvent">Мои мероприятия</a>
                             </div>
                         </div>
                         <div class="section-program__list">
-                            <div class="section-program__message">
-                                <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <rect id="icon/if/attention" rx="-0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
-                                    <path id="Stroke 1" d="M21.25 12C21.25 17.1 17.1 21.25 12 21.25C6.89 21.25 2.75 17.1 2.75 12C2.75 6.89 6.89 2.75 12 2.75C17.1 2.75 21.25 6.89 21.25 12Z" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
-                                    <path id="Stroke 3" d="M11.99 8.2L11.99 12.62" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
-                                    <path id="Stroke 5" d="M11.99 15.79L12 15.79" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
-                                </svg>
-                                Учитывайте возможные временные наложения мероприятий при планировании графика
+                            <div class="section-program__message section-program__message--intersection">
+                                <div class="section-program__message-wrapper">
+                                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect id="icon/if/attention" rx="0.500000" width="23.000000" height="23.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+                                        <path id="Stroke 1" d="M21.25 12C21.25 17.1 17.1 21.25 12 21.25C6.89 21.25 2.75 17.1 2.75 12C2.75 6.89 6.89 2.75 12 2.75C17.1 2.75 21.25 6.89 21.25 12Z" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                                        <path id="Stroke 3" d="M11.99 8.2L11.99 12.62" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+                                        <path id="Stroke 5" d="M11.99 15.79L12 15.79" stroke="#E3000F" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+                                    </svg>
+                                    Учитывайте возможные временные наложения мероприятий при планировании графика
+                                </div>
                             </div>
-                            <div class="section-program__item">
+                            <div class="section-program__item" data-id="1" data-start="09:00" data-end="10:00">
                                 <div class="section-program__date">
                                     22 апреля
                                     <span class="time">9:00 - 10:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Регистрация участников, утренний кофе-брейк 
@@ -299,15 +304,18 @@
                                     Конференц-зал 3, Зона H 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
-                            <div class="section-program__item section-program__item--register section-program__item--selected">
+                            
+                            <div class="section-program__item section-program__item--register " data-id="2" data-start="11:00" data-end="12:00">
                                 <div class="section-program__date">
                                     22 апреля
-                                    <span class="time">9:00 - 10:00</span>
+                                    <span class="time">11:00 - 12:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Регистрация участников, утренний кофе-брейк 
@@ -321,15 +329,18 @@
                                     Конференц-зал 3, Зона H 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Отказаться</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
-                            <div class="section-program__item section-program__item--register">
+                            
+                            <div class="section-program__item" data-id="3" data-start="11:00" data-end="14:00">
                                 <div class="section-program__date">
                                     22 апреля
-                                    <span class="time">9:00 - 10:00</span>
+                                    <span class="time">11:00 - 14:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Официальное открытие форума, приветственные речи представителей местного самоуправления и организаторов
@@ -343,7 +354,8 @@
                                     Конференц-зал 3, Зона H 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Отказаться</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
@@ -352,11 +364,13 @@
                             <h2>ЭКОНОМИЧЕСКОЕ РАЗВИТИЕ</h2>
                         </div>
                         <div class="section-program__list">
-                            <div class="section-program__item">
+
+                            <div class="section-program__item" data-id="4" data-start="11:00" data-end="15:00">
                                 <div class="section-program__date">
                                     22 апреля
-                                    <span class="time">9:00 - 10:00</span>
+                                    <span class="time">11:00 - 15:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Регистрация участников, утренний кофе-брейк 
@@ -370,15 +384,17 @@
                                     Конференц-зал 3, Зона H 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
-                            <div class="section-program__item section-program__item--register section-program__item--selected">
+                            <div class="section-program__item " data-id="5" data-start="13:00" data-end="15:00">
                                 <div class="section-program__date">
                                     22 апреля
-                                    <span class="time">9:00 - 10:00</span>
+                                    <span class="time">13:00 - 15:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Регистрация участников, утренний кофе-брейк 
@@ -394,15 +410,17 @@
                                     Конференц-зал 3, Зона Конференц-зал 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Отказаться</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
-                            <div class="section-program__item section-program__item--register">
+                            <div class="section-program__item" data-id="6" data-start="14:00" data-end="19:00">
                                 <div class="section-program__date">
                                     22 апреля
-                                    <span class="time">9:00 - 10:00</span>
+                                    <span class="time">14:00 - 19:00</span>
                                     <div class="tag tag--date">Вы посещаете</div>
+                                    <div class="tag tag--intersection">Пересекается</div>
                                 </div>
                                 <div class="section-program__descr">
                                     Официальное открытие форума, приветственные речи представителей местного самоуправления и организаторов
@@ -416,10 +434,12 @@
                                     Конференц-зал 3, Зона H 
                                 </div>
                                 <div class="section-program__btns">
-                                    <a href="javascript:void(0)" class="btn btn-border">Отказаться</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsReg">Регистрация</a>
+                                    <a href="javascript:void(0)" class="btn btn-border jsRefuseReg">Отказаться</a>
                                     <a href="javascript:void(0)" class="btn btn-transparent">Трансляция</a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                  </section>

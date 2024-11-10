@@ -30,16 +30,11 @@ $(document).ready(function () {
         $(this).next(".mobile-menu__children").toggleClass("mobile-menu__children--active");
     });
 
-    // Выбор элемента на странице программа
-    $('.section-program__item').click(function () {
-        $(this).toggleClass('section-program__item--selected')
-    })
-
     // Плавный скролл к якорю
     $('.ancor').click(function () {
         let anchor = $(this).attr('href')
         $('html, body').animate({
-            scrollTop: $(anchor).offset().top
+            scrollTop: $(anchor).offset().top - 100
         }, 500)
     });
 
@@ -923,12 +918,59 @@ $(document).ready(function () {
     });
 
 
+    // плейсхолдер
     $('input, textarea').on('focusout', function () {
         let $masktel = /(^(?!\+.*\(.*\).*--.*$)(?!\+.*\(.*\).*-$)(\+[0-9]{1,3}\([0-9]{1,3}\)[0-9]{1}([-0-9]{0,8})?([0-9]{0,1})?)$)|(^[0-9]{1,4}$)/
-        
         $(this).val() != '' ? $(this).closest('.label').addClass('not-empty') : $(this).closest('.label').removeClass('not-empty')
-        if($(this).attr('type') == 'tel' && !$masktel.test($(this).val()) ) {
+        if($(this).attr('type') == 'tel' && !$masktel.test($(this).val())) {
             $(this).closest('.label').removeClass('not-empty')
+        }
+    })
+    // валидация
+    $('input, textarea').on('focusout', function () {
+        let $this = $(this)
+        let $val = $this.val()
+        let $parent = $this.closest('.label')
+        let $masktel = /(^(?!\+.*\(.*\).*--.*$)(?!\+.*\(.*\).*-$)(\+[0-9]{1,3}\([0-9]{1,3}\)[0-9]{1}([-0-9]{0,8})?([0-9]{0,1})?)$)|(^[0-9]{1,4}$)/
+        let $name = /^([A-Za-z][A-Za-z\-\']{1,50})|([А-ЯЁIЇҐЄа-яёіїґє][А-ЯЁIЇҐЄа-яёіїґє\-\']{1,50})$/
+        let $email = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
+        function _valid($parent) {
+            $parent.removeClass('label--error').addClass('label--valid')
+        }
+        function _noValid($parent) {
+            $parent.addClass('label--error')
+        }
+        if($parent.hasClass('label--required')) {
+            if($parent.hasClass('label--tel')) {
+                $masktel.test($val) ? _valid($parent) : _noValid($parent)
+            } else if($parent.hasClass('label--email')) {
+                $email.test($val) ? _valid($parent) : _noValid($parent)
+            } else if($parent.hasClass('label--name')) {
+                $name.test($val) ? _valid($parent) : _noValid($parent)
+            } else {
+                $val == '' ? _valid($parent) : _noValid($parent)
+            }
+        }
+    })
+    $(':checkbox').change(function() {
+        let $checked = $(this).prop('checked')
+        let $parent = $(this).closest('.label')
+        console.log($checked)
+        $checked ?  $parent.removeClass('label--error').addClass('label--valid') : $parent.addClass('label--error')
+    });
+
+    // сабмит
+    $('form').on('submit', function(e) {
+        e.preventDefault()
+        let $form = $(this)
+        let $required = $form.find('.label--required').length
+        let $valid = $form.find('.label--valid').length
+        console.log($required)
+        console.log($valid)
+        if($required == $valid) {
+            alert('submit')
+        } else {
+            $form.find('.label--required').not('.label--valid').addClass('label--error').eq(0).find('input').focus()
         }
     })
 
@@ -962,13 +1004,79 @@ $(document).ready(function () {
     });
 
 });
+function _intersectionTime() {
+    const inPairs = (xs) => xs .slice (1) .map ((x, i) => [xs [i], x])
+    const uniq = (xs) => [... new Set (xs)]
+    const overlaps = (events) =>
+    inPairs (uniq (events .flatMap ((w) => [w .startDate, w .endDate])) .sort ())
+        .map (([start, end]) => ({
+            start, 
+            end, 
+            events: events.filter (e => e .startDate < end && e.endDate > start) .map (e => e .id) 
+        }))
+        .filter (({events}) => events .length > 1)
+    
+    let meetings = []
 
+    let mergeMeetings = []
+    let i = 0
+    $('.section-program__item--register').each(function () {
+        i++
+        $time = {
+                id: $(this).attr('data-id'),
+                startDate: $(this).attr('data-start'),
+                endDate: $(this).attr('data-end')
+        }
+        meetings.push($time)
+    })
+
+    const conflicts = overlaps(meetings) 
+    
+    conflicts.forEach(function (e) {
+      mergeMeetings = mergeMeetings.concat(e.events)
+    })
+
+    if(mergeMeetings.length) {
+        $('.section-program__message--intersection').show()
+    } else {
+        $('.section-program__message--intersection').hide()
+        $('.section-program__item--register').removeClass('except')
+    } 
+
+    mergeMeetings.forEach(function (e) {
+        $('.section-program__item--register[data-id="' + e + '"]').addClass('except')
+    })
+    console.log(mergeMeetings)
+}
+$(document).ready(
+    _intersectionTime()
+)
+
+$('.jsRefuseReg').click(function () {
+    $(this).closest('.section-program__item').removeClass('section-program__item--register').removeClass('except')
+    _intersectionTime()
+})
+$('.jsReg').click(function () {
+    $(this).closest('.section-program__item').addClass('section-program__item--register')
+    _intersectionTime()
+})
+
+$('.jsShowMyEvent').click(function () {
+    $(this).removeClass('btn-secondary').addClass('btn-primary')
+    $('.jsShowAllEvent').removeClass('btn-primary').addClass('btn-secondary')
+    $('.section-program__item').not('.section-program__item--register').hide()
+})
+$('.jsShowAllEvent').click(function () {
+    $(this).removeClass('btn-secondary').addClass('btn-primary')
+    $('.jsShowMyEvent').removeClass('btn-primary').addClass('btn-secondary')
+    $('.section-program__item').show()
+})
 
 
 
 
 // Драг без полосы прокрутки. При необходимости динамического добавления класса вызвать dragscroll.reset()
-(function (root, factory) {
+$(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['exports'], factory);
     } else if (typeof exports !== 'undefined') {

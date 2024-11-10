@@ -4617,30 +4617,6 @@ ul.header-dropdown--lang > li a {
   padding-right: 0;
 }
 
-.label {
-  width: 100%;
-  position: relative;
-  margin-bottom: 20px;
-  background: rgba(0, 86, 164, 0.05);
-  border-radius: 8px;
-}
-.label--submit {
-  width: auto;
-}
-#popup-questions .label--submit {
-  margin-top: 20px;
-}
-#popup-questions .label--submit .btn {
-  width: 190px;
-}
-.label .error {
-  position: absolute;
-  color: #E3000F;
-  left: 0;
-  bottom: 0;
-  display: none;
-}
-
 input[type=text],
 input[type=tel],
 input[type=email],
@@ -4652,7 +4628,8 @@ textarea {
   font-size: 18px;
   border: 0;
   outline: none;
-  background: transparent;
+  border-radius: 8px;
+  background: rgba(0, 86, 164, 0.05);
 }
 @media (max-width: 576px) {
   input[type=text],
@@ -4710,11 +4687,69 @@ textarea {
   }
 }
 
+.placeholder {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  transition: 0.35s ease-in-out all;
+  transform-origin: 0 0;
+  cursor: text;
+}
+
+input:focus + .placeholder, .not-empty input + .placeholder,
+textarea:focus + .placeholder,
+.not-empty textarea + .placeholder {
+  bottom: calc(100% - 26px);
+  transform: scale(0.6);
+}
+input:required + .placeholder::after,
+textarea:required + .placeholder::after {
+  content: "*";
+  display: inline-block;
+  margin-left: 3px;
+  color: #E3000F;
+}
+
+.label {
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.label--submit {
+  width: auto;
+}
+#popup-questions .label--submit {
+  margin-top: 20px;
+}
+#popup-questions .label--submit .btn {
+  width: 190px;
+}
+.label .error {
+  color: #E3000F;
+  display: none;
+  font-size: 11px;
+  position: absolute;
+  left: 16px;
+  bottom: -15px;
+}
+.label--error {
+  margin-bottom: 20px;
+}
+.label--error input {
+  border: 1px solid #E3000F;
+}
+.label--error .error {
+  display: block;
+}
+
 .checkbox {
   background: transparent;
   padding-left: 32px;
   position: relative;
   cursor: pointer;
+}
+.checkbox .error {
+  left: 32px;
 }
 .checkbox .like-checkbox::before {
   content: "";
@@ -4747,28 +4782,6 @@ textarea {
 }
 .checkbox input[type=checkbox]:checked + .like-checkbox::after {
   transform: scale(1);
-}
-
-.placeholder {
-  position: absolute;
-  left: 16px;
-  bottom: 12px;
-  transition: 0.35s ease-in-out all;
-  transform-origin: 0 0;
-}
-
-input:focus + .placeholder, .not-empty input + .placeholder,
-textarea:focus + .placeholder,
-.not-empty textarea + .placeholder {
-  bottom: calc(100% - 26px);
-  transform: scale(0.6);
-}
-input:required + .placeholder::after,
-textarea:required + .placeholder::after {
-  content: "*";
-  display: inline-block;
-  margin-left: 3px;
-  color: #E3000F;
 }
 
 .section-placement-list__inner {
@@ -6658,6 +6671,11 @@ textarea:required + .placeholder::after {
 .section-program__btns .btn-primary {
   margin-right: 16px;
 }
+.section-program__message-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .section-program__message {
   padding: 19px;
   width: 100%;
@@ -6669,6 +6687,9 @@ textarea:required + .placeholder::after {
   color: #E3000F;
   margin-top: -20px;
   margin-bottom: 8px;
+}
+.section-program__message--intersection {
+  display: none;
 }
 @media (max-width: 576px) {
   .section-program__message {
@@ -6787,11 +6808,28 @@ textarea:required + .placeholder::after {
   margin-top: auto;
   width: 122px;
 }
-.section-program__item--selected .section-program__date .tag--date, .section-program__item--register .section-program__date .tag--date {
+.section-program__item--register .section-program__date .tag--date {
   display: block;
 }
 @media (max-width: 768px) {
   .section-program__date .tag--date {
+    margin-top: 8px;
+  }
+}
+.section-program__date .tag--intersection {
+  display: none;
+  padding: 4px 8px;
+  color: #fff;
+  background: #0056A4;
+  border-radius: 4px;
+  margin-top: auto;
+  width: 122px;
+}
+.except .section-program__date .tag--intersection {
+  display: block;
+}
+@media (max-width: 768px) {
+  .section-program__date .tag--intersection {
     margin-top: 8px;
   }
 }
@@ -6827,9 +6865,6 @@ textarea:required + .placeholder::after {
   width: 16px;
   height: 16px;
   display: inline-block;
-}
-.section-program__item--selected .section-program__descr {
-  color: #1460A3;
 }
 .section-program__tags {
   display: flex;
@@ -6895,7 +6930,7 @@ textarea:required + .placeholder::after {
 .section-title__btns {
   display: flex;
 }
-.section-title__btns .btn-primary {
+.section-title__btns .jsShowAllEvent {
   margin-right: 16px;
 }
 @media (max-width: 1024px) {
@@ -7064,6 +7099,62 @@ textarea:required + .placeholder::after {
 .dragscroll::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.section-program__item.section-program__item--register {
+  color: #fff;
+  background: rgb(0, 86, 164);
+}
+
+.section-program__item.section-program__item--register a {
+  color: #fff;
+}
+
+.section-program__item.section-program__item--register .section-program__descr {
+  color: #fff;
+}
+
+.section-program__item.section-program__item--register {
+  border: 0;
+}
+
+.tag--intersection {
+  display: none;
+}
+
+.section-program__item.section-program__item--register .tag {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.0509803922);
+}
+.section-program__item.section-program__item--register .tag.tag--intersection {
+  background: #E3000F;
+}
+
+.section-program__item.section-program__item--register a.btn.btn-border {
+  border-color: #fff;
+}
+@media (hover: hover) {
+  .section-program__item.section-program__item--register a.btn.btn-border:hover {
+    background: #fff;
+    color: #0056A4;
+  }
+}
+@media (hover: none) {
+  .section-program__item.section-program__item--register a.btn.btn-border:active {
+    background: #fff;
+    color: #0056A4;
+  }
+}
+
+.section-program__item--register .btn.jsReg {
+  display: none;
+}
+
+.btn.jsRefuseReg {
+  display: none;
+}
+.section-program__item--register .btn.jsRefuseReg {
+  display: inline-flex;
 }
 
 .footer .footer-menu a {
