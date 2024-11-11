@@ -3,6 +3,12 @@
     @include mobile-sm{
         margin-bottom: 56px;
     }
+    .checkbox {
+        margin-left: 20px;
+        @include mobile-sm{
+            margin-left: 0;
+        }
+    }
     &__inner{
     display: grid;
     grid-template-columns: 1.5fr 3fr;

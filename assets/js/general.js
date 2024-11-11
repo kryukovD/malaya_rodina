@@ -937,56 +937,56 @@ $(document).ready(function () {
     // плейсхолдер
     $('input, textarea').on('focusout', function () {
         let $masktel = /(^(?!\+.*\(.*\).*--.*$)(?!\+.*\(.*\).*-$)(\+[0-9]{1,3}\([0-9]{1,3}\)[0-9]{1}([-0-9]{0,8})?([0-9]{0,1})?)$)|(^[0-9]{1,4}$)/
-        $(this).val() != '' ? $(this).closest('.label').addClass('not-empty') : $(this).closest('.label').removeClass('not-empty')
+        $(this).val() != '' ? $(this).closest('.fieldset').addClass('not-empty') : $(this).closest('.fieldset').removeClass('not-empty')
         if($(this).attr('type') == 'tel' && !$masktel.test($(this).val())) {
-            $(this).closest('.label').removeClass('not-empty')
+            $(this).closest('.fieldset').removeClass('not-empty')
         }
     })
     // валидация
     $('input, textarea').on('focusout', function () {
         let $this = $(this)
         let $val = $this.val()
-        let $parent = $this.closest('.label')
+        let $parent = $this.closest('.fieldset')
         let $masktel = /(^(?!\+.*\(.*\).*--.*$)(?!\+.*\(.*\).*-$)(\+[0-9]{1,3}\([0-9]{1,3}\)[0-9]{1}([-0-9]{0,8})?([0-9]{0,1})?)$)|(^[0-9]{1,4}$)/
         let $name = /^([A-Za-z][A-Za-z\-\']{1,50})|([А-ЯЁIЇҐЄа-яёіїґє][А-ЯЁIЇҐЄа-яёіїґє\-\']{1,50})$/
         let $email = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
         function _valid($parent) {
-            $parent.removeClass('label--error').addClass('label--valid')
+            $parent.removeClass('fieldset--error').addClass('fieldset--valid')
         }
         function _noValid($parent) {
-            $parent.addClass('label--error')
+            $parent.addClass('fieldset--error')
         }
-        if($parent.hasClass('label--required')) {
-            if($parent.hasClass('label--tel')) {
+        if($parent.hasClass('fieldset--required')) {
+            if($parent.hasClass('fieldset--tel')) {
                 $masktel.test($val) ? _valid($parent) : _noValid($parent)
-            } else if($parent.hasClass('label--email')) {
+            } else if($parent.hasClass('fieldset--email')) {
                 $email.test($val) ? _valid($parent) : _noValid($parent)
-            } else if($parent.hasClass('label--name')) {
+            } else if($parent.hasClass('fieldset--name')) {
                 $name.test($val) ? _valid($parent) : _noValid($parent)
             } else {
-                $val == '' ? _valid($parent) : _noValid($parent)
+                $val != '' ? _valid($parent) : _noValid($parent)
             }
         }
     })
     $(':checkbox').change(function() {
         let $checked = $(this).prop('checked')
-        let $parent = $(this).closest('.label')
+        let $parent = $(this).closest('.fieldset')
         console.log($checked)
-        $checked ?  $parent.removeClass('label--error').addClass('label--valid') : $parent.addClass('label--error')
+        $checked ?  $parent.removeClass('fieldset--error').addClass('fieldset--valid') : $parent.addClass('fieldset--error')
     });
 
     // сабмит
     $('form').on('submit', function(e) {
         e.preventDefault()
         let $form = $(this)
-        let $required = $form.find('.label--required').length
-        let $valid = $form.find('.label--valid').length
+        let $required = $form.find('.fieldset--required').length
+        let $valid = $form.find('.fieldset--valid').length
         console.log($required)
         console.log($valid)
         if($required == $valid) {
             alert('submit')
         } else {
-            $form.find('.label--required').not('.label--valid').addClass('label--error').eq(0).find('input').focus()
+            $form.find('.fieldset--required').not('.fieldset--valid').addClass('fieldset--error').eq(0).find('input').focus()
         }
     })
 

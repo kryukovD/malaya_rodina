@@ -6,11 +6,24 @@
     @include mobile-sm {
         flex-direction: column;
     }
-    label {
+    .fieldset {
         width: calc(50% - 10px);
         @include mobile-sm {
             width: 100%;
             margin-bottom: 10px;
+        }
+    }
+    &--four {
+        flex-wrap: wrap;
+        .fieldset {
+            width: calc(25% - 10px);
+            @include tablet {
+                width: calc(50% - 10px);
+            }
+            @include mobile-sm {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     }
     .btn {
@@ -22,10 +35,17 @@
     }
 }
 
+::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
 input[type="number"],
+input[type="date"],
 textarea {
     width: 100%;
     height: 60px;
@@ -80,7 +100,7 @@ textarea{
         bottom: calc(100% - 26px);
         transform: scale(.6);
     }
-    &:required {
+    .fieldset--required & {
         & + .placeholder {
             &::after {
                 content: '*';
@@ -93,7 +113,32 @@ textarea{
 }
 
 
-.label {
+.fieldset-file {
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 86, 164, 0.05);
+    cursor: pointer;
+    &__title {
+        font-size: 15px;
+        line-height: 18px;
+        margin-bottom: 4px;
+        color: $primary-color-btn;
+        span {
+            color: $color-accent;
+        }
+    }
+    &__descr {
+        text-align: center;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.fieldset {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
@@ -105,6 +150,24 @@ textarea{
                 width: 190px;
             }
             
+        }
+    }
+    &+span {
+        display: block;
+        margin-top: -16px;
+        font-size: 14px;
+    }
+    &--file {
+        width: 100%;
+        border: 1px dashed $primary-color-btn;
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        input {
+            display: none;
+        }
+        svg {
+            margin-bottom: 12px;
         }
     }
     .error {
@@ -171,5 +234,68 @@ textarea{
                 }
             }
         }
+    }
+}
+
+.registration {
+    padding: 48px 72px;
+    background: #fff;
+    border-radius: $border-radius-xl;
+    margin: 64px 0 80px;
+    @include tablet {
+        padding: 48px 42px 48px;
+    }
+    @include mobile-sm {
+        padding: 32px 17px 32px;
+    }
+    @include mobile-sm {
+        padding: 32px 16px;
+    }
+}
+
+.input-block {
+    padding-left: calc(100% - 851px);
+}
+
+.form-part {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 96px;
+    @include laptop {
+        grid-template-columns: 1fr;
+    }
+    &__descr {
+        @include laptop {
+            margin-bottom: 30px;
+        }   
+    }
+    &:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+    &__text {
+        width: 400px;
+    }
+    .btn.btn-red {
+        padding: 16px 50px;
+    }
+}
+
+.form-descr {
+    margin-top: 50px;
+    margin-bottom: 48px;
+    span {
+        color: $color-accent;
+    }
+}
+
+.fieldset--empty {
+    width: 100%;
+    height: 54px;
+    background: rgba(0, 86, 164, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: $primary-color-btn;
     }
 }
