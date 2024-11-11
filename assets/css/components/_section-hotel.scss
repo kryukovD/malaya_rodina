@@ -56,6 +56,9 @@
         margin-bottom: 24px;
     }
     .map {
+        iframe {
+            border-radius: 12px;
+        }
         img {
             width: 100%;
             height: auto;
@@ -102,7 +105,7 @@
                 height: 190px;
                 object-fit: cover;
                 @include laptop {
-                    width: calc(50% - 10px);
+                    width: calc(100% - 5px);
                     height: auto;
                 }
             }

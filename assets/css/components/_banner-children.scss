@@ -217,6 +217,11 @@
             max-width: 248px;
             width: 100%;
             margin-right: 16px;
+            &:nth-last-child(1) {
+                @include mobile-sm{
+                    margin-top: 8px;
+                }
+            }
             @include mobile-sm{
                 max-width: 227px;
             }

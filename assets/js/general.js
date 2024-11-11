@@ -210,6 +210,9 @@ $(document).ready(function () {
             nextEl: '.section-placement .slider-arrow--next',
             prevEl: '.section-placement .slider-arrow--prev',
         },
+        scrollbar: {
+            el: '.placement-slider  .slider-scrollbar',
+        },
         allowTouchMove: true,
 
         breakpoints: {
@@ -974,6 +977,10 @@ $(document).ready(function () {
         console.log($checked)
         $checked ?  $parent.removeClass('fieldset--error').addClass('fieldset--valid') : $parent.addClass('fieldset--error')
     });
+    
+    $('.placeholder').click(function () {
+        $(this).prev().focus()
+    })
 
     // сабмит
     $('form').on('submit', function(e) {

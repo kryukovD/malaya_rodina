@@ -99,6 +99,12 @@
         font-size: 18px;
         line-height: 25px;
         margin-bottom: 24px;
+        a {
+            text-decoration: underline;
+            @include hover {
+                text-decoration: none;
+            }
+        }
         @include tablet {
             display: none;
         }

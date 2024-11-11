@@ -1,3 +1,11 @@
+.banner-children--stream {
+    h1 {
+        @include mobile-sm {
+            font-size: 23px;
+        }
+    }
+}
+
 .section-stream{
     margin-bottom: 80px;
     
@@ -9,7 +17,6 @@
         @include mobile{
             display: flex;
             flex-direction: column;
-
         }
     }
 

@@ -34,7 +34,7 @@
             display: block;
             position: absolute;
             left: 7px;
-            top: 5px;
+            top: 7px;
             width: 1px;
             height: 100%;
             background: #0056A4;
@@ -49,7 +49,7 @@
             display: block;
             position: absolute;
             left: -26px;
-            top: 5px;
+            top: 7px;
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -61,7 +61,7 @@
                 display: block;
                 position: absolute;
                 left: -21px;
-                top: 17px;
+                top: 19px;
                 background: #fff;
                 width: 1px;
                 height: 100%;
@@ -122,6 +122,16 @@
                 font-size: 14px;
                 line-height: 17px;
             }
+        }
+    }
+}
+
+.form-issue {
+    .fieldset--submit {
+        width: calc(50% - 10px);
+        @include mobile-sm {
+            margin-bottom: 20px;
+            width: 100%;
         }
     }
 }

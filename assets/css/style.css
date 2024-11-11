@@ -3232,6 +3232,12 @@ ul.header-dropdown--lang > li a {
   }
 }
 
+@media (max-width: 576px) {
+  .banner-children--stream h1 {
+    font-size: 23px;
+  }
+}
+
 .section-stream {
   margin-bottom: 80px;
 }
@@ -4195,7 +4201,7 @@ ul.header-dropdown--lang > li a {
   display: block;
   position: absolute;
   left: 7px;
-  top: 5px;
+  top: 7px;
   width: 1px;
   height: 100%;
   background: #0056A4;
@@ -4210,7 +4216,7 @@ ul.header-dropdown--lang > li a {
   display: block;
   position: absolute;
   left: -26px;
-  top: 5px;
+  top: 7px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -4221,7 +4227,7 @@ ul.header-dropdown--lang > li a {
   display: block;
   position: absolute;
   left: -21px;
-  top: 17px;
+  top: 19px;
   background: #fff;
   width: 1px;
   height: 100%;
@@ -4295,6 +4301,16 @@ ul.header-dropdown--lang > li a {
   }
 }
 
+.form-issue .fieldset--submit {
+  width: calc(50% - 10px);
+}
+@media (max-width: 576px) {
+  .form-issue .fieldset--submit {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
 .section-placement {
   color: #200E32;
   margin-bottom: 100px;
@@ -4325,6 +4341,11 @@ ul.header-dropdown--lang > li a {
 .section-placement__btns {
   display: flex;
 }
+@media (max-width: 576px) {
+  .section-placement__btns {
+    display: none;
+  }
+}
 .section-placement__btns .btn {
   margin-right: 24px;
   padding: 10px 28px;
@@ -4340,8 +4361,18 @@ ul.header-dropdown--lang > li a {
 .section-placement .swiper-scrollbar {
   display: none;
 }
+@media (max-width: 576px) {
+  .section-placement .swiper-scrollbar {
+    display: block;
+  }
+}
 .section-placement .swiper-wrapper {
   align-items: stretch;
+}
+@media (max-width: 576px) {
+  .section-placement .swiper-wrapper {
+    margin-bottom: 20px;
+  }
 }
 
 .card-placement {
@@ -4395,22 +4426,35 @@ ul.header-dropdown--lang > li a {
 .card-placement__text {
   margin-bottom: 24px;
   transition: 0.35s ease-in-out all;
+  min-height: 250px;
+  -webkit-line-clamp: 11;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  transition: 0.35s ease-in-out all;
 }
 @media (hover: hover) {
   .card-placement__text:hover {
-    text-decoration: underline;
+    color: #0056A4;
   }
 }
 @media (hover: none) {
   .card-placement__text:active {
-    text-decoration: underline;
+    color: #0056A4;
   }
 }
 @media (max-width: 576px) {
   .card-placement__text {
+    min-height: initial;
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 16px;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
   }
 }
 .card-placement__options {
@@ -4450,6 +4494,11 @@ ul.header-dropdown--lang > li a {
 @media (max-width: 1640px) {
   .card-placement__options .tag-price {
     width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  .card-placement__options .tag-price {
+    text-align: right;
   }
 }
 .card-placement__options b {
@@ -4594,6 +4643,19 @@ ul.header-dropdown--lang > li a {
   font-size: 18px;
   line-height: 25px;
   margin-bottom: 24px;
+}
+.form-issue__text a {
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .form-issue__text a:hover {
+    text-decoration: none;
+  }
+}
+@media (hover: none) {
+  .form-issue__text a:active {
+    text-decoration: none;
+  }
 }
 @media (max-width: 1024px) {
   .form-issue__text {
@@ -4833,6 +4895,19 @@ textarea:focus + .placeholder,
 }
 .checkbox .error {
   left: 32px;
+}
+.checkbox .like-checkbox a {
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .checkbox .like-checkbox a:hover {
+    text-decoration: none;
+  }
+}
+@media (hover: none) {
+  .checkbox .like-checkbox a:active {
+    text-decoration: none;
+  }
 }
 .checkbox .like-checkbox::before {
   content: "";
@@ -5311,6 +5386,9 @@ textarea:focus + .placeholder,
 .section-hotel__title {
   margin-bottom: 24px;
 }
+.section-hotel .map iframe {
+  border-radius: 12px;
+}
 .section-hotel .map img {
   width: 100%;
   height: auto;
@@ -5369,7 +5447,7 @@ textarea:focus + .placeholder,
 }
 @media (max-width: 1640px) {
   .hotel-gallery__col:nth-last-child(1) img {
-    width: calc(50% - 10px);
+    width: calc(100% - 5px);
     height: auto;
   }
 }
@@ -6118,6 +6196,11 @@ blockquote {
   max-width: 248px;
   width: 100%;
   margin-right: 16px;
+}
+@media (max-width: 576px) {
+  .banner-children__block-button .btn:nth-last-child(1) {
+    margin-top: 8px;
+  }
 }
 @media (max-width: 576px) {
   .banner-children__block-button .btn {

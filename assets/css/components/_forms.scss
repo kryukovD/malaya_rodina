@@ -199,6 +199,12 @@ textarea{
         left: 32px;
     }
     .like-checkbox{
+        a {
+            text-decoration: underline;
+            @include hover {
+                text-decoration: none;
+            }
+        }
         &::before {
             content: '';
             display: block;
