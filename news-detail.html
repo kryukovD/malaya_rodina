@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="./assets/css/fancybox.css">
+    <link rel="stylesheet" href="./assets/css/swiper.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
+    <script src="./assets/js/jquery.countTo.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery.marquee.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script defer src="./assets/js/general.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- header-->
+        <div class="container">
+            <header class="header">
+                <div class=header__inner>
+                    <a href="javascript:void(0)" class="header__logo">
+                        <img src="./assets/images/logo.svg">
+                    </a>
+                    <nav class="nav">
+                        <ul class="header__menu">
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">О форуме <svg
+                                        width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg></a>
+                                <div
+                                    class="header-dropdown__overlay  header-dropdown__overlay--menu header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Страница</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">Участникам
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg>
+                                </a>
+                                <div class="header-dropdown__overlay header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Страница</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            <li class="header-menu__li--is_dropdown"><a href="javascript:void(0)">Программа
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.35891 2.77717C3.19828 2.65542 2.96663 2.66942 2.81801 2.81804C2.65588 2.98017 2.65396 3.24111 2.81372 3.40087L7.89844 8.48559L4.20509 8.50535L4.14414 8.51014C3.94514 8.54063 3.79103 8.71274 3.78908 8.91966C3.78693 9.14727 3.9697 9.33081 4.19731 9.32961L8.88077 9.30482C8.90813 9.30521 8.93556 9.30288 8.96261 9.29785C9.1561 9.26206 9.30401 9.09192 9.30506 8.88873L9.3295 4.19738L9.32535 4.13652C9.29695 3.93807 9.12644 3.78722 8.91952 3.78919C8.69191 3.79135 8.50643 3.97762 8.50524 4.20522L8.48602 7.89892L3.40084 2.81375L3.35891 2.77717Z"
+                                            fill="#200E32" />
+
+                                    </svg>
+                                </a>
+                                <div class="header-dropdown__overlay header-dropdown__overlay--menu">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Страница</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="javascript:void(0)">Марафон межрегиональных форумов</a></li>
+                            <li> <a href="javascript:void(0)">Новости</a></li>
+                            <li> <a href="javascript:void(0)">Контакты</a></li>
+                        </ul>
+
+                        <!-- mobile menu-->
+                        <div class="mobile-menu">
+                            <div class="mobile-menu__burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="mobile-menu__dropdown">
+                                <div class="mobile-menu__close">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="32" height="32" rx="4" fill="#FDFEFF" fill-opacity="0.1" />
+                                        <rect x="9" y="9" width="20" height="2" rx="1" transform="rotate(45 9 9)"
+                                            fill="white" />
+                                        <rect x="8" y="23" width="20" height="2" rx="1" transform="rotate(-45 8 23)"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <ul class="mobile-menu__list">
+                                    <li class="mobile-menu__li--has--children "> <a class="" href="javascript:void(0)">О
+                                            форуме <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M3.35909 2.77717C3.19846 2.65542 2.96681 2.66942 2.81819 2.81804C2.65606 2.98017 2.65414 3.24111 2.8139 3.40087L7.89862 8.48559L4.20527 8.50535L4.14433 8.51014C3.94532 8.54063 3.79121 8.71274 3.78926 8.91966C3.78712 9.14727 3.96989 9.33081 4.19749 9.32961L8.88095 9.30482C8.90831 9.30521 8.93574 9.30288 8.9628 9.29785C9.15628 9.26206 9.30419 9.09192 9.30525 8.88873L9.32969 4.19738L9.32554 4.13652C9.29714 3.93807 9.12663 3.78722 8.9197 3.78919C8.69209 3.79135 8.50661 3.97762 8.50543 4.20522L8.4862 7.89892L3.40103 2.81375L3.35909 2.77717Z"
+                                                    fill="#1460A3" />
+                                            </svg></a></li>
+                                    <ul class="mobile-menu__children">
+                                        <li> <a href="javascript:void(0)">Страница</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li> <a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                    <li> <a href="javascript:void(0)">Участникам</a></li>
+                                    <li> <a href="javascript:void(0)">Программа</a></li>
+                                    <li> <a href="javascript:void(0)">Марафон межрегиональных форумов</a></li>
+                                    <li> <a href="javascript:void(0)">Контакты</a></li>
+
+                                </ul>
+                                <div class="mobile-menu__lang">
+                                    <div class="mobile-menu__lang-title">Выберите язык:</div>
+                                    <ul>
+                                        <li><span>BY</span> <span> Беларускі</span></li>
+                                        <li><span>EN</span> <span> English</span></li>
+                                        <li class="mobile-menu__li--active"><span>RU</span> <span> Русский</span></li>
+                                        <li><span>CH</span> <span>中文</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="header__group">
+                        <div class="header__cabinet">
+                            <a class="btn btn-cabinet" href="javascript:void(0)"> <svg width="12" height="14"
+                                    viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.00282 0.333496C4.04681 0.333496 2.46114 1.92592 2.46114 3.89028C2.46114 5.85464 4.04681 7.44706 6.00282 7.44706C7.95884 7.44706 9.5445 5.85464 9.5445 3.89028C9.5445 1.92592 7.95884 0.333496 6.00282 0.333496ZM6.00282 1.29861C7.42808 1.29861 8.58349 2.45894 8.58349 3.89028C8.58349 5.32162 7.42808 6.48195 6.00282 6.48195C4.57756 6.48195 3.42216 5.32162 3.42216 3.89028C3.42216 2.45894 4.57756 1.29861 6.00282 1.29861ZM4.55333 8.88075C4.03485 8.91675 3.51077 8.99076 2.99382 9.10154C1.99608 9.30707 1.19786 9.7177 0.858119 10.4001C0.729978 10.6669 0.665552 10.9527 0.66664 11.242C0.666255 11.5292 0.730159 11.8153 0.853704 12.077C1.17992 12.7515 1.88516 13.1333 2.83745 13.3449L3.00804 13.3805C3.51095 13.4939 4.03519 13.5703 4.56294 13.6062C4.60788 13.6194 4.71501 13.6316 4.83193 13.6376L4.9281 13.6412C4.97755 13.6423 5.03368 13.6426 5.1173 13.6426C5.87586 13.6844 6.66224 13.6722 7.44497 13.6056C7.86209 13.577 8.28202 13.5225 8.69845 13.4426L9.01 13.3779C10.0383 13.175 10.8083 12.7892 11.1457 12.0778C11.3958 11.5496 11.3958 10.9366 11.1458 10.4087C10.8093 9.699 10.0491 9.31642 9.0022 9.10076C8.59147 9.01307 8.17409 8.94819 7.75374 8.90676L7.44643 8.88075C6.48391 8.79585 5.51584 8.79585 4.55333 8.88075ZM7.36233 9.84216L7.37078 9.84283C7.85321 9.87679 8.33269 9.9445 8.80573 10.0455C9.58335 10.2057 10.1111 10.4713 10.278 10.8234C10.4037 11.0888 10.4037 11.3973 10.2779 11.6631C10.1219 11.9921 9.64795 12.2462 8.96294 12.4016L8.81295 12.4333C8.33061 12.541 7.85271 12.6103 7.37166 12.6433C6.62524 12.7068 5.88325 12.7182 5.14313 12.6782L4.88073 12.6737C4.80789 12.67 4.7465 12.663 4.6896 12.6516C4.2391 12.6175 3.83373 12.5638 3.44013 12.4857L3.20512 12.436C2.42509 12.2831 1.89272 12.0164 1.72011 11.6595C1.65971 11.5315 1.62745 11.387 1.62764 11.2408C1.6271 11.0954 1.65894 10.9542 1.72074 10.8254C1.88857 10.4884 2.45275 10.1982 3.19066 10.0462C3.66711 9.94409 4.14636 9.87641 4.62858 9.84286C5.54397 9.76219 6.45577 9.76219 7.36233 9.84216Z"
+                                        fill="white" />
+                                </svg> Личный кабинет</a>
+
+                            <a class="header-cabinet-mobile"> <svg width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="32" height="32" rx="4" fill="#1460A3" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M16.0037 7.6665C13.5587 7.6665 11.5766 9.65704 11.5766 12.1125C11.5766 14.5679 13.5587 16.5585 16.0037 16.5585C18.4488 16.5585 20.4308 14.5679 20.4308 12.1125C20.4308 9.65704 18.4488 7.6665 16.0037 7.6665ZM16.0037 8.87289C17.7853 8.87289 19.2296 10.3233 19.2296 12.1125C19.2296 13.9017 17.7853 15.3521 16.0037 15.3521C14.2222 15.3521 12.7779 13.9017 12.7779 12.1125C12.7779 10.3233 14.2222 8.87289 16.0037 8.87289ZM14.1919 18.3506C13.5438 18.3956 12.8887 18.4881 12.2425 18.6266C10.9953 18.8835 9.99754 19.3968 9.57286 20.2497C9.41269 20.5833 9.33215 20.9405 9.33351 21.3021C9.33303 21.6611 9.41291 22.0187 9.56734 22.3459C9.97512 23.1891 10.8567 23.6662 12.047 23.9307L12.2603 23.9752C12.8889 24.1171 13.5442 24.2125 14.2039 24.2574C14.2601 24.2738 14.394 24.2892 14.5401 24.2966L14.6603 24.3011C14.7222 24.3026 14.7923 24.3029 14.8968 24.3029C15.845 24.3551 16.828 24.3399 17.8064 24.2566C18.3278 24.2209 18.8527 24.1527 19.3733 24.0528L19.7627 23.972C21.0481 23.7184 22.0106 23.2362 22.4323 22.3469C22.745 21.6866 22.745 20.9204 22.4325 20.2605C22.0118 19.3734 21.0616 18.8952 19.753 18.6256C19.2396 18.516 18.7178 18.4349 18.1924 18.3831L17.8082 18.3506C16.6051 18.2444 15.395 18.2444 14.1919 18.3506ZM17.7031 19.5523L17.7137 19.5532C18.3167 19.5956 18.9161 19.6803 19.5074 19.8065C20.4794 20.0067 21.1391 20.3387 21.3477 20.7788C21.5049 21.1107 21.5049 21.4963 21.3476 21.8285C21.1526 22.2397 20.5602 22.5574 19.7039 22.7516L19.5164 22.7913C18.9135 22.9258 18.3161 23.0125 17.7148 23.0538C16.7818 23.1331 15.8543 23.1474 14.9291 23.0974L14.6011 23.0918C14.5101 23.0871 14.4333 23.0784 14.3622 23.0641C13.7991 23.0216 13.2924 22.9543 12.8004 22.8568L12.5066 22.7946C11.5316 22.6035 10.8661 22.2701 10.6504 21.824C10.5749 21.664 10.5345 21.4834 10.5348 21.3006C10.5341 21.1189 10.5739 20.9423 10.6511 20.7814C10.8609 20.3602 11.5662 19.9974 12.4885 19.8074C13.0841 19.6798 13.6832 19.5951 14.2859 19.5532C15.4302 19.4524 16.5699 19.4524 17.7031 19.5523Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="header__lang">
+                            <a href="javascript:void(0)">
+                                <svg width="21" height="16" viewBox="0 0 21 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_2246_2188)">
+                                        <rect y="0.5" width="21" height="15" rx="4" fill="#1A47B8" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.5H21V15.5H0V10.5Z"
+                                            fill="#F93939" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H21V5.5H0V0.5Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2246_2188">
+                                            <rect y="0.5" width="21" height="15" rx="4" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <span>RU</span>
+                            </a>
+
+                            <div class="header-dropdown__overlay header-dropdown__overlay--lang">
+                                <ul class="header-dropdown header-dropdown--lang">
+                                    <li><a href="javascript:void(0)"> <span>BY</span> <span>Беларускі</span></a></li>
+                                    <li><a href="javascript:void(0)"><span>EN</span> <span>English</span> </a></li>
+                                    <li class="active"><a href="javascript:void(0)"><span>RU</span> <span>Русский</span>
+                                    </li>
+                                    <li><a href="javascript:void(0)"><span>CH</span> <span>中文</span> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+        </div>
+        <!-- content-->
+        <div class="content">
+            <div class="container">
+
+                <div class="banner-children banner-children--news-list  banner-children--partners  wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="banner-children__inner"
+                        style="background:url('./assets/images/news/new-bg.png');background-size: cover;">
+                        <div class="banner-children__content">
+                            <div class="breadcrumbs  breadcrumbs--partners">
+                                <ul class="breadcrumbs__list">
+                                    <li><a href="javascript:void(0)">Главная </a></li>
+                                    <li> <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.47144 4.45143C0.205203 4.48809 0 4.71969 0 4.99993C0 5.30564 0.244208 5.55347 0.545455 5.55347L10.1333 5.55347L6.6698 9.05423L6.61686 9.1162C6.45797 9.33257 6.47495 9.64013 6.6682 9.83706C6.88077 10.0537 7.22613 10.0544 7.43959 9.83868L11.8318 5.3997C11.858 5.37427 11.8816 5.34622 11.9024 5.31597C12.0511 5.0998 12.0301 4.79995 11.8396 4.60737L7.43955 0.161287L7.37826 0.107824C7.16439 -0.0524988 6.8614 -0.0339699 6.66817 0.162973C6.45561 0.379612 6.45636 0.730097 6.66983 0.945805L10.1342 4.44638L0.545455 4.44638L0.47144 4.45143Z"
+                                                fill="white" fill-opacity="0.5" />
+                                        </svg>
+                                        Новости
+                                    </li>
+                                    <li> <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.47144 4.45143C0.205203 4.48809 0 4.71969 0 4.99993C0 5.30564 0.244208 5.55347 0.545455 5.55347L10.1333 5.55347L6.6698 9.05423L6.61686 9.1162C6.45797 9.33257 6.47495 9.64013 6.6682 9.83706C6.88077 10.0537 7.22613 10.0544 7.43959 9.83868L11.8318 5.3997C11.858 5.37427 11.8816 5.34622 11.9024 5.31597C12.0511 5.0998 12.0301 4.79995 11.8396 4.60737L7.43955 0.161287L7.37826 0.107824C7.16439 -0.0524988 6.8614 -0.0339699 6.66817 0.162973C6.45561 0.379612 6.45636 0.730097 6.66983 0.945805L10.1342 4.44638L0.545455 4.44638L0.47144 4.45143Z"
+                                                fill="white" fill-opacity="0.5" />
+                                        </svg>
+                                        Всероссийский Форум "Малая Родина": Объединяем Усилия для Развития Регионов
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="banner-children__group">
+                                <div class="banner-children__title">
+                                    <h1 class="text-white">Всероссийский Форум "Малая Родина": Объединяем Усилия для Развития Регионов</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <section class="section-new wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-new__wrapper">
+                        <h5>4 января 2025 года пройдет Всероссийский Форум "Малая Родина". Это мероприятие обещает стать знаковым событием для руководителей муниципалитетов и представителей местного самоуправления со всей России. Форум посвящен обсуждению актуальных вопросов развития малых городов и сельских поселений, а также укреплению межмуниципального сотрудничества.</h5>
+                    </div>
+                </section>
+                
+                <section class="section-new--slider wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-new__wrapper">
+                        <div class="new-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/news/n1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/news/n1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/news/n1.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-new__arrow slider-arrow--prev">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1906 14.8192C12.4141 14.6001 12.4344 14.2571 12.2515 14.0155L12.1906 13.9462L7.14494 9L12.1906 4.05377C12.4141 3.83462 12.4344 3.49169 12.2515 3.25003L12.1906 3.1808C11.967 2.96165 11.6172 2.94173 11.3707 3.12103L11.3001 3.1808L5.80942 8.56351C5.58588 8.78266 5.56556 9.1256 5.74846 9.36725L5.80942 9.43649L11.3001 14.8192C11.546 15.0603 11.9447 15.0603 12.1906 14.8192Z" fill="#0056A4"/>
+                            </svg>                                
+                        </div>
+                        <div class="section-new__arrow slider-arrow--next">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.80942 14.8192C5.58588 14.6001 5.56556 14.2571 5.74846 14.0155L5.80942 13.9462L10.8551 9L5.80942 4.05377C5.58588 3.83462 5.56556 3.49169 5.74846 3.25003L5.80942 3.1808C6.03297 2.96165 6.38278 2.94173 6.62928 3.12103L6.6999 3.1808L12.1906 8.56351C12.4141 8.78266 12.4344 9.1256 12.2515 9.36725L12.1906 9.43649L6.6999 14.8192C6.454 15.0603 6.05532 15.0603 5.80942 14.8192Z" fill="#0056A4"/>
+                            </svg>                                
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-new__detail wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-new__wrapper">
+                        <h3>Основные Цели Форума</h3>
+                        <b>Главные задачи мероприятия включают:</b>
+                        <ul>
+                            <li>Обсуждение ключевых вопросов повышения качества жизни в малых населенных пунктах.</li>
+                            <li>Разработка совместных стратегий и инициатив по развитию регионов.</li>
+                            <li>Укрепление сетей сотрудничества между муниципалитетами на федеральном уровне.</li>
+                        </ul>
+                        
+                        <h3>Основные Цели Форума</h3>
+                        <b>Главные задачи мероприятия включают:</b>
+                        <ul>
+                            <li>Обсуждение ключевых вопросов повышения качества жизни в малых населенных пунктах.</li>
+                            <li>Разработка совместных стратегий и инициатив по развитию регионов.</li>
+                            <li>Укрепление сетей сотрудничества между муниципалитетами на федеральном уровне.</li>
+                        </ul>
+                        <h3>Основные Цели Форума</h3>
+                        <b>Главные задачи мероприятия включают:</b>
+                        <ul>
+                            <li>Обсуждение ключевых вопросов повышения качества жизни в малых населенных пунктах.</li>
+                            <li>Разработка совместных стратегий и инициатив по развитию регионов.</li>
+                            <li>Укрепление сетей сотрудничества между муниципалитетами на федеральном уровне.</li>
+                        </ul>
+                        <blockquote>"Форум 'Малая Родина' — это уникальная возможность для представителей муниципальных сообществ обменяться опытом и выработать совместные стратегии, направленные на улучшение качества жизни в регионах," — отметил представитель организационного комитета.</blockquote>
+                        
+                        <h3>Основные Цели Форума</h3>
+                        <b>Главные задачи мероприятия включают:</b>
+                        <ul>
+                            <li>Обсуждение ключевых вопросов повышения качества жизни в малых населенных пунктах.</li>
+                            <li>Разработка совместных стратегий и инициатив по развитию регионов.</li>
+                            <li>Укрепление сетей сотрудничества между муниципалитетами на федеральном уровне.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- section news-->
+                <section class="section-news wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-news__inner">
+                        <div class="section-news__header">
+                            <h2>ЧИТАЙТЕ ЕЩЕ</h2>
+                            <div class="section-news__btns">
+                                <a class="btn btn-primary" href="javascript:void(0)">Все новости</a>
+                                <div class="section-news__arrows">
+                                    <div class="slider-arrow slider-arrow--prev">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 12L3 12" stroke="#1460A3" stroke-linecap="round" />
+                                            <path d="M9 6L3 12L9 18" stroke="#1460A3" stroke-linecap="round" />
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="slider-arrow slider-arrow--next">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 12L21 12" stroke="#1460A3" stroke-linecap="round" />
+                                            <path d="M15 18L21 12L15 6" stroke="#1460A3" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-news__body">
+                            <div class="swiper slider-news">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news1.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                Сегодня
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                В Музее БИОТЕХ на ВДНХ пройдет день открытых дверей
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news2.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                7 октября
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                На ВДНХ пройдет театрализованная экскурсия по роману Льва Толстого
+                                                «Война
+                                                и мир»
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news3.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                7 октября
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                Лекции, мастер-классы и экскурсии: топ-5 бесплатных мероприятий ВДНХ
+                                                на неделе
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news4.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                6 октября
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                Лакросс, кила и цигун: какие тренировки проходят осенью на ВДНХ
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news4.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                6 октября
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                Лакросс, кила и цигун: какие тренировки проходят осенью на ВДНХ
+                                            </div>
+                                        </div>
+
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="swiper-slide  slider-news__item ">
+                                        <div class="slider-news__item-image">
+                                            <img src="./assets/images/main/news4.png" alt="">
+                                        </div>
+                                        <div class="slider-news__item-body">
+                                            <div class="slider-news__item-date">
+                                                6 октября
+                                            </div>
+                                            <div class="slider-news__item-name">
+                                                Лакросс, кила и цигун: какие тренировки проходят осенью на ВДНХ
+                                            </div>
+                                        </div>
+
+                                    </a>
+
+
+
+
+                                </div>
+
+                                <!-- If we need scrollbar -->
+                                <div class="swiper-scrollbar slider-scrollbar"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+
+        <!-- footer-->
+        <div class="footer-container container">
+            <button class="btn-upper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21V3" stroke="#F7F7F7" stroke-linecap="round" />
+                    <path d="M6 9L12 3L18 9" stroke="#F7F7F7" stroke-linecap="round" />
+                </svg>
+            </button>
+            <footer class="footer">
+                <div class="footer__inner">
+                    <div class="footer__top">
+                        <a href="javascript:void(0)" class="footer__logo">
+                            <img src="./assets/images/footer-logo.svg">
+                        </a>
+                        <div class="footer__partners">
+                            <a href="javascript:void(0)">
+                                <img src="./assets/images/main/partner_footer1.svg">
+                            </a>
+                            <a href="javascript:void(0)">
+                                <img src="./assets/images/main/partner__footer2.svg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <div class="footer__bottom-btn">
+                            <a href="javascript:void(0)">Вход/Регистрация</a>
+                        </div>
+                        <div class="footer-menus">
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">О форуме </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Карта выставки</a></li>
+                                    <li><a href="javascript:void(0)">Место проведения</a></li>
+                                    <li><a href="javascript:void(0)">Вопрос-ответ</a></li>
+                                    <li><a href="javascript:void(0)">Партнеры</a></li>
+                                </ul>
+
+
+                            </ul>
+
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">Участникам </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Размещение (Отели)</a></li>
+                                    <li><a href="javascript:void(0)">О площадке (Карта залов)</a></li>
+                                </ul>
+                            </ul>
+
+                            <ul class="footer-menu">
+                                <li><a href="javascript:void(0)">Программа </a></li>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Деловая программа</a></li>
+                                    <li><a href="javascript:void(0)">Культурная программа</a></li>
+                                    <li><a href="javascript:void(0)">Первый инвестиционный форум</a></li>
+                                    <li><a href="javascript:void(0)">Премия (служения)</a></li>
+                                </ul>
+                            </ul>
+
+                            <ul class="footer-menu footer-menu--not-title">
+
+                                <li><a href="javasscript:void(0)">Марафон межрегиональных форумов</a></li>
+                                <li><a href="javasscript:void(0)">Новости </a></li>
+                                <li><a href="javascript:void(0)"> Контакты </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="footer-separate">
+                    <span>© Всероссийский муниципальный форум <a href="javascript:void(0)"> «Малая Родина — сила России»
+                        </a></span>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

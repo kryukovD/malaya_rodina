@@ -244,6 +244,22 @@ $(document).ready(function () {
         }
     });
 
+    
+    /*placement slider */
+    const newSlider = new Swiper('.new-slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        autoHeight: true,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.section-new__arrow.slider-arrow--next',
+            prevEl: '.section-new__arrow.slider-arrow--prev',
+        },
+        allowTouchMove: true,
+    });
+
     /*tabs */
     $(".section-members__tabs-li").each(function (i, item) {
         if ($(item).hasClass("section-members__tabs-li--active")) {
