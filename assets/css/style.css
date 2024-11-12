@@ -3910,14 +3910,23 @@ ul.header-dropdown--lang > li a {
 .section-news .slider-news__item .slider-news__item-image {
   transition: all 0.8s ease-in-out;
 }
-.section-news .slider-news__item.section-news__item--revert-slide {
-  animation: revertSlide 0.6s ease forwards; /* Запускаем анимацию */
+.section-news .slider-news .slider-news__item-body {
+  transition: all ease-in-out 0.8s 0.3s;
+}
+.section-news .slider-news .slider-news__item-image {
+  z-index: 1;
+}
+.section-news .slider-news__item.section-news__item--revert-slide .slider-news__item-body {
+  transform: translateY(-470px);
 }
 .section-news .slider-news__item.section-news__item--revert-slide .slider-news__item-image {
-  order: 2;
+  transform: translateY(155px);
 }
-.section-news .slider-news__item.section-news__item--before-revert-slide {
-  animation: revertBeforeSlide 0.6s ease forwards; /* Запускаем анимацию */
+.section-news .slider-news__item.section-news__item--before-revert-slide + .section-news__item--small-slide .slider-news__item-body {
+  transform: translateY(-470px);
+}
+.section-news .slider-news__item.section-news__item--before-revert-slide + .section-news__item--small-slide .slider-news__item-image {
+  transform: translateY(155px);
 }
 .section-news .slider-news__item.section-news__item--large-slide {
   width: calc(33% - 20px) !important;
@@ -4073,7 +4082,7 @@ ul.header-dropdown--lang > li a {
 @keyframes revertBeforeSlide {
   0% {
     transform: translateX(0); /* Начальная позиция */
-    opacity: 0; /* Полная непрозрачность */
+    opacity: 1; /* Полная непрозрачность */
   }
   50% {
     transform: translateY(200%); /* Сдвиг вправо на полпути */
@@ -7495,7 +7504,7 @@ textarea:focus + .placeholder,
   cursor: pointer;
 }
 
-.bk-slider .swiper-slide-new::before {
+.bk-slider .swiper-slide-new.swiper-slide-active::before {
   content: "";
   display: block;
   position: absolute;
@@ -7508,7 +7517,7 @@ textarea:focus + .placeholder,
   opacity: 0;
   transition: all ease 0.4s;
 }
-.bk-slider .swiper-slide-new::after {
+.bk-slider .swiper-slide-new.swiper-slide-active::after {
   opacity: 0;
   transition: all ease 0.4s;
   position: absolute;
@@ -7517,13 +7526,13 @@ textarea:focus + .placeholder,
   right: 24px;
 }
 @media (hover: hover) {
-  .bk-slider .swiper-slide-new:hover::after, .bk-slider .swiper-slide-new:hover::before {
+  .bk-slider .swiper-slide-new.swiper-slide-active:hover::after, .bk-slider .swiper-slide-new.swiper-slide-active:hover::before {
     opacity: 1;
     cursor: pointer;
   }
 }
 @media (hover: none) {
-  .bk-slider .swiper-slide-new:active::after, .bk-slider .swiper-slide-new:active::before {
+  .bk-slider .swiper-slide-new.swiper-slide-active:active::after, .bk-slider .swiper-slide-new.swiper-slide-active:active::before {
     opacity: 1;
     cursor: pointer;
   }

@@ -72,7 +72,7 @@
     }
 }
 
-.bk-slider .swiper-slide-new {
+.bk-slider .swiper-slide-new.swiper-slide-active {
     &::before {
         content: '';
         display: block;

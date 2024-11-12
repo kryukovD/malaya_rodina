@@ -117,16 +117,42 @@
             }
         }
 
-        &__item.section-news__item--revert-slide{
-            animation: revertSlide 0.6s ease forwards; /* Запускаем анимацию */
-           
-            .slider-news__item-image{
-                order: 2;
+        .slider-news__item-body {
+            transition: all ease-in-out .8s .3s;
+        }
+        .slider-news__item-image {
+            z-index: 1;
+        }
+
+        &__item.section-news__item--revert-slide {
+            .slider-news__item-body {
+                transform: translateY(-470px);
+            }
+            .slider-news__item-image {
+                transform: translateY(155px);
             }
         }
-        &__item.section-news__item--before-revert-slide{
-            animation: revertBeforeSlide 0.6s ease forwards; /* Запускаем анимацию */
+        &__item.section-news__item--before-revert-slide {
+            & + .section-news__item--small-slide {
+                .slider-news__item-body {
+                    transform: translateY(-470px);
+                }
+                .slider-news__item-image {
+                    transform: translateY(155px);
+                }
+                
+            }
         }
+//        &__item.section-news__item--revert-slide{
+//            animation: revertSlide 0.6s ease forwards; /* Запускаем анимацию */
+//           
+//            .slider-news__item-image{
+//                order: 2;
+//            }
+//        }
+//        &__item.section-news__item--before-revert-slide{
+//            animation: revertBeforeSlide 0.6s ease forwards; /* Запускаем анимацию */
+//        }
         &__item.section-news__item--large-slide {
             width: calc(33% - 20px) !important;
             img {
@@ -313,7 +339,7 @@
   @keyframes revertBeforeSlide {
     0% {
       transform: translateX(0); /* Начальная позиция */
-      opacity: 0;               /* Полная непрозрачность */
+      opacity: 1;               /* Полная непрозрачность */
     }
     50% {
       transform: translateY(200%); /* Сдвиг вправо на полпути */
