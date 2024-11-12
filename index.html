@@ -1350,12 +1350,13 @@
                 </section>
 
                 <!-- section photogallery-->
-                <section class="section-photo-gallery wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
-                    <div class="section-photo-gallery__inner">
-                        <div class="section-photo-gallery__header">
-                            <h2> Фотогалерея</h2> <a href="javascript:void(0)" class="btn  btn-primary"> Все фото</a>
-                        </div>
-                        <div class="section-photo-gallery__body">
+                
+                <section class="section-photo-gallery section-photo-gallery--new">
+                    <div class="section-photo-gallery__header">
+                        <h2> Фотогалерея</h2> <a href="javascript:void(0)" class="btn  btn-primary"> Все фото</a>
+                    </div>
+                    <div class="section-photo-gallery--new__inner">
+                                            <div class="section-photo-gallery__body">
                             <div class="slider-arrow-chevron slider-arrow-chevron--prev">
                                 <svg width="8" height="12" viewBox="0 0 8 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1373,62 +1374,58 @@
                                         fill="#0056A4" />
                                 </svg>
                             </div>
-                            <div class="swiper slider-photo-gallery">
-                                <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p1gal.png">
-                                        <img src="./assets/images/main/p1gal.png" alt="">
-
-                                    </div>
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p2gal.png">
-                                        <img src="./assets/images/main/p2gal.png" alt="">
-                                    </div>
-
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p3gal.png">
-
-                                        <img src="./assets/images/main/p3gal.png" alt="">
-                                    </div>
-
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p4gal.png">
-
-                                        <img src="./assets/images/main/p4gal.png" alt="">
-                                    </div>
-
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p4gal.png">
-
-                                        <img src="./assets/images/main/p4gal.png" alt="">
-                                    </div>
-
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p5gal.png">
-
-                                        <img src="./assets/images/main/p5gal.png" alt="">
-                                    </div>
-
-
-                                    <div class="swiper-slide slider-photo-gallery__item "
-                                        data-src="./assets/images/main/p1gal.png">
-                                        <img src="./assets/images/main/p1gal.png" alt="">
-
-                                    </div>
-
-
-
-
-
-                                </div>
-
-                                <!-- If we need scrollbar -->
-                                <div class="swiper-scrollbar slider-scrollbar"></div>
-                            </div>
                         </div>
+
+                        <div class="bk-slider">
+                            <div class="swiper-new">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p3gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p3gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p5gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p5gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p4gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p4gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p2gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p2gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p1gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p1gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p5gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p5gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p3gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p3gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p5gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p5gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p4gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p4gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p2gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p2gal.png">
+                                </div>
+                                <div class="swiper-slide swiper-slide-new" data-src="./assets/images/main/p1gal.png" data-fancybox="gallery">
+                                    <img src="./assets/images/main/p1gal.png">
+                                </div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+
                     </div>
+
+
+
+
                 </section>
 
                 <!-- section-stream-->

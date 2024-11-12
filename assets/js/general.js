@@ -685,6 +685,33 @@ $(document).ready(function () {
 
     });
 
+
+    var swiperNew = new Swiper('.swiper-new', {
+        centeredSlides: true,
+        slidesPerView: 7,
+        loop: true,
+        navigation: {
+            nextEl: '.slider-arrow-chevron--next',
+            prevEl: '.slider-arrow-chevron--prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.5,
+            },
+            768: {
+                slidesPerView: 7,
+            },
+        }
+    });
+
+    $('.section-photo-gallery').on('click', '.swiper-slide-test.swiper-slide-next', function () {
+        $('.slider-arrow-chevron--next').trigger('click')
+    })
+    $('.section-photo-gallery').on('click', '.swiper-slide-test.swiper-slide-prev', function () {
+        $('.slider-arrow-chevron--prev').trigger('click')
+    })
+    
+
     const partner_slider_2 = new Swiper('.section-brands__row--second', {
         loop: true,
         allowTouchMove: false,
@@ -910,11 +937,13 @@ $(document).ready(function () {
         var headerHeight = $('.header').outerHeight(); // Получаем высоту шапки
 
         if (scroll >= headerHeight) {
-            $("body").css("padding-top", headerHeight + "px")
-            $('.header').addClass('fixed');
+            // $("body").css("padding-top", headerHeight + "px")
+            // $('.header').addClass('fixed');
+            $('.header').addClass('sticky');
         } else {
-            $("body").css("padding-top", 0)
-            $('.header').removeClass('fixed');
+            // $("body").css("padding-top", 0)
+            // $('.header').removeClass('fixed');
+            $('.header').removeClass('sticky');
         }
     });
 
@@ -1179,5 +1208,7 @@ $(function (root, factory) {
     }
     exports.reset = reset;
 }));
+
+
 
 
