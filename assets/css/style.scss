@@ -210,6 +210,18 @@ body{
     }
   }
 
+  .mobile-show {
+    display: none;
+    @include mobile-sm {
+        display: block;
+    }
+}  
+.mobile-hide {
+    display: block;
+    @include mobile-sm {
+        display: none;
+    }
+}  
 
 
 @import "./components/_breadcrumbs";

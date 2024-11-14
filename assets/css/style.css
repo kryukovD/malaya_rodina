@@ -218,6 +218,24 @@ body {
     opacity: 1;
   }
 }
+.mobile-show {
+  display: none;
+}
+@media (max-width: 576px) {
+  .mobile-show {
+    display: block;
+  }
+}
+
+.mobile-hide {
+  display: block;
+}
+@media (max-width: 576px) {
+  .mobile-hide {
+    display: none;
+  }
+}
+
 .breadcrumbs {
   position: relative;
   z-index: 100;
@@ -4329,6 +4347,14 @@ ul.header-dropdown--lang > li a {
   .form-issue .fieldset--submit {
     margin-bottom: 20px;
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-children__description.mobile-show {
+    color: #200E32;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 

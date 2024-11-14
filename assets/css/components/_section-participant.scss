@@ -135,3 +135,12 @@
         }
     }
 }
+
+
+.banner-children__description.mobile-show {
+    @include mobile-sm {
+        color: $color-text-accent;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}  
