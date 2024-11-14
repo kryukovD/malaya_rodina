@@ -37,6 +37,10 @@
 
 .paggination {
     display: flex;
+    margin-left: auto;
+    @include laptop {
+        margin-left: 0;
+    }
     a.paggination__item {
         width: 49px;
         height: 49px;

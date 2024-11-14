@@ -5108,6 +5108,12 @@ textarea:focus + .placeholder,
 
 .paggination {
   display: flex;
+  margin-left: auto;
+}
+@media (max-width: 1640px) {
+  .paggination {
+    margin-left: 0;
+  }
 }
 .paggination a.paggination__item {
   width: 49px;
@@ -5223,6 +5229,7 @@ textarea:focus + .placeholder,
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
+  margin-bottom: 10px;
 }
 .gallery__item:nth-child(1) {
   grid-row: 1/3;

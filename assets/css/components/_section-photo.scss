@@ -49,6 +49,7 @@
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px; 
+    margin-bottom: 10px;
     &__item {
         &:nth-child(1) {
           grid-row: 1 / 3;
