@@ -4939,6 +4939,7 @@ textarea:focus + .placeholder,
   padding-left: 32px;
   position: relative;
   cursor: pointer;
+  margin-bottom: 0;
 }
 .checkbox .error {
   left: 32px;
