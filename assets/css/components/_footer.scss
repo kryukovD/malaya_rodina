@@ -1,5 +1,8 @@
 .footer {
     
+    .list__item_active {
+        font-weight: 600;
+    }
     .footer-menu a{
         color: white;
         @include hover{

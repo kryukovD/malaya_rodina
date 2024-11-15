@@ -18,10 +18,12 @@ $(document).ready(function () {
 
     /* mobile menu */
     $(".mobile-menu__burger").click(function () {
+        $('body').addClass('no-overflow')
         $(".mobile-menu__dropdown").addClass("mobile-menu__dropdown--active");
     });
 
     $(".mobile-menu__close").click(function () {
+        $('body').removeClass('no-overflow')
         $(".mobile-menu__dropdown").removeClass("mobile-menu__dropdown--active");
     });
 
@@ -37,6 +39,12 @@ $(document).ready(function () {
             scrollTop: $(anchor).offset().top - 100
         }, 500)
     });
+
+    
+
+    $('html, body').animate({
+        scrollTop: 0
+    }, 0)
 
     function isElementInViewport(el) {
         const rect = el[0].getBoundingClientRect();
@@ -448,10 +456,12 @@ $(document).ready(function () {
     }
 
 
-
-
     Fancybox.bind("[data-fancybox]", {
-        // Your custom options
+        iframe : {
+            css : {
+                width : '600px'
+            }
+        }
     });
 
 
@@ -1107,6 +1117,10 @@ $(document).ready(
 $('.jsRefuseReg').click(function () {
     $(this).closest('.section-program__item').removeClass('section-program__item--register').removeClass('except')
     _intersectionTime()
+
+    if($(this).closest('.section-program').hasClass('jsMyProgramm')) {
+        $(this).closest('.section-program__item').hide()
+    }
 })
 $('.jsReg').click(function () {
     $(this).closest('.section-program__item').addClass('section-program__item--register')
@@ -1117,15 +1131,14 @@ $('.jsShowMyEvent').click(function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowAllEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').not('.section-program__item--register').hide()
+    $('.section-program').addClass('jsMyProgramm')
 })
 $('.jsShowAllEvent').click(function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowMyEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').show()
+    $('.section-program').removeClass('jsMyProgramm')
 })
-
-
-
 
 // Драг без полосы прокрутки. При необходимости динамического добавления класса вызвать dragscroll.reset()
 $(function (root, factory) {

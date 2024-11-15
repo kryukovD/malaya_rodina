@@ -53,13 +53,14 @@
                 color: #FFFFFF;
             }
             @include mobile-sm{
-                width: calc(100% - 32px);
-                left: 16px;
-                right: 16px;
-                top: 8px;
-                border-radius: 8px;
-                bottom: 8px;
-                height: calc(100vh - 16px);
+                width: 100%;
+                left: 0;
+                right: 0;
+                top: 0;
+                border-radius: 0;
+                bottom: 0;
+                height: 100%;
+                overflow: auto;
             }
         }
     }
@@ -91,6 +92,10 @@
        display: flex;
        flex-direction: column;
        gap: 4px; 
+       header & {
+        margin-bottom: 20px;
+       }
+       
     >li{
         border-radius: 4px;
         padding: 16px;
@@ -103,7 +108,8 @@
        
     }
     &__lang{
-        margin-top: 25px;
+        margin-top: auto;
+        margin-bottom: 20px;
         li.mobile-menu__li--active{
             background-color: white;
             color: #200E32;

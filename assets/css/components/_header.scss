@@ -212,9 +212,17 @@
             position: relative;
             border-radius: 4px;
 
+            &.list__item_active {
+                background-color: $primary-color-btn;
+                color: #fff;
+            }
             @include hover {
                 background-color: #E6EFF6;
                 color: $primary-color-btn;
+                &.list__item_active {
+                    background-color: $primary-color-btn;
+                    color: #fff;
+                }
             }
 
             // @include laptop {
@@ -224,7 +232,7 @@
         }
 
         >li:is(.header-menu__li--is_dropdown, .header__menu__dots) {
-            z-index: 130;
+            z-index: 100;
             padding: 10px 12px;
             border-radius: 4px;
 
@@ -251,7 +259,7 @@
 
         >li:hover:is(.header-menu__li--is_dropdown) .header-dropdown__overlay {
             display: flex;
-            z-index: 100;
+            z-index: -1;
 
         }
 
@@ -322,4 +330,8 @@
         /* Конечное положение — фиксировано вверху */
         opacity: 1;
     }
+}
+
+.list__item_active {
+    pointer-events: none;
 }
