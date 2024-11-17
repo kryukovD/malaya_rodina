@@ -70,7 +70,7 @@
              background-color: $primary-color-btn;
         }
         .banner-children__inner:before{
-            background-color: transparent;
+            background-color: transparent; 
         }
     }
     &__text-forum{
@@ -84,7 +84,7 @@
         p:last-child{
             margin-bottom: 0px;
         }
-        @include mobile{
+        @include mobile-sm{
             display: none;
         }
     }

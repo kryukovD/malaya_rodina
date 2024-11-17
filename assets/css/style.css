@@ -6218,7 +6218,7 @@ blockquote {
 .banner-children__text-forum p:last-child {
   margin-bottom: 0px;
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .banner-children__text-forum {
     display: none;
   }

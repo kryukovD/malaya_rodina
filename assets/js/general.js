@@ -432,12 +432,12 @@ $(document).ready(function () {
             var activeIndex = photoGallerySwiper.activeIndex; // Получаем индекс активного слайда
             var currentIndex = $(this).index(); // Получаем индекс текущего слайда
             if (currentIndex === activeIndex) {
-                let src = $(this).attr("data-src");
+                let src = $(this).attr("href");
                 let allImage = $(".slider-photo-gallery__item");
                 let objectsShow = [];
                 objectsShow.push({ src: src, type: 'image' });
                 allImage.each(function (i, item) {
-                    objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
+                    objectsShow.push({ src: $(item).attr("href"), type: 'image' });
                 });
                 Fancybox.show(objectsShow);
             }
@@ -465,12 +465,12 @@ $(document).ready(function () {
         $(".slider-photo-gallery__item.scale-3").addClass("slider-photo-gallery__item--change-height");
     });
     $(".slider-photo-gallery").on("click", ".slider-photo-gallery__item.swiper-slide-active", function () {
-        let src = $(this).attr("data-src");
+        let src = $(this).attr("href");
         let allImage = $(".slider-photo-gallery__item");
         let objectsShow = [];
         objectsShow.push({ src: src, type: 'image' });
         allImage.each(function (i, item) {
-            objectsShow.push({ src: $(item).attr("data-src"), type: 'image' });
+            objectsShow.push({ src: $(item).attr("href"), type: 'image' });
         });
         Fancybox.show(objectsShow);
     });
