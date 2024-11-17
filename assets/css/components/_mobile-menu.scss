@@ -27,8 +27,7 @@
     ul.mobile-menu__children--active{
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        padding: 16px;
+        padding: 0;
         color: #FFFFFF99;
     }
 
@@ -130,5 +129,17 @@
                 background-color: #FFFFFF1A; 
             }
         }
+    }
+}
+
+.mobile-menu__children {
+    li {
+        padding: 8px 16px;
+    }
+}
+.mobile-menu {
+    li.list__item_active {
+        background: #fff;
+        color: $primary-color-btn;
     }
 }

@@ -40,12 +40,6 @@ $(document).ready(function () {
         }, 500)
     });
 
-    
-
-    $('html, body').animate({
-        scrollTop: 0
-    }, 0)
-
     function isElementInViewport(el) {
         const rect = el[0].getBoundingClientRect();
         return (
@@ -891,19 +885,6 @@ $(document).ready(function () {
         $(this).parents(".forum-text-block").find(".forum-text-block__inner").toggleClass("forum-text-block__inner--expanded");
     });
 
-
-    const wow = new WOW(
-        {
-            boxClass: 'wow',      // default
-            animateClass: 'animated', // default
-            offset: 0,          // default
-            mobile: false,       // default
-            live: true        // default
-        }
-    )
-    wow.init();
-
-
     /*rezize */
     $(window).resize(function () {
         // updateSwiper();
@@ -1225,3 +1206,14 @@ $(function (root, factory) {
 
 
 
+const wow = new WOW(
+    {
+        boxClass: 'wow',      // default
+        animateClass: 'animated', // default
+        offset: 0,          // default
+        mobile: false,       // default
+        live: true,        // default
+        scrollContainer: null
+    }
+)
+wow.init();

@@ -333,5 +333,13 @@
 }
 
 .list__item_active {
-    pointer-events: none;
+    @include hover {
+        pointer-events: none;
+    }
+}
+
+li.list__item_active {
+    color: #fff;
+    font-weight: 600;
+    background: #0056a4;
 }
