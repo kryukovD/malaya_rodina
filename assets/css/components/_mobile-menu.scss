@@ -4,13 +4,6 @@
     @include tablet{
         display: block;
     }
-    .mobile-menu__li--has--children.mobile-menu__li--active{
-        background-color: white;
-        color: $primary-color-btn;
-        svg path{
-            fill: $primary-color-btn;
-        }
-    }
 
     .mobile-menu__li--has--children{
         a{
@@ -18,10 +11,6 @@
             justify-content: space-between; 
             align-items: center;
         }
-        
-            svg path{
-                fill: white;
-            }
         
     }
     ul.mobile-menu__children--active{
@@ -99,6 +88,7 @@
         border-radius: 4px;
         padding: 16px;
         background-color: #FFFFFF1A;
+        position: relative;
     }
 }
     &__children{
@@ -141,5 +131,43 @@
     li.list__item_active {
         background: #fff;
         color: $primary-color-btn;
+    }
+}
+
+.mobile-menu__list > li {
+    height: 50px;
+}
+
+.mobile-menu__li--has--children {
+    position: relative;
+    height: 50px;
+    a {
+        position: absolute;
+        left: 0;
+        padding-left: 16px;
+        top: 0;
+        height: 100%;
+        width: calc(100% - 50px);
+    }
+    svg {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 34px;
+        height: 34px;
+        background: #fff;
+        border-radius: 4px;
+        path {
+            transform-origin: center;
+            transition: .35s ease-in-out all;
+        }
+    }
+    &.mobile-menu__li--active {
+        svg {
+            path {
+                transform: scaleY(-1);
+            }
+            
+        }
     }
 }

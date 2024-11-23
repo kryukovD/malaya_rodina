@@ -1081,9 +1081,11 @@ function _intersectionTime() {
 
     if(mergeMeetings.length) {
         $('.section-program__message--intersection').show()
+        $('.section-program').addClass('section-program--intersection')
     } else {
         $('.section-program__message--intersection').hide()
         $('.section-program__item--register').removeClass('except')
+        $('.section-program').removeClass('section-program--intersection')
     } 
 
     mergeMeetings.forEach(function (e) {
@@ -1217,3 +1219,14 @@ const wow = new WOW(
     }
 )
 wow.init();
+
+$(function () {
+    $('.faq__title').click(function () {
+        if(!$(this).closest('.faq__item').hasClass('faq__item--active')) {
+            $('.faq__item').removeClass('faq__item--active').find('.faq__descr').slideUp(350)
+            $(this).next().slideDown(350).closest('.faq__item').addClass('faq__item--active')
+        } else {
+            $('.faq__item').removeClass('faq__item--active').find('.faq__descr').slideUp(350)
+        }
+    })
+})

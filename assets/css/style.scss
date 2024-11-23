@@ -301,3 +301,77 @@ body{
 
 
 @import "./components/footer";
+
+
+
+
+
+
+.faq-wrapper {
+    // display: flex;
+    display: grid;
+    grid-template-columns: 518px 1fr;
+    gap: 22px;
+}
+.faq {
+    z-index: 120;
+    position: relative;
+    padding: 37px 32px 18px;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #0056A4;
+    padding: 56px 72px 67px;
+    border-radius: 16px;
+    overflow: hidden;
+    color: white;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.faq__item {
+    width: 100%;
+    margin-bottom: 8px;
+}
+.faq__item:nth-last-child(1) {
+    margin-bottom: 0;
+}
+.faq__title {
+    position: relative;
+    z-index: 100;
+    font-size: 20px;
+    line-height: 1;
+    color: $color-text-accent;
+    padding: 31px 12px 31px 32px;
+    background-color: $color-accent-third;
+    width: calc(100% - 18px);
+    border-radius: $border-radius-xl-secondary;
+    position: relative;
+    color: $color-text-accent;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all $transition-timing ease  ;
+}
+.faq__descr {
+    display: none;
+    margin-top: 8px;
+    padding: 16px 0px 24px 32px;
+    a{
+      color:$color-accent-secondary;
+      text-decoration: underline;
+    }
+
+    @include mobile-sm{
+        padding: 16px;
+        
+    }
+    p{
+        margin-bottom: 4px;
+    }
+}
