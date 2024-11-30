@@ -101,6 +101,9 @@
         border-radius: $border-radius-xl;
         position: relative;
         overflow: hidden;
+        &--no-overflow {
+            overflow: initial;
+        }
         @include mobile-sm{
             border-radius: $border-radius-sm; 
         }
