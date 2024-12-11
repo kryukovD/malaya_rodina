@@ -1244,4 +1244,7 @@ $(function () {
             $('.faq__item').removeClass('faq__item--active').find('.faq__descr').slideUp(350)
         }
     })
+
+    $('.section-hotel__inner iframe').attr('height', ($('.section-hotel__col-left').height() - 100))
+
 })

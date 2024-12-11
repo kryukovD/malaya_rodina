@@ -542,13 +542,48 @@
             </div>
             <div class="popup-come-out__content">
                 <div class="popup-come-out__body">
-                    <h2>Здесь будет формочка</h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus voluptatum, consequuntur repellat, illo assumenda in, sit veniam rerum commodi itaque sunt magnam optio facere asperiores et provident aut omnis!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eum libero quam, voluptate voluptatum expedita atque ipsam maiores qui illum excepturi, perspiciatis nulla voluptates tempore animi error voluptatibus! Commodi, vel!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem dicta earum culpa ab nesciunt, hic temporibus non ipsa voluptatibus! Repellat quisquam hic voluptates amet repudiandae unde provident voluptas exercitationem eaque.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellat cupiditate non architecto officia rem recusandae quidem? Mollitia maiores quidem dolorum sunt, dolore modi maxime quos vitae ratione est quam.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, saepe explicabo voluptate provident architecto molestiae ab illo officia nobis cupiditate, delectus magnam deleniti maiores sunt quas. Voluptate, laborum illum! Quis?
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit officia voluptatibus, ducimus distinctio obcaecati molestiae consequatur ex earum veniam unde optio natus accusantium necessitatibus officiis. Dolorum perspiciatis voluptatibus atque.
+
+                    <form class="form form-parner">
+                        <fieldset class="fieldset fieldset--required fieldset--name">
+                            <input type="text" value="">
+                            <div class="placeholder">Ваше ФИО</div>
+                            <span class="error">Введите корректное имя</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--required">
+                            <input type="text" value="">
+                            <div class="placeholder">Должность</div>
+                            <span class="error">Укажите должность</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--required">
+                            <input type="text" value="">
+                            <div class="placeholder">Название организации</div>
+                            <span class="error">Укажите название организации</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--required">
+                            <input type="email" value="">
+                            <div class="placeholder">Ваш e-mail</div>
+                            <span class="error">Укажите email</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--tel fieldset--required">
+                            <input type="tel" value="">
+                            <div class="placeholder">Ваш телефон</div>
+                            <span class="error">Введите корректный телефон</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--text">
+                            <textarea value=""></textarea>
+                            <div class="placeholder">Информация о компании (Деятельность, Веб-сайт компании, Какие формы партнерства интересуют)</div>
+                        </fieldset>
+                        <label class="checkbox fieldset fieldset--required fieldset--valid">
+                            <input type="checkbox" checked>
+                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                            <span class="error">Необходимо ваше согласие</span>                                     
+                        </label>
+                        <fieldset class="fieldset--submit">
+                            <button class="btn btn-registration btn-red" href="javascript:void(0)">Отправить</button>
+                        </fieldset>
+                    </form>
+
+
                 </div>
                 <div class="popup-come-out__notice">
                     <span>*</span> Поля, обязательные к заполнению

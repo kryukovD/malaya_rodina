@@ -2,6 +2,7 @@
     
     .list__item_active {
         font-weight: 600;
+        background: transparent;
     }
     .footer-menu a{
         color: white;
@@ -105,6 +106,8 @@
         flex-shrink: 1;
         max-width: 224px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
         @include mobile-sm{
             max-width: 100%;
             display: flex;
@@ -203,11 +206,18 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 1.3;
-        justify-content: center;
+        justify-content: space-between;
         overflow: hidden;
+        padding: 16px 70px 16px 80px;
+        @include laptop {
+            flex-direction: column-reverse;
+            span {
+                margin-top: 10px;
+            }
+        }
         @include mobile-sm{
             border-radius: $border-radius-sm-secondary;
-            padding: 9.5px;
+            padding: 9.5px 16px;
             font-size: 12px;
         }
     }
@@ -219,5 +229,26 @@
     @include mobile-sm{
         margin-bottom: 8px;
         overflow: hidden;
+    }
+}
+
+.footer__bottom-social {
+    display: flex;
+    margin-top: auto;
+    a.social-icon--footer {
+        display: block;
+        padding: 0;
+        background: transparent;
+        margin-right: 16px;
+        svg {
+            path {
+                transition: .35s ease-in-out all;
+            }
+            @include hover {
+                path {
+                    fill: rgba(255, 255, 255, 0.5019607843) !important;
+                }
+            }
+        }
     }
 }
