@@ -332,14 +332,33 @@
     }
 }
 
-.list__item_active {
-    @include hover {
-        pointer-events: none;
-    }
-}
 
 li.list__item_active {
     color: #fff;
     font-weight: 600;
     background: #0056a4;
+}
+
+.header-dropdown {
+    li.list__item_active {
+        @include hover {
+            color: #fff;
+            background: $primary-color-btn;
+        }        
+    }
+}
+.header-menu__li--is_dropdown {
+    &.list__item_active {
+        svg {
+            path {
+                fill: #fff;
+            }
+        }
+        li {
+            color: $primary-color-btn;
+            &.list__item_active {
+                color: #fff;
+            }
+        }
+    }
 }
