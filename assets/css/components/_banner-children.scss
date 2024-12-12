@@ -217,7 +217,7 @@
     &__block-button {
         margin-top: 24px;
         .btn {
-            max-width: 248px;
+            max-width: max-content;
             width: 100%;
             margin-right: 16px;
             &:nth-last-child(1) {
@@ -305,4 +305,111 @@
         }
     }
     
+}
+
+.banner-children__inner--nooverlay {
+    &::before {
+        display: none;
+    }
+}
+
+.text-white--landing {
+    max-width: 500px;
+}
+
+.landing-country {
+    position: relative;
+    top: -60px;
+    color: #fff;
+    padding: 10px 32px;
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+    background: linear-gradient(45deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0));
+    border-radius: 4px;
+    width: max-content;
+}
+
+.btn.btn-red--full {
+    text-align: center;
+    padding-right: 48px;
+    padding-left: 48px;
+}
+
+.mb80 {
+    margin-bottom: 80px;
+}
+
+.about--flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 24px;
+    @include tablet {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .about-col {
+        width: calc(50% - 16px);
+        @include tablet {
+            width: 100%;
+        }
+    }
+}
+
+.about-col__item {
+    position: relative;
+    padding-left: 24px;
+    border-radius: 16px;
+    @include mobile-sm {
+        padding-left: 12px;
+        border-radius: 8px;
+    }
+    ul {
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+    .about-col__item-inner{
+        padding: 16px;
+        background: rgba(247, 247, 252, 1);
+        margin-bottom: 20px;
+        border-radius: 16px;
+        position: relative;
+        z-index: 1;
+        @include mobile-sm {
+            border-radius: 8px;
+            font-size: 14px;
+        }
+    }
+    position: relative;
+    &--red {
+        background: rgba(227, 0, 15, 1);
+    }
+    &--yellow {
+        background: rgba(199, 154, 77, 1);
+    }
+    &--blue {
+        background: rgba(0, 86, 164, 1);
+    }
+    &--full-blue {
+        background: rgba(0, 86, 164, 1);
+        .about-col__item-inner {
+            background: rgba(0, 86, 164, 1);
+            color: #fff;
+        }
+    }
+}
+
+.about-col__title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 25px;
+    @include mobile-sm {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.mb-80 {
+    margin-bottom: 80px;
 }

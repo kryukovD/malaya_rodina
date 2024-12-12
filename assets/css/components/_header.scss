@@ -362,3 +362,8 @@ li.list__item_active {
         }
     }
 }
+
+.header-menu__li--is_dropdown.list__item_active li {
+    color: #4d5364;
+    font-weight: 400;
+}

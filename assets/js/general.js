@@ -27,9 +27,10 @@ $(document).ready(function () {
         $(".mobile-menu__dropdown").removeClass("mobile-menu__dropdown--active");
     });
 
-    $(".mobile-menu__li--has--children").click(function () {
-        $(this).toggleClass("mobile-menu__li--active");
-        $(this).next(".mobile-menu__children").toggleClass("mobile-menu__children--active");
+    $(".mobile-menu__li--has--children svg").click(function () {
+        let $parent = $(this).closest('li')
+        $parent.toggleClass("mobile-menu__li--active");
+        $parent.next(".mobile-menu__children").toggleClass("mobile-menu__children--active");
     });
 
     // Плавный скролл к якорю
@@ -1247,4 +1248,131 @@ $(function () {
 
     $('.section-hotel__inner iframe').attr('height', ($('.section-hotel__col-left').height() - 100))
 
+})
+
+$(function () {
+    let $hotels = window.hotels
+    if($('#map').length) {
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+            $hotels.forEach(function(e) {
+                ymaps.geocode(e.address).then(function (res) {
+                    var coord = res.geoObjects.get(0).geometry.getCoordinates()
+                    var myPlacemark = new ymaps.Placemark(coord, {
+                        balloonContent: `
+                            <div class="card-placement__map">
+                                <div class="card-placement__img">
+                                    <img src="` + e.img + `">
+                                </div>
+                                <div class="card-placement__content">
+                                    <div class="card-placement__name">
+                                        <span class="rate">` + e.rate + `</span>
+                                        ` + e.name + `
+                                    </div>
+                                    <a href="` + e.link + `" target="_blank">Подробнее</a>
+                                </div>
+                            </div>
+                        `,
+                    },
+                    {
+                        iconLayout: 'default#image',
+                        iconImageHref: "./assets/images/map/baloon.svg",
+                        iconImageSize: [30, 44],
+                        iconImageOffset: [-15, -44]
+                    })
+                    myPlacemark.events.add('click', function(e) {
+                        $('.map-content__inner').html(e.get('target')['properties'].get('balloonContent'))
+                        $('.map-content').show()
+                    })
+                    myMap.geoObjects.add(myPlacemark)
+                    myMap.setCenter(coord, 11)
+                })
+            })
+            myMap.behaviors.disable('scrollZoom')
+        }
+    }
+})
+
+
+$(function () {
+    if($('#detail-map').length) {
+        ymaps.ready(init);
+        function init() {
+            var hotelMap = new ymaps.Map("detail-map", {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+            ymaps.geocode("Краснопрудная ул., 12, Москва, 107140").then(function (res) {
+                var coord = res.geoObjects.get(0).geometry.getCoordinates()
+                var myPlacemark = new ymaps.Placemark(coord, {
+                    balloonContent: ''
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: "./assets/images/map/baloon.svg",
+                    iconImageSize: [30, 44],
+                    iconImageOffset: [-15, -44]
+                })
+                hotelMap.geoObjects.add(myPlacemark)
+                hotelMap.setCenter(coord, 11)
+            })
+            hotelMap.behaviors.disable('scrollZoom')
+        }
+    }
+})
+$(function () {
+    if($('#semi-map').length) {
+        ymaps.ready(init);
+        function init() {
+            var semiMap = new ymaps.Map("semi-map", {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+            ymaps.geocode("Краснопрудная ул., 12, Москва, 107140").then(function (res) {
+                var coord = res.geoObjects.get(0).geometry.getCoordinates()
+                var myPlacemark = new ymaps.Placemark(coord, {
+                    balloonContent: ''
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: "./assets/images/map/baloon.svg",
+                    iconImageSize: [30, 44],
+                    iconImageOffset: [-15, -44]
+                })
+                semiMap.geoObjects.add(myPlacemark)
+                semiMap.setCenter(coord, 11)
+            })
+            semiMap.behaviors.disable('scrollZoom')
+        }
+    }
+})
+
+$('.modal').on('click', '.map-content__close', function () {
+    $('.ymaps-2-1-79-balloon__close-button').trigger('click')
+    $('.map-content').hide()
+})
+
+$('.jsOpenModalCard').click(function () {
+    $('.overlay-wrapper').fadeIn(350)
+    $('.overlay').find('.modal').addClass('modal--show')
+    $('html, body').addClass('no-overflow')
+})
+
+$('.modal__close, .modal-title__close').click(function () {
+    $('.overlay').find('.modal').removeClass('modal--show')
+    $('.overlay').closest('.overlay-wrapper').fadeOut(350)
+    $('html, body').removeClass('no-overflow')
 })

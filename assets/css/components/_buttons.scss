@@ -22,6 +22,7 @@ button {
     transition: all ease $transition-timing;
     @include hover{
         background-color: $hover-btn-primary;
+        cursor: pointer;
     }
 }
 .btn-registry{

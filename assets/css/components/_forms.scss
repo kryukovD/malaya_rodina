@@ -316,3 +316,192 @@ textarea:focus + .placeholder,
     line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+
+
+#map {
+    width: calc(100% - 64px);
+    height: calc(100% - 64px);
+    background-color: #ccc;
+    position: absolute;
+    left: 32px;
+    top: 32px;
+    @include mobile {
+        top: initial;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.overlay-wrapper {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1105;
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 26, 61, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+        align-items: flex-end;
+    }
+}
+
+.modal {
+    width: calc(100% - 140px);
+    max-width: 1062px;
+    height: 80vh;
+    max-height: 670px;
+    background: #fff;
+    position: relative;
+    border-radius: 16px;
+    transition: .35s ease-in-out all;
+    transform: translateY(-20%);
+    @include mobile {
+        width: calc(100% - 20px);
+        border-radius: 16px 16px 0 0;
+    }
+    &--show {
+        transform: translate(0);
+    }
+    &__close {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: -60px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 8px;
+        transition: .35s ease-in-out all;
+        @include mobile {
+            display: none;
+        }
+        svg {
+            transform-origin: center;
+            transition: .35s ease-in-out all;
+        }
+        @include hover {
+            cursor: pointer;
+            svg {
+                transform: scale(1.25);
+            }
+        }
+    }
+}
+
+.card-placement__img {
+    width: 76px;
+    height: 53px;
+}
+.card-placement__map {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .card-placement__name {
+        margin-bottom: 0;
+        margin-left: 16px;
+        font-family: "Montserrat";
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+    }
+    a {
+        margin-left: 68px;
+        color: $primary-color-btn;
+        font-size: 14px;
+        text-decoration: underline;
+        @include hover {
+            text-decoration: none;
+        }
+        @include mobile {
+            margin-left: 65px;
+        }
+    }
+}
+
+.ymaps-2-1-79-balloon__content {
+    display: none !important;
+}
+
+.map-content {
+    position: absolute;
+    z-index: 1001;
+    background: #fff;
+    padding: 8px 32px 8px 8px;
+    left: 43px;
+    top: 43px;
+    box-shadow: 0 0 5px -3px #000;
+    border-radius: 4px;
+    display: none;
+    @include mobile {
+        top: initial;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        padding: 12px;
+        border-radius: 8px 8px 0 0;
+    }
+    svg {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        @include hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.no-overflow {
+    overflow-y: hidden;
+}
+
+.card-placement__map {
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        .card-placement__img {
+            width: 303px;
+            height: 115px;
+            margin-bottom: 10px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.modal-title {
+    display: none;
+    @include mobile {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 18px 16px;
+        svg {
+            margin-right: 20px;
+        }
+    }
+}
+
+#detail-map {
+    width: 100%;
+    height: 100%;
+}
