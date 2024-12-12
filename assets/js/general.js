@@ -1130,12 +1130,17 @@ $('.jsShowMyEvent').click(function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowAllEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').not('.section-program__item--register').hide()
+    $('.section-program__list').hide()
+    $('.section-program__item--register').each(function () {
+        $(this).closest('.section-program__list').show()
+    })
     $('.section-program').addClass('jsMyProgramm')
 })
 $('.jsShowAllEvent').click(function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowMyEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').show()
+    $('.section-program__list').show()
     $('.section-program').removeClass('jsMyProgramm')
 })
 

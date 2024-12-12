@@ -482,18 +482,15 @@
 }
 
 .jsMyProgramm {
-    .section-program__title {
-        display: none;
-    }
-    .section-title__btns {
-        margin: 0;
-    }
     .section-program__message {
         margin-top: 20px;
     }
     .section-program__list {
-        margin-bottom: 0;
+        @include mobile {
+            margin-bottom: 32px;
+        }
     }
+
 }
 
 .wrapper .program-nav {

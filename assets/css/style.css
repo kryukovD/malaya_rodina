@@ -1483,6 +1483,14 @@ header .mobile-menu__list {
   border: 1px solid #1a67ad;
 }
 
+.mobile-menu__dropdown--active .mobile-menu__li--active {
+  background: rgb(67, 128, 181);
+}
+.mobile-menu__dropdown--active .mobile-menu__children--active li {
+  background: rgb(67, 128, 181);
+  color: #fff;
+}
+
 .main-banner {
   margin-top: 16px;
   color: white;
@@ -8463,17 +8471,13 @@ blockquote {
   display: inline-flex;
 }
 
-.jsMyProgramm .section-program__title {
-  display: none;
-}
-.jsMyProgramm .section-title__btns {
-  margin: 0;
-}
 .jsMyProgramm .section-program__message {
   margin-top: 20px;
 }
-.jsMyProgramm .section-program__list {
-  margin-bottom: 0;
+@media (max-width: 768px) {
+  .jsMyProgramm .section-program__list {
+    margin-bottom: 32px;
+  }
 }
 
 .wrapper .program-nav {

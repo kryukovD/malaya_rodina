@@ -176,3 +176,15 @@
 .mobile-menu__li--has--children svg {
     border: 1px solid #1a67ad;
 }
+
+.mobile-menu__dropdown--active {
+    .mobile-menu__li--active {
+        background: rgb(67, 128, 181);
+    }
+    .mobile-menu__children--active {
+        li {
+            background: rgb(67, 128, 181);
+            color: #fff;
+        }
+    }
+}
