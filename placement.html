@@ -17,7 +17,7 @@
     <script src="./assets/js/swiper-bundle.min.js"></script>
     <script src="./assets/js/jquery.marquee.min.js"></script>
     <script src="./assets/js/wow.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=b9cb3120-b3f9-42d1-9514-9bbc06532690&amp;lang=ru_RU&amp;coordorder=longlat"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b9cb3120-b3f9-42d1-9514-9bbc06532690&lang=ru_RU"></script>
     <script defer src="./assets/js/general.js"></script>
 
 </head>
@@ -229,24 +229,31 @@
                 <script>
                     window.hotels = [
                         {
-                            "address": "Краснопрудная ул., 12, Москва, 107140", // адрес в формате город, улица, дом. Прядок не имеет значения
                             "img": "./assets/images/map/preview.png", // картинка относительно корня
                             "rate": "4",
                             "name": "Soluxe Hotel Moscow",
+                            "coords": [55.784870, 37.623627],
                             "link": "/" // ссылка на детальную страницу
                         },
                         {
-                            "address": "16, ул. Вильгельма Пика, Str, Москва, 129226",
                             "img": "./assets/images/map/preview.png",
-                            "rate": "3",
-                            "name": "Мариотт Империал Плаза",
+                            "rate": "5",
+                            "coords": [55.759095, 37.419418],
+                            "name": "AZIMUT Сити Отель Олимпик Москва",
                             "link": "/"
                         },
                         {
-                            "address": "Олимпийский пр., 18/1, Москва, 129110",
                             "img": "./assets/images/map/preview.png",
                             "rate": "5",
+                            "coords": [55.683123, 37.720257],
                             "name": "AZIMUT Сити Отель Олимпик Москва",
+                            "link": "/"
+                        },
+                        {
+                            "img": "./assets/images/map/preview.png",
+                            "rate": "3",
+                            "name": "Мариотт Империал Плаза",
+                            "coords": [55.751562, 37.607784],
                             "link": "/"
                         }
                     ]

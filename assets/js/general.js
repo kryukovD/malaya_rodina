@@ -1267,43 +1267,52 @@ $(function () {
             }, {
                 searchControlProvider: 'yandex#search'
             });
+            let $pointsList = [];
             $hotels.forEach(function(e) {
-                ymaps.geocode(e.address).then(function (res) {
-                    var coord = res.geoObjects.get(0).geometry.getCoordinates()
-                    var myPlacemark = new ymaps.Placemark(coord, {
-                        balloonContent: `
-                            <div class="card-placement__map">
-                                <div class="card-placement__img">
-                                    <img src="` + e.img + `">
-                                </div>
-                                <div class="card-placement__content">
-                                    <div class="card-placement__name">
-                                        <span class="rate">` + e.rate + `</span>
-                                        ` + e.name + `
-                                    </div>
-                                    <a href="` + e.link + `" target="_blank">Подробнее</a>
-                                </div>
+                let coord = e.coords                    
+                $pointsList.push(coord)
+                myPlacemark = new ymaps.Placemark(coord, {
+                    balloonContent: `
+                        <div class="card-placement__map">
+                            <div class="card-placement__img">
+                                <img src="` + e.img + `">
                             </div>
-                        `,
-                    },
-                    {
-                        iconLayout: 'default#image',
-                        iconImageHref: "./assets/images/map/baloon.svg",
-                        iconImageSize: [30, 44],
-                        iconImageOffset: [-15, -44]
-                    })
-                    myPlacemark.events.add('click', function(e) {
-                        $('.map-content__inner').html(e.get('target')['properties'].get('balloonContent'))
-                        $('.map-content').show()
-                    })
-                    myMap.geoObjects.add(myPlacemark)
-                    myMap.setCenter(coord, 11)
+                            <div class="card-placement__content">
+                                <div class="card-placement__name">
+                                    <span class="rate">` + e.rate + `</span>
+                                    ` + e.name + `
+                                </div>
+                                <a href="` + e.link + `" target="_blank">Подробнее</a>
+                            </div>
+                        </div>
+                    `,
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: "./assets/images/map/baloon.svg",
+                    iconImageSize: [30, 44],
+                    iconImageOffset: [-15, -44]
                 })
+                myPlacemark.events.add('click', function(e) {
+                    $('.map-content__inner').html(e.get('target')['properties'].get('balloonContent'))
+                    $('.map-content').show()
+                })
+                myMap.geoObjects.add(myPlacemark)
+                myMap.setCenter(coord, 11) 
             })
             myMap.behaviors.disable('scrollZoom')
         }
     }
 })
+
+
+
+
+
+
+
+
+
 
 
 $(function () {
