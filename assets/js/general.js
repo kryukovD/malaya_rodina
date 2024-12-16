@@ -1326,21 +1326,34 @@ $(function () {
             }, {
                 searchControlProvider: 'yandex#search'
             });
-            ymaps.geocode("Краснопрудная ул., 12, Москва, 107140").then(function (res) {
-                var coord = res.geoObjects.get(0).geometry.getCoordinates()
-                var myPlacemark = new ymaps.Placemark(coord, {
-                    balloonContent: ''
-                },
-                {
-                    iconLayout: 'default#image',
-                    iconImageHref: "./assets/images/map/baloon.svg",
-                    iconImageSize: [30, 44],
-                    iconImageOffset: [-15, -44]
-                })
-                hotelMap.geoObjects.add(myPlacemark)
-                hotelMap.setCenter(coord, 11)
+
+            let $coord = $('#detail-map').attr('data-coords').split(',')
+
+            var myPlacemark = new ymaps.Placemark($coord, {
+                balloonContent: '',
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: "./assets/images/map/baloon.svg",
+                iconImageSize: [30, 44],
+                iconImageOffset: [-15, -44]
             })
-            hotelMap.behaviors.disable('scrollZoom')
+            hotelMap.geoObjects.add(myPlacemark)
+            hotelMap.setCenter($coord, 11) 
+
+            // console.log($('#detail-map').attr('data-coords'))
+            // let coord = $('#detail-map').attr('data-coords')
+            // myPlacemark = new ymaps.Placemark(coord, {
+            //     balloonContent: '',
+            // },
+            // {
+            //     iconLayout: 'default#image',
+            //     iconImageHref: "./assets/images/map/baloon.svg",
+            //     iconImageSize: [30, 44],
+            //     iconImageOffset: [-15, -44]
+            // })
+            // hotelMap.geoObjects.add(myPlacemark)
+            // hotelMap.setCenter(coord, 11) 
         }
     }
 })
