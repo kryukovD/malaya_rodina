@@ -1944,6 +1944,47 @@ header .mobile-menu__list {
   margin-bottom: 32px;
   color: #200E32;
 }
+.section-about-forum__desc .truncateText {
+  display: none;
+}
+.section-about-forum__desc.trunk {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  position: relative;
+}
+.section-about-forum__desc.trunk .truncateText {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  height: 23px;
+  display: block;
+  font-size: 14px;
+  color: #0056A4;
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .section-about-forum__desc.trunk .truncateText:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+@media (hover: none) {
+  .section-about-forum__desc.trunk .truncateText:active {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.section-about-forum__desc.trincate-expand {
+  display: block;
+  -webkit-box-orient: initial;
+  -webkit-line-clamp: initial;
+  overflow: initial;
+  padding-bottom: 23px;
+}
 @media (max-width: 576px) {
   .section-about-forum__desc {
     margin-bottom: 12px;
@@ -1951,9 +1992,14 @@ header .mobile-menu__list {
 }
 .section-about-forum__inner {
   display: grid;
-  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-columns: 790px repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 20px;
+}
+@media (max-width: 1640px) {
+  .section-about-forum__inner {
+    grid-template-columns: 2fr repeat(2, 1fr);
+  }
 }
 @media (max-width: 1200px) {
   .section-about-forum__inner {
@@ -1975,12 +2021,15 @@ header .mobile-menu__list {
   grid-row: 1/span 2;
   background-color: white;
   border-radius: 16px;
-  padding: 48px 98px 48px 72px;
+  padding: 48px 32px 48px 72px;
 }
 @media (max-width: 1640px) {
   .section-about-forum__big {
     padding-right: 30px;
     padding-left: 30px;
+  }
+  .section-about-forum__big h2 {
+    font-size: 36px;
   }
 }
 @media (max-width: 1200px) {
@@ -5674,6 +5723,15 @@ textarea:focus + .placeholder,
   margin-right: 0;
 }
 
+.paggination--off {
+  margin-bottom: 100px;
+}
+@media (max-width: 768px) {
+  .paggination--off {
+    margin-bottom: 56px;
+  }
+}
+
 .section-photo__inner {
   padding: 0 72px;
   border-radius: 16px;
@@ -6044,6 +6102,15 @@ textarea:focus + .placeholder,
   border-radius: 12px;
   overflow: hidden;
   display: block;
+  height: calc(100% - 10px);
+}
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .img-wrapper::before {
   content: "";
@@ -6570,6 +6637,8 @@ blockquote {
 
 /*page marafaon */
 .banner-children {
+  position: relative;
+  z-index: 1;
   margin-top: 16px;
 }
 .banner-children--marafon {
@@ -6654,7 +6723,6 @@ blockquote {
   padding: 48px 72px 48px;
   border-radius: 16px;
   position: relative;
-  overflow: hidden;
 }
 .banner-children__inner--no-overflow {
   overflow: initial;
@@ -6979,6 +7047,82 @@ blockquote {
 
 .mb-80 {
   margin-bottom: 80px;
+}
+
+.btn--like-select {
+  position: relative;
+}
+
+.pseudo-options {
+  height: 210px;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background: #fff;
+  padding: 19px 0;
+  border-radius: 8px;
+  box-shadow: 3px 5px 25px 0 rgba(9, 19, 39, 0.08);
+  height: 240px;
+  overflow-y: auto;
+  display: none;
+}
+.pseudo-options::-webkit-scrollbar {
+  width: 5px;
+}
+.pseudo-options::-webkit-scrollbar-track {
+  background: #fff;
+}
+.pseudo-options::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+.pseudo-options .option {
+  color: #000;
+  padding: 8px 19px;
+  transition: 0.35s ease-in-out all;
+}
+.pseudo-options .option-all {
+  font-weight: 600;
+}
+@media (hover: hover) {
+  .pseudo-options .option:hover {
+    background: rgba(0, 86, 164, 0.05);
+  }
+}
+@media (hover: none) {
+  .pseudo-options .option:active {
+    background: rgba(0, 86, 164, 0.05);
+  }
+}
+.pseudo-options .option--active {
+  background: rgba(0, 86, 164, 0.05);
+}
+
+[data-id-popup] {
+  border-radius: 8px;
+}
+
+.jsOpenSelect {
+  min-width: 300px;
+}
+.jsOpenSelect svg {
+  margin-left: 20px;
+}
+
+.region-change .pseudo-options {
+  display: block;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+  top: initial;
+  left: initial;
+  box-shadow: 0 0 0 0 transparent;
+  width: 100%;
 }
 
 .section-marafon-page-conception {

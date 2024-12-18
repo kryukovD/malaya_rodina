@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    const wow = new WOW(
+        {
+            boxClass: 'wow',      // default
+            animateClass: 'animated', // default
+            offset: 0,          // default
+            mobile: false,       // default
+            live: true,        // default
+            scrollContainer: null
+        }
+    )
+    wow.init();
 
     $.fn.setCursorPosition = function (pos) {
         if ($(this).get(0).setSelectionRange) {
@@ -51,8 +62,6 @@ $(document).ready(function () {
         );
     }
 
-
-
     // Запуск счетчика
     function startCounter() {
         const $counter = $('.section-statistics__row');
@@ -71,14 +80,10 @@ $(document).ready(function () {
         }
     }
 
-
-
     // Обработчик события скролла
     function onScroll() {
         startCounter();
     }
-
-
     $(window).on('scroll', onScroll);
 
 
@@ -107,21 +112,6 @@ $(document).ready(function () {
         let target = $(this).attr("id");
         $(`.section-marafon__region[data-target='#${target}'`).removeClass("section-marafon__region--active");
     });
-
-
-    // function cloneSlides(slidesSelector,wrapperSwiperSelector){
-    //     let slides = document.querySelectorAll(slidesSelector);
-
-    //     if (slides.length === 5) {
-    //         let swiperWrapper = document.querySelector(wrapperSwiperSelector);
-    //         slides.forEach(slide => {
-    //             let clone = slide.cloneNode(true);
-    //             swiperWrapper.appendChild(clone);
-    //         });
-    //     }
-    // }
-
-    //    cloneSlides(".speakers-slider .swiper-slide",".speakers-slider .swiper-wrapper");
 
     /*speakers slider */
     const speakersSlider = new Swiper('.speakers-slider', {
@@ -170,8 +160,6 @@ $(document).ready(function () {
         }
     });
 
-
-
     /*quote slider */
     const quoteSlider = new Swiper('.slider-quote', {
         // Optional parameters
@@ -199,7 +187,6 @@ $(document).ready(function () {
         $(".slider-quote__arrows").css("z-index", "-1");
         $(".slider-quote__arrows").css("opacity", 0);
     }
-
 
     /*placement slider */
     const placement = new Swiper('.placement-slider', {
@@ -301,27 +288,6 @@ $(document).ready(function () {
             $(target).show();
         }
     });
-
-
-    /*photo gallery slider */
-
-    // const swiperContainer = document.querySelector('.slider-photo-gallery');
-    // const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
-    // const originalSlides = swiperWrapper.children;
-
-    // // Проверяем количество слайдов и клонируем при необходимости
-    // const totalSlides = originalSlides.length;
-    // const requiredSlides = 30; // Необходимое количество слайдов для корректного отображения
-
-    // if (totalSlides < requiredSlides) {
-    //     const slidesToClone = requiredSlides - totalSlides;
-
-    //     for (let i = 0; i < slidesToClone; i++) {
-    //         const clonedSlide = originalSlides[i % totalSlides].cloneNode(true); // Клонируем слайды
-    //         swiperWrapper.appendChild(clonedSlide); // Добавляем клонированные слайды в обертку
-    //     }
-    // }
-
 
     var photoGallerySwiper = undefined;
     function initGallerySlider() {
@@ -1010,7 +976,6 @@ $(document).ready(function () {
     $(':checkbox').change(function() {
         let $checked = $(this).prop('checked')
         let $parent = $(this).closest('.fieldset')
-        console.log($checked)
         $checked ?  $parent.removeClass('fieldset--error').addClass('fieldset--valid') : $parent.addClass('fieldset--error')
     });
     
@@ -1024,8 +989,6 @@ $(document).ready(function () {
         let $form = $(this)
         let $required = $form.find('.fieldset--required').length
         let $valid = $form.find('.fieldset--valid').length
-        console.log($required)
-        console.log($valid)
         if($required == $valid) {
             alert('submit')
         } else {
@@ -1107,7 +1070,6 @@ function _intersectionTime() {
     mergeMeetings.forEach(function (e) {
         $('.section-program__item--register[data-id="' + e + '"]').addClass('except')
     })
-    console.log(mergeMeetings)
 }
 $(document).ready(
     _intersectionTime()
@@ -1226,21 +1188,6 @@ $(function (root, factory) {
     exports.reset = reset;
 }));
 
-
-
-
-const wow = new WOW(
-    {
-        boxClass: 'wow',      // default
-        animateClass: 'animated', // default
-        offset: 0,          // default
-        mobile: false,       // default
-        live: true,        // default
-        scrollContainer: null
-    }
-)
-wow.init();
-
 $(function () {
     $('.faq__title').click(function () {
         if(!$(this).closest('.faq__item').hasClass('faq__item--active')) {
@@ -1289,7 +1236,7 @@ $(function () {
                 },
                 {
                     iconLayout: 'default#image',
-                    iconImageHref: "./assets/images/map/baloon.svg",
+                    iconImageHref: window.marker,
                     iconImageSize: [30, 44],
                     iconImageOffset: [-15, -44]
                 })
@@ -1305,16 +1252,6 @@ $(function () {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
 $(function () {
     if($('#detail-map').length) {
         ymaps.ready(init);
@@ -1328,32 +1265,20 @@ $(function () {
             });
 
             let $coord = $('#detail-map').attr('data-coords').split(',')
+            let $marker = $('#detail-map').attr('data-marker') || './assets/images/map/baloon.svg'
 
             var myPlacemark = new ymaps.Placemark($coord, {
                 balloonContent: '',
             },
             {
                 iconLayout: 'default#image',
-                iconImageHref: "./assets/images/map/baloon.svg",
+                iconImageHref: $marker,
                 iconImageSize: [30, 44],
                 iconImageOffset: [-15, -44]
             })
             hotelMap.geoObjects.add(myPlacemark)
             hotelMap.setCenter($coord, 11) 
 
-            // console.log($('#detail-map').attr('data-coords'))
-            // let coord = $('#detail-map').attr('data-coords')
-            // myPlacemark = new ymaps.Placemark(coord, {
-            //     balloonContent: '',
-            // },
-            // {
-            //     iconLayout: 'default#image',
-            //     iconImageHref: "./assets/images/map/baloon.svg",
-            //     iconImageSize: [30, 44],
-            //     iconImageOffset: [-15, -44]
-            // })
-            // hotelMap.geoObjects.add(myPlacemark)
-            // hotelMap.setCenter(coord, 11) 
         }
     }
 })
@@ -1368,21 +1293,22 @@ $(function () {
             }, {
                 searchControlProvider: 'yandex#search'
             });
-            ymaps.geocode("Краснопрудная ул., 12, Москва, 107140").then(function (res) {
-                var coord = res.geoObjects.get(0).geometry.getCoordinates()
-                var myPlacemark = new ymaps.Placemark(coord, {
-                    balloonContent: ''
-                },
-                {
-                    iconLayout: 'default#image',
-                    iconImageHref: "./assets/images/map/baloon.svg",
-                    iconImageSize: [30, 44],
-                    iconImageOffset: [-15, -44]
-                })
-                semiMap.geoObjects.add(myPlacemark)
-                semiMap.setCenter(coord, 11)
+
+
+            let $coord = $('#semi-map').attr('data-coords').split(',')
+            let $marker = $('#semi-map').attr('data-marker') || './assets/images/map/baloon.svg'
+
+            var myPlacemark = new ymaps.Placemark($coord, {
+                balloonContent: '',
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: $marker,
+                iconImageSize: [30, 44],
+                iconImageOffset: [-15, -44]
             })
-            semiMap.behaviors.disable('scrollZoom')
+            semiMap.geoObjects.add(myPlacemark)
+            semiMap.setCenter($coord, 11) 
         }
     }
 })
@@ -1403,3 +1329,55 @@ $('.modal__close, .modal-title__close').click(function () {
     $('.overlay').closest('.overlay-wrapper').fadeOut(350)
     $('html, body').removeClass('no-overflow')
 })
+
+//truncateText
+function _truncateText() {
+    let $truncHeight = 0
+    let $truncWrapper = $('.section-about-forum__desc')
+    $truncWrapper.find('p').each(function () {
+        $truncHeight = $truncHeight + $(this).height()
+    })
+    if($truncHeight > 260) {
+        $truncWrapper.addClass('trunk')
+    }
+    $('.truncateText').click(function () {
+        let $parent = $(this).closest('.section-about-forum__desc')
+        let $button = $('.truncateText')
+        $parent.toggleClass('trincate-expand')
+        $parent.hasClass('trincate-expand') ? $button.text('Свернуть') : $button.text('Подробнее (развернуть)')
+    })
+
+}
+
+function _region() {
+    var search = location.search.substring(1);
+    let obj = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+    if(obj.region && $('.pseudo-options').length) {
+      $('.btn--like-select span').text(obj.region)
+      $('.pseudo-options .option').each(function () {
+        let $this = $(this)
+        if($this.text() == obj.region) {
+            $this.addClass('option--active')
+        }
+      })
+    }
+    $('.jsOpenSelect').click(function (e) {
+        e.preventDefault()
+        $(this).find('.pseudo-options').slideToggle()
+    })
+    $('.option').click(function () {
+        let $text = $(this).text()
+        $('.option').removeClass('option--active')
+        $(this).addClass('option--active')
+        $('.btn--like-select span').text($text)
+        $('.btn--like-select[data-id-popup] span').text($text)
+        $('.popup-come-out__close').trigger('click')
+    })
+}
+
+
+$(function () {
+    _truncateText(),
+    _region()
+})
+

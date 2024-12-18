@@ -87,3 +87,9 @@
         margin-right: 0;
     }
 }
+.paggination--off {
+    margin-bottom: 100px;
+    @include mobile {
+        margin-bottom: 56px;;
+    }
+}

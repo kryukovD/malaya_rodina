@@ -1,5 +1,6 @@
 .banner-children {
-
+    position: relative;
+    z-index: 1;
     &--marafon {
         margin-bottom: 64px;
         @include mobile-sm{
@@ -100,7 +101,7 @@
         padding: 48px 72px 48px;
         border-radius: $border-radius-xl;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
         &--no-overflow {
             overflow: initial;
         }
@@ -412,4 +413,77 @@
 
 .mb-80 {
     margin-bottom: 80px;
+}
+
+.btn--like-select {
+    position: relative;
+}
+
+.pseudo-options {
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    width: max-content;
+    height: max-content;
+    background: #fff;
+    padding: 19px 0;
+    border-radius: 8px;
+    box-shadow: 3px 5px 25px 0 rgba(9, 19, 39, 0.08);
+    height: 240px;
+    overflow-y: auto;
+    display: none;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: gray;
+        // border-radius: 10px;
+    }
+    .option {
+        color: #000;
+        padding: 8px 19px;
+        transition: .35s ease-in-out all;
+        &-all {
+            font-weight: 600;
+        }
+        @include hover {
+            background: rgba(0, 86, 164, 0.05);;
+        }
+        &--active {
+            background: rgba(0, 86, 164, 0.05);
+            // background: $primary-color-btn;
+            // color: #fff;
+            // @include hover {
+            //     background: $primary-color-btn;
+            // }
+        }
+    }
+}
+
+[data-id-popup] {
+    border-radius: 8px;
+}
+
+.jsOpenSelect  {
+    min-width: 300px;
+    svg {
+        margin-left: 20px;
+    }
+}
+
+.region-change .pseudo-options {
+    display: block;
+    height: -moz-max-content;
+    height: max-content;
+    position: relative;
+    top: initial;
+    left: initial;
+    box-shadow: 0 0 0 0 transparent;
+    width: 100%;
 }

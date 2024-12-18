@@ -227,6 +227,7 @@
 
                 <!-- Для вывода отелей на карте нужен массив вида: -->
                 <script>
+                    window.marker = './assets/images/map/baloon.svg'
                     window.hotels = [
                         {
                             "img": "./assets/images/map/preview.png", // картинка относительно корня
@@ -259,7 +260,7 @@
                     ]
                 </script>
 
-
+                <!-- если нет паггинации, добавляем класс "paggination--off" (<section class="section-placement-list wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">) -->
                 <section class="section-placement-list wow animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
                     <div class="section-placement-list__btns">
                         <a class="btn btn-red jsOpenModalCard">Показать на карте</a>
