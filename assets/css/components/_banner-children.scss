@@ -118,6 +118,10 @@
             right: 0; 
             background-color: #0F1A3DA6;
             z-index: 1;
+            border-radius: $border-radius-xl;
+            @include mobile-sm{
+                border-radius: $border-radius-sm; 
+            }
         }
 
         @include tablet {

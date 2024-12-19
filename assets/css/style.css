@@ -6737,6 +6737,12 @@ blockquote {
   right: 0;
   background-color: rgba(15, 26, 61, 0.6509803922);
   z-index: 1;
+  border-radius: 16px;
+}
+@media (max-width: 576px) {
+  .banner-children__inner::before {
+    border-radius: 8px;
+  }
 }
 @media (max-width: 1024px) {
   .banner-children__inner {
