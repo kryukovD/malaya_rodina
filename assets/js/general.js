@@ -1351,19 +1351,22 @@ function _truncateText() {
 
 function _region() {
     var search = location.search.substring(1);
-    let obj = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
-    if(obj.region && $('.pseudo-options').length) {
-      $('.btn--like-select span').text(obj.region)
-      $('.pseudo-options .option').each(function () {
-        let $this = $(this)
-        if($this.text() == obj.region) {
-            $this.addClass('option--active')
+    if (search) {
+        let obj = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+        if(obj.region && $('.pseudo-options').length) {
+        $('.btn--like-select span').text(obj.region)
+        $('.pseudo-options .option').each(function () {
+            let $this = $(this)
+            if($this.text() == obj.region) {
+                $this.addClass('option--active')
+            }
+        })
         }
-      })
     }
     $('.jsOpenSelect').click(function (e) {
         e.preventDefault()
-        $(this).find('.pseudo-options').slideToggle()
+        $(this).find('.pseudo-options').fadeToggle()
+        $(this).find('.pseudo-options__border').fadeToggle()
     })
     $('.option').click(function () {
         let $text = $(this).text()
@@ -1375,6 +1378,9 @@ function _region() {
     })
 }
 
+$('[data-filter-news]').click(function () {
+    $(this).toggleClass('filter-active')
+})
 
 $(function () {
     _truncateText(),

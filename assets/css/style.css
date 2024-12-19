@@ -6945,13 +6945,31 @@ blockquote {
 
 .landing-country {
   position: relative;
-  top: -60px;
+  top: 0;
   color: #fff;
   padding: 10px 32px;
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
   border-radius: 4px;
   width: -moz-max-content;
   width: max-content;
+}
+
+@media (max-width: 576px) {
+  .banner-children__block-button--landing .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.banner-children--landing {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.landing__date,
+.landing__place {
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .btn.btn-red--full {
@@ -7074,12 +7092,14 @@ blockquote {
 }
 .pseudo-options::-webkit-scrollbar {
   width: 5px;
+  left: -20px;
 }
 .pseudo-options::-webkit-scrollbar-track {
-  background: #fff;
+  background: rgba(0, 86, 164, 0.05);
 }
 .pseudo-options::-webkit-scrollbar-thumb {
-  background-color: gray;
+  background-color: rgb(205, 223, 242);
+  border-radius: 0 8px 8px 0;
 }
 .pseudo-options .option {
   color: #000;
@@ -7123,6 +7143,48 @@ blockquote {
   left: initial;
   box-shadow: 0 0 0 0 transparent;
   width: 100%;
+}
+
+.pseudo-options__border {
+  position: absolute;
+  right: -109px;
+  top: 60px;
+  width: 20px;
+  height: 240px;
+  background: #fff;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 3px 5px 25px 0 rgba(9, 19, 39, 0.08);
+  z-index: 1;
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .news-links.dragscroll--news {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: calc(100% + 80px);
+    transform: translateX(-40px);
+  }
+}
+
+.news-links__item.btn.btn-light.filter-active {
+  color: #fff;
+  background: #0056A4;
+}
+
+.news-links__item.btn.btn-light.filter-active .arrow {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.13764 10.8028C3.84475 11.0957 3.84475 11.5706 4.13764 11.8635C4.43053 12.1564 4.90541 12.1564 5.1983 11.8635L4.13764 10.8028ZM8.53163 8.53017C8.82453 8.23727 8.82453 7.7624 8.53163 7.46951C8.23874 7.17661 7.76387 7.17661 7.47097 7.46951L8.53163 8.53017ZM7.47097 7.46951C7.17808 7.7624 7.17808 8.23727 7.47097 8.53017C7.76387 8.82306 8.23874 8.82306 8.53163 8.53017L7.47097 7.46951ZM11.865 5.19683C12.1579 4.90394 12.1579 4.42907 11.865 4.13617C11.5721 3.84328 11.0972 3.84328 10.8043 4.13617L11.865 5.19683ZM8.53163 7.46951C8.23874 7.17661 7.76387 7.17661 7.47097 7.46951C7.17808 7.7624 7.17808 8.23727 7.47097 8.53017L8.53163 7.46951ZM10.8043 11.8635C11.0972 12.1564 11.5721 12.1564 11.865 11.8635C12.1579 11.5706 12.1579 11.0957 11.865 10.8028L10.8043 11.8635ZM7.47097 8.53017C7.76387 8.82306 8.23874 8.82306 8.53163 8.53017C8.82453 8.23727 8.82453 7.7624 8.53163 7.46951L7.47097 8.53017ZM5.1983 4.13617C4.90541 3.84328 4.43053 3.84328 4.13764 4.13617C3.84475 4.42907 3.84475 4.90394 4.13764 5.19683L5.1983 4.13617ZM5.1983 11.8635L8.53163 8.53017L7.47097 7.46951L4.13764 10.8028L5.1983 11.8635ZM8.53163 8.53017L11.865 5.19683L10.8043 4.13617L7.47097 7.46951L8.53163 8.53017ZM7.47097 8.53017L10.8043 11.8635L11.865 10.8028L8.53163 7.46951L7.47097 8.53017ZM8.53163 7.46951L5.1983 4.13617L4.13764 5.19683L7.47097 8.53017L8.53163 7.46951Z' fill='white'/%3E%3C/svg%3E%0A");
+  transform: translateY(-2px) !important;
+}
+@media (hover: hover) {
+  .news-links__item.btn.btn-light.filter-active .arrow:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+@media (hover: none) {
+  .news-links__item.btn.btn-light.filter-active .arrow:active {
+    transform: translateY(-2px) !important;
+  }
 }
 
 .section-marafon-page-conception {
