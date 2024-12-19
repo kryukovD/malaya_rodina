@@ -5514,10 +5514,6 @@ textarea:focus + .placeholder,
   }
 }
 
-.ymaps-2-1-79-balloon__content {
-  display: none !important;
-}
-
 .map-content {
   position: absolute;
   z-index: 1001;
@@ -5527,7 +5523,7 @@ textarea:focus + .placeholder,
   top: 43px;
   box-shadow: 0 0 5px -3px #000;
   border-radius: 4px;
-  display: none;
+  display: none !important;
 }
 @media (max-width: 768px) {
   .map-content {
@@ -7105,6 +7101,7 @@ blockquote {
   color: #000;
   padding: 8px 19px;
   transition: 0.35s ease-in-out all;
+  font-weight: 400;
 }
 .pseudo-options .option-all {
   font-weight: 600;
@@ -7112,15 +7109,18 @@ blockquote {
 @media (hover: hover) {
   .pseudo-options .option:hover {
     background: rgba(0, 86, 164, 0.05);
+    color: #1460A3;
   }
 }
 @media (hover: none) {
   .pseudo-options .option:active {
     background: rgba(0, 86, 164, 0.05);
+    color: #1460A3;
   }
 }
 .pseudo-options .option--active {
   background: rgba(0, 86, 164, 0.05);
+  color: #1460A3;
 }
 
 [data-id-popup] {
@@ -7185,6 +7185,17 @@ blockquote {
   .news-links__item.btn.btn-light.filter-active .arrow:active {
     transform: translateY(-2px) !important;
   }
+}
+
+.placeholder-wrapper {
+  margin: 30px 0;
+}
+.placeholder-wrapper .timer-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.placeholder-wrapper p {
+  text-align: center;
 }
 
 .section-marafon-page-conception {
@@ -9732,4 +9743,15 @@ blockquote {
 }
 .faq__descr p {
   margin-bottom: 4px;
+}
+
+:root {
+  scroll-behavior: auto !important;
+}
+
+[data-wow-delay] {
+  visibility: hidden;
+}
+[data-wow-delay].wow {
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */

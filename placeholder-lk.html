@@ -10,14 +10,6 @@
     <link rel="stylesheet" href="./assets/css/swiper.min.css">
     <link rel="stylesheet" href="./assets/css/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/jquery-3.7.1.min.js"></script>
-    <script src="./assets/js/jquery.maskedinput.min.js"></script>
-    <script src="./assets/js/fancybox.umd.js"></script>
-    <script src="./assets/js/jquery.countTo.js"></script>
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <script src="./assets/js/jquery.marquee.min.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
-    <script defer src="./assets/js/general.js"></script>
 
 
 </head>
@@ -63,10 +55,10 @@
                                 </a>
                                 <div class="header-dropdown__overlay header-dropdown__overlay--menu">
                                     <ul class="header-dropdown">
-                                        <li><a href="javascript:void(0)">Страница</a></li>
-                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
-                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
-                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Страница </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю </a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -83,7 +75,7 @@
                                 </a>
                                 <div class="header-dropdown__overlay header-dropdown__overlay--menu">
                                     <ul class="header-dropdown">
-                                        <li><a href="javascript:void(0)">Страница</a></li>
+                                        <li><a href="https://www.google.com/">Страница</a></li>
                                         <li><a href="javascript:void(0)">Пункт подменю</a></li>
                                         <li><a href="javascript:void(0)">Пункт подменю</a></li>
                                         <li><a href="javascript:void(0)">Пункт подменю</a></li>
@@ -93,6 +85,23 @@
                             <li><a href="javascript:void(0)">Марафон межрегиональных форумов</a></li>
                             <li> <a href="javascript:void(0)">Новости</a></li>
                             <li> <a href="javascript:void(0)">Контакты</a></li>
+                            <!-- dots li-->
+                            <li class="header__menu__dots">
+                                <a href="javascript:void(0)" class="header__menu__dots-icons">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                                <div class="header-dropdown__overlay header-dropdown__overlay--menu  header-dropdown__overlay--dots">
+                                    <ul class="header-dropdown">
+                                        <li><a href="javascript:void(0)">Пункт  меню</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                        <li><a href="javascript:void(0)">Пункт подменю</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
                         </ul>
 
                         <!-- mobile menu-->
@@ -203,199 +212,23 @@
         <!-- content-->
         <div class="content">
             <div class="container">
-
-                <div class="banner-children banner-children--news-list  banner-children--partners  animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
-                    <div class="banner-children__inner"
-                        style="background:url('./assets/images/news/new-bg.png');background-size: cover;">
-                        <div class="banner-children__content">
-
-                            <div class="banner-children__group">
-                                <div class="banner-children__title">
-                                    <h1 class="text-white">РЕГИСТРАЦИЯ</h1>
-                                </div>
-                            </div>
+                <div class="stream-wrapper placeholder-wrapper">
+                    <div class="stream-wrapper__overlay">
+                        <img src="./assets/images/stream/stream-bg.jpg" alt="СКОРО ЗДЕСЬ БУДЕТ ТРАНСЛЯЦИЯ">
+                        <div class="timer-wrapper">
+                            <div class="timer-wrapper__title">СКОРО ЗДЕСЬ БУДЕТ ПРОГРАММА МЕРОПРИЯТИЯ</div>
+                            <p>II Всероссийский муниципальный форум
+                                <br>
+                                «Малая родина — сила России»</p>
                         </div>
                     </div>
                 </div>
-                
-                <section class="registration animate__animated  animate__fadeInUp" data-wow-delay="0.1s">
-                    <form class="registration-form">
-                        <div class="form-part">
-                            <div class="form-part__descr">
-                                <h3 class="form-part__title">Личные данные</h3>
-                                <div class="form-part__text">Чтобы мы знали, как к Вам обращаться (или другой текст)</div>
-                            </div>
-                            <div class="input-block">
-                                <div class="form-row">
-                                    <fieldset class="fieldset fieldset--required fieldset--name">
-                                        <input type="text" value="">
-                                        <div class="placeholder">Фамилия</div>
-                                        <span class="error">Введите фамилию</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--name">
-                                        <input type="text" value="">
-                                        <div class="placeholder">Имя</div>
-                                        <span class="error">Введите Имя</span>
-                                    </fieldset>
-                                </div>
-                                <div class="form-row">
-                                    <fieldset class="fieldset fieldset--required fieldset--name">
-                                        <input type="text" value="">
-                                        <div class="placeholder">Отчество</div>
-                                        <span class="error">Введите отчество</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--name">
-                                        <input type="text">
-                                        <div class="placeholder">Дата рождения</div>
-                                        <span class="error">Укажите дату рождения</span>
-                                    </fieldset>
-                                </div>
-                                <label class="fieldset fieldset--required fieldset--file">
-                                    <div class="fieldset-file">
-                                        <input type="file">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="icon_intrface/download">
-                                            <path id="Path 2" d="M12 1V17" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            <path id="Path 3" d="M6 12L12 18L18 12" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            <path id="Path 2_2" d="M22 23H2" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            </g>
-                                        </svg>
-                                        <div class="fieldset-file__title">Загрузите или перетащите сюда фото <span>*</span></div>
-                                        <div class="fieldset-file__descr">
-                                            (Фотография 3 на 4 на белом фоне.
-                                            <br> 
-                                            Максимальный размер не должен превышать ***, формат файла ***.)
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-part">
-                            <div class="form-part__descr">
-                                <h3 class="form-part__title">Контактные данные</h3>
-                                <div class="form-part__text">Чтобы мы знали, как с Вами связаться (или другой текст)</div>
-                            </div>
-                            <div class="input-block">
-                                <div class="form-row">
-                                    <fieldset class="fieldset fieldset--required fieldset--email">
-                                        <input type="email" value="">
-                                        <div class="placeholder">Введите ваш e-mail</div>
-                                        <span class="error">Введите ваш e-mail</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--tel">
-                                        <input type="tel" value="">
-                                        <div class="placeholder">Введите ваш телефон</div>
-                                        <span class="error">Введите ваш телефон</span>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-part">
-                            <div class="form-part__descr">
-                                <h3 class="form-part__title">Паспортные данные </h3>
-                                <div class="form-part__text">Укажите точно, как в паспорте</div>
-                            </div>
-                            <div class="input-block">
-                                <div class="form-row form-row--four">
-                                    <fieldset class="fieldset fieldset--required fieldset--pass-citizenship">
-                                        <input type="text" value="">
-                                        <div class="placeholder">Граджанство</div>
-                                        <span class="error">Укажите гражданство</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--pass-serial">
-                                        <input type="number" value="">
-                                        <div class="placeholder">Серия паспорта</div>
-                                        <span class="error">Серия паспорта</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--pass-num">
-                                        <input type="number" value="">
-                                        <div class="placeholder">Номер паспорта</div>
-                                        <span class="error">Номер паспорта</span>
-                                    </fieldset>
-                                    <fieldset class="fieldset fieldset--required fieldset--pass-date">
-                                        <input type="text" value="">
-                                        <div class="placeholder">Дата выдачи</div>
-                                        <span class="error">Укажите дату</span>
-                                    </fieldset>
-                                </div>
-                                <fieldset class="fieldset fieldset--required fieldset--pass">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Кем выдан</div>
-                                    <span class="error">Заполните поле</span>
-                                </fieldset>
-                                <fieldset class="fieldset fieldset--required fieldset--pass">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Адрес регистации</div>
-                                    <span class="error">Укажите адрес регистации</span>
-                                </fieldset>
-                                <label class="fieldset fieldset--required fieldset--file">
-                                    <div class="fieldset-file">
-                                        <input type="file">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="icon_intrface/download">
-                                            <path id="Path 2" d="M12 1V17" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            <path id="Path 3" d="M6 12L12 18L18 12" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            <path id="Path 2_2" d="M22 23H2" stroke="#0056A4" stroke-width="1.5" stroke-linecap="square"/>
-                                            </g>
-                                        </svg>
-                                        <div class="fieldset-file__title">Загрузите или перетащите сюда скан паспорта <span>*</span></div>
-                                        <div class="fieldset-file__descr">
-                                            (Требования к скану)
-                                        </div>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-part">
-                            <div class="form-part__descr">
-                                <h3 class="form-part__title">Общая информация </h3>
-                            </div>
-                            <div class="input-block">
-                                <fieldset class="fieldset fieldset--required fieldset--work">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Место работы</div>
-                                    <span class="error">Укажите место работы</span>
-                                </fieldset>
-                                <fieldset class="fieldset fieldset--required fieldset--district">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Федеральный округ / Субъект</div>
-                                    <span class="error">Заполните поле</span>
-                                </fieldset>
-                                <fieldset class="fieldset fieldset--required fieldset--post">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Должность</div>
-                                    <span class="error">Укажите должность</span>
-                                </fieldset>
-                                <fieldset class="fieldset fieldset--code">
-                                    <input type="text" value="">
-                                    <div class="placeholder">Кодовое слово для регистрации</div>
-                                </fieldset>
-                                <span>Введите ваше - кодовое слово для получения статуса ВИП или аккредитации СМИ </span>
-                            </div>
-                        </div>
-                        <div class="form-part">
-                            <div class="form-part__descr">
-                            </div>
-                            <div class="input-block">
-                                <label class="checkbox fieldset fieldset--required fieldset--valid">
-                                    <input type="checkbox" checked>
-                                    <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
-                                    <span class="error">Необходимо ваше согласие</span>                                     
-                                </label>
-                                <fieldset class="fieldset--submit">
-                                    <button class="btn btn-red" href="javascript:void(0)">Зарегистрироваться</button>
-                                </fieldset>
-                                <div class="form-descr">
-                                    <span>*</span>
-                                    Поля, обязательные к заполнению
-                                </div>
-                                <fieldset class="fieldset fieldset--empty">Помощь организатора:&nbsp;<a href="javascript:void(0)">e-mail</a></fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </section>
+
             </div>
         </div>
+
+
+
 
 
         <!-- footer-->
@@ -477,6 +310,17 @@
         </div>
     </div>
 
+
+
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/jquery.countTo.js"></script>
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery.marquee.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/fancybox.umd.js"></script>
+    <script src="./assets/js/jquery.maskedinput.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b9cb3120-b3f9-42d1-9514-9bbc06532690&lang=ru_RU"></script>
+    <script defer src="./assets/js/general.js"></script>
 
 </body>
 

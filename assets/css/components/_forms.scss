@@ -434,9 +434,9 @@ textarea:focus + .placeholder,
     }
 }
 
-.ymaps-2-1-79-balloon__content {
-    display: none !important;
-}
+// .ymaps-2-1-79-balloon__content {
+//     display: none !important;
+// }
 
 .map-content {
     position: absolute;
@@ -447,7 +447,7 @@ textarea:focus + .placeholder,
     top: 43px;
     box-shadow: 0 0 5px -3px #000;
     border-radius: 4px;
-    display: none;
+    display: none !important;
     @include mobile {
         top: initial;
         bottom: 0;

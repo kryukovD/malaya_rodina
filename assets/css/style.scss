@@ -375,3 +375,16 @@ body{
         margin-bottom: 4px;
     }
 }
+
+
+:root {
+    scroll-behavior: auto !important;
+}
+
+[data-wow-delay] {
+    visibility: hidden;
+    &.wow {
+        visibility: visible;
+    }
+}
+

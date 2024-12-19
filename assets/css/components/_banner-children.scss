@@ -470,14 +470,17 @@
         color: #000;
         padding: 8px 19px;
         transition: .35s ease-in-out all;
+        font-weight: 400;
         &-all {
             font-weight: 600;
         }
         @include hover {
-            background: rgba(0, 86, 164, 0.05);;
+            background: rgba(0, 86, 164, 0.05);
+            color: #1460A3;
         }
         &--active {
             background: rgba(0, 86, 164, 0.05);
+            color: #1460A3;
             // background: $primary-color-btn;
             // color: #fff;
             // @include hover {
@@ -540,5 +543,16 @@
     transform: translateY(-2px) !important;
     @include hover {
         transform: translateY(-2px) !important;
+    }
+}
+
+.placeholder-wrapper {
+    margin: 30px 0;
+    .timer-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    p {
+        text-align: center;
     }
 }
