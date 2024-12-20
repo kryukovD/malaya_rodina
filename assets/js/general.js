@@ -1250,15 +1250,10 @@ $(function () {
                     $('.map-content__inner').html(e.get('target')['properties'].get('balloonContent'))
                     $('.map-content').show()
                 })
+
                 myMap.geoObjects.add(myPlacemark)
                 myMap.setCenter(coord, 11) 
             })
-            
-            YMaps.Events.observe(ml, ml.Events.Load, function () {
-                ml.get(0).forEach(function (obj) {
-                    obj.setOptions({hideIcon: false});
-                });
-            });
 
             myMap.behaviors.disable('scrollZoom')
         }
@@ -1398,4 +1393,10 @@ $('[data-filter-news]').click(function () {
 $(function () {
     _truncateText(),
     _region()
+})
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        $('.section-stream').show();
+    }, 2000)
 })
