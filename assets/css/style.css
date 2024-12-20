@@ -7204,6 +7204,24 @@ blockquote {
   text-align: center;
 }
 
+.btns--index .btn {
+  max-width: 311px !important;
+}
+
+.section-about-forum__big--index {
+  padding-right: 92px;
+}
+@media (max-width: 768px) {
+  .section-about-forum__big--index {
+    padding-right: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .section-about-forum__big--index {
+    padding-right: 16px;
+  }
+}
+
 .section-marafon-page-conception {
   margin-bottom: 80px;
 }

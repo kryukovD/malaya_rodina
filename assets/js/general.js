@@ -13,6 +13,8 @@ $(document).ready(function () {
         }
     )
     wow.init();
+    
+
 
     $.fn.setCursorPosition = function (pos) {
         if ($(this).get(0).setSelectionRange) {
@@ -55,39 +57,39 @@ $(document).ready(function () {
         }, 500)
     });
 
-    function isElementInViewport(el) {
-        const rect = el[0].getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= ($(window).height()) &&
-            rect.right <= ($(window).width())
-        );
-    }
+    // function isElementInViewport(el) {
+    //     const rect = el[0].getBoundingClientRect();
+    //     return (
+    //         rect.top >= 0 &&
+    //         rect.left >= 0 &&
+    //         rect.bottom <= ($(window).height()) &&
+    //         rect.right <= ($(window).width())
+    //     );
+    // }
 
     // Запуск счетчика
-    function startCounter() {
-        const $counter = $('.section-statistics__row');
-        if ($('.section-statistics__row').length > 0) {
-            if (isElementInViewport($counter)) {
-                /*счетчик */
-                $('.counter').countTo({
-                    refreshInterval: 50,
-                    formatter: function (value, options) {
-                        return value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
-                    },
-                });
-                // Убираем обработчик скролла, чтобы счетчик запускался один раз
-                $(window).off('scroll', onScroll);
-            }
-        }
-    }
+    // function startCounter() {
+    //     const $counter = $('.section-statistics__row');
+    //     if ($('.section-statistics__row').length > 0) {
+    //         if (isElementInViewport($counter)) {
+    //             /*счетчик */
+    //             $('.counter').countTo({
+    //                 refreshInterval: 50,
+    //                 formatter: function (value, options) {
+    //                     return value.toLocaleString('ru-RU', { maximumFractionDigits: 0 });
+    //                 },
+    //             });
+    //             // Убираем обработчик скролла, чтобы счетчик запускался один раз
+    //             $(window).off('scroll', onScroll);
+    //         }
+    //     }
+    // }
 
-    // Обработчик события скролла
-    function onScroll() {
-        startCounter();
-    }
-    $(window).on('scroll', onScroll);
+    // // Обработчик события скролла
+    // function onScroll() {
+    //     startCounter();
+    // }
+    // $(window).on('scroll', onScroll);
 
 
     /* hover on map item */

@@ -560,3 +560,18 @@
         text-align: center;
     }
 }
+
+.btns--index {
+    .btn {
+        max-width: 311px !important;
+    }
+}
+.section-about-forum__big--index {
+    padding-right: 92px;
+    @include mobile {
+        padding-right: 30px;
+    }
+    @include mobile-sm {
+        padding-right: 16px;
+    }
+}
