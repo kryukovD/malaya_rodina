@@ -1245,15 +1245,11 @@ $(function () {
                          */
                         build: function () {
                             this.constructor.superclass.build.call(this);
-        
                             this._$element = $('.popover', this.getParentElement());
-        
                             this.applyElementOffset();
-        
                             this._$element.find('.close')
                                 .on('click', $.proxy(this.onCloseClick, this));
                         },
-        
                         /**
                          * Удаляет содержимое макета из DOM.
                          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/layout.templateBased.Base.xml#clear
@@ -1263,7 +1259,6 @@ $(function () {
                         clear: function () {
                             this._$element.find('.close')
                                 .off('click');
-        
                             this.constructor.superclass.clear.call(this);
                         },
         

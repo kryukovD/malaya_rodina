@@ -414,3 +414,93 @@ body{
         box-shadow: 0 0 4px -1px #000;
     }
 } 
+
+.page-404 {
+    display: flex;
+    align-items: center;
+    padding: 80px 0 140px;
+    @include tablet {
+        flex-direction: column;
+    }
+    @include mobile-sm {
+        padding: 30px 0;
+    }
+    &__descr {
+        margin-right: 50px;
+        flex-shrink: 0;
+        max-width: 490px;
+        @include tablet {
+            width: 100%;
+            margin-right: 0;
+            text-align: center;
+        }
+        @include mobile-sm {
+            max-width: 400px;
+        }
+    }
+    h1.page-404__title {
+        font-size: 48px;
+        line-height: 60px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        @include laptop-sm {
+            font-size: 44px;
+        }
+        @include mobile-sm {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    h2.page-404__subtitle {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 500;
+        margin-bottom: 60px;
+        @include mobile-sm {
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+    a {
+        color: #1460A3;
+    }
+    svg {
+        width: 65%;
+        height: auto;
+        @include tablet {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        @include mobile-sm {
+            margin-bottom: 30px;
+        }
+    }
+    p {
+        font-size: 18px;
+        line-height: 26px;
+        color: #4D4853;
+        @include tablet {
+            max-width: 400px;
+            text-align: center;
+        }
+        @include mobile-sm {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
+.tablet-show {
+    display: none;
+    @include tablet {
+        display: block;
+    }
+}
+
+.tablet-hide {
+    display: block;
+    @include tablet {
+        display: none;
+    }
+}
