@@ -9778,4 +9778,28 @@ blockquote {
 }
 [data-wow-delay].wow {
   visibility: visible;
+}
+
+.popover-inner > * {
+  background: #fff;
+  padding: 10px;
+  padding-right: 30px;
+}
+
+.popover .close {
+  position: absolute;
+  left: 375px;
+  transform: scale(1.7);
+  opacity: 0.6;
+}
+.popover .arrow {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  left: 387px;
+  transform: rotate(45deg);
+  z-index: -1;
+  top: 33px;
+  box-shadow: 0 0 4px -1px #000;
 }/*# sourceMappingURL=style.css.map */
