@@ -99,6 +99,9 @@
         @include mobile-sm{
             row-gap: 24px;
             column-gap: 8px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
         }
     }
 

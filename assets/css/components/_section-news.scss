@@ -297,3 +297,18 @@
 
     }
 }
+
+.slider-news.no-slide {
+    .swiper-slide {
+        width: calc(50% - 10px) !important;
+        @include tablet {
+            width: 75% !important;
+        }
+    }
+}
+
+.slider-news.no-slide-3 {
+    .swiper-slide {
+        width: calc(33.33% - 14px) !important;
+    }
+}

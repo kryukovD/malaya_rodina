@@ -494,6 +494,103 @@ $(document).ready(function () {
         }
     });
 
+
+if($(window).width() > 768) {
+    /* news slider */
+    let swiperContainerNews = $('.slider-news');
+    let slidesNews = swiperContainerNews.find('.swiper-slide');
+    let minSlides = 5;
+    let $loop;
+    if(slidesNews.length == 4 && $(window).width() <= 1200) {
+        if (slidesNews.length < minSlides) {
+            var slidesToDuplicate = minSlides - slidesNews.length;
+            for (var i = 0; i < slidesToDuplicate; i++) {
+                slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+            }
+        }
+        $loop = true;
+        $('.section-news__arrows').show()
+        $('.slider-news').removeClass('no-slide')
+    } else if(slidesNews.length == 3 && $(window).width() <= 1200) {
+        if (slidesNews.length < minSlides) {
+            var slidesToDuplicate = minSlides - slidesNews.length;
+            for (var i = 0; i < slidesToDuplicate; i++) {
+                slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+            }
+        }
+        $loop = true;
+        $('.section-news__arrows').show()
+        $('.slider-news').removeClass('no-slide')
+    } else if(slidesNews.length == 2 && $(window).width() <= 1080) {
+        if (slidesNews.length < minSlides) {
+            var slidesToDuplicate = minSlides - slidesNews.length;
+            for (var i = 0; i < slidesToDuplicate; i++) {
+                slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+            }
+        }
+        $loop = true;
+        $('.section-news__arrows').show()
+        $('.slider-news').removeClass('no-slide')
+    } else if(slidesNews.length == 4 && $(window).width() > 1200){
+        $loop = false;
+        $('.section-news__arrows').hide()
+        $('.slider-news').addClass('no-slide')
+    } else if(slidesNews.length == 3 && $(window).width() > 1080) {
+        $loop = false;
+        $('.section-news__arrows').hide()
+        $('.slider-news').addClass('no-slide-3')
+    }
+
+    const newsSlider = new Swiper('.slider-news', {
+        slidesPerView: 4,
+        autoHeight: false,
+        spaceBetween: 20,
+        allowTouchMove: true,
+        speed: 1000,
+        loop: $loop,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: '.section-news__btns .slider-arrow--next',
+            prevEl: '.section-news__btns  .slider-arrow--prev',
+        },
+        on: {
+            slideChange: function () {
+                updateClassNews(this);
+            },
+        }
+    })
+
+    function updateClassNews(swiper) {
+        swiper.slides.forEach(slide => {
+            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
+        });
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        activeSlide.classList.add('section-news__item--large-slide');
+        swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
+        swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
+        for (let i = 1; i <= 3; i++) {
+            const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
+            nextSlide.classList.add('section-news__item--small-slide');
+        }
+    }
+} else {
+    $('.slider-news').removeClass('no-slide')
+    const newsSlider = new Swiper('.slider-news', {
+        slidesPerView: 1,
+        autoHeight: false,
+        spaceBetween: 20,
+        allowTouchMove: true,
+        speed: 1000,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: '.section-news__btns .slider-arrow--next',
+            prevEl: '.section-news__btns  .slider-arrow--prev',
+        }
+    })
+}
+
+
     /*Партнер слайдеры */
     const partner_slider_1 = new Swiper('.section-brands__row--first', {
         loop: true,
@@ -1438,113 +1535,8 @@ function _speakersSlider() {
     })
 }
 
-
-function _newSlider() {
-    /* news slider */
-    let swiperContainerNews = $('.slider-news');
-    let slidesNews = swiperContainerNews.find('.swiper-slide');
-    let minSlides = 5; // Минимальное количество слайдов
-    let $loop
-
-    // Дублируем слайды, если их меньше 4
-    if (slidesNews.length < minSlides) {
-        var slidesToDuplicate = minSlides - slidesNews.length;
-        for (var i = 0; i < slidesToDuplicate; i++) {
-            slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
-        }
-    }
-
-    if($('.slider-news .swiper-slide').length < 5) {
-        $loop = true
-        $('.section-news__arrows').hide()
-    } else {
-        $loop = true
-        $('.section-news__arrows').show()
-    }
-
-
-    const newsSlider = new Swiper('.slider-news', {
-        slidesPerView: 4,
-        autoHeight: false,
-        spaceBetween: 20,
-        allowTouchMove: true,
-        speed: 1000,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        navigation: {
-            nextEl: '.section-news__btns .slider-arrow--next',
-            prevEl: '.section-news__btns  .slider-arrow--prev',
-        },
-        on: {
-            slideChange: function () {
-                    updateClassNews(this);
-            },
-        },
-        breakpoints: {
-            0: {
-                spaceBetween: 8,
-                slidesPerView: 1,
-                loopAdditionalSlides: 1,
-                navigation: false,
-                allowTouchMove: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-            },
-            768: {
-                allowTouchMove: true,
-                slidesPerView: 1,
-                loopAdditionalSlides: 1,
-                scrollbar: false,
-                navigation: {
-                    nextEl: '.section-news__btns .slider-arrow--next',
-                    prevEl: '.section-news__btns  .slider-arrow--prev',
-                },
-
-            },
-            1080: {
-                allowTouchMove: true,
-                slidesPerView: 2,
-                loopAdditionalSlides: 2,
-                observer: true,
-                observeParents: true,
-                scrollbar: false,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.section-news__btns .slider-arrow--next',
-                    prevEl: '.section-news__btns  .slider-arrow--prev',
-                },
-
-            },
-            1200: {
-                allowTouchMove: true,
-                slidesPerView: 3,
-                loopAdditionalSlides: 3,
-                spaceBetween: 20,
-                loop: true
-            }
-        }
-    })
-
-    function updateClassNews(swiper) {
-            swiper.slides.forEach(slide => {
-                slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
-            });
-            const activeSlide = swiper.slides[swiper.activeIndex];
-            activeSlide.classList.add('section-news__item--large-slide');
-            swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
-            swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
-            for (let i = 1; i <= 3; i++) {
-                const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
-                nextSlide.classList.add('section-news__item--small-slide');
-            }
-        }
-
-}
-
 $(document).ready(
-    _speakersSlider(),
-    _newSlider()
+    _speakersSlider()
 )
 
 $(function () {
