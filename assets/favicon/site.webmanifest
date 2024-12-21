@@ -1,0 +1,7 @@
+{
+  "icons": [
+    { "src": "./assets/favicon/favicon-96x96.png", "type": "image/png", "sizes": "96x96" },
+    { "src": "./assets/favicon/web-app-manifest-192x192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "./assets/favicon/web-app-manifest-512x512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
