@@ -115,6 +115,8 @@
         
         a {
             display: inline-flex;
+            justify-content: center;
+            align-items: center;
             color: white;
             font-size: 15px;
             font-weight: 500;
@@ -235,6 +237,9 @@
 .footer__bottom-social {
     display: flex;
     margin-top: auto;
+    @include tablet {
+        margin-top: 30px;
+    }
     a.social-icon--footer {
         display: block;
         padding: 0;

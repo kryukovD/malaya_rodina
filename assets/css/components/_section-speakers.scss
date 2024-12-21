@@ -28,8 +28,8 @@
     &__arrows{
         display: flex;
         gap: 8px;
-        @include mobile-sm{
-            display: none;
+        @include mobile{
+            display: flex !important;
         }
     }
     .slider-scrollbar{

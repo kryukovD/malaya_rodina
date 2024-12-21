@@ -118,52 +118,7 @@ $(document).ready(function () {
         $(`.section-marafon__region[data-target='#${target}'`).removeClass("section-marafon__region--active");
     });
 
-    /*speakers slider */
-    const speakersSlider = new Swiper('.speakers-slider', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 4,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.section-speakers .slider-arrow--next',
-            prevEl: '.section-speakers .slider-arrow--prev',
-        },
-        allowTouchMove: true,
-        speed: 1000,
 
-
-        breakpoints: {
-            0: {
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-                slidesPerView: 1.25,
-                navigation: false,
-                allowTouchMove: true,
-            },
-            576: {
-                scrollbar: false,
-                slidesPerView: 2,
-                navigation: {
-                    nextEl: '.section-speakers .slider-arrow--next',
-                    prevEl: '.section-speakers .slider-arrow--prev',
-                },
-                allowTouchMove: true,
-            },
-
-            768: {
-                scrollbar: false,
-                slidesPerView: 3,
-
-            },
-            1200: {
-                scrollbar: false,
-                slidesPerView: 4,
-                spaceBetween: 20
-            }
-        }
-    });
 
     /*quote slider */
     const quoteSlider = new Swiper('.slider-quote', {
@@ -539,114 +494,8 @@ $(document).ready(function () {
         }
     });
 
-
-
-    /* news slider */
-    var swiperContainerNews = $('.slider-news');
-    var slidesNews = swiperContainerNews.find('.swiper-slide');
-    var minSlides = 5; // Минимальное количество слайдов
-
-    // Дублируем слайды, если их меньше 4
-    if (slidesNews.length < minSlides) {
-        var slidesToDuplicate = minSlides - slidesNews.length;
-        for (var i = 0; i < slidesToDuplicate; i++) {
-            slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
-        }
-    }
-
-    const newsSlider = new Swiper('.slider-news', {
-        slidesPerView: 4, // Показываем несколько слайдов одновременно
-        autoHeight: false,
-        spaceBetween: 20,
-        allowTouchMove: true,
-        speed: 1000,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        navigation: {
-            nextEl: '.section-news__btns .slider-arrow--next',
-            prevEl: '.section-news__btns  .slider-arrow--prev',
-        },
-        on: {
-
-            // Событие при смене слайда
-            slideChange: function () {
-                updateClassNews(this);
-            },
-
-
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: "auto",
-                spaceBetween: 8,
-                width: null,
-                navigation: false,
-                allowTouchMove: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-            },
-            576: {
-                allowTouchMove: false,
-                slidesPerView: "auto",
-                with: "auto",
-                scrollbar: false,
-                navigation: {
-                    nextEl: '.section-news__btns .slider-arrow--next',
-                    prevEl: '.section-news__btns  .slider-arrow--prev',
-                },
-
-            },
-
-            768: {
-                allowTouchMove: false,
-                slidesPerView: 3,
-                loopAdditionalSlides: 3,
-                observer: true,
-                observeParents: true,
-                scrollbar: false,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.section-news__btns .slider-arrow--next',
-                    prevEl: '.section-news__btns  .slider-arrow--prev',
-                },
-
-            },
-
-            1024: {
-                slidesPerView: 4, // Показываем несколько слайдов одновременно
-                spaceBetween: 20,
-                loop: true
-            }
-        }
-
-    });
-
-
-
-
-    function updateClassNews(swiper) {
-        // Сначала удаляем классы со всех слайдов
-        swiper.slides.forEach(slide => {
-            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
-        });
-
-        // Находим первый видимый слайд и задаем ему класс 'large-slide'
-        const activeSlide = swiper.slides[swiper.activeIndex];
-
-        activeSlide.classList.add('section-news__item--large-slide');
-        swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
-        swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
-        // Задаем остальным слайдам класс 'small-slide'
-        for (let i = 1; i <= 3; i++) {
-            const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
-            nextSlide.classList.add('section-news__item--small-slide');
-        }
-    }
-
     /*Партнер слайдеры */
     const partner_slider_1 = new Swiper('.section-brands__row--first', {
-
         loop: true,
         allowTouchMove: false,
         slidesPerView: 7, // показывать несколько слайдов одновременно
@@ -1529,6 +1378,174 @@ function _region() {
 $('[data-filter-news]').click(function () {
     $(this).toggleClass('filter-active')
 })
+
+function _speakersSlider() {
+    let $loop;
+    if($('.speakers-slider .card-speakers.swiper-slide').length > 4) {
+        $loop = true
+        $('.section-speakers__arrows').show()
+    } else {
+        if($(window).width() > 1200) {
+            $('.section-speakers__arrows').hide()
+            $loop = false
+        } else {
+            $('.section-speakers__arrows').show()
+            $loop = true
+        }
+        
+    }
+    
+    const speakersSlider = new Swiper('.speakers-slider', {
+        direction: 'horizontal',
+        loop: $loop,
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.section-speakers .slider-arrow--next',
+            prevEl: '.section-speakers .slider-arrow--prev',
+        },
+        allowTouchMove: true,
+        speed: 1000,
+        breakpoints: {
+            0: {
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                slidesPerView: 1.25,
+                navigation: false,
+                allowTouchMove: true,
+            },
+            576: {
+                scrollbar: false,
+                slidesPerView: 2,
+                loop: true,
+                navigation: {
+                    nextEl: '.section-speakers .slider-arrow--next',
+                    prevEl: '.section-speakers .slider-arrow--prev',
+                },
+                allowTouchMove: true,
+            },
+            768: {
+                scrollbar: false,
+                slidesPerView: 3,
+            },
+            1200: {
+                scrollbar: false,
+                slidesPerView: 4,
+                spaceBetween: 20
+            }
+        }
+    })
+}
+
+
+function _newSlider() {
+    /* news slider */
+    let swiperContainerNews = $('.slider-news');
+    let slidesNews = swiperContainerNews.find('.swiper-slide');
+    let minSlides = 5; // Минимальное количество слайдов
+    let $loop
+
+    // Дублируем слайды, если их меньше 4
+    if (slidesNews.length < minSlides) {
+        var slidesToDuplicate = minSlides - slidesNews.length;
+        for (var i = 0; i < slidesToDuplicate; i++) {
+            slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+        }
+    }
+
+    if($('.slider-news .swiper-slide').length < 5) {
+        $loop = true
+        $('.section-news__arrows').hide()
+    } else {
+        $loop = true
+        $('.section-news__arrows').show()
+    }
+
+
+    const newsSlider = new Swiper('.slider-news', {
+        slidesPerView: 4,
+        autoHeight: false,
+        spaceBetween: 20,
+        allowTouchMove: true,
+        speed: 1000,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+            nextEl: '.section-news__btns .slider-arrow--next',
+            prevEl: '.section-news__btns  .slider-arrow--prev',
+        },
+        on: {
+            slideChange: function () {
+                    updateClassNews(this);
+            },
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 8,
+                slidesPerView: 1,
+                loopAdditionalSlides: 1,
+                navigation: false,
+                allowTouchMove: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            },
+            768: {
+                allowTouchMove: true,
+                slidesPerView: 1,
+                loopAdditionalSlides: 1,
+                scrollbar: false,
+                navigation: {
+                    nextEl: '.section-news__btns .slider-arrow--next',
+                    prevEl: '.section-news__btns  .slider-arrow--prev',
+                },
+
+            },
+            1080: {
+                allowTouchMove: true,
+                slidesPerView: 2,
+                loopAdditionalSlides: 2,
+                observer: true,
+                observeParents: true,
+                scrollbar: false,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.section-news__btns .slider-arrow--next',
+                    prevEl: '.section-news__btns  .slider-arrow--prev',
+                },
+
+            },
+            1200: {
+                allowTouchMove: true,
+                slidesPerView: 3,
+                loopAdditionalSlides: 3,
+                spaceBetween: 20,
+                loop: true
+            }
+        }
+    })
+
+    function updateClassNews(swiper) {
+            swiper.slides.forEach(slide => {
+                slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
+            });
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            activeSlide.classList.add('section-news__item--large-slide');
+            swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
+            swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
+            for (let i = 1; i <= 3; i++) {
+                const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
+                nextSlide.classList.add('section-news__item--small-slide');
+            }
+        }
+
+}
+
+$(document).ready(
+    _speakersSlider(),
+    _newSlider()
+)
 
 $(function () {
     _truncateText(),
