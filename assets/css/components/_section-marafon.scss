@@ -323,11 +323,19 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    @include mobile-sm {
+        flex-direction: column;
+    }
 }
 .contacts-col {
     width: 50%;
     @include laptop {
         width: 100%;
+    }
+    &:nth-child(1) {
+        @include mobile-sm {
+            margin-bottom: 20px;
+        }
     }
     b {
         font-weight: 500;
@@ -340,6 +348,24 @@
         display: block;
         @include hover {
             text-decoration: none;
+        }
+    }
+}
+
+.section-speakers__inner.section-contacts__inner {
+    @include mobile-sm {
+        background: $primary-color-btn;
+        color: #fff;
+        padding-right: 24px;
+        h2,
+        a,
+        b {
+            color: #fff;
+        }
+        .section-contacts__content {
+            padding: 0;
+            background: $primary-color-btn;
+            color: rgba(255, 255, 255, 0.6);
         }
     }
 }

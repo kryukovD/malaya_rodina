@@ -303,3 +303,22 @@
         }
     }
 }
+
+.footer__bottom-social a.social-icon--footer {
+    @include tablet {
+        width: 24px !important;
+        min-width: none;
+        flex-grow: 0;
+    }
+}
+.footer__bottom-social {
+    @include tablet {
+        justify-content: center;
+    }
+}
+
+.footer__bottom-btn {
+    @include tablet {
+        margin: auto;
+    }
+}
