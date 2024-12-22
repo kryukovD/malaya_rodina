@@ -7037,6 +7037,11 @@ blockquote {
     aspect-ratio: unset;
   }
 }
+@media (max-width: 576px) {
+  .banner-children__logos > div:not(:first-child) {
+    width: 60px;
+  }
+}
 
 .banner-children__inner--nooverlay::before {
   display: none;

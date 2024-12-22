@@ -307,6 +307,9 @@
                width: auto;
                aspect-ratio: unset;
             }
+            @include mobile-sm{
+               width: 60px;
+            }
         }
     }
     
