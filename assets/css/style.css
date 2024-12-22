@@ -9868,7 +9868,8 @@ blockquote {
     flex-wrap: wrap;
   }
   .footer-menus .footer-menu {
-    width: calc(50% - 5px);
+    width: 100%;
+    text-align: center;
   }
 }
 
