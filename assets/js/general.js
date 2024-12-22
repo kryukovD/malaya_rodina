@@ -495,13 +495,40 @@ $(document).ready(function () {
     });
 
 
+
+function updateClassNews(swiper) {
+    console.log(swiper)
+    swiper.slides.forEach(slide => {
+        slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
+    });
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    activeSlide.classList.add('section-news__item--large-slide');
+    swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
+    swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
+    for (let i = 1; i <= 3; i++) {
+        const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
+        nextSlide.classList.add('section-news__item--small-slide');
+    }
+}
+
 if($(window).width() > 768) {
     /* news slider */
     let swiperContainerNews = $('.slider-news');
     let slidesNews = swiperContainerNews.find('.swiper-slide');
     let minSlides = 5;
     let $loop;
-    if(slidesNews.length == 4 && $(window).width() <= 1200) {
+
+    if(slidesNews.length > 4) {
+        if (slidesNews.length < minSlides) {
+            var slidesToDuplicate = minSlides - slidesNews.length;
+            for (var i = 0; i < slidesToDuplicate; i++) {
+                slidesNews.eq(i % slidesNews.length).clone().appendTo(".slider-news .swiper-wrapper"); // Клонируем и добавляем
+            }
+        }
+        $loop = true;
+        $('.section-news__arrows').show()
+        $('.slider-news').removeClass('no-slide')
+    } else if(slidesNews.length == 4 && $(window).width() <= 1200) {
         if (slidesNews.length < minSlides) {
             var slidesToDuplicate = minSlides - slidesNews.length;
             for (var i = 0; i < slidesToDuplicate; i++) {
@@ -560,19 +587,6 @@ if($(window).width() > 768) {
         }
     })
 
-    function updateClassNews(swiper) {
-        swiper.slides.forEach(slide => {
-            slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
-        });
-        const activeSlide = swiper.slides[swiper.activeIndex];
-        activeSlide.classList.add('section-news__item--large-slide');
-        swiper.slides[(swiper.activeIndex + 2)].classList.add("section-news__item--before-revert-slide");
-        swiper.slides[(swiper.activeIndex + 1)].classList.add("section-news__item--revert-slide");
-        for (let i = 1; i <= 3; i++) {
-            const nextSlide = swiper.slides[(swiper.activeIndex + i) % swiper.slides.length];
-            nextSlide.classList.add('section-news__item--small-slide');
-        }
-    }
 } else {
     $('.slider-news').removeClass('no-slide')
     const newsSlider = new Swiper('.slider-news', {

@@ -1,6 +1,10 @@
 .section-marafon{
     margin-bottom: 80px;
     position: relative;
+    @include mobile{
+        background: #fff;
+        border-radius: 8px;
+    }
     @include mobile-sm{
         margin-bottom: 55px;
     }
@@ -54,6 +58,8 @@
             // min-height: 550px;
             border-radius: $border-radius-sm;
             min-height: auto;
+            background: transparent;
+            padding-bottom: 16px;
             
         }
 
@@ -88,6 +94,16 @@
             }
             @include laptop-sm{
                 padding: 64px 30px 20px;
+            }
+            @include mobile{
+                color: #000;
+                h2 {
+                    color: #000;
+                }
+                p {
+                    color: #000;
+                    display: block;
+                }
             }
             @include mobile-sm{
                 padding: 24px 16px 0px;
@@ -242,7 +258,7 @@
 .section--semi-map__inner {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     @include tablet {
         flex-direction: column;
         justify-content: flex-start;
@@ -275,12 +291,12 @@
 
 #semi-map {
     width: 100%;
-    height: 370px;
+    height: 100%;
     @include laptop {
-        height: 390px;
+        height: 100%;
     }
     @include laptop-sm {
-        height: 480px;
+        height: 100%;
     }
     @include tablet {
         height: 400px;

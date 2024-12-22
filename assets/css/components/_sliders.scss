@@ -41,6 +41,9 @@
     .swiper-slide-prev,
     .swiper-slide-next {
         padding: 20px 5px;
+        @include mobile-sm {
+            padding: 5px;
+        }
     }
     .swiper-slide-active {
         z-index: 3;

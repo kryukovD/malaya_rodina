@@ -264,4 +264,16 @@
     }
 }
 
-
+.section-photo-gallery__header .btn {
+    @include mobile-sm {
+        display: none;
+    }
+}
+.mobile-sm--show {
+    display: none !important;
+    @include mobile-sm {
+        display: block !important;
+        margin-top: 16px;
+        width: 140px;
+    }
+}

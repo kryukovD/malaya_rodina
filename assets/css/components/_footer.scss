@@ -260,3 +260,46 @@
         }
     }
 }
+
+
+.footer--landing {
+    .footer-menus {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include tablet {
+            justify-content: center;
+        }
+        .footer-menu {
+            &:nth-child(1) {
+                margin-left: auto;
+                width: 200px;
+                @include tablet {
+                    width: 270px;
+                    margin-left: 0;
+                    li {
+                        text-align: center;
+                    }
+                }
+                @include mobile-sm {
+                    margin-bottom: -15px;
+                }
+            }
+            @include tablet {
+                width: 230px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.footer-menus {
+    @include mobile-sm {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .footer-menu {
+            width: calc(50% - 5px);
+        }
+    }
+}

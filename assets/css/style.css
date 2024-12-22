@@ -137,6 +137,12 @@ body.no-overflow {
   }
 }
 
+@media (max-width: 768px) {
+  .text-white--landing {
+    font-size: 5vw !important;
+  }
+}
+
 .wrapper h1 span {
   font-size: 48px;
   line-height: 1.2;
@@ -2528,6 +2534,12 @@ header .mobile-menu__list {
   margin-bottom: 80px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .section-marafon {
+    background: #fff;
+    border-radius: 8px;
+  }
+}
 @media (max-width: 576px) {
   .section-marafon {
     margin-bottom: 55px;
@@ -2591,6 +2603,8 @@ header .mobile-menu__list {
     flex-direction: column;
     border-radius: 8px;
     min-height: auto;
+    background: transparent;
+    padding-bottom: 16px;
   }
 }
 .section-marafon__block-map-text {
@@ -2626,6 +2640,18 @@ header .mobile-menu__list {
 @media (max-width: 1200px) {
   .section-marafon__block-map-text {
     padding: 64px 30px 20px;
+  }
+}
+@media (max-width: 768px) {
+  .section-marafon__block-map-text {
+    color: #000;
+  }
+  .section-marafon__block-map-text h2 {
+    color: #000;
+  }
+  .section-marafon__block-map-text p {
+    color: #000;
+    display: block;
   }
 }
 @media (max-width: 576px) {
@@ -2799,7 +2825,7 @@ header .mobile-menu__list {
 .section--semi-map__inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
 }
 @media (max-width: 1024px) {
   .section--semi-map__inner {
@@ -2839,16 +2865,16 @@ header .mobile-menu__list {
 
 #semi-map {
   width: 100%;
-  height: 370px;
+  height: 100%;
 }
 @media (max-width: 1640px) {
   #semi-map {
-    height: 390px;
+    height: 100%;
   }
 }
 @media (max-width: 1200px) {
   #semi-map {
-    height: 480px;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -3517,6 +3543,23 @@ header .mobile-menu__list {
   opacity: 0.6;
 }
 
+@media (max-width: 576px) {
+  .section-photo-gallery__header .btn {
+    display: none;
+  }
+}
+
+.mobile-sm--show {
+  display: none !important;
+}
+@media (max-width: 576px) {
+  .mobile-sm--show {
+    display: block !important;
+    margin-top: 16px;
+    width: 140px;
+  }
+}
+
 .slider-arrow-chevron {
   cursor: pointer;
   display: inline-flex;
@@ -4050,6 +4093,7 @@ header .mobile-menu__list {
     border-radius: 4px;
     width: calc(100% - 5px);
     line-height: 1.4;
+    min-height: 62px;
   }
 }
 .section-faq__answer-text {
@@ -6998,10 +7042,6 @@ blockquote {
   display: none;
 }
 
-.text-white--landing {
-  max-width: 500px;
-}
-
 .landing-country {
   position: relative;
   top: 0;
@@ -7276,6 +7316,15 @@ blockquote {
 @media (max-width: 576px) {
   .section-about-forum__big--index {
     padding-right: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn--mobile-sm__full {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    display: block !important;
   }
 }
 
@@ -9380,6 +9429,12 @@ blockquote {
 .bk-slider .swiper-slide-next {
   padding: 20px 5px;
 }
+@media (max-width: 576px) {
+  .bk-slider .swiper-slide-prev,
+  .bk-slider .swiper-slide-next {
+    padding: 5px;
+  }
+}
 .bk-slider .swiper-slide-active {
   z-index: 3;
   width: auto !important;
@@ -9762,6 +9817,52 @@ blockquote {
   }
 }
 
+.footer--landing .footer-menus {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .footer--landing .footer-menus {
+    justify-content: center;
+  }
+}
+.footer--landing .footer-menus .footer-menu:nth-child(1) {
+  margin-left: auto;
+  width: 200px;
+}
+@media (max-width: 1024px) {
+  .footer--landing .footer-menus .footer-menu:nth-child(1) {
+    width: 270px;
+    margin-left: 0;
+  }
+  .footer--landing .footer-menus .footer-menu:nth-child(1) li {
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .footer--landing .footer-menus .footer-menu:nth-child(1) {
+    margin-bottom: -15px;
+  }
+}
+@media (max-width: 1024px) {
+  .footer--landing .footer-menus .footer-menu {
+    width: 230px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-menus {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-menus .footer-menu {
+    width: calc(50% - 5px);
+  }
+}
+
 .faq-wrapper {
   display: grid;
   grid-template-columns: 518px 1fr;
@@ -9984,5 +10085,19 @@ blockquote {
 @media (max-width: 1024px) {
   .tablet-hide {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .btns--index .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-banner__date-numbers {
+    flex-shrink: 0;
+    min-width: 150px;
   }
 }/*# sourceMappingURL=style.css.map */

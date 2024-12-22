@@ -138,6 +138,12 @@ body{
     }
 }
 
+.text-white--landing {
+    @include mobile{
+        font-size: 5vw !important;
+    }
+}
+
 .wrapper h1 span {
     font-size: 48px;
     line-height: 1.2;
@@ -526,5 +532,20 @@ body{
     display: block;
     @include tablet {
         display: none;
+    }
+}
+.btns--index {
+    .btn {
+        @include mobile-sm {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+}
+
+.main-banner__date-numbers {
+    @include mobile-sm {
+        flex-shrink: 0;
+        min-width: 150px;
     }
 }

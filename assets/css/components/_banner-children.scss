@@ -319,7 +319,7 @@
 }
 
 .text-white--landing {
-    max-width: 500px;
+    // max-width: 500px;
 }
 
 .landing-country {
@@ -573,5 +573,13 @@
     }
     @include mobile-sm {
         padding-right: 16px;
+    }
+}
+.btn--mobile-sm__full {
+    @include mobile-sm {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        display: block !important;
     }
 }
