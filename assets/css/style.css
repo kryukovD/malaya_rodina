@@ -2979,6 +2979,11 @@ header .mobile-menu__list {
     display: flex !important;
   }
 }
+@media (max-width: 576px) {
+  .section-speakers__arrows {
+    display: none !important;
+  }
+}
 .section-speakers .slider-scrollbar {
   display: none;
 }
@@ -9868,8 +9873,7 @@ blockquote {
     flex-wrap: wrap;
   }
   .footer-menus .footer-menu {
-    width: 100%;
-    text-align: center;
+    width: calc(50% - 5px);
   }
 }
 

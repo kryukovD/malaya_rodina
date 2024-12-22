@@ -31,6 +31,9 @@
         @include mobile{
             display: flex !important;
         }
+        @include mobile-sm {
+            display: none !important;
+        }
     }
     .slider-scrollbar{
         display: none;
