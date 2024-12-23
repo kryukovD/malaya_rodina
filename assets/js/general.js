@@ -527,7 +527,7 @@ if($(window).width() > 768) {
         $loop = true;
         $('.section-news__arrows').show()
         $('.slider-news').removeClass('no-slide')
-    } else if(slidesNews.length == 4 && $(window).width() <= 1200) {
+    } else if(slidesNews.length == 4) {
         if (slidesNews.length < minSlides) {
             var slidesToDuplicate = minSlides - slidesNews.length;
             for (var i = 0; i < slidesToDuplicate; i++) {
