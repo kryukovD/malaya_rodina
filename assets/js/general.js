@@ -1,3 +1,21 @@
+
+$(function () {
+        // $('.section-faq__answers-list li').each(function () {
+        //     let $el = $(this).find('.section-faq__answer-layer')
+        //     setTimeout(function () {
+        //         if($count < 5) {
+        //             $height = $height + $el.height() + 8
+        //             $count++
+        //         }
+        //         $('.section-faq__answers-list').css('max-height', $height)
+        //     }, 20)
+        // })
+        $height = $('.section-faq__answer-layer').eq(0).height() + $('.section-faq__answer-layer').eq(1).height() + $('.section-faq__answer-layer').eq(2).height() + $('.section-faq__answer-layer').eq(3).height() + $('.section-faq__answer-layer').eq(4).height() + 34
+        $('.section-faq__answers-list').css('max-height', $height)
+})
+
+
+
 $(document).ready(function () {
 
     $('[data-wow-delay]').addClass('wow')
@@ -117,12 +135,6 @@ $(document).ready(function () {
         let target = $(this).attr("id");
         $(`.section-marafon__region[data-target='#${target}'`).removeClass("section-marafon__region--active");
     });
-
-
-    console.log($('.slider-quote__item').length)
-
-
-
 
 
 
@@ -960,19 +972,6 @@ if($(window).width() > 768) {
         $(this).prev().focus()
     })
 
-    // сабмит
-    $('form').on('submit', function(e) {
-        e.preventDefault()
-        let $form = $(this)
-        let $required = $form.find('.fieldset--required').length
-        let $valid = $form.find('.fieldset--valid').length
-        if($required == $valid) {
-            alert('submit')
-        } else {
-            $form.find('.fieldset--required').not('.fieldset--valid').addClass('fieldset--error').eq(0).find('input').focus()
-        }
-    })
-
 
     $(document).click(function (event) {
 
@@ -1576,16 +1575,3 @@ $(window).on('load', function () {
     }, 2000)
 })
 
-
-$(document).ready(function () {
-    $count = 0;
-    $height = 0;
-    $('.section-faq__answers-list li').each(function () {
-        let $el = $(this).find('.section-faq__answer-layer')
-        if($count < 5) {
-            $height = $height + $el.height() + 8
-            $count++
-        }
-    })
-    $('.section-faq__answers-list').css('max-height', $height)
-})

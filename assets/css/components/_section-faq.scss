@@ -304,3 +304,9 @@
       opacity: 1;
     }
   }
+
+
+.ajax-wrapper .section-faq__answers-list {
+    overflow: initial !important;
+    max-height: max-content !important;
+}
