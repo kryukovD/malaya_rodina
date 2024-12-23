@@ -1558,7 +1558,7 @@ header .mobile-menu__list {
     margin-bottom: 23px;
   }
 }
-.main-banner__title {
+.main-banner__title, .main-banner__title h1 {
   font-family: "Unbounded";
   font-weight: 500;
   font-size: 64px;
@@ -1567,7 +1567,7 @@ header .mobile-menu__list {
   text-transform: uppercase;
 }
 @media (max-width: 576px) {
-  .main-banner__title {
+  .main-banner__title, .main-banner__title h1 {
     font-size: 40px;
     line-height: 1.2;
   }
