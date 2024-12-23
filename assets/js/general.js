@@ -497,7 +497,6 @@ $(document).ready(function () {
 
 
 function updateClassNews(swiper) {
-    console.log(swiper)
     swiper.slides.forEach(slide => {
         slide.classList.remove('section-news__item--large-slide', 'section-news__item--small-slide', 'section-news__item--revert-slide', 'section-news__item--before-revert-slide');
     });
@@ -1562,4 +1561,18 @@ $(window).on('load', function () {
     setTimeout(function () {
         $('.section-stream').show();
     }, 2000)
+})
+
+
+$(document).ready(function () {
+    $count = 0;
+    $height = 0;
+    $('.section-faq__answers-list li').each(function () {
+        let $el = $(this).find('.section-faq__answer-layer')
+        if($count < 5) {
+            $height = $height + $el.height() + 8
+            $count++
+        }
+    })
+    $('.section-faq__answers-list').css('max-height', $height)
 })

@@ -4062,6 +4062,20 @@ header .mobile-menu__list {
   flex-direction: column;
   gap: 8px;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px !important;
+}
+.section-faq__answers-list::-webkit-scrollbar {
+  width: 5px;
+  left: -20px;
+}
+.section-faq__answers-list::-webkit-scrollbar-track {
+  background: rgba(0, 86, 164, 0.05);
+}
+.section-faq__answers-list::-webkit-scrollbar-thumb {
+  background-color: rgb(205, 223, 242);
+  border-radius: 0 8px 8px 0;
 }
 .section-faq__answer {
   border-radius: 8px;
@@ -4112,6 +4126,7 @@ header .mobile-menu__list {
 }
 .section-faq__answer-name svg {
   transition: all 0.4s ease;
+  flex-shrink: 0;
 }
 @media (max-width: 576px) {
   .section-faq__answer-name svg {
