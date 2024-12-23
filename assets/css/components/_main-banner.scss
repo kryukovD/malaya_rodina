@@ -37,6 +37,7 @@
         line-height: 1.2;
         max-width: 918px;
         text-transform: uppercase;
+
         @include mobile-sm{
             font-size: 40px;
             line-height: 1.2;
@@ -290,5 +291,12 @@
                 }
             }
         }
+    }
+}
+
+.main-banner__body h1 {
+    text-transform: none;
+    .main-banner__subtitle {
+        font-family: "Montserrat";
     }
 }
