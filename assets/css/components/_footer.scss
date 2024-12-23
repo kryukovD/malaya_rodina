@@ -248,6 +248,10 @@
         padding: 0;
         background: transparent;
         margin-right: 16px;
+        @include tablet {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
         svg {
             path {
                 transition: .35s ease-in-out all;

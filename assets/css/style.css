@@ -9860,6 +9860,12 @@ blockquote {
   background: transparent;
   margin-right: 16px;
 }
+@media (max-width: 1024px) {
+  .footer__bottom-social a.social-icon--footer {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
 .footer__bottom-social a.social-icon--footer svg path {
   transition: 0.35s ease-in-out all;
 }
