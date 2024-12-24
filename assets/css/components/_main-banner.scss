@@ -294,3 +294,28 @@
         }
     }
 }
+
+
+.main-banner__logos {
+    div:nth-child(1),
+    div:nth-child(2) {
+        position: absolute;
+        height: 95px;
+        width: auto;
+        right: 0;
+        top: 100px;
+        @include tablet {
+            position: static;
+            top: initial;
+            right: initial;
+            width: 48px;
+            height: 39px;
+        }
+    }
+    div:nth-child(1) {
+        right: 230px;
+    }
+    div:nth-child(2) {
+        right: 40px;
+    }
+}

@@ -1818,6 +1818,31 @@ header .mobile-menu__list {
   }
 }
 
+.main-banner__logos div:nth-child(1),
+.main-banner__logos div:nth-child(2) {
+  position: absolute;
+  height: 95px;
+  width: auto;
+  right: 0;
+  top: 100px;
+}
+@media (max-width: 1024px) {
+  .main-banner__logos div:nth-child(1),
+  .main-banner__logos div:nth-child(2) {
+    position: static;
+    top: initial;
+    right: initial;
+    width: 48px;
+    height: 39px;
+  }
+}
+.main-banner__logos div:nth-child(1) {
+  right: 230px;
+}
+.main-banner__logos div:nth-child(2) {
+  right: 40px;
+}
+
 .mini-banner {
   margin-bottom: 64px;
 }
