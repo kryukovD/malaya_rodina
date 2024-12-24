@@ -297,13 +297,25 @@
 
 
 .main-banner__logos {
-    div:nth-child(1),
-    div:nth-child(2) {
-        position: absolute;
+    div {
         height: 95px;
+        transform: translateX(-100px);
+        @include tablet {
+            position: static;
+            top: initial;
+            right: initial;
+            width: 48px;
+            height: 39px;
+            transform: none;
+        }
+    }
+    div:nth-child(3){
+        transform: translateX(0px);
+        position: absolute;
+        height: 65px;
         width: auto;
         right: 0;
-        top: 100px;
+        top: 130px;
         @include tablet {
             position: static;
             top: initial;
@@ -311,11 +323,5 @@
             width: 48px;
             height: 39px;
         }
-    }
-    div:nth-child(1) {
-        right: 230px;
-    }
-    div:nth-child(2) {
-        right: 40px;
     }
 }

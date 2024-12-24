@@ -1818,29 +1818,36 @@ header .mobile-menu__list {
   }
 }
 
-.main-banner__logos div:nth-child(1),
-.main-banner__logos div:nth-child(2) {
-  position: absolute;
+.main-banner__logos div {
   height: 95px;
-  width: auto;
-  right: 0;
-  top: 100px;
+  transform: translateX(-100px);
 }
 @media (max-width: 1024px) {
-  .main-banner__logos div:nth-child(1),
-  .main-banner__logos div:nth-child(2) {
+  .main-banner__logos div {
+    position: static;
+    top: initial;
+    right: initial;
+    width: 48px;
+    height: 39px;
+    transform: none;
+  }
+}
+.main-banner__logos div:nth-child(3) {
+  transform: translateX(0px);
+  position: absolute;
+  height: 65px;
+  width: auto;
+  right: 0;
+  top: 130px;
+}
+@media (max-width: 1024px) {
+  .main-banner__logos div:nth-child(3) {
     position: static;
     top: initial;
     right: initial;
     width: 48px;
     height: 39px;
   }
-}
-.main-banner__logos div:nth-child(1) {
-  right: 230px;
-}
-.main-banner__logos div:nth-child(2) {
-  right: 40px;
 }
 
 .mini-banner {
