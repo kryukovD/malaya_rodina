@@ -4209,6 +4209,12 @@ header .mobile-menu__list {
     opacity: 1;
   }
 }
+.ajax-wrapper .section-faq__answers-list {
+  overflow: initial !important;
+  max-height: -moz-max-content !important;
+  max-height: max-content !important;
+}
+
 .section-news {
   margin-bottom: 100px;
 }
@@ -10183,4 +10189,4 @@ blockquote {
     flex-shrink: 0;
     min-width: 150px;
   }
-}
+}/*# sourceMappingURL=style.css.map */
