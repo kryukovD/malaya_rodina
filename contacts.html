@@ -492,7 +492,7 @@
                                         <div class="questions-form-block__text">Не нашли нужного вопроса? <br>
                                             Задайте его нам, заполнив форму.<br>
                                             Наши специалисты ответят в ближайшее время.</div>
-                                        <a class="btn btn-question" href="javascript:void(0)">Задать вопрос</a>
+                                        <a class="btn btn-question btn-trigger-popup" data-id-popup="#popup-questions" href="javascript:void(0)">Задать вопрос</a>
                                     </div>
                                 </div>
                             </div>
@@ -792,6 +792,59 @@
         </div>
     </div>
 
+    <div class="popup-come-out" id="popup-questions">
+        <div class="popup-come-out__inner">
+            <div class="popup-come-out__header" style="background-image: url('./assets/images/popup-back-header.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="popup-come-out__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L21 12" stroke="white" stroke-linecap="round" />
+                        <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="popup-come-out__header-title">
+                    Задать вопрос
+                </div>
+            </div>
+            <div class="popup-come-out__content">
+                <div class="popup-come-out__body">
+                    <form>
+                        <fieldset class="fieldset fieldset--required fieldset--name">
+                            <input type="text" value="">
+                            <div class="placeholder">Ваше ФИО</div>
+                            <span class="error">Введите корректное имя</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--required fieldset--email">
+                            <input type="email" value="">
+                            <div class="placeholder">Ваш email</div>
+                            <span class="error">Введите корректное имя</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--tel fieldset--required">
+                            <input type="tel" value="">
+                            <div class="placeholder">Ваш телефон</div>
+                            <span class="error">Введите корректный телефон</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--text">
+                            <textarea value=""></textarea>
+                            <div class="placeholder">Ваш вопрос</div>
+                        </fieldset>
+                        <label class="checkbox fieldset fieldset--required fieldset--valid">
+                            <input type="checkbox" checked>
+                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                            <span class="error">Необходимо ваше согласие</span>                                     
+                        </label>
+                        <fieldset class="fieldset fieldset--submit">
+                            <button class="btn btn-registration btn-red" >Отправить</button>
+                        </fieldset>
+                    </form>
+                    
+                </div>
+                <div class="popup-come-out__notice">
+                    <span>*</span> Поля, обязательные к заполнению
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 
