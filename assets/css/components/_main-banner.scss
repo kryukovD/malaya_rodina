@@ -177,17 +177,17 @@
             height: 100%;
             object-fit: contain;
         }
-        >div:first-child{
-            width: 382px;
-            aspect-ratio: 382/77;
-            @include tablet{
-                width: 39px;
-                height: 39px;
-                aspect-ratio: 1/1;
-            }
-        }
+        // >div:first-child{
+        //     width: 382px;
+        //     aspect-ratio: 382/77;
+        //     @include tablet{
+        //         width: 39px;
+        //         height: 39px;
+        //         aspect-ratio: 1/1;
+        //     }
+        // }
 
-        >div:nth-child(2){
+        >div{
             @include tablet{
                 width: 39px;
                 height: 39px;
@@ -200,14 +200,14 @@
                 height: 39px;
             }
         }
-        >div:not(:first-child){
-            width: 108px;
-            aspect-ratio: 108/83;
-            @include tablet{
-               width: auto;
-               aspect-ratio: unset;
-            }
-        }
+        // >div:not(:first-child){
+        //     width: 108px;
+        //     aspect-ratio: 108/83;
+        //     @include tablet{
+        //        width: auto;
+        //        aspect-ratio: unset;
+        //     }
+        // }
     }
 
     &__time{

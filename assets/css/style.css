@@ -1709,19 +1709,8 @@ header .mobile-menu__list {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.main-banner__logos > div:first-child {
-  width: 382px;
-  aspect-ratio: 382/77;
-}
 @media (max-width: 1024px) {
-  .main-banner__logos > div:first-child {
-    width: 39px;
-    height: 39px;
-    aspect-ratio: 1/1;
-  }
-}
-@media (max-width: 1024px) {
-  .main-banner__logos > div:nth-child(2) {
+  .main-banner__logos > div {
     width: 39px;
     height: 39px;
   }
@@ -1730,16 +1719,6 @@ header .mobile-menu__list {
   .main-banner__logos > div:nth-child(3) {
     width: 48px;
     height: 39px;
-  }
-}
-.main-banner__logos > div:not(:first-child) {
-  width: 108px;
-  aspect-ratio: 108/83;
-}
-@media (max-width: 1024px) {
-  .main-banner__logos > div:not(:first-child) {
-    width: auto;
-    aspect-ratio: unset;
   }
 }
 .main-banner__time {
