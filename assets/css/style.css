@@ -8967,6 +8967,34 @@ blockquote {
   filter: grayscale(1);
 }
 
+.acc-body__programm {
+  max-height: 530px;
+  overflow-y: auto;
+}
+.acc-body__programm::-webkit-scrollbar {
+  width: 5px;
+  left: -20px;
+}
+.acc-body__programm::-webkit-scrollbar-track {
+  background: rgba(0, 86, 164, 0.05);
+}
+.acc-body__programm::-webkit-scrollbar-thumb {
+  background-color: rgb(205, 223, 242);
+  border-radius: 0 8px 8px 0;
+}
+@media (max-width: 1024px) {
+  .acc-body__programm {
+    overflow: hidden;
+  }
+}
+.acc-body__programm .section-program__title {
+  margin: 30px 0;
+}
+.acc-body__programm .section-program__title h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
 .banner-children--no-overlay::before {
   display: none;
 }

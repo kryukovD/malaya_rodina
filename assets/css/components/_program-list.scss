@@ -545,3 +545,29 @@
         }
     }
 }
+
+.acc-body__programm {
+    max-height: 530px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 5px;
+        left:-20px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 86, 164, 0.05);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(205, 223, 242, 1);
+        border-radius: 0 8px 8px 0;
+    }
+    @include tablet {
+        overflow: hidden;
+    }
+    .section-program__title {
+        margin: 30px 0; 
+        h2 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+}
