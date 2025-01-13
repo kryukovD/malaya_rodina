@@ -4220,7 +4220,8 @@ header .mobile-menu__list {
     opacity: 1;
   }
 }
-.ajax-wrapper .section-faq__answers-list {
+.ajax-wrapper .section-faq__answers-list,
+.section-faq__answers-list.acc-nav {
   overflow: initial !important;
   max-height: -moz-max-content !important;
   max-height: max-content !important;
@@ -8970,6 +8971,8 @@ blockquote {
 .acc-body__programm {
   max-height: 530px;
   overflow-y: auto;
+  width: calc(100% + 30px);
+  padding: 30px;
 }
 .acc-body__programm::-webkit-scrollbar {
   width: 5px;
@@ -8982,9 +8985,34 @@ blockquote {
   background-color: rgb(205, 223, 242);
   border-radius: 0 8px 8px 0;
 }
+@media (max-width: 1640px) {
+  .acc-body__programm {
+    width: calc(100% + 60px);
+    transform: translateX(-30px);
+  }
+}
+@media (max-width: 1200px) {
+  .acc-body__programm {
+    width: 100%;
+    padding-right: 0;
+  }
+  .acc-body__programm .section-program__btns {
+    flex-shrink: 0;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .acc-body__programm .section-program__place {
+    margin-bottom: 20px;
+  }
+}
 @media (max-width: 1024px) {
   .acc-body__programm {
-    overflow: hidden;
+    max-height: -moz-max-content;
+    max-height: max-content;
+    overflow: initial;
+  }
+  .acc-body__programm .section-program__place {
+    text-align: left !important;
   }
 }
 .acc-body__programm .section-program__title {

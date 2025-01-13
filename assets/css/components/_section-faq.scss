@@ -306,7 +306,8 @@
   }
 
 
-.ajax-wrapper .section-faq__answers-list {
+.ajax-wrapper .section-faq__answers-list,
+.section-faq__answers-list.acc-nav {
     overflow: initial !important;
     max-height: max-content !important;
 }
