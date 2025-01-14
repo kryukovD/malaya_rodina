@@ -629,36 +629,40 @@ if($(window).width() > 768) {
 }
 
 
-    /*Партнер слайдеры */
-    const partner_slider_1 = new Swiper('.section-brands__row--first', {
-        loop: true,
-        allowTouchMove: false,
-        slidesPerView: 7, // показывать несколько слайдов одновременно
-        spaceBetween: 20,
-        autoplay: {
-            delay: 0, // Задержка между слайдами
-            disableOnInteraction: false,
+    if($('.section-brands__row--first .section-brands__item').length > 6) {
+        /*Партнер слайдеры */
+        const partner_slider_1 = new Swiper('.section-brands__row--first', {
+            loop: true,
+            allowTouchMove: false,
+            slidesPerView: 7, // показывать несколько слайдов одновременно
+            spaceBetween: 20,
+            autoplay: {
+                delay: 0, // Задержка между слайдами
+                disableOnInteraction: false,
 
-        },
-        speed: 8000,
-        grabCursor: true,
+            },
+            speed: 8000,
+            grabCursor: true,
 
-        breakpoints: {
-            0: {
-                slidesPerView: 3.2,
-                spaceBetween: 8,
-            },
-            768: {
-                slidesPerView: 5,
-                spaceBetween: 8,
-            },
-            1200: {
-                slidesPerView: 7,
-                spaceBetween: 20,
+            breakpoints: {
+                0: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 8,
+                },
+                768: {
+                    slidesPerView: 5,
+                    spaceBetween: 8,
+                },
+                1200: {
+                    slidesPerView: 7,
+                    spaceBetween: 20,
+                }
             }
-        }
 
-    });
+        });
+    }
+
+
 
 
     var swiperNew = new Swiper('.swiper-new', {
@@ -1051,7 +1055,7 @@ $(document).ready(
     _intersectionTime()
 )
 
-$('.jsRefuseReg').click(function () {
+$(document).on('click', '.jsRefuseReg', function () {
     $(this).closest('.section-program__item').removeClass('section-program__item--register').removeClass('except')
     _intersectionTime()
 
@@ -1059,12 +1063,12 @@ $('.jsRefuseReg').click(function () {
         $(this).closest('.section-program__item').hide()
     }
 })
-$('.jsReg').click(function () {
+$(document).on('click', '.jsReg', function () {
     $(this).closest('.section-program__item').addClass('section-program__item--register')
     _intersectionTime()
 })
 
-$('.jsShowMyEvent').click(function () {
+$(document).on('click', '.jsShowMyEvent', function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowAllEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').not('.section-program__item--register').hide()
@@ -1074,7 +1078,7 @@ $('.jsShowMyEvent').click(function () {
     })
     $('.section-program').addClass('jsMyProgramm')
 })
-$('.jsShowAllEvent').click(function () {
+$(document).on('click', '.jsShowAllEvent', function () {
     $(this).removeClass('btn-secondary').addClass('btn-primary')
     $('.jsShowMyEvent').removeClass('btn-primary').addClass('btn-secondary')
     $('.section-program__item').show()
@@ -1165,7 +1169,7 @@ $('.jsShowAllEvent').click(function () {
 // }));
 
 $(function () {
-    $('.faq__title').click(function () {
+    $(document).on('click', '.faq__title', function () {
         if(!$(this).closest('.faq__item').hasClass('faq__item--active')) {
             $('.faq__item').removeClass('faq__item--active').find('.faq__descr').slideUp(350)
             $(this).next().slideDown(350).closest('.faq__item').addClass('faq__item--active')

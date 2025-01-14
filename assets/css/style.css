@@ -4612,6 +4612,8 @@ header .mobile-menu__list {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
+  width: auto;
+  margin-right: 20px;
 }
 .section-brands__item img {
   max-width: 100%;
