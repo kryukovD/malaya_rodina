@@ -1564,8 +1564,20 @@ function _speakersSlider() {
     })
 }
 
+function _accEdit() {
+    $('body').on('click', '.jsEditField', function () {
+        $(this).prev().prop('disable', false).focus()
+        $(this).closest('.acc-article__col').find('a').removeClass('jsEditField').addClass('jsSaveField')
+    })
+    $('body').on('click', '.jsSaveField', function () {
+        $(this).prev().prop('disable', true)
+        $(this).closest('.acc-article__col').find('a').removeClass('jsSaveField').addClass('jsEditField')
+    })
+}
+
 $(document).ready(
-    _speakersSlider()
+    _speakersSlider(),
+    _accEdit()
 )
 
 $(function () {
