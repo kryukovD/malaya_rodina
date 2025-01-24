@@ -357,3 +357,22 @@ button {
 .btn.btn--like-select {
     justify-content: space-between;
 }
+
+.btn.btn-white--opacity.btn-white {
+    background: #BFC3CB;   
+    color: #fff;
+    @include hover {
+        background: rgba(194, 209, 221, 0.5);
+    }
+ }
+.stream--error-text {
+    span {
+        display: block;
+    }
+    a {
+        text-decoration: underline;
+        @include hover {
+            text-decoration: none;
+        }
+    }
+ }

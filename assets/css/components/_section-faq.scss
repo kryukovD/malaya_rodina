@@ -148,13 +148,24 @@
         &::-webkit-scrollbar {
             width: 5px;
             left:-20px;
+            @include tablet {
+                width: initial;
+                left: 0;
+            }
         }
         &::-webkit-scrollbar-track {
             background: rgba(0, 86, 164, 0.05);
+            @include tablet {
+                background: inherit;
+            }
         }
         &::-webkit-scrollbar-thumb {
             background-color: rgba(205, 223, 242, 1);
             border-radius: 0 8px 8px 0;
+            @include tablet {
+                background: inherit;
+                border-radius: 0;
+            }
         }
     }
     &__answer {

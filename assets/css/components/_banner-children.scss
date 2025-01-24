@@ -586,3 +586,16 @@
         display: block !important;
     }
 }
+
+.stream--error {
+    background: #E3000F;
+    border-radius: 8px;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 16px;
+    .stream--error-icon {
+        margin-right: 10px;
+    }
+}
