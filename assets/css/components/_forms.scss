@@ -44,6 +44,7 @@
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="password"],
 input[type="number"],
 input[type="date"],
 textarea {
@@ -504,4 +505,48 @@ textarea:focus + .placeholder,
 #detail-map {
     width: 100%;
     height: 100%;
+}
+
+.popup-come-out__content {
+    .checkbox.fieldset {
+        margin: 10px 0 20px;
+    }
+}
+.wrapper a.link-blue {
+    color: $primary-color-btn;
+    @include hover {
+        text-decoration: underline;
+    }
+}
+
+.btn-signup {
+    width: 152px;
+}
+
+.form-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 24px;
+    font-family: "Montserrat";
+}
+
+.form-after {
+    margin-top: 20px;
+}
+
+.like-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    width: 100%;
+    background: rgba(0, 86, 164, 0.05);
+    border-radius: 8px;
+}
+
+.popup-come-out__header-title {
+    @include mobile-sm {
+        font-size: 26px;
+    }
 }

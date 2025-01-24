@@ -222,9 +222,116 @@
                     </div>
                 </section>
 
+                <a class="btn btn-question btn-trigger-popup" data-id-popup="#popup-sigin" href="javascript:void(0)">Задать вопрос</a>
 
             </div>
         </div>
+
+        
+
+    <!-- form signin-->
+    <div class="popup-come-out" id="popup-sigin">
+        <div class="popup-come-out__inner">
+            <div class="popup-come-out__header" style="background-image: url('./assets/images/popup-back-header.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="popup-come-out__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L21 12" stroke="white" stroke-linecap="round" />
+                        <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="popup-come-out__header-title">
+                    Авторизация
+                </div>
+            </div>
+            <div class="popup-come-out__content">
+                <div class="popup-come-out__body">
+                    <form>
+                        <div class="form-title">Для входа в личный кабинет, введите ваши данные:</div>
+                        <fieldset class="fieldset fieldset--required fieldset--email">
+                            <input type="email" value="">
+                            <div class="placeholder">Ваш email</div>
+                            <span class="error">Введите корректное имя</span>
+                        </fieldset>
+                        <fieldset class="fieldset fieldset--required  fieldset--text">
+                            <input type="password" value="">
+                            <div class="placeholder">Ваш пароль</div>
+                        </fieldset>
+                        <a class="btn-trigger-popup link-blue" data-id-popup="#popup-lost" href="javascript:void(0)">Я забыл пароль</a>
+                        <label class="checkbox fieldset fieldset--required fieldset--valid">
+                            <input type="checkbox" checked>
+                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                            <span class="error">Необходимо ваше согласие</span>                                     
+                        </label>
+                        <fieldset class="fieldset fieldset--submit">
+                            <button class="btn btn-signup btn-red" >Войти</button>
+                        </fieldset>
+                        <div class="form-after">
+                            Еще не зарегистрированы? 
+                            <a class="btn-trigger-popup link-blue" data-id-popup="#popup-register" href="javascript:void(0)">Регистрация</a>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="popup-come-out__notice">
+                    <div class="like-btn">
+                        Помощь организатора:&nbsp;<a class="link-blue" href="mailto:text@test.test"> e-mail</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- form lost password-->
+    <div class="popup-come-out" id="popup-lost">
+        <div class="popup-come-out__inner">
+            <div class="popup-come-out__header" style="background-image: url('./assets/images/popup-back-header.png'); background-repeat: no-repeat; background-size: cover;">
+                <div class="popup-come-out__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12L21 12" stroke="white" stroke-linecap="round" />
+                        <path d="M15 18L21 12L15 6" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="popup-come-out__header-title">
+                    Забыли пароль?
+                </div>
+            </div>
+            <div class="popup-come-out__content">
+                <div class="popup-come-out__body">
+                    <form>
+                        <div class="form-title">Введите электронный адрес, указанный при регистрации, и мы вышлем вам ссылку на восстановление пароля.</div>
+                        <fieldset class="fieldset fieldset--required fieldset--email">
+                            <input type="email" value="">
+                            <div class="placeholder">Ваш email</div>
+                            <span class="error">Введите корректное имя</span>
+                        </fieldset>
+                        <a class="btn-trigger-popup link-blue" data-id-popup="#popup-sigin" href="javascript:void(0)">Вспомнил пароль</a>
+                        <label class="checkbox fieldset fieldset--required fieldset--valid">
+                            <input type="checkbox" checked>
+                            <div class="like-checkbox">Даю согласие на <a href="javascript:void(0)">обработку персональных данных</a></div>   
+                            <span class="error">Необходимо ваше согласие</span>                                     
+                        </label>
+                        <fieldset class="fieldset fieldset--submit">
+                            <button class="btn btn-signup btn-red" >Отправить</button>
+                        </fieldset>
+                        <div class="form-after">
+                            Еще не зарегистрированы? 
+                            <a class="btn-trigger-popup link-blue" data-id-popup="#popup-register" href="javascript:void(0)">Регистрация</a>
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="popup-come-out__notice">
+                    <div class="like-btn">
+                        Помощь организатора:&nbsp;<a class="link-blue" href="mailto:text@test.test"> e-mail</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 <style>
     .flex {
         display: flex;

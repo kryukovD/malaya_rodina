@@ -397,6 +397,8 @@
                     @include mobile-sm {
                         position: static;
                         display: block;
+                        right: 0;
+                        top: 0;
                     }
                     img {
                         width: 113px;
@@ -545,6 +547,9 @@
 .acc-article__col-wrapper {
     border: 2px solid $primary-color-btn;
     border-radius: 8px;
+    @include mobile-sm {
+        width: 67px;
+    }
 }
 
 
@@ -818,5 +823,19 @@
             left: initial !important;
             height: initial !important;
         }        
+    }
+}
+#acc-map,
+#bage-map {
+    width: 100%;
+    height: 400px;
+    @include laptop {
+        height: 400px;
+    }
+    @include laptop-sm {
+        height: 400px;
+    }
+    @include tablet {
+        height: 400px;
     }
 }

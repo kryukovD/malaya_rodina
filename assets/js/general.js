@@ -1197,13 +1197,6 @@ $(function () {
             let $pointsList = [];
 
             $hotels.forEach(function(e) {
-
-
-
-
-
-
-
                 MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
                     '<div class="popover top">' +
                         '<a class="close" href="#">&times;</a>' +
@@ -1321,10 +1314,6 @@ $(function () {
                         '<div class="popover-content">$[properties.balloonContent]</div>'
                 )
 
-
-
-
-
                 let coord = e.coords                    
                 $pointsList.push(coord)
                 myPlacemark = new ymaps.Placemark(coord, {
@@ -1405,6 +1394,69 @@ $(function () {
         }
     }
 })
+
+$(function () {
+    if($('#acc-map').length) {
+        ymaps.ready(init);
+        function init() {
+            var accMap = new ymaps.Map("acc-map", {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+
+            let $coord = $('#acc-map').attr('data-coords').split(',')
+            let $marker = $('#acc-map').attr('data-marker') || './assets/images/map/baloon.svg'
+
+            var myPlacemark = new ymaps.Placemark($coord, {
+                balloonContent: '',
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: $marker,
+                iconImageSize: [30, 44],
+                iconImageOffset: [-15, -44]
+            })
+            accMap.geoObjects.add(myPlacemark)
+            accMap.setCenter($coord, 11) 
+        }
+    }
+})
+
+$(function () {
+    if($('#bage-map').length) {
+        ymaps.ready(init);
+        function init() {
+            var bageMap = new ymaps.Map("bage-map", {
+                center: [55.76, 37.64],
+                zoom: 10,
+                controls: []
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+
+            let $coord = $('#bage-map').attr('data-coords').split(',')
+            let $marker = $('#bage-map').attr('data-marker') || './assets/images/map/baloon.svg'
+
+            var myPlacemark = new ymaps.Placemark($coord, {
+                balloonContent: '',
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: $marker,
+                iconImageSize: [30, 44],
+                iconImageOffset: [-15, -44]
+            })
+            bageMap.geoObjects.add(myPlacemark)
+            bageMap.setCenter($coord, 11) 
+        }
+    }
+})
+
 $(function () {
     if($('#semi-map').length) {
         ymaps.ready(init);

@@ -5283,6 +5283,7 @@ header .mobile-menu__list {
 input[type=text],
 input[type=tel],
 input[type=email],
+input[type=password],
 input[type=number],
 input[type=date],
 textarea {
@@ -5299,13 +5300,14 @@ textarea {
   input[type=text],
   input[type=tel],
   input[type=email],
+  input[type=password],
   input[type=number],
   input[type=date],
   textarea {
     height: 49px;
   }
 }
-input[type=text]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=date]::-moz-placeholder, textarea::-moz-placeholder {
+input[type=text]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=date]::-moz-placeholder, textarea::-moz-placeholder {
   transform-origin: 0 0;
   font-size: 15px;
   -moz-transition: 0.35s ease-in-out all;
@@ -5314,6 +5316,7 @@ input[type=text]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[typ
 input[type=text]::placeholder,
 input[type=tel]::placeholder,
 input[type=email]::placeholder,
+input[type=password]::placeholder,
 input[type=number]::placeholder,
 input[type=date]::placeholder,
 textarea::placeholder {
@@ -5321,23 +5324,25 @@ textarea::placeholder {
   font-size: 15px;
   transition: 0.35s ease-in-out all;
 }
-input[type=text]:hover::-moz-placeholder, input[type=tel]:hover::-moz-placeholder, input[type=email]:hover::-moz-placeholder, input[type=number]:hover::-moz-placeholder, input[type=date]:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+input[type=text]:hover::-moz-placeholder, input[type=tel]:hover::-moz-placeholder, input[type=email]:hover::-moz-placeholder, input[type=password]:hover::-moz-placeholder, input[type=number]:hover::-moz-placeholder, input[type=date]:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
   opacity: 0.5;
 }
 input[type=text]:hover::placeholder,
 input[type=tel]:hover::placeholder,
 input[type=email]:hover::placeholder,
+input[type=password]:hover::placeholder,
 input[type=number]:hover::placeholder,
 input[type=date]:hover::placeholder,
 textarea:hover::placeholder {
   opacity: 0.5;
 }
-input[type=text]:focus::-moz-placeholder, input[type=tel]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=number]:focus::-moz-placeholder, input[type=date]:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+input[type=text]:focus::-moz-placeholder, input[type=tel]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=password]:focus::-moz-placeholder, input[type=number]:focus::-moz-placeholder, input[type=date]:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
   opacity: 0;
 }
 input[type=text]:focus::placeholder,
 input[type=tel]:focus::placeholder,
 input[type=email]:focus::placeholder,
+input[type=password]:focus::placeholder,
 input[type=number]:focus::placeholder,
 input[type=date]:focus::placeholder,
 textarea:focus::placeholder {
@@ -5811,6 +5816,50 @@ textarea:focus + .placeholder,
 #detail-map {
   width: 100%;
   height: 100%;
+}
+
+.popup-come-out__content .checkbox.fieldset {
+  margin: 10px 0 20px;
+}
+
+.wrapper a.link-blue {
+  color: #0056A4;
+}
+@media (hover: hover) {
+  .wrapper a.link-blue:hover {
+    text-decoration: underline;
+  }
+}
+@media (hover: none) {
+  .wrapper a.link-blue:active {
+    text-decoration: underline;
+  }
+}
+
+.btn-signup {
+  width: 152px;
+}
+
+.form-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 24px;
+  font-family: "Montserrat";
+}
+
+.form-after {
+  margin-top: 20px;
+}
+
+.like-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  width: 100%;
+  background: rgba(0, 86, 164, 0.05);
+  border-radius: 8px;
 }
 
 .section-placement-list__inner {
@@ -9510,6 +9559,8 @@ blockquote {
   .acc-article__row--photo .acc-article__col:nth-last-child(1) {
     position: static;
     display: block;
+    right: 0;
+    top: 0;
   }
 }
 .acc-article__row--photo .acc-article__col:nth-last-child(1) img {
@@ -9667,6 +9718,11 @@ blockquote {
 .acc-article__col-wrapper {
   border: 2px solid #0056A4;
   border-radius: 8px;
+}
+@media (max-width: 576px) {
+  .acc-article__col-wrapper {
+    width: 67px;
+  }
 }
 
 .section-acc--error .acc-article__row--photo .acc-article__col:nth-last-child(1) {
@@ -9946,6 +10002,30 @@ blockquote {
     width: initial !important;
     left: initial !important;
     height: initial !important;
+  }
+}
+
+#acc-map,
+#bage-map {
+  width: 100%;
+  height: 400px;
+}
+@media (max-width: 1640px) {
+  #acc-map,
+  #bage-map {
+    height: 400px;
+  }
+}
+@media (max-width: 1200px) {
+  #acc-map,
+  #bage-map {
+    height: 400px;
+  }
+}
+@media (max-width: 1024px) {
+  #acc-map,
+  #bage-map {
+    height: 400px;
   }
 }
 
