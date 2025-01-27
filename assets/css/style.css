@@ -4966,6 +4966,7 @@ header .mobile-menu__list {
   width: 100%;
   height: auto;
   transition: 0.35s ease-in-out all;
+  border-radius: 8px;
 }
 .card-placement__name {
   font-family: "Unbounded";
@@ -5860,6 +5861,12 @@ textarea:focus + .placeholder,
   width: 100%;
   background: rgba(0, 86, 164, 0.05);
   border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  .popup-come-out__header-title {
+    font-size: 26px;
+  }
 }
 
 .section-placement-list__inner {
