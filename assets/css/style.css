@@ -10791,4 +10791,9 @@ blockquote {
     flex-shrink: 0;
     min-width: 150px;
   }
+}
+
+.FormRecordDisplay__input input {
+  font-size: 16px;
+  line-height: 19px;
 }/*# sourceMappingURL=style.css.map */
