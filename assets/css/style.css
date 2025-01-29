@@ -7358,6 +7358,7 @@ blockquote {
   left: 0;
   width: -moz-max-content;
   width: max-content;
+  min-width: 300px;
   height: -moz-max-content;
   height: max-content;
   background: #fff;
