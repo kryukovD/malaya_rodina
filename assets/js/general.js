@@ -1635,7 +1635,26 @@ $(document).ready(
 function _sendFile() {
     const dropFileZone = document.querySelector(".fieldset-file");
     const uploadInput = document.querySelector(".input-file");
-    const submitButton = document.querySelector('.form-upload__submit');
+    
+    
+    const elements = document.querySelectorAll(".fieldset-file");
+    elements.forEach(element => {
+        element.addEventListener("dragenter", function () {
+            element.classList.add("_active");
+        });
+        element.addEventListener("dragleave", function () {
+            element.classList.remove("_active");
+        });
+        element.addEventListener("drop", function () {
+            element.classList.remove("_active");
+            const file = event.dataTransfer?.files[0];
+            if (file) {
+                uploadInput.files = event.dataTransfer.files;
+                $('.fieldset-file__descr').html('<p>Файл загружен</p>')
+            }
+        });
+    });
+
 
     ["dragover", "drop"].forEach(function (event) {
         document.addEventListener(event, function (evt) {
